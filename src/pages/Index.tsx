@@ -250,26 +250,26 @@ const Index = () => {
             custom={0}
             variants={fade}
           >
-            <span className="text-[11px] uppercase tracking-[0.2em] font-body font-bold block mb-6" style={{ color: "#D4A843" }}>
+            <span className="text-[13px] uppercase tracking-[0.2em] font-body font-bold block mb-6" style={{ color: "#D4A843" }}>
               Founding Offer
             </span>
-            <p className="font-body leading-[1.7] text-[17px]" style={{ color: "#C8C0B0" }}>
+            <p className="font-body text-[20px]" style={{ color: "#C8C0B0", lineHeight: 1.75 }}>
               This is Nano's first month. A small group of people get in at $20, prove it works, and walk away with $25. You in?
             </p>
 
             {/* Founding Member Perks */}
             <div className="mt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "24px 0" }}>
-              <span className="block mb-4 font-body uppercase" style={{ color: "#D4A843", fontSize: "10px", letterSpacing: "0.15em", fontWeight: 700 }}>
+              <span className="block mb-4 font-body uppercase" style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.15em", fontWeight: 700 }}>
                 Founding Member Perks
               </span>
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center gap-2">
                   <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
-                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "15px", fontWeight: 500 }}>Lifetime free access to the app</span>
+                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "17px", fontWeight: 500 }}>Lifetime free access to the app</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
-                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "15px", fontWeight: 500 }}>
+                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "17px", fontWeight: 500 }}>
                     A chance to win a <span style={{ color: "#D4A843" }}>$250 gift card</span>
                   </span>
                 </div>
@@ -291,10 +291,10 @@ const Index = () => {
                     border: "1px solid rgba(212,168,67,0.3)",
                   }}
                 >
-                  <span className="text-[36px] font-bold" style={{ color: "#FFFFFF" }}>
+                  <span className="text-[52px] font-bold" style={{ color: "#FFFFFF" }}>
                     {item.value}
                   </span>
-                  <span className="text-[11px] uppercase tracking-[0.15em] mt-1" style={{ color: "#D4A843" }}>
+                  <span className="text-[13px] uppercase tracking-[0.15em] mt-1" style={{ color: "#D4A843" }}>
                     {item.label}
                   </span>
                 </div>
@@ -304,11 +304,11 @@ const Index = () => {
               onClick={() => scrollToSection("how")}
               className="mt-8 w-full transition-all duration-200"
               style={{
-                height: "52px",
+                height: "60px",
                 backgroundColor: "#D4A843",
                 color: "#000000",
                 borderRadius: "6px",
-                fontSize: "14px",
+                fontSize: "16px",
                 fontWeight: 700,
                 letterSpacing: "0.01em",
               }}
