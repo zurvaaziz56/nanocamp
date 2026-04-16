@@ -222,7 +222,7 @@ const Index = () => {
               variants={fade}
             >
               View Demo{" "}
-              <span className="inline-block animate-[bounce-arrow_1.5s_ease-in-out_infinite]">↓</span>
+              <span className="inline-block animate-[bounce-arrow_1.5s_ease-in-out_infinite]">→</span>
             </motion.a>
           </div>
         </div>
