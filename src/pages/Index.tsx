@@ -78,7 +78,7 @@ const Index = () => {
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              Become a founding member
+              Become a Founding Member
             </button>
           </div>
         </div>
@@ -184,7 +184,7 @@ const Index = () => {
                       e.currentTarget.style.boxShadow = "none";
                     }}
                   >
-                    Become a founding member
+                    Become a Founding Member
                   </button>
                 </>
               ) : (
@@ -300,7 +300,7 @@ const Index = () => {
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              Become a founding member
+              Become a Founding Member
             </button>
           </motion.div>
         </div>
