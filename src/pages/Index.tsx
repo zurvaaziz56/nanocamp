@@ -52,11 +52,21 @@ const Index = () => {
       {/* Hero */}
       <section className="pt-36 pb-16 px-6">
         <div className="max-w-5xl mx-auto">
+          <motion.img
+            src={nanoCampLogo}
+            alt="Nano Camp"
+            className="mb-10 md:mb-14"
+            style={{ height: '120px', width: 'auto' }}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            variants={fade}
+          />
           <motion.h1
             className="font-display text-5xl md:text-6xl lg:text-[72px] font-semibold leading-[1.05] tracking-tight text-foreground max-w-3xl"
             initial="hidden"
             animate="visible"
-            custom={0}
+            custom={1}
             variants={fade}
           >
             Get paid to reach your goals.
