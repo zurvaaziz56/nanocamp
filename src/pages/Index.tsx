@@ -123,7 +123,6 @@ const Index = () => {
                       }}
                       className="w-full px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-colors rounded-lg"
                       style={{ backgroundColor: "#141414", color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.12)" }}
-                      placeholder="Your email"
                     />
                     {error && (
                       <span className="mt-1.5 text-xs text-destructive">{error}</span>
