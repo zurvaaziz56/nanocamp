@@ -150,7 +150,7 @@ const WillpowerSection = () => {
               transitionDelay: "0ms",
             }}
           >
-            Nano changes that.
+            Set your goal. Put money on it. Win.
           </p>
           <p
             className="font-display text-[32px] font-bold leading-[1.3] mt-1 transition-all duration-500"
