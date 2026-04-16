@@ -6,24 +6,22 @@ const stats = [
 
 const StatPills = () => {
   return (
-    <div className="flex gap-3">
+    <div className="grid grid-cols-3 gap-3 w-full">
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="flex flex-col items-center justify-center rounded-xl px-6 py-4 transition-colors"
+          className="flex flex-col items-center justify-center rounded-xl transition-colors"
           style={{
-            width: "140px",
-            height: "80px",
-            backgroundColor: "#141414",
-            border: "1px solid rgba(255,255,255,0.06)",
+            minHeight: "110px",
+            backgroundColor: "rgba(212,168,67,0.07)",
+            border: "1px solid rgba(212,168,67,0.3)",
+            borderTop: "2px solid rgba(212,168,67,0.6)",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#c9a84c")}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)")}
         >
-          <span className="text-xl font-medium tracking-tight" style={{ color: "#F5F0E8" }}>
+          <span className="text-[48px] font-[800] tracking-tight" style={{ color: "#FFFFFF" }}>
             {stat.value}
           </span>
-          <span className="text-[11px] uppercase tracking-[0.15em] mt-1" style={{ color: "#B0A898" }}>
+          <span className="text-[11px] uppercase tracking-[0.15em] mt-1" style={{ color: "#D4A843" }}>
             {stat.label}
           </span>
         </div>
