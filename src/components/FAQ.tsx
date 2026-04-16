@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: "What counts as checking in?",
-    a: "Upload a screenshot each day that proves you did the thing — a step count, a gym selfie, your sleep app, whatever fits your goal. It takes about 30 seconds.",
+    a: "Upload a screenshot each day that proves you did the thing - a step count, a gym selfie, your sleep app, whatever fits your goal. It takes about 30 seconds.",
   },
   {
     q: "What if I miss more than 6 days?",
