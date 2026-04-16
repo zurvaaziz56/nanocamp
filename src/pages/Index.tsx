@@ -177,17 +177,15 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 border-t border-border">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            ¹ We are exploring an optional WhatsApp community where founding members can share check-in videos and support each other. Participation would be voluntary. Legal review needed on: third-party platform liability, video as verification mechanism, UGC rights, age verification, and moderation policy.
-          </p>
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            ² This product involves health-related goal tracking (sleep, steps, physical activity) and a pay-to-participate cash reward structure. Legal review needed on: data collection and privacy compliance (GDPR/CCPA), potential HIPAA adjacency, and gambling/sweepstakes classification by jurisdiction.
-          </p>
-          <p className="text-xs text-muted-foreground mt-8">
-            © 2025 Nano. All rights reserved.
-          </p>
+      <footer className="py-12 px-6 border-t border-border">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <span className="font-display text-lg font-semibold text-foreground">Nano</span>
+          <div className="flex items-center gap-6 text-sm text-muted-foreground">
+            <a href="#how" className="hover:text-foreground transition-colors">How it works</a>
+            <a href="#founding" className="hover:text-foreground transition-colors">Pricing</a>
+            <a href="mailto:hello@nano.app" className="hover:text-foreground transition-colors">Contact</a>
+          </div>
+          <p className="text-xs text-muted-foreground">© 2025 Nano. All rights reserved.</p>
         </div>
       </footer>
     </div>
