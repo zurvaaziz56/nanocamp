@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const fade = {
@@ -20,20 +20,39 @@ const WillpowerSection = () => {
   const [crossed, setCrossed] = useState<boolean[]>([false, false, false]);
   const [allCrossed, setAllCrossed] = useState(false);
   const [showPayoff, setShowPayoff] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
+  const [triggered, setTriggered] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  const crossOut = (index: number) => {
-    if (crossed[index]) return;
-    if (!hasInteracted) setHasInteracted(true);
-    const next = [...crossed];
-    next[index] = true;
-    setCrossed(next);
-  };
+  // Scroll-triggered strikethrough
+  useEffect(() => {
+    if (triggered) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTriggered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [triggered]);
+
+  useEffect(() => {
+    if (!triggered) return;
+    const timers = [
+      setTimeout(() => setCrossed((p) => { const n = [...p]; n[0] = true; return n; }), 0),
+      setTimeout(() => setCrossed((p) => { const n = [...p]; n[1] = true; return n; }), 600),
+      setTimeout(() => setCrossed((p) => { const n = [...p]; n[2] = true; return n; }), 1200),
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, [triggered]);
 
   useEffect(() => {
     if (crossed.every(Boolean) && !allCrossed) {
       setAllCrossed(true);
-      setTimeout(() => setShowPayoff(true), 200);
+      setTimeout(() => setShowPayoff(true), 500);
     }
   }, [crossed, allCrossed]);
 
@@ -41,10 +60,11 @@ const WillpowerSection = () => {
     setCrossed([false, false, false]);
     setAllCrossed(false);
     setShowPayoff(false);
+    setTriggered(false);
   };
 
   return (
-    <section className="pt-28 pb-12 px-6">
+    <section className="pt-28 pb-12 px-6" ref={sectionRef}>
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial="hidden"
@@ -75,21 +95,19 @@ const WillpowerSection = () => {
           </h2>
         </motion.div>
 
-        {/* Interactive strike-through sentences */}
-        <div className="mt-10 flex flex-col gap-1">
+        {/* Strikethrough sentences */}
+        <div className="mt-10 flex flex-col" style={{ gap: "32px" }}>
           {sentences.map((text, i) => (
             <motion.div
               key={i}
-              className="relative cursor-pointer select-none"
-              style={{ cursor: crossed[i] ? "default" : "pointer" }}
-              onClick={() => crossOut(i)}
+              className="relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
             >
               <p
-                className="font-display text-[28px] leading-[1.5] transition-all duration-400"
+                className="font-display text-[28px] md:text-[40px] leading-[1.4] transition-all duration-500"
                 style={{
                   color: crossed[i] ? "rgba(255,255,255,0.2)" : "#FFFFFF",
                   filter: crossed[i] ? "blur(0.4px)" : "none",
@@ -97,31 +115,21 @@ const WillpowerSection = () => {
               >
                 {text}
               </p>
-              {/* Animated strikethrough line */}
               <span
                 className="absolute left-0 pointer-events-none"
                 style={{
                   top: "50%",
-                  height: "2px",
+                  height: "3px",
                   backgroundColor: "#D4A843",
                   width: crossed[i] ? "100%" : "0%",
-                  transition: "width 400ms ease",
+                  transition: "width 500ms ease",
                 }}
               />
-              {/* Prompt on first sentence */}
-              {i === 0 && !hasInteracted && (
-                <span
-                  className="block mt-1 text-[13px] transition-opacity duration-300"
-                  style={{ color: "#6B6560" }}
-                >
-                  sound familiar? tap to dismiss.
-                </span>
-              )}
             </motion.div>
           ))}
         </div>
 
-        {/* Gold divider — visible after all crossed */}
+        {/* Gold divider */}
         <div
           className="transition-all duration-500"
           style={{
@@ -158,7 +166,7 @@ const WillpowerSection = () => {
               transitionDelay: "150ms",
             }}
           >
-            Put something on the line.{" "}
+            Put something on the line. Follow through.{" "}
             <span
               className="italic"
               style={{
@@ -170,7 +178,6 @@ const WillpowerSection = () => {
             </span>
           </p>
 
-          {/* Reset link */}
           {allCrossed && (
             <button
               onClick={reset}
