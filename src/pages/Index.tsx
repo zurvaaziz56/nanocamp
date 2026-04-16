@@ -233,6 +233,8 @@ const Index = () => {
 
       <WillpowerSection />
 
+      <Testimonials />
+
       {/* Founding Offer */}
       <section id="founding" className="pt-12 pb-28 px-6">
         <div className="max-w-2xl mx-auto">
