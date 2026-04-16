@@ -79,6 +79,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "bounce-arrow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(4px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
