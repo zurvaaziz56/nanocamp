@@ -44,10 +44,8 @@ const Index = () => {
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
-            <a
-              href="https://zurvaaziz56.github.io/nanocamp-app/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => scrollToSection("how")}
               className="px-4 py-2 rounded-[8px] text-sm font-medium transition-all duration-200"
               style={{ color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.15)", backgroundColor: "transparent" }}
               onMouseEnter={(e) => {
@@ -62,7 +60,7 @@ const Index = () => {
               }}
             >
               View demo
-            </a>
+            </button>
             <button
               onClick={() => scrollToSection("founding")}
               className="px-4 py-2 rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
@@ -182,10 +180,8 @@ const Index = () => {
               )}
             </motion.form>
 
-            <motion.a
-              href="https://zurvaaziz56.github.io/nanocamp-app/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() => scrollToSection("how")}
               className="mt-3 inline-flex items-center gap-2 rounded-[8px] group"
               style={{
                 color: "#D4A843",
@@ -211,7 +207,7 @@ const Index = () => {
             >
               View Demo{" "}
               <span className="inline-block animate-[bounce-arrow_1.5s_ease-in-out_infinite]">↓</span>
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
