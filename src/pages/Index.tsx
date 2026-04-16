@@ -228,8 +228,6 @@ const Index = () => {
             </span>
           </motion.div>
           <motion.div
-            className="pl-6"
-            style={{ borderLeft: "4px solid #D4A843" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -240,17 +238,59 @@ const Index = () => {
               Willpower is overrated.
             </h2>
           </motion.div>
-          <motion.p
-            className="mt-8 font-body leading-[1.75] text-[18px]"
-            style={{ color: "#C8C0B0" }}
-            initial="hidden"
-            whileInView="visible"
+
+          {/* Staggered statement lines */}
+          <div className="mt-10 space-y-3">
+            {[
+              { text: "Most people don't finish what they start.", indent: 0 },
+              { text: "Not because they can't.", indent: 120 },
+              { text: "Because they don't have to.", indent: 0 },
+            ].map((line, i) => (
+              <motion.p
+                key={i}
+                className="font-display text-[22px] leading-[1.4] cursor-default"
+                style={{
+                  color: "#A09880",
+                  marginLeft: line.indent,
+                  transition: "color 0.2s ease",
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#D4A843"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "#A09880"; }}
+              >
+                {line.text}
+              </motion.p>
+            ))}
+          </div>
+
+          {/* Gold divider */}
+          <motion.div
+            className="my-8"
+            style={{ width: 40, height: 2, backgroundColor: "#D4A843" }}
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
-            custom={2}
-            variants={fade}
+            transition={{ delay: 0.5, duration: 0.4 }}
+          />
+
+          {/* Closing lines */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.5 }}
           >
-            Most people don't finish what they start. Not because they can't. Because they don't have to. Nano changes that. Put something on the line. Follow through. Get paid.
-          </motion.p>
+            <p className="font-display text-[32px] font-bold leading-[1.3]" style={{ color: "#FFFFFF" }}>
+              Nano changes that.
+            </p>
+            <p className="font-display text-[32px] font-bold leading-[1.3] mt-1" style={{ color: "#FFFFFF" }}>
+              Put something on the line.{" "}
+              <span className="italic" style={{ color: "#D4A843" }}>Get paid.</span>
+            </p>
+          </motion.div>
         </div>
       </section>
 
