@@ -51,7 +51,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.6, ease: "easeOut" as const }}
         >
           <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-4">
-            How it works
+            {"\n"}
           </span>
           <h2 className="font-display text-[40px] md:text-[52px] font-medium leading-[1.1]" style={{ color: "#FFFFFF" }}>
             How it works.
