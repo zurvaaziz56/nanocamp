@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
+import nanoCampLogo from "@/assets/nano-camp-logo.jpeg";
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
@@ -38,9 +39,7 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-          <span className="font-display text-xl font-semibold tracking-tight text-foreground">
-            Nano
-          </span>
+          <img src={nanoCampLogo} alt="Nano Camp" className="h-10" />
           <button
             onClick={() => scrollToSection("founding")}
             className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
@@ -179,7 +178,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <span className="font-display text-lg font-semibold text-foreground">Nano</span>
+          <img src={nanoCampLogo} alt="Nano Camp" className="h-8" />
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#how" className="hover:text-foreground transition-colors">How it works</a>
             <a href="#founding" className="hover:text-foreground transition-colors">Pricing</a>
