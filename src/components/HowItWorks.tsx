@@ -117,7 +117,7 @@ const HowItWorks = () => {
                 Show up daily.
               </h3>
               <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
-                Check in every day. Upload a quick screenshot — your step count, your gym check-in, your sleep data. Thirty days. One goal. That's the whole job.
+                Check in every day. Upload a quick photo, video, or screenshot - you at the gymm, your step count, your sleep data. Thirty days. One goal. That's the whole job.
               </p>
               <StreakBar />
             </div>
