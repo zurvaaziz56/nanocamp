@@ -170,7 +170,7 @@ const WillpowerSection = () => {
               transitionDelay: "150ms",
             }}
           >
-            Put something on the line.
+            {"\u200b"}
           </p>
 
           {allCrossed && (
