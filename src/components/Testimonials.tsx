@@ -29,21 +29,21 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 px-6"
       style={{
         background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
+        padding: "96px 60px",
       }}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="mx-auto" style={{ maxWidth: "1200px" }}>
         <span
-          className="block mb-4 font-body uppercase"
-          style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em" }}
+          className="block font-body uppercase"
+          style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.15em", fontWeight: 700, marginBottom: "16px" }}
         >
           What early testers have said
         </span>
         <h2
           className="font-display font-bold mb-14"
-          style={{ color: "#FFFFFF", fontSize: "48px", lineHeight: 1.1 }}
+          style={{ color: "#FFFFFF", fontSize: "52px", lineHeight: 1.1 }}
         >
           Real words. Real results.
         </h2>
