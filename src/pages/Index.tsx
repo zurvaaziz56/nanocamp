@@ -40,7 +40,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground star-field">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: "rgba(10,10,10,0.85)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: "rgba(10,10,10,0.85)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
@@ -49,9 +49,9 @@ const Index = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors duration-200"
-              style={{ color: "#A09880", fontSize: "14px", fontWeight: 500 }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "#D4A843"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "#A09880"; }}
+              style={{ color: "#808080", fontSize: "13px", fontWeight: 500 }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#FFFFFF"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "#808080"; }}
             >
               View demo
             </a>
@@ -59,21 +59,22 @@ const Index = () => {
               onClick={() => scrollToSection("founding")}
               className="transition-all duration-200"
               style={{
-                backgroundColor: "#D4A843",
-                color: "#000000",
+                backgroundColor: "#FFFFFF",
+                color: "#0A0A0A",
                 borderRadius: "6px",
-                fontSize: "14px",
+                fontSize: "13px",
                 fontWeight: 700,
-                letterSpacing: "0.01em",
-                padding: "10px 22px",
+                letterSpacing: "0.02em",
+                padding: "10px 20px",
+                border: "none",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#E8C068";
+                e.currentTarget.style.backgroundColor = "#F0EDE6";
                 e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(255,255,255,0.12)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#D4A843";
+                e.currentTarget.style.backgroundColor = "#FFFFFF";
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
               }}
@@ -165,21 +166,22 @@ const Index = () => {
                     className="shrink-0 transition-all duration-200"
                     style={{
                       height: "54px",
-                      padding: "0 22px",
-                      backgroundColor: "#D4A843",
-                      color: "#000000",
+                      padding: "0 20px",
+                      backgroundColor: "#FFFFFF",
+                      color: "#0A0A0A",
                       borderRadius: "6px",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       fontWeight: 700,
-                      letterSpacing: "0.01em",
+                      letterSpacing: "0.02em",
+                      border: "none",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#E8C068";
+                      e.currentTarget.style.backgroundColor = "#F0EDE6";
                       e.currentTarget.style.transform = "translateY(-1px)";
-                      e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+                      e.currentTarget.style.boxShadow = "0 4px 16px rgba(255,255,255,0.12)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "#D4A843";
+                      e.currentTarget.style.backgroundColor = "#FFFFFF";
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "none";
                     }}
@@ -282,20 +284,21 @@ const Index = () => {
               className="mt-8 w-full transition-all duration-200"
               style={{
                 height: "52px",
-                backgroundColor: "#D4A843",
-                color: "#000000",
+                backgroundColor: "#FFFFFF",
+                color: "#0A0A0A",
                 borderRadius: "6px",
-                fontSize: "14px",
+                fontSize: "13px",
                 fontWeight: 700,
-                letterSpacing: "0.01em",
+                letterSpacing: "0.02em",
+                border: "none",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#E8C068";
+                e.currentTarget.style.backgroundColor = "#F0EDE6";
                 e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(255,255,255,0.12)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#D4A843";
+                e.currentTarget.style.backgroundColor = "#FFFFFF";
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
               }}
