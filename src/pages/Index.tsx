@@ -42,10 +42,6 @@ const Index = () => {
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-body" style={{ color: "#C8C0B0" }}>
-              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#52c97a" }} />
-              216 earning now
-            </span>
             <button
               onClick={() => scrollToSection("how")}
               className="text-sm font-medium transition-colors hover:opacity-80"
