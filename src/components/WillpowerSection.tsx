@@ -79,8 +79,8 @@ const WillpowerSection = () => {
               className="font-display leading-[1.4] transition-all duration-500 ease-out"
               style={{
                 fontSize: i === 2 ? "30px" : "26px",
-                fontWeight: i === 2 ? 700 : 400,
-                color: i === 2 ? "#FFFFFF" : "#C8C0B0",
+                fontWeight: i === 2 ? 700 : 500,
+                color: "#FFFFFF",
                 opacity: visibleLines[i] ? 1 : 0,
                 transform: visibleLines[i] ? "translateY(0)" : "translateY(30px)",
               }}
