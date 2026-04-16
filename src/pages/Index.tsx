@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
+import StatPills from "@/components/StatPills";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
 const fade = {
@@ -39,13 +40,21 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
-          <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '40px', width: 'auto' }} />
-          <button
-            onClick={() => scrollToSection("founding")}
-            className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-          >
-            Become a founding member
-          </button>
+          <div className="flex items-center gap-3">
+            <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '40px', width: 'auto' }} />
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-muted-foreground font-body">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#52c97a" }} />
+              216 earning now
+            </span>
+            <button
+              onClick={() => scrollToSection("founding")}
+              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            >
+              Become a founding member
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -62,105 +71,74 @@ const Index = () => {
             custom={0}
             variants={fade}
           />
-          <motion.h1
-            className="font-display text-5xl md:text-6xl lg:text-[72px] font-semibold leading-[1.05] tracking-tight text-foreground max-w-3xl"
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={fade}
-          >
-            Get paid to reach your goals.
-          </motion.h1>
-          <motion.p
-            className="mt-6 text-lg md:text-xl text-muted-foreground font-light max-w-xl"
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={fade}
-          >
-            The only app that pays you to show up.
-          </motion.p>
-          <motion.p
-            className="mt-6 text-sm md:text-base text-muted-foreground font-light"
-            initial="hidden"
-            animate="visible"
-            custom={2}
-            variants={fade}
-          >
-            Pick a goal. Show up for 30 days. Walk away with $25.
-          </motion.p>
+          <div className="max-w-[600px]">
+            <motion.h1
+              className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight text-foreground"
+              initial="hidden"
+              animate="visible"
+              custom={1}
+              variants={fade}
+            >
+              Get paid to reach your{" "}
+              <span className="italic text-primary">goals.</span>
+            </motion.h1>
 
-          <motion.form
-            onSubmit={validateAndSubmit}
-            className="mt-10 flex flex-col sm:flex-row gap-3 max-w-[480px]"
-            initial="hidden"
-            animate="visible"
-            custom={3}
-            variants={fade}
-          >
-            {!submitted ? (
-              <>
-                <div className="flex-1 flex flex-col items-start">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      if (error) setError("");
-                    }}
-                    className="w-full px-4 py-3 bg-secondary text-foreground placeholder:text-muted-foreground border border-border rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                  />
-                  {error && (
-                    <span className="mt-1.5 text-xs text-destructive">{error}</span>
-                  )}
-                </div>
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors shrink-0"
-                >
-                  Become a founding member
-                </button>
-              </>
-            ) : (
-              <p className="text-primary font-medium">
-                You're in. We'll be in touch.
-              </p>
-            )}
-          </motion.form>
+            <motion.div
+              className="mt-8"
+              initial="hidden"
+              animate="visible"
+              custom={2}
+              variants={fade}
+            >
+              <StatPills />
+            </motion.div>
+
+            <motion.form
+              onSubmit={validateAndSubmit}
+              className="mt-10 flex flex-col sm:flex-row gap-3"
+              initial="hidden"
+              animate="visible"
+              custom={3}
+              variants={fade}
+            >
+              {!submitted ? (
+                <>
+                  <div className="flex-1 flex flex-col items-start">
+                    <input
+                      type="email"
+                      placeholder="Your email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (error) setError("");
+                      }}
+                      className="w-full px-4 py-3 bg-secondary text-foreground placeholder:text-muted-foreground border border-border rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                    />
+                    {error && (
+                      <span className="mt-1.5 text-xs text-destructive">{error}</span>
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors shrink-0"
+                  >
+                    Become a founding member
+                  </button>
+                </>
+              ) : (
+                <p className="text-primary font-medium">
+                  You're in. We'll be in touch.
+                </p>
+              )}
+            </motion.form>
+          </div>
         </div>
       </section>
 
       <HowItWorks />
 
-      {/* Why */}
-      <section className="py-20 px-6">
-        <div className="max-w-2xl mx-auto">
-          <motion.h2
-            className="font-display text-3xl md:text-4xl font-semibold text-foreground"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fade}
-          >
-            Willpower is overrated.
-          </motion.h2>
-          <motion.p
-            className="mt-8 text-muted-foreground font-light leading-relaxed text-lg"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={1}
-            variants={fade}
-          >
-            Most people don't finish what they start. Not because they can't. Because they don't have to. Nano changes that. Put something on the line. Follow through. Get paid.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Founding Offer */}
-      <section id="founding" className="py-20 px-6">
+      {/* Willpower */}
+      <section className="py-28 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial="hidden"
@@ -169,12 +147,60 @@ const Index = () => {
             custom={0}
             variants={fade}
           >
-            <span className="text-primary text-sm font-medium tracking-widest uppercase">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-4">
+              Why it works
+            </span>
+          </motion.div>
+          <motion.div
+            className="pl-6"
+            style={{ borderLeft: "2px solid #c9a84c" }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1}
+            variants={fade}
+          >
+            <h2 className="font-display text-[40px] md:text-[52px] font-light text-foreground leading-[1.1]">
+              Willpower is overrated.
+            </h2>
+          </motion.div>
+          <motion.p
+            className="mt-8 text-muted-foreground font-body font-light leading-[1.75] text-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
+            variants={fade}
+          >
+            Most people don't finish what they start. Not because they can't. Because they don't have to. Nano changes that. Put something on the line. Follow through. Get paid.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Founding Offer */}
+      <section id="founding" className="py-28 px-6">
+        <div className="max-w-2xl mx-auto">
+          <motion.div
+            className="rounded-2xl p-8 md:p-12"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            variants={fade}
+          >
+            <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-6">
               Founding Offer
             </span>
-            <p className="mt-6 text-muted-foreground font-light leading-relaxed text-lg">
+            <p className="text-muted-foreground font-body font-light leading-[1.75] text-lg">
               This is Nano's first month. A small group of people get in at $20, prove it works, and walk away with $25. You in?
             </p>
+            <div className="mt-6">
+              <StatPills />
+            </div>
             <button
               onClick={() => scrollToSection("how")}
               className="mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors"
