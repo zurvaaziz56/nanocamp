@@ -121,8 +121,22 @@ const Index = () => {
                         setEmail(e.target.value);
                         if (error) setError("");
                       }}
-                      className="w-full px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-colors rounded-lg"
-                      style={{ backgroundColor: "#141414", color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.12)" }}
+                      className="w-full px-4 text-sm transition-all rounded-lg"
+                      style={{
+                        height: "54px",
+                        backgroundColor: "#111111",
+                        color: "#F5F0E8",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                        outline: "none",
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = "#D4A843";
+                        e.currentTarget.style.boxShadow = "0 0 0 3px rgba(212,168,67,0.15)";
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
                     />
                     {error && (
                       <span className="mt-1.5 text-xs text-destructive">{error}</span>
@@ -130,8 +144,25 @@ const Index = () => {
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-3 rounded-[8px] text-sm font-bold transition-colors hover:opacity-90 shrink-0"
-                    style={{ backgroundColor: "#D4A843", color: "#000000" }}
+                    className="rounded-[8px] shrink-0 transition-all duration-200"
+                    style={{
+                      height: "54px",
+                      padding: "0 24px",
+                      backgroundColor: "#D4A843",
+                      color: "#000000",
+                      fontSize: "15px",
+                      fontWeight: 700,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "#E8C068";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow = "0 8px 24px rgba(212,168,67,0.35)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "#D4A843";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
                   >
                     Become a founding member
                   </button>
@@ -145,8 +176,10 @@ const Index = () => {
 
             <motion.button
               onClick={() => scrollToSection("how")}
-              className="mt-4 text-sm font-medium transition-colors underline underline-offset-4 hover:opacity-80"
-              style={{ color: "#C8C0B0" }}
+              className="mt-4 font-medium transition-colors underline-offset-4 hover:underline"
+              style={{ color: "#A09890", fontSize: "14px", letterSpacing: "0.03em" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#D4A843")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#A09890")}
               initial="hidden"
               animate="visible"
               custom={4}
