@@ -169,7 +169,7 @@ const WillpowerSection = () => {
               transitionDelay: "150ms",
             }}
           >
-            Put something on the line. Follow through.{" "}
+            Put something on the line.{" "}
             <span
               className="italic"
               style={{
