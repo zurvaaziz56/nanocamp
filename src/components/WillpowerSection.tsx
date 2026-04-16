@@ -112,8 +112,8 @@ const WillpowerSection = () => {
               <p
                 className="font-display text-[28px] md:text-[40px] leading-[1.4] transition-all duration-500"
                 style={{
-                  color: crossed[i] ? "rgba(255,255,255,0.2)" : "#FFFFFF",
-                  filter: crossed[i] ? "blur(0.4px)" : "none",
+                  color: crossed[i] ? "rgba(255,255,255,0.35)" : "#FFFFFF",
+                  filter: crossed[i] ? "blur(0.3px)" : "none",
                 }}
               >
                 {text}
