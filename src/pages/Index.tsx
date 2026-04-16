@@ -49,8 +49,14 @@ const Index = () => {
               216 earning now
             </span>
             <button
+              onClick={() => scrollToSection("how")}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              View demo
+            </button>
+            <button
               onClick={() => scrollToSection("founding")}
-              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               Become a founding member
             </button>
