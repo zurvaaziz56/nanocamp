@@ -256,6 +256,26 @@ const Index = () => {
             <p className="font-body leading-[1.7] text-[17px]" style={{ color: "#C8C0B0" }}>
               This is Nano's first month. A small group of people get in at $20, prove it works, and walk away with $25. You in?
             </p>
+
+            {/* Founding Member Perks */}
+            <div className="mt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "24px 0" }}>
+              <span className="block mb-4 font-body uppercase" style={{ color: "#D4A843", fontSize: "10px", letterSpacing: "0.15em", fontWeight: 700 }}>
+                Founding Member Perks
+              </span>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex items-center gap-2">
+                  <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
+                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "15px", fontWeight: 500 }}>Lifetime free access to the app</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
+                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "15px", fontWeight: 500 }}>
+                    A chance to win a <span style={{ color: "#D4A843" }}>$250 gift card</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-8 grid grid-cols-3 gap-3">
               {[
                 { value: "$20", label: "Commitment" },
