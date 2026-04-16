@@ -38,25 +38,27 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground star-field">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: "rgba(10,10,10,0.85)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3">
             <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '40px', width: 'auto' }} />
           </div>
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-muted-foreground font-body">
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-body" style={{ color: "#C8C0B0" }}>
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#52c97a" }} />
               216 earning now
             </span>
             <button
               onClick={() => scrollToSection("how")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium transition-colors hover:opacity-80"
+              style={{ color: "#C8C0B0" }}
             >
               View demo
             </button>
             <button
               onClick={() => scrollToSection("founding")}
-              className="px-4 py-2 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors"
+              className="px-4 py-2 rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
+              style={{ backgroundColor: "#D4A843", color: "#000000" }}
             >
               Become a founding member
             </button>
@@ -79,14 +81,15 @@ const Index = () => {
           />
           <div className="max-w-[600px]">
             <motion.h1
-              className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight text-foreground"
+               className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight"
+               style={{ color: "#FFFFFF" }}
               initial="hidden"
               animate="visible"
               custom={1}
               variants={fade}
             >
               Get paid to reach your{" "}
-              <span className="italic text-primary">goals.</span>
+              <span className="italic" style={{ color: "#D4A843" }}>goals.</span>
             </motion.h1>
 
             <motion.div
@@ -118,7 +121,8 @@ const Index = () => {
                         setEmail(e.target.value);
                         if (error) setError("");
                       }}
-                      className="w-full px-4 py-3 bg-secondary text-foreground placeholder:text-muted-foreground border border-border rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                      className="w-full px-4 py-3 text-sm focus:outline-none focus:ring-1 transition-colors rounded-lg"
+                      style={{ backgroundColor: "#141414", color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.12)" }}
                     />
                     {error && (
                       <span className="mt-1.5 text-xs text-destructive">{error}</span>
@@ -126,13 +130,14 @@ const Index = () => {
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors shrink-0"
+                    className="px-6 py-3 rounded-[8px] text-sm font-bold transition-colors hover:opacity-90 shrink-0"
+                    style={{ backgroundColor: "#D4A843", color: "#000000" }}
                   >
                     Become a founding member
                   </button>
                 </>
               ) : (
-                <p className="text-primary font-medium">
+                <p className="font-medium" style={{ color: "#D4A843" }}>
                   You're in. We'll be in touch.
                 </p>
               )}
@@ -140,7 +145,8 @@ const Index = () => {
 
             <motion.button
               onClick={() => scrollToSection("how")}
-              className="mt-4 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+              className="mt-4 text-sm font-medium transition-colors underline underline-offset-4 hover:opacity-80"
+              style={{ color: "#C8C0B0" }}
               initial="hidden"
               animate="visible"
               custom={4}
@@ -257,15 +263,15 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
+      <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '32px', width: 'auto' }} />
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#how" className="hover:text-foreground transition-colors">How it works</a>
-            <a href="#founding" className="hover:text-foreground transition-colors">Pricing</a>
-            <a href="mailto:hello@nano.app" className="hover:text-foreground transition-colors">Contact</a>
+          <div className="flex items-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
+            <a href="#how" className="hover:opacity-80 transition-colors">How it works</a>
+            <a href="#founding" className="hover:opacity-80 transition-colors">Pricing</a>
+            <a href="mailto:hello@nano.app" className="hover:opacity-80 transition-colors">Contact</a>
           </div>
-          <p className="text-xs text-muted-foreground">© 2025 Nano. All rights reserved.</p>
+          <p className="text-xs" style={{ color: "#807868" }}>© 2025 Nano. All rights reserved.</p>
         </div>
       </footer>
     </div>
