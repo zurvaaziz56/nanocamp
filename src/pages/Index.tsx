@@ -48,25 +48,35 @@ const Index = () => {
               href="https://zurvaaziz56.github.io/nanocamp-app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-[8px] text-sm font-medium transition-all duration-200"
-              style={{ color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.15)", backgroundColor: "transparent" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#D4A843";
-                e.currentTarget.style.color = "#D4A843";
-                e.currentTarget.style.backgroundColor = "rgba(212,168,67,0.08)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
-                e.currentTarget.style.color = "#F5F0E8";
-                e.currentTarget.style.backgroundColor = "transparent";
-              }}
+              className="transition-colors duration-200"
+              style={{ color: "#A09880", fontSize: "14px", fontWeight: 500 }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#D4A843"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "#A09880"; }}
             >
               View demo
             </a>
             <button
               onClick={() => scrollToSection("founding")}
-              className="px-4 py-2 rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
-              style={{ backgroundColor: "#D4A843", color: "#000000" }}
+              className="transition-all duration-200"
+              style={{
+                backgroundColor: "#D4A843",
+                color: "#000000",
+                borderRadius: "6px",
+                fontSize: "14px",
+                fontWeight: 700,
+                letterSpacing: "0.01em",
+                padding: "10px 22px",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#E8C068";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#D4A843";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
               Become a founding member
             </button>
@@ -152,19 +162,21 @@ const Index = () => {
                   </div>
                   <button
                     type="submit"
-                    className="rounded-[8px] shrink-0 transition-all duration-200"
+                    className="shrink-0 transition-all duration-200"
                     style={{
                       height: "54px",
-                      padding: "0 24px",
+                      padding: "0 22px",
                       backgroundColor: "#D4A843",
                       color: "#000000",
-                      fontSize: "15px",
+                      borderRadius: "6px",
+                      fontSize: "14px",
                       fontWeight: 700,
+                      letterSpacing: "0.01em",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = "#E8C068";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow = "0 8px 24px rgba(212,168,67,0.35)";
+                      e.currentTarget.style.transform = "translateY(-1px)";
+                      e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = "#D4A843";
@@ -267,12 +279,25 @@ const Index = () => {
             </div>
             <button
               onClick={() => scrollToSection("how")}
-              className="mt-8 w-full rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
+              className="mt-8 w-full transition-all duration-200"
               style={{
                 height: "52px",
                 backgroundColor: "#D4A843",
                 color: "#000000",
-                fontSize: "15px",
+                borderRadius: "6px",
+                fontSize: "14px",
+                fontWeight: 700,
+                letterSpacing: "0.01em",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#E8C068";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#D4A843";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               Become a founding member
