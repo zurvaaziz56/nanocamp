@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
-import nanoCampLogo from "@/assets/nano-camp-logo.jpeg";
+import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
