@@ -1,183 +1,111 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
-const fade = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
-  }),
-};
-
-const sentences = [
-  "What if finishing what you started came with a reward? ",
-  "Nano holds you accountable to your goals - and pays you back when you hit them. ",
-  "\u200b",
+const statements = [
+  { text: "You keep meaning to start.", size: "text-[22px] md:text-[26px]", color: "#C8C0B0", weight: 400 },
+  { text: "Something always gets in the way.", size: "text-[22px] md:text-[26px]", color: "#C8C0B0", weight: 400 },
+  { text: "That changes when real money is on the line.", size: "text-[26px] md:text-[30px]", color: "#FFFFFF", weight: 700 },
 ];
 
 const WillpowerSection = () => {
-  const [crossed, setCrossed] = useState<boolean[]>([false, false, false]);
-  const [allCrossed, setAllCrossed] = useState(false);
-  const [showPayoff, setShowPayoff] = useState(false);
-  const [triggered, setTriggered] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  // Scroll-triggered strikethrough — revert when section leaves viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !triggered) {
-          setTriggered(true);
-        } else if (!entry.isIntersecting && triggered && !showPayoff) {
-          setCrossed([false, false, false]);
-          setAllCrossed(false);
-          setTriggered(false);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, [triggered, showPayoff]);
+  const statementsRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(statementsRef, { once: true, margin: "-80px" });
+  const [phase, setPhase] = useState(0); // 0=hidden, 1-3=lines, 4=bar, 5=closing
 
   useEffect(() => {
-    if (!triggered) return;
+    if (!inView) return;
     const timers = [
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[0] = true; return n; }), 600),
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[1] = true; return n; }), 1800),
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[2] = true; return n; }), 3000),
+      setTimeout(() => setPhase(1), 100),
+      setTimeout(() => setPhase(2), 500),
+      setTimeout(() => setPhase(3), 900),
+      setTimeout(() => setPhase(4), 1400),
+      setTimeout(() => setPhase(5), 2200),
+      setTimeout(() => setPhase(6), 2500),
     ];
     return () => timers.forEach(clearTimeout);
-  }, [triggered]);
-
-  useEffect(() => {
-    if (crossed.every(Boolean) && !allCrossed) {
-      setAllCrossed(true);
-      setTimeout(() => setShowPayoff(true), 150);
-    }
-  }, [crossed, allCrossed]);
-
-  const reset = () => {
-    setCrossed([false, false, false]);
-    setAllCrossed(false);
-    setShowPayoff(false);
-    setTriggered(false);
-  };
+  }, [inView]);
 
   return (
-    <section className="pt-28 pb-12 px-6" ref={sectionRef}>
+    <section
+      className="pt-28 pb-12 px-6 relative"
+      style={{
+        background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
+      }}
+    >
       <div className="max-w-2xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
-          variants={fade}
+        {/* Label */}
+        <span
+          className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4"
+          style={{ color: "#D4A843" }}
         >
-          <span
-            className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4"
-            style={{ color: "#D4A843" }}
-          >
-            Why it works
-          </span>
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={1}
-          variants={fade}
-        >
-          <h2
-            className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]"
-            style={{ color: "#FFFFFF" }}
-          >
-            Been on your list long enough ...
-          </h2>
-        </motion.div>
+          Why it works
+        </span>
 
-        {/* Strikethrough sentences */}
-        <div className="mt-10 flex flex-col" style={{ gap: "32px" }}>
-          {sentences.map((text, i) => (
-            <motion.div
+        {/* Headline — always visible */}
+        <h2 className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]" style={{ color: "#FFFFFF" }}>
+          Been on your list long{" "}
+          <span className="italic" style={{ color: "#D4A843" }}>
+            enough
+          </span>
+          <span style={{ color: "#D4A843" }}>.</span>
+        </h2>
+
+        {/* Scroll-triggered statements */}
+        <div ref={statementsRef} className="mt-12 flex flex-col gap-6">
+          {statements.map((s, i) => (
+            <p
               key={i}
-              className="relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
+              className={`font-display ${s.size} leading-[1.5] transition-all duration-500 ease-out`}
+              style={{
+                color: s.color,
+                fontWeight: s.weight,
+                opacity: phase >= i + 1 ? 1 : 0,
+                transform: phase >= i + 1 ? "translateY(0)" : "translateY(30px)",
+              }}
             >
-              <p
-                className="font-display text-[28px] md:text-[40px] leading-[1.4]"
-                style={{ color: "#FFFFFF" }}
-              >
-                {text}
-              </p>
-            </motion.div>
+              {s.text}
+            </p>
           ))}
         </div>
 
-        {/* Gold divider */}
-        <div
-          className="transition-all duration-500"
-          style={{
-            width: 40,
-            height: 2,
-            backgroundColor: "#D4A843",
-            marginTop: 32,
-            marginBottom: 32,
-            opacity: showPayoff ? 1 : 0,
-            transform: showPayoff ? "scaleX(1)" : "scaleX(0)",
-            transformOrigin: "left",
-          }}
-        />
+        {/* Progress bar */}
+        <div className="mt-10 mb-10">
+          <div
+            className="h-[2px] rounded-full transition-all ease-out"
+            style={{
+              backgroundColor: "#D4A843",
+              maxWidth: 120,
+              width: phase >= 4 ? "100%" : "0%",
+              transitionDuration: "800ms",
+              opacity: phase >= 4 ? 1 : 0,
+            }}
+          />
+        </div>
 
-        {/* Payoff reveal */}
-        <div style={{ minHeight: showPayoff ? "auto" : 0, overflow: "hidden" }}>
+        {/* Closing statement */}
+        <div>
           <p
-            className="font-display text-[32px] font-bold leading-[1.3] transition-all duration-500"
+            className="font-display text-[32px] md:text-[36px] font-bold leading-[1.3] transition-all duration-500 ease-out"
             style={{
               color: "#FFFFFF",
-              opacity: showPayoff ? 1 : 0,
-              transform: showPayoff ? "translateY(0)" : "translateY(30px)",
-              transitionDelay: "0ms",
+              opacity: phase >= 5 ? 1 : 0,
+              transform: phase >= 5 ? "translateY(0)" : "translateY(30px)",
             }}
           >
-            Set your goal. Put money on it.{" "}
-            <span
-              className="italic"
-              style={{
-                color: "#D4A843",
-                animation: showPayoff ? "gold-pulse 0.8s ease-out 0.65s 1" : "none",
-              }}
-            >
-              Win.
-            </span>
+            Set your goal. Put money on it.
           </p>
           <p
-            className="font-display text-[32px] font-bold leading-[1.3] mt-1 transition-all duration-500"
+            className="font-display text-[38px] md:text-[44px] italic leading-[1.3] mt-2 transition-all duration-500 ease-out"
             style={{
-              color: "#FFFFFF",
-              opacity: showPayoff ? 1 : 0,
-              transform: showPayoff ? "translateY(0)" : "translateY(30px)",
-              transitionDelay: "150ms",
+              color: "#D4A843",
+              fontWeight: 700,
+              opacity: phase >= 6 ? 1 : 0,
+              transform: phase >= 6 ? "translateY(0)" : "translateY(30px)",
+              textShadow: phase >= 6 ? "0 0 30px rgba(212,168,67,0.4)" : "none",
             }}
           >
-            {"\u200b"}
+            Get paid.
           </p>
-
-          <button
-            onClick={reset}
-            className="mt-6 text-[13px] transition-all duration-500 hover:opacity-80 flex items-center gap-1.5 ml-auto"
-            style={{
-              color: "#6B6560",
-              opacity: allCrossed ? 1 : 0,
-              pointerEvents: allCrossed ? "auto" : "none",
-            }}
-          >
-            ↺ start over
-          </button>
         </div>
       </div>
     </section>
