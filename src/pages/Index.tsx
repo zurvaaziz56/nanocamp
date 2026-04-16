@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import StatPills from "@/components/StatPills";
 import FAQ from "@/components/FAQ";
 import WillpowerSection from "@/components/WillpowerSection";
+import Testimonials from "@/components/Testimonials";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
 const fade = {
@@ -231,6 +232,8 @@ const Index = () => {
       <HowItWorks />
 
       <WillpowerSection />
+
+      <Testimonials />
 
       {/* Founding Offer */}
       <section id="founding" className="pt-12 pb-28 px-6">
