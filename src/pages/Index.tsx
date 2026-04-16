@@ -53,7 +53,7 @@ const Index = () => {
               onMouseEnter={(e) => { e.currentTarget.style.color = "#D4A843"; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = "#A09880"; }}
             >
-              View demo
+              {"\u200B"}
             </a>
             <button
               onClick={() => scrollToSection("founding")}
