@@ -173,15 +173,17 @@ const WillpowerSection = () => {
             {"\u200b"}
           </p>
 
-          {allCrossed && (
-            <button
-              onClick={reset}
-              className="mt-6 text-[13px] transition-colors duration-200 hover:opacity-80 flex items-center gap-1.5 ml-auto"
-              style={{ color: "#6B6560" }}
-            >
-              ↺ start over
-            </button>
-          )}
+          <button
+            onClick={reset}
+            className="mt-6 text-[13px] transition-all duration-500 hover:opacity-80 flex items-center gap-1.5 ml-auto"
+            style={{
+              color: "#6B6560",
+              opacity: allCrossed ? 1 : 0,
+              pointerEvents: allCrossed ? "auto" : "none",
+            }}
+          >
+            ↺ start over
+          </button>
         </div>
       </div>
     </section>
