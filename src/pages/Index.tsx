@@ -5,6 +5,7 @@ import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
 import StatPills from "@/components/StatPills";
 import FAQ from "@/components/FAQ";
+import WillpowerSection from "@/components/WillpowerSection";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
 const fade = {
@@ -213,86 +214,7 @@ const Index = () => {
 
       <HowItWorks />
 
-      {/* Willpower */}
-      <section className="pt-28 pb-12 px-6">
-        <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fade}
-          >
-            <span className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4" style={{ color: "#D4A843" }}>
-              Why it works
-            </span>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={1}
-            variants={fade}
-          >
-            <h2 className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]" style={{ color: "#FFFFFF" }}>
-              Willpower is overrated.
-            </h2>
-          </motion.div>
-
-          {/* Staggered statement lines */}
-          <div className="mt-10 space-y-3">
-            {[
-              { text: "Most people don't finish what they start.", indent: 0 },
-              { text: "Not because they can't.", indent: 120 },
-              { text: "Because they don't have to.", indent: 0 },
-            ].map((line, i) => (
-              <motion.p
-                key={i}
-                className="font-display text-[22px] leading-[1.4] cursor-default"
-                style={{
-                  color: "#A09880",
-                  marginLeft: line.indent,
-                  transition: "color 0.2s ease",
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "#D4A843"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "#A09880"; }}
-              >
-                {line.text}
-              </motion.p>
-            ))}
-          </div>
-
-          {/* Gold divider */}
-          <motion.div
-            className="my-8"
-            style={{ width: 40, height: 2, backgroundColor: "#D4A843" }}
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-          />
-
-          {/* Closing lines */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <p className="font-display text-[32px] font-bold leading-[1.3]" style={{ color: "#FFFFFF" }}>
-              Nano changes that.
-            </p>
-            <p className="font-display text-[32px] font-bold leading-[1.3] mt-1" style={{ color: "#FFFFFF" }}>
-              Put something on the line.{" "}
-              <span className="italic" style={{ color: "#D4A843" }}>Get paid.</span>
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <WillpowerSection />
 
       {/* Founding Offer */}
       <section id="founding" className="pt-12 pb-28 px-6">

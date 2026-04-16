@@ -83,6 +83,11 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(4px)" },
         },
+        "gold-pulse": {
+          "0%": { textShadow: "0 0 0px rgba(212,168,67,0)" },
+          "50%": { textShadow: "0 0 20px rgba(212,168,67,0.6)" },
+          "100%": { textShadow: "0 0 0px rgba(212,168,67,0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
