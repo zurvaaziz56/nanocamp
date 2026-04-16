@@ -141,7 +141,7 @@ const HowItWorks = () => {
                 Get paid.
               </h3>
               <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
-                Show up at least 24 out of 30 days and we send you $25. Not a discount. Not credits. Real money. Because you actually did it.
+                Show up at least 24 out of 30 days and we send $25 straight to your account to celebrate you.  Because you actually did it.
               </p>
               <div className="mt-6">
                 <span
