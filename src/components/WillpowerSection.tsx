@@ -169,7 +169,7 @@ const WillpowerSection = () => {
               transitionDelay: "150ms",
             }}
           >
-            Put something on the line.{" "}
+            Put something on the line.
             <span
               className="italic"
               style={{
@@ -177,7 +177,7 @@ const WillpowerSection = () => {
                 animation: showPayoff ? "gold-pulse 0.8s ease-out 0.65s 1" : "none",
               }}
             >
-              {" "}Get paid.
+              {"\u00a0"}Get paid.
             </span>
           </p>
 
