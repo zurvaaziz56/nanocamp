@@ -40,9 +40,7 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: "rgba(10,10,10,0.85)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
-          <div className="flex items-center gap-3">
-            <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '40px', width: 'auto' }} />
-          </div>
+          <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-body" style={{ color: "#C8C0B0" }}>
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#52c97a" }} />
