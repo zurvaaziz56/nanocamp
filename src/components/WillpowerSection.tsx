@@ -13,7 +13,7 @@ const fade = {
 const sentences = [
   "What if finishing what you started came with a reward? ",
   "Nano holds you accountable to your goals - and pays you back when you hit them. ",
-  "Because they don't have to.",
+  "\u200b",
 ];
 
 const WillpowerSection = () => {
