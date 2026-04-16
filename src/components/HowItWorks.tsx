@@ -47,7 +47,7 @@ const HowItWorks = () => {
           <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-4">
             How it works
           </span>
-          <h2 className="font-display text-[40px] md:text-[52px] font-light text-foreground leading-[1.1]">
+          <h2 className="font-display text-[40px] md:text-[52px] font-medium text-foreground leading-[1.1]">
             How it works.
           </h2>
           <div className="mt-4 w-8 h-[3px] bg-primary rounded-full" />
@@ -72,7 +72,7 @@ const HowItWorks = () => {
               01
             </span>
             <div className="relative pt-16">
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 className="font-display text-2xl font-medium text-foreground">
                 Pick Your Goal.
               </h3>
               <p className="mt-4 text-muted-foreground font-body text-[15px] leading-[1.75]">
@@ -112,7 +112,7 @@ const HowItWorks = () => {
               02
             </span>
             <div className="relative pt-16">
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 className="font-display text-2xl font-medium text-foreground">
                 Show up daily.
               </h3>
               <p className="mt-4 text-muted-foreground font-body text-[15px] leading-[1.75]">
@@ -139,7 +139,7 @@ const HowItWorks = () => {
               03
             </span>
             <div className="relative pt-16">
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 className="font-display text-2xl font-medium text-foreground">
                 Get paid.
               </h3>
               <p className="mt-4 text-muted-foreground font-body text-[15px] leading-[1.75]">

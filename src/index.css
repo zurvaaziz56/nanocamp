@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,8 +46,8 @@
     --sidebar-border: 240 4% 16%;
     --sidebar-ring: 43 50% 54%;
 
-    --font-display: 'Fraunces', serif;
-    --font-body: 'DM Sans', 'Inter', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
   }
 }
 
