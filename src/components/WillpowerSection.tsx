@@ -54,7 +54,7 @@ const WillpowerSection = () => {
   useEffect(() => {
     if (crossed.every(Boolean) && !allCrossed) {
       setAllCrossed(true);
-      setTimeout(() => setShowPayoff(true), 500);
+      setTimeout(() => setShowPayoff(true), 150);
     }
   }, [crossed, allCrossed]);
 
