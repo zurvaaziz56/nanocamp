@@ -44,8 +44,18 @@ const Index = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => scrollToSection("how")}
-              className="text-sm font-medium transition-colors hover:opacity-80"
-              style={{ color: "#C8C0B0" }}
+              className="px-4 py-2 rounded-[8px] text-sm font-medium transition-all duration-200"
+              style={{ color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.15)", backgroundColor: "transparent" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#D4A843";
+                e.currentTarget.style.color = "#D4A843";
+                e.currentTarget.style.backgroundColor = "rgba(212,168,67,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                e.currentTarget.style.color = "#F5F0E8";
+                e.currentTarget.style.backgroundColor = "transparent";
+              }}
             >
               View demo
             </button>
@@ -170,16 +180,34 @@ const Index = () => {
 
             <motion.button
               onClick={() => scrollToSection("how")}
-              className="mt-4 font-medium transition-colors underline-offset-4 hover:underline"
-              style={{ color: "#A09890", fontSize: "14px", letterSpacing: "0.03em" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#D4A843")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#A09890")}
+              className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-[8px] font-medium transition-all duration-200"
+              style={{
+                color: "#F5F0E8",
+                fontSize: "15px",
+                letterSpacing: "0.02em",
+                border: "1px solid rgba(255,255,255,0.15)",
+                backgroundColor: "rgba(255,255,255,0.04)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#D4A843";
+                e.currentTarget.style.color = "#D4A843";
+                e.currentTarget.style.backgroundColor = "rgba(212,168,67,0.1)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(212,168,67,0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                e.currentTarget.style.color = "#F5F0E8";
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
               initial="hidden"
               animate="visible"
               custom={4}
               variants={fade}
             >
-              View Demo
+              View Demo ↓
             </motion.button>
           </div>
         </div>
