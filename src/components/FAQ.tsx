@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Can I pick any goal?",
-    a: "Right now we have three to choose from — hit the gym, walk 10,000 steps, or get 7 hours of sleep. We'll be adding more over time.",
+    a: "Right now we have three to choose from - hit the gym, walk 10,000 steps, or get 7 hours of sleep. We'll be adding more over time.",
   },
   {
     q: "When do I get paid?",
