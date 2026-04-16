@@ -181,34 +181,31 @@ const Index = () => {
 
             <motion.button
               onClick={() => scrollToSection("how")}
-              className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-[8px] font-medium transition-all duration-200"
+              className="mt-3 inline-flex items-center gap-2 rounded-[8px] group"
               style={{
-                color: "#F5F0E8",
+                color: "#D4A843",
                 fontSize: "15px",
-                letterSpacing: "0.02em",
-                border: "1px solid rgba(255,255,255,0.15)",
-                backgroundColor: "rgba(255,255,255,0.04)",
+                fontWeight: 600,
+                padding: "12px 28px",
+                border: "1.5px solid rgba(212,168,67,0.6)",
+                backgroundColor: "transparent",
+                transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = "#D4A843";
-                e.currentTarget.style.color = "#D4A843";
-                e.currentTarget.style.backgroundColor = "rgba(212,168,67,0.1)";
-                e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 4px 16px rgba(212,168,67,0.2)";
+                e.currentTarget.style.backgroundColor = "rgba(212,168,67,0.08)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
-                e.currentTarget.style.color = "#F5F0E8";
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.borderColor = "rgba(212,168,67,0.6)";
+                e.currentTarget.style.backgroundColor = "transparent";
               }}
               initial="hidden"
               animate="visible"
               custom={4}
               variants={fade}
             >
-              View Demo ↓
+              View Demo{" "}
+              <span className="inline-block animate-[bounce-arrow_1.5s_ease-in-out_infinite]">↓</span>
             </motion.button>
           </div>
         </div>
