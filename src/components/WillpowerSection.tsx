@@ -23,14 +23,17 @@ const WillpowerSection = () => {
   const [triggered, setTriggered] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Scroll-triggered strikethrough
+  // Scroll-triggered strikethrough — revert when section leaves viewport
   useEffect(() => {
-    if (triggered) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !triggered) {
           setTriggered(true);
-          observer.disconnect();
+        } else if (!entry.isIntersecting && triggered) {
+          setCrossed([false, false, false]);
+          setAllCrossed(false);
+          setShowPayoff(false);
+          setTriggered(false);
         }
       },
       { threshold: 0.2 }
