@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
 import StatPills from "@/components/StatPills";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
@@ -71,7 +73,7 @@ const Index = () => {
           />
           <div className="max-w-[600px]">
             <motion.h1
-              className="font-display text-5xl md:text-[68px] font-bold leading-[1.05] text-foreground" style={{ letterSpacing: '-1px' }}
+              className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight text-foreground"
               initial="hidden"
               animate="visible"
               custom={1}
@@ -158,7 +160,7 @@ const Index = () => {
             custom={1}
             variants={fade}
           >
-            <h2 className="font-display text-[40px] md:text-[52px] font-medium text-foreground leading-[1.1]">
+            <h2 className="font-display text-[40px] md:text-[52px] font-light text-foreground leading-[1.1]">
               Willpower is overrated.
             </h2>
           </motion.div>
