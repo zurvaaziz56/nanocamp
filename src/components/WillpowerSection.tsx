@@ -15,18 +15,25 @@ const WillpowerSection = () => {
   const [triggered, setTriggered] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Scroll-triggered staggered reveal
+  // Scroll-triggered staggered reveal — only fires after user actually scrolls
   useEffect(() => {
+    let hasScrolled = false;
+    const onScroll = () => { hasScrolled = true; };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !triggered) {
+        if (entry.isIntersecting && hasScrolled && !triggered) {
           setTriggered(true);
         }
       },
       { threshold: 0.4 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [triggered]);
 
   useEffect(() => {
