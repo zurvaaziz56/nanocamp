@@ -182,8 +182,10 @@ const Index = () => {
               )}
             </motion.form>
 
-            <motion.button
-              onClick={() => scrollToSection("how")}
+            <motion.a
+              href="https://zurvaaziz56.github.io/nanocamp-app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-3 inline-flex items-center gap-2 rounded-[8px] group"
               style={{
                 color: "#D4A843",
@@ -209,7 +211,7 @@ const Index = () => {
             >
               View Demo{" "}
               <span className="inline-block animate-[bounce-arrow_1.5s_ease-in-out_infinite]">↓</span>
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </section>
