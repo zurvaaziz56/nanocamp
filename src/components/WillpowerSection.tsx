@@ -93,7 +93,7 @@ const WillpowerSection = () => {
             className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]"
             style={{ color: "#FFFFFF" }}
           >
-            Willpower is overrated.
+            Been on your list long enough ...
           </h2>
         </motion.div>
 
