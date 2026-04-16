@@ -279,12 +279,25 @@ const Index = () => {
             </div>
             <button
               onClick={() => scrollToSection("how")}
-              className="mt-8 w-full rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
+              className="mt-8 w-full transition-all duration-200"
               style={{
                 height: "52px",
                 backgroundColor: "#D4A843",
                 color: "#000000",
-                fontSize: "15px",
+                borderRadius: "6px",
+                fontSize: "14px",
+                fontWeight: 700,
+                letterSpacing: "0.01em",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#E8C068";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#D4A843";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               Become a founding member
