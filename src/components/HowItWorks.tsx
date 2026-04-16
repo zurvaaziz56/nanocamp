@@ -27,9 +27,15 @@ const StreakBar = () => {
           />
         ))}
       </div>
-      <p className="mt-2 text-xs text-muted-foreground font-body">Day 14 streak</p>
+      <p className="mt-2 text-xs font-body" style={{ color: "#C8C0B0" }}>Day 14 streak</p>
     </div>
   );
+};
+
+const cardStyle = {
+  backgroundColor: "#1A1A1A",
+  border: "1px solid rgba(255,255,255,0.12)",
+  boxShadow: "inset 0 1px 0 0 rgba(255,255,255,0.04)",
 };
 
 const HowItWorks = () => {
@@ -47,7 +53,7 @@ const HowItWorks = () => {
           <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-4">
             How it works
           </span>
-          <h2 className="font-display text-[40px] md:text-[52px] font-light text-foreground leading-[1.1]">
+          <h2 className="font-display text-[40px] md:text-[52px] font-medium leading-[1.1]" style={{ color: "#FFFFFF" }}>
             How it works.
           </h2>
           <div className="mt-4 w-8 h-[3px] bg-primary rounded-full" />
@@ -57,33 +63,31 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {/* Card 01 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl p-8 md:p-10"
-            style={{
-              backgroundColor: "#111114",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
+            className="relative overflow-hidden rounded-2xl p-9"
+            style={cardStyle}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={0}
             variants={cardFade}
           >
-            <span className="absolute top-6 left-8 font-display text-[68px] font-semibold leading-none text-primary/20 select-none">
+            <span className="absolute top-6 left-9 font-display text-[80px] font-bold leading-none select-none" style={{ color: "#FFFFFF", opacity: 0.08 }}>
               01
             </span>
             <div className="relative pt-16">
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 className="font-display text-[28px] font-semibold" style={{ color: "#FFFFFF" }}>
                 Pick Your Goal.
               </h3>
-              <p className="mt-4 text-muted-foreground font-body text-[15px] leading-[1.75]">
+              <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
                 You already know what it is. The gym you keep meaning to get back to. The sleep you keep sacrificing. The steps you keep skipping. Pick one. Just one.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {goals.map((goal) => (
                   <span
                     key={goal}
-                    className="inline-block px-3.5 py-1.5 text-[13px] rounded-full text-muted-foreground font-body"
+                    className="inline-block px-3.5 py-1.5 text-[13px] rounded-full font-body"
                     style={{
+                      color: "#C8C0B0",
                       border: "1px solid rgba(201,168,76,0.3)",
                       backgroundColor: "rgba(201,168,76,0.06)",
                     }}
@@ -97,25 +101,22 @@ const HowItWorks = () => {
 
           {/* Card 02 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl p-8 md:p-10"
-            style={{
-              backgroundColor: "#111114",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
+            className="relative overflow-hidden rounded-2xl p-9"
+            style={cardStyle}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={1}
             variants={cardFade}
           >
-            <span className="absolute top-6 left-8 font-display text-[68px] font-semibold leading-none text-primary/20 select-none">
+            <span className="absolute top-6 left-9 font-display text-[80px] font-bold leading-none select-none" style={{ color: "#FFFFFF", opacity: 0.08 }}>
               02
             </span>
             <div className="relative pt-16">
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 className="font-display text-[28px] font-semibold" style={{ color: "#FFFFFF" }}>
                 Show up daily.
               </h3>
-              <p className="mt-4 text-muted-foreground font-body text-[15px] leading-[1.75]">
+              <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
                 Check in every day. Upload a quick screenshot — your step count, your gym check-in, your sleep data. Thirty days. One goal. That's the whole job.
               </p>
               <StreakBar />
@@ -124,25 +125,22 @@ const HowItWorks = () => {
 
           {/* Card 03 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl p-8 md:p-10"
-            style={{
-              backgroundColor: "#111114",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
+            className="relative overflow-hidden rounded-2xl p-9"
+            style={cardStyle}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
             variants={cardFade}
           >
-            <span className="absolute top-6 left-8 font-display text-[68px] font-semibold leading-none text-primary/20 select-none">
+            <span className="absolute top-6 left-9 font-display text-[80px] font-bold leading-none select-none" style={{ color: "#FFFFFF", opacity: 0.08 }}>
               03
             </span>
             <div className="relative pt-16">
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 className="font-display text-[28px] font-semibold" style={{ color: "#FFFFFF" }}>
                 Get paid.
               </h3>
-              <p className="mt-4 text-muted-foreground font-body text-[15px] leading-[1.75]">
+              <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
                 Show up at least 24 out of 30 days and we send you $25. Not a discount. Not credits. Real money. Because you actually did it.
               </p>
               <div className="mt-6">
