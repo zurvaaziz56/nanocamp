@@ -61,7 +61,7 @@ const WillpowerSection = () => {
 
         {/* Headline — no animation, renders immediately */}
         <h2
-          className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]"
+          className="font-display text-[44px] md:text-[72px] font-bold leading-[1.1]"
           style={{ color: "#FFFFFF" }}
         >
           Been on your list{" "}
