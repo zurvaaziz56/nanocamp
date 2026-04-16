@@ -113,20 +113,13 @@ const WillpowerSection = () => {
                 style={{
                   color: crossed[i] ? "rgba(255,255,255,0.35)" : "#FFFFFF",
                   filter: crossed[i] ? "blur(0.3px)" : "none",
+                  textDecoration: crossed[i] ? "line-through" : "none",
+                  textDecorationColor: "#D4A843",
+                  textDecorationThickness: "3px",
                 }}
               >
                 {text}
               </p>
-              <span
-                className="absolute left-0 pointer-events-none"
-                style={{
-                  top: "50%",
-                  height: "3px",
-                  backgroundColor: "#D4A843",
-                  width: crossed[i] ? "100%" : "0%",
-                  transition: "width 500ms ease",
-                }}
-              />
             </motion.div>
           ))}
         </div>
