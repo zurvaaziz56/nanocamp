@@ -74,9 +74,25 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="pt-36 pb-16 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative pt-36 pb-16 px-6 overflow-hidden">
+        {/* Noise grain overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+            opacity: 0.03,
+          }}
+        />
+        {/* Radial gold glow at bottom */}
+        <div
+          className="absolute bottom-0 left-0 right-0 pointer-events-none z-0"
+          style={{
+            height: "40%",
+            background: "radial-gradient(ellipse at center bottom, rgba(212,168,67,0.04) 0%, transparent 70%)",
+          }}
+        />
+
+        <div className="max-w-5xl mx-auto relative z-10">
           <motion.img
             src={nanoCampLogo}
             alt="Nano Camp"
@@ -87,17 +103,17 @@ const Index = () => {
             custom={0}
             variants={fade}
           />
-          <div className="max-w-[600px]">
+          <div>
             <motion.h1
-               className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight"
-               style={{ color: "#FFFFFF" }}
+              className="font-display leading-[1.05] tracking-tight"
+              style={{ color: "#FFFFFF", fontSize: "64px", fontWeight: 400 }}
               initial="hidden"
               animate="visible"
               custom={1}
               variants={fade}
             >
               Get paid to reach your{" "}
-              <span className="italic" style={{ color: "#D4A843" }}>goals.</span>
+              <span className="italic font-display" style={{ color: "#D4A843", fontSize: "72px" }}>goals.</span>
             </motion.h1>
 
             <motion.div
@@ -152,14 +168,14 @@ const Index = () => {
                   </div>
                   <button
                     type="submit"
-                    className="rounded-[8px] shrink-0 transition-all duration-200"
+                    className="font-display rounded-[8px] shrink-0 transition-all duration-200"
                     style={{
                       height: "54px",
                       padding: "0 24px",
                       backgroundColor: "#D4A843",
                       color: "#000000",
                       fontSize: "15px",
-                      fontWeight: 700,
+                      fontWeight: 600,
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = "#E8C068";
@@ -186,31 +202,28 @@ const Index = () => {
               href="https://zurvaaziz56.github.io/nanocamp-app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-[8px] group"
+              className="mt-4 inline-flex items-center gap-1 font-body transition-colors duration-200"
               style={{
-                color: "#D4A843",
-                fontSize: "15px",
-                fontWeight: 600,
-                padding: "12px 28px",
-                border: "1.5px solid rgba(212,168,67,0.6)",
-                backgroundColor: "transparent",
-                transition: "all 0.2s ease",
+                color: "#A09880",
+                fontSize: "14px",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#D4A843";
-                e.currentTarget.style.backgroundColor = "rgba(212,168,67,0.08)";
+                e.currentTarget.style.color = "#D4A843";
+                const arrow = e.currentTarget.querySelector('.demo-arrow') as HTMLElement;
+                if (arrow) arrow.style.transform = "translateX(4px)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(212,168,67,0.6)";
-                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#A09880";
+                const arrow = e.currentTarget.querySelector('.demo-arrow') as HTMLElement;
+                if (arrow) arrow.style.transform = "translateX(0)";
               }}
               initial="hidden"
               animate="visible"
               custom={4}
               variants={fade}
             >
-              View Demo{" "}
-              <span className="inline-block animate-[bounce-arrow_1.5s_ease-in-out_infinite]">↓</span>
+              Watch how it works{" "}
+              <span className="demo-arrow inline-block transition-transform duration-200 ease-out">→</span>
             </motion.a>
           </div>
         </div>
