@@ -110,7 +110,7 @@ const WillpowerSection = () => {
               transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
             >
               <p
-                className="font-display text-[28px] md:text-[40px] leading-[1.4] transition-all duration-500"
+                className="font-display text-[28px] md:text-[40px] leading-[1.4] transition-all duration-[1200ms] ease-in-out"
                 style={{
                   color: crossed[i] ? "rgba(255,255,255,0.35)" : "#FFFFFF",
                   filter: crossed[i] ? "blur(0.3px)" : "none",
