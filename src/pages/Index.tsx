@@ -137,6 +137,17 @@ const Index = () => {
                 </p>
               )}
             </motion.form>
+
+            <motion.button
+              onClick={() => scrollToSection("how")}
+              className="mt-4 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+              initial="hidden"
+              animate="visible"
+              custom={4}
+              variants={fade}
+            >
+              View Demo
+            </motion.button>
           </div>
         </div>
       </section>
