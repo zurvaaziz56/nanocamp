@@ -150,7 +150,16 @@ const WillpowerSection = () => {
               transitionDelay: "0ms",
             }}
           >
-            Set your goal. Put money on it. Win.
+            Set your goal. Put money on it. Win.{" "}
+            <span
+              className="italic"
+              style={{
+                color: "#D4A843",
+                animation: showPayoff ? "gold-pulse 0.8s ease-out 0.65s 1" : "none",
+              }}
+            >
+              {"\u00a0"}Get paid.
+            </span>
           </p>
           <p
             className="font-display text-[32px] font-bold leading-[1.3] mt-1 transition-all duration-500"
@@ -161,16 +170,7 @@ const WillpowerSection = () => {
               transitionDelay: "150ms",
             }}
           >
-            Put something on the line.{" "}
-            <span
-              className="italic"
-              style={{
-                color: "#D4A843",
-                animation: showPayoff ? "gold-pulse 0.8s ease-out 0.65s 1" : "none",
-              }}
-            >
-              {"\u00a0"}Get paid.
-            </span>
+            Put something on the line.
           </p>
 
           {allCrossed && (
