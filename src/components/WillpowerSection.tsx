@@ -39,7 +39,7 @@ const WillpowerSection = () => {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, [triggered]);
+  }, [triggered, showPayoff]);
 
   useEffect(() => {
     if (!triggered) return;
