@@ -60,7 +60,7 @@ export default {
       },
       fontFamily: {
         display: ["Fraunces", "serif"],
-        body: ["Inter", "sans-serif"],
+        body: ["DM Sans", "Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
+import HowItWorks from "@/components/HowItWorks";
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
@@ -119,60 +122,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how" className="py-28 px-6">
-        <div className="max-w-2xl mx-auto">
-          <motion.h2
-            className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-20"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fade}
-          >
-            How it works.
-          </motion.h2>
-
-          <div className="space-y-20">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fade}>
-              <span className="text-primary font-display text-sm tracking-widest">01</span>
-              <h3 className="font-display text-2xl font-semibold text-foreground mt-2">Pick Your Goal.</h3>
-              <p className="text-muted-foreground mt-4 font-light">You already know what it is.</p>
-              <ul className="mt-4 space-y-2 text-muted-foreground font-light">
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
-                  Hit the gym
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
-                  Sleep 7 hours
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
-                  Walk 10,000 steps a day
-                </li>
-              </ul>
-              <p className="text-muted-foreground mt-4 font-light">One thing you've been meaning to do.</p>
-            </motion.div>
-
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fade}>
-              <span className="text-primary font-display text-sm tracking-widest">02</span>
-              <h3 className="font-display text-2xl font-semibold text-foreground mt-2">Show up daily.</h3>
-              <p className="text-muted-foreground mt-4 font-light">
-                Check in every day. Thirty days. One goal. That's it.
-              </p>
-            </motion.div>
-
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0} variants={fade}>
-              <span className="text-primary font-display text-sm tracking-widest">03</span>
-              <h3 className="font-display text-2xl font-semibold text-foreground mt-2">Get paid.</h3>
-              <p className="text-muted-foreground mt-4 font-light">
-                Show up at least 24 out of 30 days and we pay you $25. Because you actually did it.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <HowItWorks />
 
       {/* Why */}
       <section className="py-28 px-6">
