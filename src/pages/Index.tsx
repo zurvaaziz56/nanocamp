@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import "@fontsource/dm-sans/400.css";
-import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
 import StatPills from "@/components/StatPills";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
