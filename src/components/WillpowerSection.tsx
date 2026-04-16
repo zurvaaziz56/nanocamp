@@ -1,15 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-const fade = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
-  }),
-};
-
 const sentences = [
   "What if finishing what you started came with a reward? ",
   "Nano holds you accountable to your goals - and pays you back when you hit them. ",
@@ -17,169 +8,133 @@ const sentences = [
 ];
 
 const WillpowerSection = () => {
-  const [crossed, setCrossed] = useState<boolean[]>([false, false, false]);
-  const [allCrossed, setAllCrossed] = useState(false);
-  const [showPayoff, setShowPayoff] = useState(false);
+  const [visibleLines, setVisibleLines] = useState<boolean[]>([false, false, false]);
+  const [showBar, setShowBar] = useState(false);
+  const [showClosing1, setShowClosing1] = useState(false);
+  const [showClosing2, setShowClosing2] = useState(false);
   const [triggered, setTriggered] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Scroll-triggered strikethrough — revert when section leaves viewport
+  // Scroll-triggered staggered reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !triggered) {
           setTriggered(true);
-        } else if (!entry.isIntersecting && triggered && !showPayoff) {
-          setCrossed([false, false, false]);
-          setAllCrossed(false);
-          setTriggered(false);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.4 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, [triggered, showPayoff]);
+  }, [triggered]);
 
   useEffect(() => {
     if (!triggered) return;
     const timers = [
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[0] = true; return n; }), 600),
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[1] = true; return n; }), 1800),
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[2] = true; return n; }), 3000),
+      setTimeout(() => setVisibleLines((p) => { const n = [...p]; n[0] = true; return n; }), 200),
+      setTimeout(() => setVisibleLines((p) => { const n = [...p]; n[1] = true; return n; }), 600),
+      setTimeout(() => setVisibleLines((p) => { const n = [...p]; n[2] = true; return n; }), 1000),
+      setTimeout(() => setShowBar(true), 1200),
+      setTimeout(() => setShowClosing1(true), 2000),
+      setTimeout(() => setShowClosing2(true), 2300),
     ];
     return () => timers.forEach(clearTimeout);
   }, [triggered]);
 
-  useEffect(() => {
-    if (crossed.every(Boolean) && !allCrossed) {
-      setAllCrossed(true);
-      setTimeout(() => setShowPayoff(true), 150);
-    }
-  }, [crossed, allCrossed]);
-
-  const reset = () => {
-    setCrossed([false, false, false]);
-    setAllCrossed(false);
-    setShowPayoff(false);
-    setTriggered(false);
-  };
-
   return (
-    <section className="pt-28 pb-12 px-6" ref={sectionRef}>
+    <section
+      className="pt-28 pb-12 px-6 relative"
+      ref={sectionRef}
+      style={{
+        background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
+      }}
+    >
       <div className="max-w-2xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
-          variants={fade}
+        {/* Eyebrow */}
+        <span
+          className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4"
+          style={{ color: "#D4A843" }}
         >
-          <span
-            className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4"
-            style={{ color: "#D4A843" }}
-          >
-            Why it works
-          </span>
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={1}
-          variants={fade}
-        >
-          <h2
-            className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]"
-            style={{ color: "#FFFFFF" }}
-          >
-            Been on your list long enough ...
-          </h2>
-        </motion.div>
+          Why it works
+        </span>
 
-        {/* Strikethrough sentences */}
+        {/* Headline — no animation, renders immediately */}
+        <h2
+          className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]"
+          style={{ color: "#FFFFFF" }}
+        >
+          Been on your list{" "}
+          <span className="italic" style={{ color: "#D4A843" }}>
+            long enough
+          </span>{" "}
+          ...
+        </h2>
+
+        {/* Statement lines — scroll-triggered stagger */}
         <div className="mt-10 flex flex-col" style={{ gap: "32px" }}>
           {sentences.map((text, i) => (
-            <motion.div
+            <p
               key={i}
-              className="relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
+              className="font-display leading-[1.4] transition-all duration-500 ease-out"
+              style={{
+                fontSize: i === 2 ? "30px" : "26px",
+                fontWeight: i === 2 ? 700 : 400,
+                color: i === 2 ? "#FFFFFF" : "#C8C0B0",
+                opacity: visibleLines[i] ? 1 : 0,
+                transform: visibleLines[i] ? "translateY(0)" : "translateY(30px)",
+              }}
             >
-              <p
-                className="font-display text-[28px] md:text-[40px] leading-[1.4]"
-                style={{ color: "#FFFFFF" }}
-              >
-                {text}
-              </p>
-            </motion.div>
+              {text}
+            </p>
           ))}
         </div>
 
-        {/* Gold divider */}
+        {/* Gold progress bar */}
         <div
-          className="transition-all duration-500"
+          className="mt-8 mb-8 h-[2px] transition-all ease-out"
           style={{
-            width: 40,
-            height: 2,
+            maxWidth: 120,
             backgroundColor: "#D4A843",
-            marginTop: 32,
-            marginBottom: 32,
-            opacity: showPayoff ? 1 : 0,
-            transform: showPayoff ? "scaleX(1)" : "scaleX(0)",
-            transformOrigin: "left",
+            width: showBar ? "120px" : "0px",
+            transitionDuration: "800ms",
+            opacity: showBar ? 1 : 0,
           }}
         />
 
-        {/* Payoff reveal */}
-        <div style={{ minHeight: showPayoff ? "auto" : 0, overflow: "hidden" }}>
+        {/* Closing statement */}
+        <div>
           <p
-            className="font-display text-[32px] font-bold leading-[1.3] transition-all duration-500"
+            className="font-display text-[36px] font-bold leading-[1.3] transition-all duration-500 ease-out"
             style={{
               color: "#FFFFFF",
-              opacity: showPayoff ? 1 : 0,
-              transform: showPayoff ? "translateY(0)" : "translateY(30px)",
-              transitionDelay: "0ms",
+              opacity: showClosing1 ? 1 : 0,
+              transform: showClosing1 ? "translateY(0)" : "translateY(30px)",
             }}
           >
-            Set your goal. Put money on it.{" "}
-            <span
-              className="italic"
-              style={{
-                color: "#D4A843",
-                animation: showPayoff ? "gold-pulse 0.8s ease-out 0.65s 1" : "none",
-              }}
-            >
-              Win.
-            </span>
+            Set your goal. Put money on it.
           </p>
           <p
-            className="font-display text-[32px] font-bold leading-[1.3] mt-1 transition-all duration-500"
+            className="font-display text-[44px] italic leading-[1.3] mt-2 transition-all duration-300 ease-out"
             style={{
-              color: "#FFFFFF",
-              opacity: showPayoff ? 1 : 0,
-              transform: showPayoff ? "translateY(0)" : "translateY(30px)",
-              transitionDelay: "150ms",
+              color: "#D4A843",
+              opacity: showClosing2 ? 1 : 0,
+              transform: showClosing2 ? "translateY(0)" : "translateY(20px)",
+              textShadow: showClosing2 ? "0 0 30px rgba(212,168,67,0.6)" : "none",
+              animation: showClosing2 ? "gold-glow-flash 0.8s ease-out 1" : "none",
             }}
           >
-            {"\u200b"}
+            Win.
           </p>
-
-          <button
-            onClick={reset}
-            className="mt-6 text-[13px] transition-all duration-500 hover:opacity-80 flex items-center gap-1.5 ml-auto"
-            style={{
-              color: "#6B6560",
-              opacity: allCrossed ? 1 : 0,
-              pointerEvents: allCrossed ? "auto" : "none",
-            }}
-          >
-            ↺ start over
-          </button>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gold-glow-flash {
+          0% { text-shadow: 0 0 40px rgba(212,168,67,0.9), 0 0 80px rgba(212,168,67,0.4); }
+          100% { text-shadow: 0 0 30px rgba(212,168,67,0.6); }
+        }
+      `}</style>
     </section>
   );
 };
