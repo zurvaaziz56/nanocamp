@@ -61,7 +61,7 @@ const WillpowerSection = () => {
 
         {/* Headline — no animation, renders immediately */}
         <h2
-          className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]"
+          className="font-display text-[44px] md:text-[72px] font-bold leading-[1.1]"
           style={{ color: "#FFFFFF" }}
         >
           Been on your list{" "}
@@ -76,9 +76,10 @@ const WillpowerSection = () => {
           {sentences.map((text, i) => (
             <p
               key={i}
-              className="font-display leading-[1.4] transition-all duration-500 ease-out"
+              className="font-display transition-all duration-500 ease-out"
               style={{
-                fontSize: i === 2 ? "30px" : "26px",
+                fontSize: i === 2 ? "30px" : "28px",
+                lineHeight: i === 2 ? 1.4 : 1.6,
                 fontWeight: i === 2 ? 700 : 500,
                 color: "#FFFFFF",
                 opacity: visibleLines[i] ? 1 : 0,

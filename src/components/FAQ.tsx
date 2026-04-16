@@ -42,7 +42,7 @@ const FAQ = () => {
           className="block mb-4 font-body font-bold"
           style={{
             color: "#D4A843",
-            fontSize: "11px",
+            fontSize: "13px",
             textTransform: "uppercase",
             letterSpacing: "0.2em",
           }}
@@ -51,7 +51,7 @@ const FAQ = () => {
         </span>
         <h2
           className="font-display font-bold leading-[1.1] mb-12"
-          style={{ color: "#FFFFFF", fontSize: "48px" }}
+          style={{ color: "#FFFFFF", fontSize: "52px" }}
         >
           Everything you need to know.
         </h2>
@@ -66,11 +66,12 @@ const FAQ = () => {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between py-5 text-left transition-colors duration-200"
+                  className="w-full flex items-center justify-between text-left transition-colors duration-200"
                   style={{
                     color: isOpen ? "#D4A843" : "#FFFFFF",
-                    fontSize: "17px",
+                    fontSize: "19px",
                     fontWeight: 600,
+                    padding: "28px 0",
                   }}
                 >
                   <span className="pr-4">{faq.q}</span>
@@ -96,11 +97,11 @@ const FAQ = () => {
                       className="overflow-hidden"
                     >
                       <p
-                        className="pb-5 font-body"
+                        className="pb-7 font-body"
                         style={{
                           color: "#C8C0B0",
-                          fontSize: "16px",
-                          lineHeight: 1.75,
+                          fontSize: "17px",
+                          lineHeight: 1.8,
                         }}
                       >
                         {faq.a}
