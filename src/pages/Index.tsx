@@ -44,8 +44,10 @@ const Index = () => {
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => scrollToSection("how")}
+            <a
+              href="https://zurvaaziz56.github.io/nanocamp-app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-[8px] text-sm font-medium transition-all duration-200"
               style={{ color: "#F5F0E8", border: "1px solid rgba(255,255,255,0.15)", backgroundColor: "transparent" }}
               onMouseEnter={(e) => {
@@ -60,7 +62,7 @@ const Index = () => {
               }}
             >
               View demo
-            </button>
+            </a>
             <button
               onClick={() => scrollToSection("founding")}
               className="px-4 py-2 rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
