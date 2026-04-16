@@ -29,10 +29,9 @@ const WillpowerSection = () => {
       ([entry]) => {
         if (entry.isIntersecting && !triggered) {
           setTriggered(true);
-        } else if (!entry.isIntersecting && triggered) {
+        } else if (!entry.isIntersecting && triggered && !showPayoff) {
           setCrossed([false, false, false]);
           setAllCrossed(false);
-          setShowPayoff(false);
           setTriggered(false);
         }
       },
@@ -40,7 +39,7 @@ const WillpowerSection = () => {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, [triggered]);
+  }, [triggered, showPayoff]);
 
   useEffect(() => {
     if (!triggered) return;
