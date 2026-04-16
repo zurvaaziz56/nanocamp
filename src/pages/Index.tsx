@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
-import nanoCampLogo from "@/assets/nano-camp-logo.jpeg";
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
@@ -39,7 +38,9 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-          <img src={nanoCampLogo} alt="Nano Camp" className="h-14" />
+          <span className="font-display text-[22px] font-semibold tracking-tight text-primary">
+            Nano
+          </span>
           <button
             onClick={() => scrollToSection("founding")}
             className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
@@ -50,10 +51,10 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-40 pb-28 px-6">
-        <div className="max-w-2xl mx-auto text-center">
+      <section className="pt-36 pb-16 px-6">
+        <div className="max-w-5xl mx-auto">
           <motion.h1
-            className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-foreground"
+            className="font-display text-5xl md:text-6xl lg:text-[72px] font-semibold leading-[1.05] tracking-tight text-foreground max-w-3xl"
             initial="hidden"
             animate="visible"
             custom={0}
@@ -62,7 +63,7 @@ const Index = () => {
             Get paid to reach your goals.
           </motion.h1>
           <motion.p
-            className="mt-6 text-lg md:text-xl text-muted-foreground font-light"
+            className="mt-6 text-lg md:text-xl text-muted-foreground font-light max-w-xl"
             initial="hidden"
             animate="visible"
             custom={1}
@@ -70,19 +71,19 @@ const Index = () => {
           >
             The only app that pays you to show up.
           </motion.p>
-          <motion.div
-            className="mt-10 space-y-1 text-sm md:text-base text-muted-foreground font-light"
+          <motion.p
+            className="mt-6 text-sm md:text-base text-muted-foreground font-light"
             initial="hidden"
             animate="visible"
             custom={2}
             variants={fade}
           >
-            <p>Pick a goal. Show up for 30 days. Walk away with $25.</p>
-          </motion.div>
+            Pick a goal. Show up for 30 days. Walk away with $25.
+          </motion.p>
 
           <motion.form
             onSubmit={validateAndSubmit}
-            className="mt-12 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            className="mt-10 flex flex-col sm:flex-row gap-3 max-w-[480px]"
             initial="hidden"
             animate="visible"
             custom={3}
@@ -107,13 +108,13 @@ const Index = () => {
                 </div>
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors shrink-0"
+                  className="px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors shrink-0"
                 >
                   Become a founding member
                 </button>
               </>
             ) : (
-              <p className="text-primary font-medium text-center w-full">
+              <p className="text-primary font-medium">
                 You're in. We'll be in touch.
               </p>
             )}
@@ -124,7 +125,7 @@ const Index = () => {
       <HowItWorks />
 
       {/* Why */}
-      <section className="py-28 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.h2
             className="font-display text-3xl md:text-4xl font-semibold text-foreground"
@@ -150,7 +151,7 @@ const Index = () => {
       </section>
 
       {/* Founding Offer */}
-      <section id="founding" className="py-28 px-6">
+      <section id="founding" className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial="hidden"
@@ -167,7 +168,7 @@ const Index = () => {
             </p>
             <button
               onClick={() => scrollToSection("how")}
-              className="mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+              className="mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               Become a founding member
             </button>
@@ -178,7 +179,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <img src={nanoCampLogo} alt="Nano Camp" className="h-11" />
+          <span className="font-display text-[18px] font-semibold text-primary">Nano</span>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#how" className="hover:text-foreground transition-colors">How it works</a>
             <a href="#founding" className="hover:text-foreground transition-colors">Pricing</a>
