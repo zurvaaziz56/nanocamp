@@ -29,9 +29,10 @@ const WillpowerSection = () => {
       ([entry]) => {
         if (entry.isIntersecting && !triggered) {
           setTriggered(true);
-        } else if (!entry.isIntersecting && triggered && !showPayoff) {
+        } else if (!entry.isIntersecting && triggered) {
           setCrossed([false, false, false]);
           setAllCrossed(false);
+          setShowPayoff(false);
           setTriggered(false);
         }
       },
