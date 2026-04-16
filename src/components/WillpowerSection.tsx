@@ -44,26 +44,25 @@ const WillpowerSection = () => {
 
   return (
     <section
-      className="pt-28 pb-12 relative"
+      className="pt-28 pb-12 px-6 relative"
       ref={sectionRef}
       style={{
         background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
-        padding: "112px 60px 48px",
       }}
     >
-      <div className="mx-auto" style={{ maxWidth: "1100px" }}>
+      <div className="max-w-2xl mx-auto">
         {/* Eyebrow */}
         <span
-          className="font-body block"
-          style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 700, marginBottom: "16px" }}
+          className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4"
+          style={{ color: "#D4A843" }}
         >
           Why it works
         </span>
 
         {/* Headline — no animation, renders immediately */}
         <h2
-          className="font-display font-bold leading-[1.1]"
-          style={{ color: "#FFFFFF", fontSize: "56px" }}
+          className="font-display text-[44px] md:text-[72px] font-bold leading-[1.1]"
+          style={{ color: "#FFFFFF" }}
         >
           Been on your list{" "}
           <span className="italic" style={{ color: "#D4A843" }}>
