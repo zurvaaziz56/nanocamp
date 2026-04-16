@@ -45,9 +45,9 @@ const WillpowerSection = () => {
   useEffect(() => {
     if (!triggered) return;
     const timers = [
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[0] = true; return n; }), 400),
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[1] = true; return n; }), 1200),
-      setTimeout(() => setCrossed((p) => { const n = [...p]; n[2] = true; return n; }), 2000),
+      setTimeout(() => setCrossed((p) => { const n = [...p]; n[0] = true; return n; }), 600),
+      setTimeout(() => setCrossed((p) => { const n = [...p]; n[1] = true; return n; }), 1800),
+      setTimeout(() => setCrossed((p) => { const n = [...p]; n[2] = true; return n; }), 3000),
     ];
     return () => timers.forEach(clearTimeout);
   }, [triggered]);
