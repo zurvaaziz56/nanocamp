@@ -155,7 +155,7 @@ const Index = () => {
       <HowItWorks />
 
       {/* Willpower */}
-      <section className="py-28 px-6">
+      <section className="pt-28 pb-12 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial="hidden"
@@ -164,25 +164,26 @@ const Index = () => {
             custom={0}
             variants={fade}
           >
-            <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-4">
+            <span className="text-[10px] uppercase tracking-[0.2em] font-body block mb-4" style={{ color: "#D4A843" }}>
               Why it works
             </span>
           </motion.div>
           <motion.div
             className="pl-6"
-            style={{ borderLeft: "2px solid #c9a84c" }}
+            style={{ borderLeft: "4px solid #D4A843" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={1}
             variants={fade}
           >
-            <h2 className="font-display text-[40px] md:text-[52px] font-light text-foreground leading-[1.1]">
+            <h2 className="font-display text-[44px] md:text-[56px] font-bold leading-[1.1]" style={{ color: "#FFFFFF" }}>
               Willpower is overrated.
             </h2>
           </motion.div>
           <motion.p
-            className="mt-8 text-muted-foreground font-body font-light leading-[1.75] text-lg"
+            className="mt-8 font-body leading-[1.75] text-[18px]"
+            style={{ color: "#C8C0B0" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -195,13 +196,13 @@ const Index = () => {
       </section>
 
       {/* Founding Offer */}
-      <section id="founding" className="py-28 px-6">
+      <section id="founding" className="pt-12 pb-28 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div
-            className="rounded-2xl p-8 md:p-12"
+            className="rounded-2xl p-10 md:p-14"
             style={{
-              backgroundColor: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(255,255,255,0.06)",
+              backgroundColor: "#16140E",
+              border: "1px solid rgba(212,168,67,0.25)",
             }}
             initial="hidden"
             whileInView="visible"
@@ -209,18 +210,45 @@ const Index = () => {
             custom={0}
             variants={fade}
           >
-            <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-6">
+            <span className="text-[11px] uppercase tracking-[0.2em] font-body font-bold block mb-6" style={{ color: "#D4A843" }}>
               Founding Offer
             </span>
-            <p className="text-muted-foreground font-body font-light leading-[1.75] text-lg">
+            <p className="font-body leading-[1.7] text-[17px]" style={{ color: "#C8C0B0" }}>
               This is Nano's first month. A small group of people get in at $20, prove it works, and walk away with $25. You in?
             </p>
-            <div className="mt-6">
-              <StatPills />
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {[
+                { value: "$20", label: "Commitment" },
+                { value: "$25", label: "Reward" },
+                { value: "30", label: "Days" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="flex flex-col items-center justify-center rounded-xl"
+                  style={{
+                    height: "120px",
+                    backgroundColor: "rgba(212,168,67,0.05)",
+                    border: "1px solid rgba(212,168,67,0.3)",
+                  }}
+                >
+                  <span className="text-[36px] font-bold" style={{ color: "#FFFFFF" }}>
+                    {item.value}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.15em] mt-1" style={{ color: "#D4A843" }}>
+                    {item.label}
+                  </span>
+                </div>
+              ))}
             </div>
             <button
               onClick={() => scrollToSection("how")}
-              className="mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-[8px] text-sm font-medium hover:bg-primary/90 transition-colors"
+              className="mt-8 w-full rounded-[8px] text-sm font-bold transition-colors hover:opacity-90"
+              style={{
+                height: "52px",
+                backgroundColor: "#D4A843",
+                color: "#000000",
+                fontSize: "15px",
+              }}
             >
               Become a founding member
             </button>
