@@ -150,7 +150,7 @@ const WillpowerSection = () => {
               transitionDelay: "0ms",
             }}
           >
-            Set your goal. Put money on it. Win.{" "}
+            Set your goal. Put money on it.{" "}
             <span
               className="italic"
               style={{
@@ -158,7 +158,7 @@ const WillpowerSection = () => {
                 animation: showPayoff ? "gold-pulse 0.8s ease-out 0.65s 1" : "none",
               }}
             >
-              {"\u00a0"}Get paid.
+              Win.
             </span>
           </p>
           <p
