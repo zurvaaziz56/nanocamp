@@ -318,6 +318,8 @@ const Index = () => {
         </div>
       </section>
 
+      <FAQ />
+
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
