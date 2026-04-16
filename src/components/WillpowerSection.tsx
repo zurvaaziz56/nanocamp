@@ -11,7 +11,7 @@ const fade = {
 };
 
 const sentences = [
-  "Most people don't finish what they start.",
+  "What if finishing what you started came with a reward? ",
   "Not because they can't.",
   "Because they don't have to.",
 ];
