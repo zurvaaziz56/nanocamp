@@ -190,30 +190,19 @@ const ThirtyDayGallery = () => {
         .thirty-day-item {
           flex: 0 0 240px;
         }
-        @media (max-width: 1199px) {
-          .thirty-day-grid {
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 28px;
-            row-gap: 56px;
-          }
-        }
-        @media (max-width: 899px) {
-          .thirty-day-grid {
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 32px;
-            row-gap: 56px;
-          }
-        }
         .thirty-day-item {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
+        @media (max-width: 1199px) {
+          .thirty-day-grid { gap: 56px 28px; }
+        }
+        @media (max-width: 899px) {
+          .thirty-day-grid { gap: 56px 32px; }
+        }
         @media (max-width: 599px) {
-          .thirty-day-grid {
-            grid-template-columns: 1fr;
-            row-gap: 72px;
-          }
+          .thirty-day-grid { gap: 72px 24px; }
         }
       `}</style>
     </section>
