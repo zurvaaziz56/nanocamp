@@ -58,6 +58,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
       setDiscountCode("");
       setShowToast(false);
       setToastTriggered(false);
+      setFormError("");
     }
   }, [open]);
 
