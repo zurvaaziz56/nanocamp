@@ -34,7 +34,7 @@ const Testimonials = () => {
         background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
       }}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto text-center">
         <span
           className="block mb-4 font-body uppercase"
           style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em" }}

@@ -37,7 +37,7 @@ const FAQ = () => {
 
   return (
     <section className="pt-28 pb-20 px-6" style={{ backgroundColor: "#0A0A0A" }}>
-      <div className="mx-auto" style={{ maxWidth: "760px" }}>
+      <div className="mx-auto text-center" style={{ maxWidth: "760px" }}>
         <span
           className="block mb-4 font-body font-bold"
           style={{
@@ -97,7 +97,7 @@ const FAQ = () => {
                       className="overflow-hidden"
                     >
                       <p
-                        className="pb-7 font-body"
+                        className="pb-7 font-body text-center"
                         style={{
                           color: "#C8C0B0",
                           fontSize: "17px",
