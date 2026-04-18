@@ -29,7 +29,7 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="pt-16 pb-24 px-6"
+      className="pt-8 pb-24 px-6"
       style={{
         background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
       }}
