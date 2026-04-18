@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/hooks/use-toast";
 
 interface Props {
   open: boolean;
@@ -50,6 +49,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
   const [toastTriggered, setToastTriggered] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   useEffect(() => {
     if (!open) {
@@ -59,6 +59,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
       setShowToast(false);
       setToastTriggered(false);
       setFormError("");
+      setFocusedField(null);
     }
   }, [open]);
 
@@ -101,127 +102,278 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
 
   const firstName = name.trim().split(" ")[0] || "friend";
 
+  const inputBase: React.CSSProperties = {
+    width: "100%",
+    height: "48px",
+    backgroundColor: "#1A1815",
+    border: "1px solid rgba(212,168,67,0.18)",
+    borderRadius: "8px",
+    padding: "0 14px",
+    color: "#F5F1E8",
+    fontSize: "14px",
+    fontFamily: "inherit",
+    outline: "none",
+    transition: "border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease",
+  };
+
+  const focusStyle: React.CSSProperties = {
+    borderColor: "rgba(212,168,67,0.55)",
+    boxShadow: "0 0 0 3px rgba(212,168,67,0.12)",
+    backgroundColor: "#1F1C18",
+  };
+
+  const inputStyle = (key: string): React.CSSProperties => ({
+    ...inputBase,
+    ...(focusedField === key ? focusStyle : {}),
+  });
+
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center px-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-6 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          style={{ backgroundColor: "rgba(0,0,0,0.85)" }}
+          style={{
+            backgroundColor: "rgba(0,0,0,0.78)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+          }}
           onClick={onClose}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 10 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="relative w-full text-center"
+            exit={{ opacity: 0, scale: 0.96, y: 12 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="relative w-full text-center my-auto"
             style={{
-              maxWidth: "480px",
-              backgroundColor: "#0D0D0D",
-              border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: "16px",
-              padding: "40px 32px",
+              maxWidth: "460px",
+              background:
+                "linear-gradient(180deg, #181613 0%, #141210 100%)",
+              border: "1px solid rgba(212,168,67,0.14)",
+              borderRadius: "18px",
+              padding: "44px 36px 36px",
+              boxShadow:
+                "0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,235,190,0.03), 0 0 60px rgba(212,168,67,0.06)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={onClose}
               aria-label="Close"
-              className="absolute top-4 right-4"
-              style={{ color: "#6B6560", fontSize: "20px", lineHeight: 1 }}
+              className="absolute flex items-center justify-center transition-all duration-200"
+              style={{
+                top: "14px",
+                right: "14px",
+                width: "32px",
+                height: "32px",
+                borderRadius: "8px",
+                backgroundColor: "rgba(255,255,255,0.04)",
+                color: "#A09880",
+                fontSize: "20px",
+                lineHeight: 1,
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.color = "#F5F1E8";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.color = "#A09880";
+              }}
             >
               ×
             </button>
 
+            {/* Header */}
             <h2
               className="font-display"
-              style={{ color: "#FFFFFF", fontSize: "28px", fontWeight: 700 }}
+              style={{
+                color: "#FBF7EE",
+                fontSize: "28px",
+                fontWeight: 700,
+                lineHeight: 1.15,
+                letterSpacing: "-0.01em",
+              }}
             >
               You're joining Nanocamp.
             </h2>
             <p
               className="mt-3 font-body mx-auto"
-              style={{ color: "#A09880", fontSize: "15px", maxWidth: "380px" }}
+              style={{
+                color: "#C9C0AB",
+                fontSize: "14.5px",
+                maxWidth: "340px",
+                lineHeight: 1.5,
+              }}
             >
-              First month. $20. Walk away with $25 if you show up.
+              Lock in your spot in our first cohort.
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5 text-left">
-              <Field label="Your name">
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Jane Smith"
-                  className="modal-input"
-                />
-              </Field>
-
-              <Field label="Email address">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="jane@email.com"
-                  className="modal-input"
-                />
-              </Field>
-
-              <Field label="Card details">
-                <input
-                  type="text"
-                  readOnly
-                  onClick={handleCardClick}
-                  value=""
-                  placeholder="1234 1234 1234 1234"
-                  className="modal-input"
-                  style={{ cursor: "pointer" }}
-                />
-                <div className="flex gap-3 mt-3">
-                  <input
-                    type="text"
-                    readOnly
-                    onClick={handleCardClick}
-                    value=""
-                    placeholder="MM/YY"
-                    className="modal-input"
-                    style={{ flex: 1, cursor: "pointer" }}
-                  />
-                  <input
-                    type="text"
-                    readOnly
-                    onClick={handleCardClick}
-                    value=""
-                    placeholder="CVV"
-                    className="modal-input"
-                    style={{ flex: 1, cursor: "pointer" }}
-                  />
+            {/* Offer block */}
+            <div
+              className="mx-auto mt-6 flex items-center justify-between text-left"
+              style={{
+                maxWidth: "380px",
+                background:
+                  "linear-gradient(135deg, rgba(212,168,67,0.10) 0%, rgba(212,168,67,0.04) 100%)",
+                border: "1px solid rgba(212,168,67,0.28)",
+                borderRadius: "10px",
+                padding: "14px 18px",
+              }}
+            >
+              <div>
+                <div
+                  className="font-body uppercase"
+                  style={{
+                    color: "#D4A843",
+                    fontSize: "10px",
+                    letterSpacing: "0.16em",
+                    fontWeight: 700,
+                    marginBottom: "2px",
+                  }}
+                >
+                  First month
                 </div>
-              </Field>
+                <div
+                  className="font-display"
+                  style={{ color: "#FBF7EE", fontSize: "22px", fontWeight: 700, lineHeight: 1 }}
+                >
+                  $20
+                </div>
+              </div>
+              <div
+                aria-hidden
+                style={{
+                  width: "1px",
+                  height: "36px",
+                  background:
+                    "linear-gradient(180deg, transparent, rgba(212,168,67,0.4), transparent)",
+                }}
+              />
+              <div className="text-right">
+                <div
+                  className="font-body uppercase"
+                  style={{
+                    color: "#D4A843",
+                    fontSize: "10px",
+                    letterSpacing: "0.16em",
+                    fontWeight: 700,
+                    marginBottom: "2px",
+                  }}
+                >
+                  Show up, get
+                </div>
+                <div
+                  className="font-display"
+                  style={{ color: "#FBF7EE", fontSize: "22px", fontWeight: 700, lineHeight: 1 }}
+                >
+                  $25
+                </div>
+              </div>
+            </div>
 
-              <Field label="Discount code (optional)">
-                <input
-                  type="text"
-                  value={discountCode}
-                  onChange={(e) => setDiscountCode(e.target.value)}
-                  placeholder="Enter code"
-                  maxLength={40}
-                  className="modal-input"
-                />
-              </Field>
+            <form onSubmit={handleSubmit} className="mt-7 flex flex-col text-left">
+              {/* Section: You */}
+              <div className="flex flex-col gap-4">
+                <Field label="Your name">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    onFocus={() => setFocusedField("name")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder="Jane Smith"
+                    style={inputStyle("name")}
+                  />
+                </Field>
+
+                <Field label="Email address">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onFocus={() => setFocusedField("email")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder="jane@email.com"
+                    style={inputStyle("email")}
+                  />
+                </Field>
+              </div>
+
+              {/* Divider */}
+              <div
+                className="my-6"
+                style={{
+                  height: "1px",
+                  background:
+                    "linear-gradient(90deg, transparent, rgba(212,168,67,0.18), transparent)",
+                }}
+              />
+
+              {/* Section: Payment */}
+              <div className="flex flex-col gap-4">
+                <Field label="Card details">
+                  <input
+                    type="text"
+                    readOnly
+                    onClick={handleCardClick}
+                    value=""
+                    placeholder="1234 1234 1234 1234"
+                    style={{ ...inputStyle("card"), cursor: "pointer" }}
+                    onFocus={() => setFocusedField("card")}
+                    onBlur={() => setFocusedField(null)}
+                  />
+                  <div className="flex gap-3 mt-3">
+                    <input
+                      type="text"
+                      readOnly
+                      onClick={handleCardClick}
+                      value=""
+                      placeholder="MM/YY"
+                      style={{ ...inputStyle("exp"), flex: 1, cursor: "pointer" }}
+                      onFocus={() => setFocusedField("exp")}
+                      onBlur={() => setFocusedField(null)}
+                    />
+                    <input
+                      type="text"
+                      readOnly
+                      onClick={handleCardClick}
+                      value=""
+                      placeholder="CVV"
+                      style={{ ...inputStyle("cvv"), flex: 1, cursor: "pointer" }}
+                      onFocus={() => setFocusedField("cvv")}
+                      onBlur={() => setFocusedField(null)}
+                    />
+                  </div>
+                </Field>
+
+                <Field label="Discount code (optional)">
+                  <input
+                    type="text"
+                    value={discountCode}
+                    onChange={(e) => setDiscountCode(e.target.value)}
+                    onFocus={() => setFocusedField("discount")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder="Enter code"
+                    maxLength={40}
+                    style={inputStyle("discount")}
+                  />
+                </Field>
+              </div>
 
               {formError && (
                 <div
                   role="alert"
+                  className="mt-5"
                   style={{
-                    marginTop: "-4px",
                     padding: "10px 14px",
                     borderRadius: "8px",
-                    backgroundColor: "rgba(220, 38, 38, 0.12)",
-                    border: "1px solid rgba(220, 38, 38, 0.45)",
+                    backgroundColor: "rgba(220, 38, 38, 0.10)",
+                    border: "1px solid rgba(220, 38, 38, 0.40)",
                     color: "#FCA5A5",
                     fontSize: "13px",
                     textAlign: "center",
@@ -234,36 +386,40 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="transition-all duration-200 mt-2 disabled:opacity-60"
+                className="transition-all duration-200 mt-6 disabled:opacity-60"
                 style={{
-                  height: "52px",
+                  height: "54px",
                   width: "100%",
-                  backgroundColor: "#FFFFFF",
-                  color: "#000000",
+                  background: "linear-gradient(180deg, #FBF7EE 0%, #ECE4D2 100%)",
+                  color: "#0A0908",
                   fontWeight: 700,
                   fontSize: "15px",
-                  borderRadius: "8px",
+                  borderRadius: "10px",
+                  letterSpacing: "0.01em",
+                  boxShadow:
+                    "0 10px 30px rgba(212,168,67,0.18), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#F0EDE6";
                   e.currentTarget.style.transform = "translateY(-1px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 14px 36px rgba(212,168,67,0.28), 0 3px 8px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.7)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#FFFFFF";
                   e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 30px rgba(212,168,67,0.18), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)";
                 }}
               >
                 {submitting ? "Saving…" : "Lock in my spot →"}
               </button>
 
               <p
-                className="text-center font-body"
-                style={{ color: "#6B6560", fontSize: "12px" }}
+                className="text-center font-body mt-4"
+                style={{ color: "#8A8270", fontSize: "12px", letterSpacing: "0.02em" }}
               >
                 🔒 Secure checkout · No charge until your challenge starts
               </p>
             </form>
-
           </motion.div>
 
           {/* Centered celebratory toast */}
@@ -340,7 +496,7 @@ const Field = ({ label, children }: { label: string; children: React.ReactNode }
   <label className="block">
     <span
       className="block mb-2 font-body uppercase"
-      style={{ color: "#A09880", fontSize: "11px", letterSpacing: "0.12em", fontWeight: 600 }}
+      style={{ color: "#B8AE94", fontSize: "11px", letterSpacing: "0.14em", fontWeight: 700 }}
     >
       {label}
     </span>
