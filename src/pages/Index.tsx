@@ -231,8 +231,6 @@ const Index = () => {
 
       <HowItWorks />
 
-      <WillpowerSection />
-
       <Testimonials />
 
       {/* Founding Offer */}
