@@ -56,19 +56,17 @@ const HowItWorks = () => {
         </motion.div>
 
         {/* Cards grid: 3 per row, last row (2) centered */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20 max-w-[1100px] mx-auto justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-6 mb-20 max-w-[1100px] mx-auto">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
-            // Center the last 2 cards on the second row (md+)
-            const isSecondRow = i >= 3;
-            const offsetClass =
-              isSecondRow && i === 3 ? "md:col-start-2" : "";
+            // 6-col grid: each card spans 2. First card of last row starts at col 2 to center the pair.
+            const offsetClass = i === 3 ? "md:col-start-2 md:col-span-2" : "md:col-span-2";
             return (
               <motion.button
                 key={goal.title}
                 type="button"
                 onClick={() => setSelected(isSelected ? null : i)}
-                className={`relative text-center transition-all duration-200 w-full max-w-[320px] ${offsetClass}`}
+                className={`relative text-center transition-all duration-200 w-full max-w-[320px] mx-auto ${offsetClass}`}
                 style={{
                   height: "380px",
                   borderRadius: "16px",
