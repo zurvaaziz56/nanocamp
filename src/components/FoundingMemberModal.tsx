@@ -49,6 +49,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
   const [showToast, setShowToast] = useState(false);
   const [toastTriggered, setToastTriggered] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
 
   useEffect(() => {
     if (!open) {
