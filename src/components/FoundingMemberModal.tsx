@@ -49,6 +49,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
   const [showToast, setShowToast] = useState(false);
   const [toastTriggered, setToastTriggered] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
 
   useEffect(() => {
     if (!open) {
@@ -57,6 +58,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
       setDiscountCode("");
       setShowToast(false);
       setToastTriggered(false);
+      setFormError("");
     }
   }, [open]);
 
@@ -72,9 +74,10 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
   const triggerCelebration = async () => {
     if (toastTriggered) return;
     if (!name.trim() || !emailRegex.test(email.trim())) {
-      toast({ title: "Please enter your name and a valid email first.", variant: "destructive" });
+      setFormError("Please enter your name and a valid email first.");
       return;
     }
+    setFormError("");
     setToastTriggered(true);
     setShowToast(true);
     setSubmitting(true);
@@ -209,6 +212,24 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   className="modal-input"
                 />
               </Field>
+
+              {formError && (
+                <div
+                  role="alert"
+                  style={{
+                    marginTop: "-4px",
+                    padding: "10px 14px",
+                    borderRadius: "8px",
+                    backgroundColor: "rgba(220, 38, 38, 0.12)",
+                    border: "1px solid rgba(220, 38, 38, 0.45)",
+                    color: "#FCA5A5",
+                    fontSize: "13px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formError}
+                </div>
+              )}
 
               <button
                 type="submit"
