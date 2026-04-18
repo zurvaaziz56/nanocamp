@@ -102,7 +102,7 @@ const FounderNote = () => {
             <span
               className="font-body uppercase"
               style={{
-                color: "#5C3D1E",
+                color: "#f4e4c1",
                 fontSize: "11px",
                 letterSpacing: "0.2em",
                 fontWeight: 700,
