@@ -44,7 +44,7 @@ const ThirtyDayGallery = () => {
         padding: "144px 24px 8px",
       }}
     >
-      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* Heading */}
         <div style={{ textAlign: "center" }}>
           <h2
@@ -186,20 +186,22 @@ const ThirtyDayGallery = () => {
           flex-wrap: nowrap;
           justify-content: center;
           align-items: flex-start;
-          gap: 16px;
+          gap: 24px;
         }
         .thirty-day-item {
           display: flex;
           flex-direction: column;
           align-items: center;
-          flex: 1 1 0;
-          min-width: 0;
+          flex: 0 0 240px;
         }
-        .thirty-day-item > div:nth-child(2) {
-          width: 100% !important;
-          max-width: 240px;
-          aspect-ratio: 240 / 500;
-          height: auto !important;
+        @media (max-width: 1380px) {
+          .thirty-day-grid { gap: 16px; }
+          .thirty-day-item { flex: 1 1 0; min-width: 0; max-width: 240px; }
+          .thirty-day-item > div:nth-child(2) {
+            width: 100% !important;
+            aspect-ratio: 240 / 500;
+            height: auto !important;
+          }
         }
         @media (max-width: 899px) {
           .thirty-day-grid { flex-wrap: wrap; gap: 56px 32px; }
