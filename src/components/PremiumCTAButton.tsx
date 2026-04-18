@@ -1,0 +1,79 @@
+import { motion } from "framer-motion";
+
+interface Props {
+  onClick?: () => void;
+  size?: "sm" | "lg";
+  children?: React.ReactNode;
+  className?: string;
+}
+
+const PremiumCTAButton = ({ onClick, size = "sm", children = "Join the first 100", className = "" }: Props) => {
+  const isLg = size === "lg";
+
+  return (
+    <motion.button
+      type="button"
+      onClick={onClick}
+      whileHover={{ y: -2, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 400, damping: 22 }}
+      className={`relative overflow-hidden group inline-flex items-center justify-center font-bold ${className}`}
+      style={{
+        padding: isLg ? "16px 32px" : "10px 22px",
+        fontSize: isLg ? "16px" : "14px",
+        letterSpacing: "0.01em",
+        color: "#1A1200",
+        borderRadius: isLg ? "10px" : "6px",
+        background:
+          "linear-gradient(135deg, #F4D27A 0%, #D4A843 45%, #B8862F 100%)",
+        boxShadow:
+          "0 6px 24px rgba(212,168,67,0.35), 0 2px 6px rgba(212,168,67,0.25), inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(0,0,0,0.15)",
+        border: "1px solid rgba(255,220,140,0.6)",
+      }}
+    >
+      {/* Inner gradient overlay for depth */}
+      <span
+        aria-hidden
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background:
+            "linear-gradient(135deg, #FBE19A 0%, #E8C068 45%, #C99232 100%)",
+        }}
+      />
+
+      {/* Shimmer sweep */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-0 -left-1/3 h-full w-1/3 -skew-x-12 transition-transform duration-700 ease-out group-hover:translate-x-[400%]"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)",
+        }}
+      />
+
+      {/* Outer soft glow */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -inset-1 rounded-[inherit] opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background:
+            "radial-gradient(60% 80% at 50% 50%, rgba(212,168,67,0.45) 0%, transparent 70%)",
+          filter: "blur(12px)",
+          zIndex: -1,
+        }}
+      />
+
+      <span className="relative flex items-center gap-2">
+        {children}
+        <span
+          aria-hidden
+          className="transition-transform duration-300 group-hover:translate-x-1"
+        >
+          →
+        </span>
+      </span>
+    </motion.button>
+  );
+};
+
+export default PremiumCTAButton;
