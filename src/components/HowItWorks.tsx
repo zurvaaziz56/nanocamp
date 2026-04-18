@@ -147,14 +147,18 @@ const HowItWorks = () => {
                       bottom: "30px",
                       right: "-50px",
                       transform: "rotate(-45deg)",
-                      backgroundColor: "#D4A843",
-                      color: "#000000",
+                      background:
+                        "linear-gradient(135deg, #F4D27A 0%, #D4A843 45%, #B8862F 100%)",
+                      color: "#1A1200",
                       fontSize: "11px",
                       fontWeight: 700,
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
                       padding: "8px 70px",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+                      borderTop: "1px solid rgba(255,220,140,0.6)",
+                      borderBottom: "1px solid rgba(0,0,0,0.2)",
+                      boxShadow:
+                        "0 4px 14px rgba(212,168,67,0.45), 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.15)",
                       whiteSpace: "nowrap",
                     }}
                   >
