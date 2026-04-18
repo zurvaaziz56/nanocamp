@@ -34,7 +34,7 @@ const ThirtyDayGallery = () => {
   return (
     <section
       style={{
-        padding: "80px 24px 120px",
+        padding: "16px 24px 80px",
       }}
     >
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
@@ -57,25 +57,10 @@ const ThirtyDayGallery = () => {
             </span>{" "}
             actually look.
           </h2>
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 400,
-              fontSize: "17px",
-              color: "#888",
-              maxWidth: "560px",
-              lineHeight: 1.6,
-              marginTop: "18px",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            {"\n"}
-          </p>
         </div>
 
         {/* Gallery */}
-        <div className="thirty-day-grid" style={{ marginTop: "72px" }}>
+        <div className="thirty-day-grid" style={{ marginTop: "48px" }}>
           {phones.map((p) => (
             <div key={p.pill} className="thirty-day-item">
               {/* Step pill */}
