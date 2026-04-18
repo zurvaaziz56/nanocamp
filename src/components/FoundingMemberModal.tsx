@@ -214,7 +214,8 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
 
               <button
                 type="submit"
-                className="transition-all duration-200 mt-2"
+                disabled={submitting}
+                className="transition-all duration-200 mt-2 disabled:opacity-60"
                 style={{
                   height: "52px",
                   width: "100%",
@@ -233,7 +234,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                Lock in my spot →
+                {submitting ? "Saving…" : "Lock in my spot →"}
               </button>
 
               <p
