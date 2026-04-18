@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import FounderNote from "@/components/FounderNote";
 import FoundingMemberModal from "@/components/FoundingMemberModal";
+import PremiumCTAButton from "@/components/PremiumCTAButton";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
 const fade = {
@@ -44,31 +45,7 @@ const Index = () => {
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
-            <button
-              onClick={openModal}
-              className="transition-all duration-200"
-              style={{
-                backgroundColor: "#D4A843",
-                color: "#000000",
-                borderRadius: "6px",
-                fontSize: "14px",
-                fontWeight: 700,
-                letterSpacing: "0.01em",
-                padding: "10px 22px",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#E8C068";
-                e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#D4A843";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
-            >
-              Join the first 100
-            </button>
+            <PremiumCTAButton onClick={openModal} size="sm" />
           </div>
         </div>
       </nav>
@@ -116,33 +93,7 @@ const Index = () => {
               custom={3}
               variants={fade}
             >
-              <button
-                type="button"
-                onClick={openModal}
-                className="shrink-0 transition-all duration-200"
-                style={{
-                  height: "54px",
-                  padding: "0 22px",
-                  backgroundColor: "#D4A843",
-                  color: "#000000",
-                  borderRadius: "6px",
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  letterSpacing: "0.01em",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#E8C068";
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#D4A843";
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                Join the first 100
-              </button>
+              <PremiumCTAButton onClick={openModal} size="lg" />
             </motion.div>
 
           </div>
