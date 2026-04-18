@@ -199,6 +199,17 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 </div>
               </Field>
 
+              <Field label="Discount code (optional)">
+                <input
+                  type="text"
+                  value={discountCode}
+                  onChange={(e) => setDiscountCode(e.target.value)}
+                  placeholder="Enter code"
+                  maxLength={40}
+                  className="modal-input"
+                />
+              </Field>
+
               <button
                 type="submit"
                 disabled={submitting}
