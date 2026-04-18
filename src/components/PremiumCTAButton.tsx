@@ -2,13 +2,18 @@ import { motion } from "framer-motion";
 
 interface Props {
   onClick?: () => void;
-  size?: "sm" | "lg";
+  size?: "sm" | "lg" | "xl";
   children?: React.ReactNode;
   className?: string;
 }
 
 const PremiumCTAButton = ({ onClick, size = "sm", children = "Join the first 100", className = "" }: Props) => {
+  const isXl = size === "xl";
   const isLg = size === "lg";
+
+  const padding = isXl ? "24px 52px" : isLg ? "16px 32px" : "10px 22px";
+  const fontSize = isXl ? "22px" : isLg ? "16px" : "14px";
+  const radius = isXl ? "14px" : isLg ? "10px" : "6px";
 
   return (
     <motion.button
@@ -19,15 +24,15 @@ const PremiumCTAButton = ({ onClick, size = "sm", children = "Join the first 100
       transition={{ type: "spring", stiffness: 400, damping: 22 }}
       className={`relative overflow-hidden group inline-flex items-center justify-center font-bold ${className}`}
       style={{
-        padding: isLg ? "16px 32px" : "10px 22px",
-        fontSize: isLg ? "16px" : "14px",
+        padding,
+        fontSize,
         letterSpacing: "0.01em",
         color: "#1A1200",
-        borderRadius: isLg ? "10px" : "6px",
+        borderRadius: radius,
         background:
           "linear-gradient(135deg, #F4D27A 0%, #D4A843 45%, #B8862F 100%)",
         boxShadow:
-          "0 6px 24px rgba(212,168,67,0.35), 0 2px 6px rgba(212,168,67,0.25), inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(0,0,0,0.15)",
+          "0 8px 32px rgba(212,168,67,0.4), 0 3px 8px rgba(212,168,67,0.3), inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(0,0,0,0.15)",
         border: "1px solid rgba(255,220,140,0.6)",
       }}
     >
