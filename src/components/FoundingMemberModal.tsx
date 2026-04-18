@@ -213,69 +213,6 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
               Lock in your spot in our first cohort.
             </p>
 
-            {/* Offer block */}
-            <div
-              className="mx-auto mt-6 flex items-center justify-between text-left"
-              style={{
-                maxWidth: "380px",
-                background:
-                  "linear-gradient(135deg, rgba(212,168,67,0.10) 0%, rgba(212,168,67,0.04) 100%)",
-                border: "1px solid rgba(212,168,67,0.28)",
-                borderRadius: "10px",
-                padding: "14px 18px",
-              }}
-            >
-              <div>
-                <div
-                  className="font-body uppercase"
-                  style={{
-                    color: "#D4A843",
-                    fontSize: "10px",
-                    letterSpacing: "0.16em",
-                    fontWeight: 700,
-                    marginBottom: "2px",
-                  }}
-                >
-                  First month
-                </div>
-                <div
-                  className="font-display"
-                  style={{ color: "#FBF7EE", fontSize: "22px", fontWeight: 700, lineHeight: 1 }}
-                >
-                  $20
-                </div>
-              </div>
-              <div
-                aria-hidden
-                style={{
-                  width: "1px",
-                  height: "36px",
-                  background:
-                    "linear-gradient(180deg, transparent, rgba(212,168,67,0.4), transparent)",
-                }}
-              />
-              <div className="text-right">
-                <div
-                  className="font-body uppercase"
-                  style={{
-                    color: "#D4A843",
-                    fontSize: "10px",
-                    letterSpacing: "0.16em",
-                    fontWeight: 700,
-                    marginBottom: "2px",
-                  }}
-                >
-                  Show up, get
-                </div>
-                <div
-                  className="font-display"
-                  style={{ color: "#FBF7EE", fontSize: "22px", fontWeight: 700, lineHeight: 1 }}
-                >
-                  $25
-                </div>
-              </div>
-            </div>
-
             <form onSubmit={handleSubmit} className="mt-7 flex flex-col text-left">
               {/* Section: You */}
               <div className="flex flex-col gap-4">
