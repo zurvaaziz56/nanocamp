@@ -45,33 +45,18 @@ const Confetti = () => {
 const FoundingMemberModal = ({ open, onClose }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [card, setCard] = useState("");
-  const [exp, setExp] = useState("");
-  const [cvv, setCvv] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [toastTriggered, setToastTriggered] = useState(false);
-  const cardRef = useRef<HTMLInputElement>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setName("");
       setEmail("");
-      setCard("");
-      setExp("");
-      setCvv("");
       setShowToast(false);
       setToastTriggered(false);
     }
   }, [open]);
-
-  useEffect(() => {
-    if (!showToast) return;
-    const t = setTimeout(() => {
-      setShowToast(false);
-      setTimeout(() => cardRef.current?.focus(), 100);
-    }, 4000);
-    return () => clearTimeout(t);
-  }, [showToast]);
 
   useEffect(() => {
     if (!open) return;
@@ -82,33 +67,31 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  const handleEmailBlur = () => {
+  const triggerCelebration = async () => {
     if (toastTriggered) return;
-    if (emailRegex.test(email.trim())) {
-      setToastTriggered(true);
-      setShowToast(true);
-    }
-  };
-
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
     if (!name.trim() || !emailRegex.test(email.trim())) {
-      toast({ title: "Please enter a valid name and email.", variant: "destructive" });
+      toast({ title: "Please enter your name and a valid email first.", variant: "destructive" });
       return;
     }
+    setToastTriggered(true);
+    setShowToast(true);
     setSubmitting(true);
     const { error } = await supabase
       .from("founding_signups")
       .insert({ name: name.trim(), email: email.trim().toLowerCase() });
     setSubmitting(false);
     if (error) {
-      toast({ title: "Something went wrong. Try again.", description: error.message, variant: "destructive" });
-      return;
+      console.error("signup error", error);
     }
-    toast({ title: "You're in 🎉", description: "Welcome to Nanocamp." });
-    onClose();
+  };
+
+  const handleCardClick = () => {
+    triggerCelebration();
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    triggerCelebration();
   };
 
   const firstName = name.trim().split(" ")[0] || "friend";
