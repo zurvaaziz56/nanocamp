@@ -55,20 +55,23 @@ const HowItWorks = () => {
           </p>
         </motion.div>
 
-        {/* Cards row */}
-        <div className="flex flex-wrap justify-center gap-5 mb-20">
+        {/* Cards grid: 3 per row, last row (2) centered */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20 max-w-[1100px] mx-auto justify-items-center">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
+            // Center the last 2 cards on the second row (md+)
+            const isSecondRow = i >= 3;
+            const offsetClass =
+              isSecondRow && i === 3 ? "md:col-start-2" : "";
             return (
               <motion.button
                 key={goal.title}
                 type="button"
                 onClick={() => setSelected(isSelected ? null : i)}
-                className="relative text-center transition-all duration-200"
+                className={`relative text-center transition-all duration-200 w-full max-w-[320px] ${offsetClass}`}
                 style={{
-                  width: "180px",
-                  height: "260px",
-                  borderRadius: "12px",
+                  height: "380px",
+                  borderRadius: "16px",
                   backgroundColor: isSelected ? "rgba(212,168,67,0.07)" : "#111111",
                   border: isSelected
                     ? "1px solid #D4A843"
@@ -95,24 +98,24 @@ const HowItWorks = () => {
                 {/* Checkmark */}
                 {isSelected && (
                   <span
-                    className="absolute top-2 right-2"
-                    style={{ color: "#D4A843", fontSize: "12px", fontWeight: 700 }}
+                    className="absolute top-3 right-3 z-10"
+                    style={{ color: "#D4A843", fontSize: "16px", fontWeight: 700 }}
                   >
                     ✓
                   </span>
                 )}
 
                 {/* Emoji */}
-                <div style={{ fontSize: "32px", paddingTop: "28px" }}>{goal.emoji}</div>
+                <div style={{ fontSize: "56px", paddingTop: "56px" }}>{goal.emoji}</div>
 
                 {/* Title */}
                 <div
                   style={{
                     color: "#FFFFFF",
-                    fontSize: "15px",
+                    fontSize: "22px",
                     fontWeight: 700,
-                    marginTop: "12px",
-                    padding: "0 12px",
+                    marginTop: "24px",
+                    padding: "0 20px",
                   }}
                 >
                   {goal.title}
@@ -122,38 +125,44 @@ const HowItWorks = () => {
                 <div
                   style={{
                     color: "#A09880",
-                    fontSize: "12px",
+                    fontSize: "15px",
                     lineHeight: 1.6,
-                    padding: "8px 16px 0",
+                    padding: "14px 28px 0",
                   }}
                 >
                   {goal.desc}
                 </div>
 
-                {/* Bottom-left small italic */}
+                {/* Diagonal banner bottom-right */}
                 <div
-                  className="absolute bottom-0 left-0 text-left"
+                  className="absolute pointer-events-none overflow-hidden"
                   style={{
-                    color: "#6B6560",
-                    fontSize: "9px",
-                    fontStyle: "italic",
-                    padding: "0 12px 14px",
+                    bottom: 0,
+                    right: 0,
+                    width: "170px",
+                    height: "170px",
                   }}
                 >
-                  $20 monthly membership required
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "30px",
+                      right: "-50px",
+                      transform: "rotate(-45deg)",
+                      backgroundColor: "#D4A843",
+                      color: "#000000",
+                      fontSize: "11px",
+                      fontWeight: 700,
+                      letterSpacing: "0.05em",
+                      textTransform: "uppercase",
+                      padding: "8px 60px",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    $20 Monthly Subscription
+                  </div>
                 </div>
-
-                {/* Dog-ear fold bottom-right */}
-                <div
-                  className="absolute bottom-0 right-0 pointer-events-none"
-                  style={{
-                    width: "0",
-                    height: "0",
-                    borderStyle: "solid",
-                    borderWidth: "0 0 18px 18px",
-                    borderColor: "transparent transparent #1E1E1E transparent",
-                  }}
-                />
               </motion.button>
             );
           })}
