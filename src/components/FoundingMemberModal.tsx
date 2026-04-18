@@ -169,8 +169,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 <input
                   type="text"
                   readOnly
-                  onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
-                  onFocus={handleCardClick}
+                  onClick={handleCardClick}
                   value=""
                   placeholder="1234 1234 1234 1234"
                   className="modal-input"
@@ -180,8 +179,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   <input
                     type="text"
                     readOnly
-                    onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
-                    onFocus={handleCardClick}
+                    onClick={handleCardClick}
                     value=""
                     placeholder="MM/YY"
                     className="modal-input"
@@ -190,8 +188,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   <input
                     type="text"
                     readOnly
-                    onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
-                    onFocus={handleCardClick}
+                    onClick={handleCardClick}
                     value=""
                     placeholder="CVV"
                     className="modal-input"
