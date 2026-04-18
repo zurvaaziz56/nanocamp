@@ -95,7 +95,7 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#8B6340",
+                backgroundColor: "#d4b888",
                 display: "inline-block",
               }}
             />
@@ -115,7 +115,7 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#8B6340",
+                backgroundColor: "#d4b888",
                 display: "inline-block",
               }}
             />
