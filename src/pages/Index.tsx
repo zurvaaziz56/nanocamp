@@ -207,25 +207,6 @@ const Index = () => {
               This is NanoCamp's first month. The first 100 members go in at $20, put in the work, and walk away with $25 — plus lifetime access. You in?
             </p>
 
-            {/* Founding Member Perks */}
-            <div className="mt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "24px 0" }}>
-              <span className="block mb-4 font-body uppercase" style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.15em", fontWeight: 700 }}>
-                Founding Member Perks
-              </span>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div className="flex items-center gap-2">
-                  <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
-                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "17px", fontWeight: 500 }}>Lifetime free access to the app</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
-                  <span className="font-body" style={{ color: "#E8E4DC", fontSize: "17px", fontWeight: 500 }}>
-                    A chance to win a <span style={{ color: "#D4A843" }}>$250 gift card</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
             <div className="mt-8 grid grid-cols-3 gap-3">
               {[
                 { value: "$20", label: "Start with $20" },
