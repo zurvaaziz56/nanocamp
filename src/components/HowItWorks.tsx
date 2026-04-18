@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import ThirtyDayGallery from "./ThirtyDayGallery";
 
 const goals = [
   { emoji: "🌙", title: "Get to bed on time", desc: "Sleep before midnight 20 out of 30 nights." },
@@ -7,19 +8,6 @@ const goals = [
   { emoji: "🏋️", title: "Hit the gym", desc: "Show up and train 10 out of 30 days." },
   { emoji: "🥗", title: "Eat healthier", desc: "Make the better choice 20 out of 30 days." },
   { emoji: "⚖️", title: "Lose 5 pounds", desc: "One month. One number. You've got this." },
-];
-
-const steps = [
-  {
-    label: "Step 1 — Show up",
-    title: "Show up",
-    body: "Check in daily. Upload a quick photo, video, or screenshot to prove you're doing the work. Thirty days. One goal.",
-  },
-  {
-    label: "Step 2 — Get Paid",
-    title: "Get Paid",
-    body: "Show up at least 20 of 30 days — because life happens. Finish strong and earn your $25. Plus bragging rights.",
-  },
 ];
 
 const HowItWorks = () => {
@@ -170,95 +158,7 @@ const HowItWorks = () => {
           })}
         </div>
 
-        {/* Steps — connected two-column journey */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-          style={{ marginTop: "60px" }}
-        >
-          {/* Connecting line with arrow */}
-          <div className="relative flex items-center mb-10" aria-hidden="true">
-            <div
-              style={{
-                flex: 1,
-                height: "1px",
-                backgroundColor: "rgba(212,168,67,0.2)",
-              }}
-            />
-            <span
-              style={{
-                color: "#D4A843",
-                fontSize: "18px",
-                lineHeight: 1,
-                padding: "0 12px",
-              }}
-            >
-              →
-            </span>
-            <div
-              style={{
-                flex: 1,
-                height: "1px",
-                backgroundColor: "rgba(212,168,67,0.2)",
-              }}
-            />
-          </div>
-
-          {/* Two-column container */}
-          <div
-            className="relative grid grid-cols-1 md:grid-cols-2"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(255,255,255,0.06)",
-              borderRadius: "16px",
-              padding: "48px",
-            }}
-          >
-            {/* Vertical gold divider (desktop only) */}
-            <div
-              aria-hidden="true"
-              className="hidden md:block absolute"
-              style={{
-                top: "48px",
-                bottom: "48px",
-                left: "50%",
-                width: "2px",
-                backgroundColor: "rgba(212,168,67,0.3)",
-                transform: "translateX(-1px)",
-              }}
-            />
-
-            {steps.map((step, i) => (
-              <div
-                key={step.title}
-                className="relative text-center"
-                style={{ padding: "0 24px" }}
-              >
-                <span
-                  className="relative block mb-3 font-body uppercase"
-                  style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em", fontWeight: 700 }}
-                >
-                  {step.label}
-                </span>
-                <h3
-                  className="relative font-display"
-                  style={{ color: "#FFFFFF", fontSize: "40px", fontWeight: 700 }}
-                >
-                  {step.title}.
-                </h3>
-                <p
-                  className="relative mt-4 font-body mx-auto"
-                  style={{ color: "#C8C0B0", fontSize: "17px", lineHeight: 1.75, maxWidth: "320px" }}
-                >
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <ThirtyDayGallery />
       </div>
     </section>
   );
