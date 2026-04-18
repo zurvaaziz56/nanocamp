@@ -36,8 +36,8 @@ const Testimonials = () => {
     >
       <div className="max-w-5xl mx-auto text-center">
         <span
-          className="block mb-4 font-body uppercase"
-          style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em" }}
+          className="block mb-4 font-body uppercase font-bold"
+          style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.2em" }}
         >
           What early testers have said
         </span>
