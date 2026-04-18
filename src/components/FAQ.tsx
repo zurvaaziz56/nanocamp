@@ -101,7 +101,7 @@ const FAQ = () => {
                       className="overflow-hidden"
                     >
                       <p
-                        className="pb-7 font-body text-center"
+                        className="pb-7 font-body text-left"
                         style={{
                           color: "#C8C0B0",
                           fontSize: "17px",
