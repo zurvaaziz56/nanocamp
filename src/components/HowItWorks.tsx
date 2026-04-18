@@ -120,21 +120,22 @@ const HowItWorks = () => {
                   </span>
                 )}
 
-                {/* Inner content with consistent padding */}
-                <div className="relative h-full flex flex-col px-8 pt-12 pb-28">
-                  {/* Emoji in soft warm chip */}
+                {/* Inner content — centered composition */}
+                <div className="relative h-full flex flex-col items-center text-center px-7 pt-14 pb-24">
+                  {/* Emoji in soft warm chip — centered */}
                   <div
-                    className="flex items-center justify-center mb-8"
+                    className="flex items-center justify-center mb-7"
                     style={{
-                      width: "84px",
-                      height: "84px",
-                      borderRadius: "18px",
+                      width: "92px",
+                      height: "92px",
+                      borderRadius: "22px",
                       background:
-                        "linear-gradient(160deg, rgba(212,168,67,0.12) 0%, rgba(212,168,67,0.04) 100%)",
-                      border: "1px solid rgba(212,168,67,0.18)",
-                      fontSize: "44px",
+                        "linear-gradient(160deg, rgba(212,168,67,0.14) 0%, rgba(212,168,67,0.04) 100%)",
+                      border: "1px solid rgba(212,168,67,0.2)",
+                      fontSize: "48px",
                       lineHeight: 1,
-                      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)",
+                      boxShadow:
+                        "inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 24px -12px rgba(212,168,67,0.25)",
                     }}
                   >
                     <span style={{ transform: "translateY(1px)" }}>{goal.emoji}</span>
@@ -145,11 +146,11 @@ const HowItWorks = () => {
                     className="font-display"
                     style={{
                       color: "#F5F1E8",
-                      fontSize: "26px",
+                      fontSize: "30px",
                       fontWeight: 600,
-                      lineHeight: 1.2,
-                      letterSpacing: "-0.01em",
-                      marginBottom: "14px",
+                      lineHeight: 1.15,
+                      letterSpacing: "-0.015em",
+                      marginBottom: "16px",
                     }}
                   >
                     {goal.title}
@@ -159,10 +160,11 @@ const HowItWorks = () => {
                   <p
                     className="font-body"
                     style={{
-                      color: "#BFB6A0",
-                      fontSize: "16px",
-                      lineHeight: 1.65,
+                      color: "#D4CCB5",
+                      fontSize: "17px",
+                      lineHeight: 1.55,
                       fontWeight: 400,
+                      maxWidth: "260px",
                     }}
                   >
                     {goal.desc}
