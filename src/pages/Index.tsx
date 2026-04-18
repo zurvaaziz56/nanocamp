@@ -93,33 +93,7 @@ const Index = () => {
               custom={3}
               variants={fade}
             >
-              <button
-                type="button"
-                onClick={openModal}
-                className="shrink-0 transition-all duration-200"
-                style={{
-                  height: "54px",
-                  padding: "0 22px",
-                  backgroundColor: "#D4A843",
-                  color: "#000000",
-                  borderRadius: "6px",
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  letterSpacing: "0.01em",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#E8C068";
-                  e.currentTarget.style.transform = "translateY(-1px)";
-                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#D4A843";
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                Join the first 100
-              </button>
+              <PremiumCTAButton onClick={openModal} size="lg" />
             </motion.div>
 
           </div>
