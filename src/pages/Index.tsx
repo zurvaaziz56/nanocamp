@@ -5,8 +5,9 @@ import "@fontsource/dm-sans/500.css";
 import HowItWorks from "@/components/HowItWorks";
 import StatPills from "@/components/StatPills";
 import FAQ from "@/components/FAQ";
-import WillpowerSection from "@/components/WillpowerSection";
 import Testimonials from "@/components/Testimonials";
+import FounderNote from "@/components/FounderNote";
+import FoundingMemberModal from "@/components/FoundingMemberModal";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
 const fade = {
@@ -20,8 +21,10 @@ const fade = {
 
 const Index = () => {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
 
   const validateAndSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,11 +34,7 @@ const Index = () => {
       return;
     }
     setError("");
-    setSubmitted(true);
-  };
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    openModal();
   };
 
   return (
@@ -45,19 +44,8 @@ const Index = () => {
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
-            <a
-              href="https://zurvaaziz56.github.io/nanocamp-app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors duration-200"
-              style={{ color: "#A09880", fontSize: "14px", fontWeight: 500 }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "#D4A843"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "#A09880"; }}
-            >
-              {"\u200B"}
-            </a>
             <button
-              onClick={() => scrollToSection("founding")}
+              onClick={openModal}
               className="transition-all duration-200"
               style={{
                 backgroundColor: "#D4A843",
@@ -87,7 +75,7 @@ const Index = () => {
 
       {/* Hero */}
       <section className="pt-36 pb-16 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <motion.img
             src={nanoCampLogo}
             alt="Nano Camp"
@@ -98,10 +86,10 @@ const Index = () => {
             custom={0}
             variants={fade}
           />
-          <div className="max-w-[600px]">
+          <div className="max-w-[600px] w-full flex flex-col items-center">
             <motion.h1
-               className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight"
-               style={{ color: "#FFFFFF" }}
+              className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight"
+              style={{ color: "#FFFFFF" }}
               initial="hidden"
               animate="visible"
               custom={1}
@@ -112,7 +100,7 @@ const Index = () => {
             </motion.h1>
 
             <motion.div
-              className="mt-8"
+              className="mt-8 w-full"
               initial="hidden"
               animate="visible"
               custom={2}
@@ -123,76 +111,68 @@ const Index = () => {
 
             <motion.form
               onSubmit={validateAndSubmit}
-              className="mt-10 flex flex-col sm:flex-row gap-3"
+              className="mt-10 flex flex-col sm:flex-row gap-3 w-full justify-center"
               initial="hidden"
               animate="visible"
               custom={3}
               variants={fade}
             >
-              {!submitted ? (
-                <>
-                  <div className="flex-1 flex flex-col items-start">
-                    <input
-                      type="email"
-                      placeholder="Your email"
-                      value={email}
-                      onChange={(e) => {
-                        setEmail(e.target.value);
-                        if (error) setError("");
-                      }}
-                      className="w-full px-4 text-sm transition-all rounded-lg"
-                      style={{
-                        height: "54px",
-                        backgroundColor: "#111111",
-                        color: "#F5F0E8",
-                        border: "1px solid rgba(255,255,255,0.15)",
-                        outline: "none",
-                      }}
-                      onFocus={(e) => {
-                        e.currentTarget.style.borderColor = "#D4A843";
-                        e.currentTarget.style.boxShadow = "0 0 0 3px rgba(212,168,67,0.15)";
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
-                        e.currentTarget.style.boxShadow = "none";
-                      }}
-                    />
-                    {error && (
-                      <span className="mt-1.5 text-xs text-destructive">{error}</span>
-                    )}
-                  </div>
-                  <button
-                    type="submit"
-                    className="shrink-0 transition-all duration-200"
-                    style={{
-                      height: "54px",
-                      padding: "0 22px",
-                      backgroundColor: "#D4A843",
-                      color: "#000000",
-                      borderRadius: "6px",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      letterSpacing: "0.01em",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#E8C068";
-                      e.currentTarget.style.transform = "translateY(-1px)";
-                      e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "#D4A843";
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow = "none";
-                    }}
-                  >
-                    Become a Founding Member
-                  </button>
-                </>
-              ) : (
-                <p className="font-medium" style={{ color: "#D4A843" }}>
-                  You're in. We'll be in touch.
-                </p>
-              )}
+              <div className="flex-1 flex flex-col items-center sm:items-start">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (error) setError("");
+                  }}
+                  className="w-full px-4 text-sm transition-all rounded-lg"
+                  style={{
+                    height: "54px",
+                    backgroundColor: "#111111",
+                    color: "#F5F0E8",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    outline: "none",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "#D4A843";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(212,168,67,0.15)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                />
+                {error && (
+                  <span className="mt-1.5 text-xs text-destructive">{error}</span>
+                )}
+              </div>
+              <button
+                type="submit"
+                className="shrink-0 transition-all duration-200"
+                style={{
+                  height: "54px",
+                  padding: "0 22px",
+                  backgroundColor: "#D4A843",
+                  color: "#000000",
+                  borderRadius: "6px",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  letterSpacing: "0.01em",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#E8C068";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(212,168,67,0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "#D4A843";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                Become a Founding Member
+              </button>
             </motion.form>
 
             <motion.a
@@ -233,11 +213,13 @@ const Index = () => {
 
       <Testimonials />
 
+      <FounderNote />
+
       {/* Founding Offer */}
       <section id="founding" className="pt-12 pb-28 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div
-            className="rounded-2xl p-10 md:p-14"
+            className="rounded-2xl p-10 md:p-14 text-center"
             style={{
               backgroundColor: "#16140E",
               border: "1px solid rgba(212,168,67,0.25)",
@@ -251,7 +233,7 @@ const Index = () => {
             <span className="text-[13px] uppercase tracking-[0.2em] font-body font-bold block mb-6" style={{ color: "#D4A843" }}>
               Founding Offer
             </span>
-            <p className="font-body text-[20px]" style={{ color: "#C8C0B0", lineHeight: 1.75 }}>
+            <p className="font-body text-[20px] mx-auto" style={{ color: "#C8C0B0", lineHeight: 1.75 }}>
               This is Nano's first month. A small group of people get in at $20, prove it works, and walk away with $25. You in?
             </p>
 
@@ -260,7 +242,7 @@ const Index = () => {
               <span className="block mb-4 font-body uppercase" style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.15em", fontWeight: 700 }}>
                 Founding Member Perks
               </span>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="flex items-center gap-2">
                   <span style={{ color: "#D4A843", fontSize: "12px" }}>✦</span>
                   <span className="font-body" style={{ color: "#E8E4DC", fontSize: "17px", fontWeight: 500 }}>Lifetime free access to the app</span>
@@ -299,7 +281,7 @@ const Index = () => {
               ))}
             </div>
             <button
-              onClick={() => scrollToSection("how")}
+              onClick={openModal}
               className="mt-8 w-full transition-all duration-200"
               style={{
                 height: "60px",
@@ -331,7 +313,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-6 text-center">
           <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '32px', width: 'auto' }} />
           <div className="flex items-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
             <a href="#how" className="hover:opacity-80 transition-colors">How it works</a>
@@ -341,6 +323,8 @@ const Index = () => {
           <p className="text-xs" style={{ color: "#807868" }}>© 2025 Nano. All rights reserved.</p>
         </div>
       </footer>
+
+      <FoundingMemberModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };
