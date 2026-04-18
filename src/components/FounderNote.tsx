@@ -30,7 +30,7 @@ const Divider = () => (
     style={{
       width: "80px",
       height: "1px",
-      backgroundColor: "rgba(80,50,20,0.2)",
+      backgroundColor: "rgba(20,12,4,0.25)",
     }}
     aria-hidden="true"
   />
@@ -128,24 +128,25 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#2C1810",
+                  color: "#120a03",
                   fontSize: "22px",
-                  fontWeight: 600,
+                  fontWeight: 700,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "#3D2510",
-                  fontSize: "18px",
+                  color: "rgba(26,15,5,0.95)",
+                  fontSize: "18.5px",
                   fontStyle: "italic",
+                  fontWeight: 500,
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.8,
+                  lineHeight: 1.75,
                   maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#2C1810",
+                  color: "#120a03",
                   fontSize: "20px",
                   fontWeight: 700,
                   lineHeight: 1.55,
@@ -171,10 +172,12 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#6B4423",
-              fontSize: "14px",
+              color: "#e8d4a8",
+              fontSize: "15px",
               fontStyle: "italic",
+              fontFamily: "Georgia, 'Times New Roman', serif",
               fontWeight: 500,
+              letterSpacing: "0.05em",
               marginTop: "32px",
             }}
             initial={{ opacity: 0 }}
