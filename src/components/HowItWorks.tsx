@@ -166,38 +166,113 @@ const HowItWorks = () => {
           })}
         </div>
 
-        {/* Steps */}
-        <div className="flex flex-col items-center gap-16 max-w-2xl mx-auto">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="text-center"
+        {/* Steps — connected two-column journey */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+          style={{ marginTop: "60px" }}
+        >
+          {/* Connecting line with arrow */}
+          <div className="relative flex items-center mb-10" aria-hidden="true">
+            <div
+              style={{
+                flex: 1,
+                height: "1px",
+                backgroundColor: "rgba(212,168,67,0.2)",
+              }}
+            />
+            <span
+              style={{
+                color: "#D4A843",
+                fontSize: "18px",
+                lineHeight: 1,
+                padding: "0 12px",
+              }}
             >
-              <span
-                className="block mb-3 font-body uppercase"
-                style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em", fontWeight: 700 }}
+              →
+            </span>
+            <div
+              style={{
+                flex: 1,
+                height: "1px",
+                backgroundColor: "rgba(212,168,67,0.2)",
+              }}
+            />
+          </div>
+
+          {/* Two-column container */}
+          <div
+            className="relative grid grid-cols-1 md:grid-cols-2"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255,255,255,0.06)",
+              borderRadius: "16px",
+              padding: "48px",
+            }}
+          >
+            {/* Vertical gold divider (desktop only) */}
+            <div
+              aria-hidden="true"
+              className="hidden md:block absolute"
+              style={{
+                top: "48px",
+                bottom: "48px",
+                left: "50%",
+                width: "2px",
+                backgroundColor: "rgba(212,168,67,0.3)",
+                transform: "translateX(-1px)",
+              }}
+            />
+
+            {steps.map((step, i) => (
+              <div
+                key={step.title}
+                className="relative text-center"
+                style={{ padding: "0 24px" }}
               >
-                {step.label}
-              </span>
-              <h3
-                className="font-display"
-                style={{ color: "#FFFFFF", fontSize: "36px", fontWeight: 700 }}
-              >
-                {step.title}
-              </h3>
-              <p
-                className="mt-4 font-body mx-auto"
-                style={{ color: "#C8C0B0", fontSize: "18px", lineHeight: 1.75 }}
-              >
-                {step.body}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+                {/* Watermark number */}
+                <span
+                  aria-hidden="true"
+                  className="absolute pointer-events-none font-display"
+                  style={{
+                    top: "-8px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    color: "#FFFFFF",
+                    fontSize: "72px",
+                    fontWeight: 900,
+                    opacity: 0.06,
+                    lineHeight: 1,
+                  }}
+                >
+                  {i === 0 ? "01" : "02"}
+                </span>
+
+                <span
+                  className="relative block mb-3 font-body uppercase"
+                  style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em", fontWeight: 700 }}
+                >
+                  {step.label}
+                </span>
+                <h3
+                  className="relative font-display"
+                  style={{ color: "#FFFFFF", fontSize: "40px", fontWeight: 700 }}
+                >
+                  {step.title}.
+                </h3>
+                <p
+                  className="relative mt-4 font-body mx-auto"
+                  style={{ color: "#C8C0B0", fontSize: "17px", lineHeight: 1.75, maxWidth: "320px" }}
+                >
+                  {step.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
