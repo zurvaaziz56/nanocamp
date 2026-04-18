@@ -233,41 +233,46 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
               </p>
             </form>
 
-            {/* Toast */}
-            <AnimatePresence>
-              {showToast && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className="absolute left-1/2 -translate-x-1/2 cursor-pointer"
+          </motion.div>
+
+          {/* Centered celebratory toast */}
+          <AnimatePresence>
+            {showToast && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="fixed inset-0 z-[110] flex items-center justify-center px-4 cursor-pointer"
+                onClick={(e) => { e.stopPropagation(); setShowToast(false); }}
+              >
+                <div
+                  className="relative"
                   style={{
-                    top: "16px",
-                    width: "calc(100% - 32px)",
+                    width: "100%",
                     maxWidth: "440px",
                     backgroundColor: "#1A1600",
                     border: "1px solid #D4A843",
-                    borderRadius: "10px",
-                    padding: "16px 20px",
+                    borderRadius: "12px",
+                    padding: "24px 28px",
                     color: "#FFFFFF",
-                    fontSize: "16px",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(212,168,67,0.25)",
                     overflow: "hidden",
                   }}
-                  onClick={() => setShowToast(false)}
                 >
                   <Confetti />
                   <div className="relative text-left">
-                    <div className="font-display" style={{ fontWeight: 700, marginBottom: "6px" }}>
+                    <div className="font-display" style={{ fontWeight: 700, marginBottom: "8px", fontSize: "18px" }}>
                       🎉 Thanks for raising your hand, {firstName}.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
                       This round's already full, but we'll send you a gift card as a thank you for your early support — and we'll be in touch when we're ready for you to join.
                     </div>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       )}
     </AnimatePresence>
