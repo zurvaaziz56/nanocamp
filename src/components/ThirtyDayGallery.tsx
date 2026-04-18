@@ -70,7 +70,7 @@ const ThirtyDayGallery = () => {
               marginRight: "auto",
             }}
           >
-            Four screens. One goal. Real stakes.
+            {"\n"}
           </p>
         </div>
 
