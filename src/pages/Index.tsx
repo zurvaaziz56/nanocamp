@@ -87,13 +87,13 @@ const Index = () => {
             </motion.div>
 
             <motion.div
-              className="mt-10 flex justify-center"
+              className="mt-24 md:mt-32 flex justify-center"
               initial="hidden"
               animate="visible"
               custom={3}
               variants={fade}
             >
-              <PremiumCTAButton onClick={openModal} size="lg" />
+              <PremiumCTAButton onClick={openModal} size="xl" />
             </motion.div>
 
           </div>
