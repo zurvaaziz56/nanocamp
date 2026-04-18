@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 interface Props {
   open: boolean;
@@ -88,8 +90,24 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name.trim() || !emailRegex.test(email.trim())) {
+      toast({ title: "Please enter a valid name and email.", variant: "destructive" });
+      return;
+    }
+    setSubmitting(true);
+    const { error } = await supabase
+      .from("founding_signups")
+      .insert({ name: name.trim(), email: email.trim().toLowerCase() });
+    setSubmitting(false);
+    if (error) {
+      toast({ title: "Something went wrong. Try again.", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "You're in 🎉", description: "Welcome to Nanocamp." });
     onClose();
   };
 
@@ -196,7 +214,8 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
 
               <button
                 type="submit"
-                className="transition-all duration-200 mt-2"
+                disabled={submitting}
+                className="transition-all duration-200 mt-2 disabled:opacity-60"
                 style={{
                   height: "52px",
                   width: "100%",
@@ -215,7 +234,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                Lock in my spot →
+                {submitting ? "Saving…" : "Lock in my spot →"}
               </button>
 
               <p
