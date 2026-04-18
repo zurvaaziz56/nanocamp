@@ -34,7 +34,6 @@ const ThirtyDayGallery = () => {
   return (
     <section
       style={{
-        backgroundColor: "#000",
         padding: "80px 24px 120px",
       }}
     >
