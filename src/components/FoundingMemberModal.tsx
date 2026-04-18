@@ -90,8 +90,24 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name.trim() || !emailRegex.test(email.trim())) {
+      toast({ title: "Please enter a valid name and email.", variant: "destructive" });
+      return;
+    }
+    setSubmitting(true);
+    const { error } = await supabase
+      .from("founding_signups")
+      .insert({ name: name.trim(), email: email.trim().toLowerCase() });
+    setSubmitting(false);
+    if (error) {
+      toast({ title: "Something went wrong. Try again.", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "You're in 🎉", description: "Welcome to Nanocamp." });
     onClose();
   };
 
