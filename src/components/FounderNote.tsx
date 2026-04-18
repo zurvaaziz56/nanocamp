@@ -28,19 +28,18 @@ const Divider = () => (
   <div
     className="mx-auto my-8"
     style={{
-      width: "80px",
+      width: "84px",
       height: "1px",
-      backgroundColor: "rgba(30,15,5,0.35)",
+      backgroundColor: "rgba(38, 20, 6, 0.28)",
     }}
     aria-hidden="true"
   />
 );
 
-// SVG noise texture for aged paper grain
 const noiseDataUri =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.05  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>`
+    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.05  0 0 0 0.28 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>`
   );
 
 const FounderNote = () => {
@@ -49,27 +48,26 @@ const FounderNote = () => {
       className="py-28 px-6 relative"
       style={{
         background:
-          "radial-gradient(ellipse at 50% 50%, rgba(212,168,67,0.06) 0%, transparent 70%)",
+          "radial-gradient(ellipse at 50% 45%, rgba(232,190,92,0.14) 0%, rgba(232,190,92,0.06) 38%, transparent 72%)",
       }}
     >
-      <div className="mx-auto" style={{ maxWidth: "720px" }}>
+      <div className="mx-auto" style={{ maxWidth: "760px" }}>
         <div
           style={{
             background:
-              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
-            backgroundBlendMode: "multiply, normal",
-            border: "none",
-            borderRadius: "4px",
-            padding: "64px 80px",
-            transform: "rotate(-0.5deg)",
+              "linear-gradient(135deg, #d8b97d 0%, #cda56b 28%, #d3ad73 58%, #c09559 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #d8b97d 0%, #cda56b 28%, #d3ad73 58%, #c09559 100%)`,
+            backgroundBlendMode: "soft-light, normal",
+            border: "1px solid rgba(255, 236, 197, 0.08)",
+            borderRadius: "6px",
+            padding: "68px 68px",
+            transform: "rotate(-0.35deg)",
             boxShadow:
-              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 28px rgba(70,40,10,0.16), 0 28px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,235,190,0.05)",
             position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
         >
-          {/* Top ruled-paper line */}
           <div
             aria-hidden="true"
             style={{
@@ -78,11 +76,10 @@ const FounderNote = () => {
               left: "32px",
               right: "32px",
               height: "1px",
-              backgroundColor: "rgba(60,35,10,0.25)",
+              backgroundColor: "rgba(62, 36, 11, 0.24)",
             }}
           />
 
-          {/* Label with gold lines */}
           <motion.div
             className="flex items-center justify-center gap-3 mb-10"
             initial={{ opacity: 0, y: 10 }}
@@ -93,18 +90,18 @@ const FounderNote = () => {
             <span
               aria-hidden="true"
               style={{
-                width: "28px",
+                width: "32px",
                 height: "1px",
-                backgroundColor: "#5a3a18",
+                backgroundColor: "#4b2c0d",
                 display: "inline-block",
               }}
             />
             <span
               className="font-body uppercase"
               style={{
-                color: "#3d2408",
-                fontSize: "11px",
-                letterSpacing: "0.22em",
+                color: "#321b06",
+                fontSize: "12.5px",
+                letterSpacing: "0.24em",
                 fontWeight: 800,
               }}
             >
@@ -113,9 +110,9 @@ const FounderNote = () => {
             <span
               aria-hidden="true"
               style={{
-                width: "28px",
+                width: "32px",
                 height: "1px",
-                backgroundColor: "#5a3a18",
+                backgroundColor: "#4b2c0d",
                 display: "inline-block",
               }}
             />
@@ -124,32 +121,37 @@ const FounderNote = () => {
           {paragraphs.map((p, i) => {
             const isOpener = p.variant === "opener";
             const isIntimate = p.variant === "intimate";
-            const isCloser = p.variant === "closer";
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#1a0f03",
-                  fontSize: "22px",
-                  fontWeight: 600,
+                  color: "#140b02",
+                  fontSize: "24px",
+                  fontWeight: 650,
                   lineHeight: 1.5,
+                  maxWidth: "560px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
                 }
               : isIntimate
               ? {
-                  color: "#2a1a08",
-                  fontSize: "18.5px",
+                  color: "#1c1105",
+                  fontSize: "20px",
                   fontStyle: "italic",
                   fontWeight: 500,
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.75,
-                  maxWidth: "520px",
+                  lineHeight: 1.85,
+                  maxWidth: "560px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#1a0f03",
-                  fontSize: "20px",
-                  fontWeight: 700,
+                  color: "#140b02",
+                  fontSize: "22px",
+                  fontWeight: 750,
                   lineHeight: 1.55,
+                  maxWidth: "590px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
                 };
 
             return (
@@ -172,13 +174,13 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#f4e4c1",
-              fontSize: "15px",
+              color: "#f7ebd1",
+              fontSize: "16px",
               fontStyle: "italic",
               fontWeight: 500,
               fontFamily: "Georgia, 'Times New Roman', serif",
               letterSpacing: "0.04em",
-              marginTop: "32px",
+              marginTop: "34px",
             }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
