@@ -182,11 +182,13 @@ const ThirtyDayGallery = () => {
 
       <style>{`
         .thirty-day-grid {
-          display: grid;
-          justify-items: center;
-          grid-template-columns: repeat(5, 1fr);
-          column-gap: 24px;
-          row-gap: 32px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 32px 24px;
+        }
+        .thirty-day-item {
+          flex: 0 0 240px;
         }
         @media (max-width: 1199px) {
           .thirty-day-grid {
