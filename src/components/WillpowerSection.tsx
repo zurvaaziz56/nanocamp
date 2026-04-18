@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const sentences = [
-  "What if finishing what you started came with a reward? ",
-  "Nano holds you accountable to your goals - and pays you back when you hit them. ",
+  "\n",
+  "\u200b",
   "\u200b",
 ];
 
@@ -73,7 +73,7 @@ const WillpowerSection = () => {
         >
           Been on your list{" "}
           <span className="italic" style={{ color: "#D4A843" }}>
-            long enough
+            {"\u200b"}
           </span>{" "}
           ...
         </h2>
