@@ -14,7 +14,7 @@ const phones = [
   {
     img: phone2,
     pill: "02 · TRACK",
-    headline: "Your daily home",
+    headline: "Your daily check-in.",
     desc: "Streak, progress, today's micro-goal. Coach-written. One tap to submit.",
   },
   {
