@@ -74,9 +74,10 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
   const triggerCelebration = async () => {
     if (toastTriggered) return;
     if (!name.trim() || !emailRegex.test(email.trim())) {
-      toast({ title: "Please enter your name and a valid email first.", variant: "destructive" });
+      setFormError("Please enter your name and a valid email first.");
       return;
     }
+    setFormError("");
     setToastTriggered(true);
     setShowToast(true);
     setSubmitting(true);
