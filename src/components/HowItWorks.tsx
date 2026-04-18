@@ -14,7 +14,7 @@ const HowItWorks = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section id="how" className="pt-20 pb-28 md:pt-24 md:pb-36 px-6">
+    <section id="how" className="pt-6 pb-28 md:pt-10 md:pb-36 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           className="mb-14"

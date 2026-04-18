@@ -51,7 +51,7 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-36 pb-16 px-6">
+      <section className="pt-36 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <motion.img
             src={nanoCampLogo}
@@ -85,18 +85,17 @@ const Index = () => {
             >
               <StatPills />
             </motion.div>
-
-            <motion.div
-              className="mt-20 md:mt-24 mb-8 md:mb-12 flex justify-center"
-              initial="hidden"
-              animate="visible"
-              custom={3}
-              variants={fade}
-            >
-              <PremiumCTAButton onClick={openModal} size="xl" />
-            </motion.div>
-
           </div>
+
+          <motion.div
+            className="mt-12 md:mt-14 w-full flex justify-center"
+            initial="hidden"
+            animate="visible"
+            custom={3}
+            variants={fade}
+          >
+            <PremiumCTAButton onClick={openModal} size="xl" />
+          </motion.div>
         </div>
       </section>
 
