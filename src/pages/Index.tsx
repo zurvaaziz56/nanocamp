@@ -109,46 +109,16 @@ const Index = () => {
               <StatPills />
             </motion.div>
 
-            <motion.form
-              onSubmit={validateAndSubmit}
-              className="mt-10 flex flex-col sm:flex-row gap-3 w-full justify-center"
+            <motion.div
+              className="mt-10 flex justify-center"
               initial="hidden"
               animate="visible"
               custom={3}
               variants={fade}
             >
-              <div className="flex-1 flex flex-col items-center sm:items-start">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (error) setError("");
-                  }}
-                  className="w-full px-4 text-sm transition-all rounded-lg"
-                  style={{
-                    height: "54px",
-                    backgroundColor: "#111111",
-                    color: "#F5F0E8",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    outline: "none",
-                  }}
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "#D4A843";
-                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(212,168,67,0.15)";
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                />
-                {error && (
-                  <span className="mt-1.5 text-xs text-destructive">{error}</span>
-                )}
-              </div>
               <button
-                type="submit"
+                type="button"
+                onClick={openModal}
                 className="shrink-0 transition-all duration-200"
                 style={{
                   height: "54px",
