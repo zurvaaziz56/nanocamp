@@ -128,24 +128,25 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#2C1810",
+                  color: "#1a0f03",
                   fontSize: "22px",
                   fontWeight: 600,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "#3D2510",
-                  fontSize: "18px",
+                  color: "#2a1a08",
+                  fontSize: "18.5px",
                   fontStyle: "italic",
+                  fontWeight: 500,
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.8,
+                  lineHeight: 1.75,
                   maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#2C1810",
+                  color: "#1a0f03",
                   fontSize: "20px",
                   fontWeight: 700,
                   lineHeight: 1.55,
