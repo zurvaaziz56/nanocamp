@@ -258,10 +258,10 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   <Confetti />
                   <div className="relative text-left">
                     <div className="font-display" style={{ fontWeight: 700, marginBottom: "6px" }}>
-                      🎉 You're already one of us.
+                      🎉 Thanks for raising your hand, {firstName}.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
-                      Welcome to Nanocamp, {firstName}. We're building something real here and you're part of it from day one. As a thank you — you're eligible for a $25 gift card just for being here. Now let's get you set up.
+                      This round's already full, but we'll send you a gift card as a thank you for your early support — and we'll be in touch when we're ready for you to join.
                     </div>
                   </div>
                 </motion.div>
