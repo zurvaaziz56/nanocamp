@@ -243,8 +243,10 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="fixed inset-0 z-[110] flex items-center justify-center px-4 cursor-pointer"
-                onClick={(e) => { e.stopPropagation(); setShowToast(false); }}
+                className="fixed inset-0 z-[110] flex items-center justify-center px-4"
+                onClick={(e) => e.stopPropagation()}
+                onMouseDown={(e) => e.stopPropagation()}
+                style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
               >
                 <div
                   className="relative"
@@ -254,12 +256,21 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                     backgroundColor: "#1A1600",
                     border: "1px solid #D4A843",
                     borderRadius: "12px",
-                    padding: "24px 28px",
+                    padding: "28px 28px 24px",
                     color: "#FFFFFF",
                     boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(212,168,67,0.25)",
                     overflow: "hidden",
                   }}
                 >
+                  <button
+                    type="button"
+                    onClick={() => { setShowToast(false); onClose(); }}
+                    aria-label="Close"
+                    className="absolute top-3 right-3"
+                    style={{ color: "#A09880", fontSize: "20px", lineHeight: 1, zIndex: 2 }}
+                  >
+                    ×
+                  </button>
                   <Confetti />
                   <div className="relative text-left">
                     <div className="font-display" style={{ fontWeight: 700, marginBottom: "8px", fontSize: "18px" }}>
@@ -268,6 +279,21 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
                       This round's already full, but we'll send you a gift card as a thank you for your early support — and we'll be in touch when we're ready for you to join.
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => { setShowToast(false); onClose(); }}
+                      className="mt-5 transition-all duration-200"
+                      style={{
+                        backgroundColor: "#D4A843",
+                        color: "#000000",
+                        borderRadius: "6px",
+                        fontSize: "13px",
+                        fontWeight: 700,
+                        padding: "10px 18px",
+                      }}
+                    >
+                      Got it
+                    </button>
                   </div>
                 </div>
               </motion.div>
