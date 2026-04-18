@@ -172,10 +172,12 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#6B4423",
-              fontSize: "14px",
+              color: "#f4e4c1",
+              fontSize: "15px",
               fontStyle: "italic",
               fontWeight: 500,
+              fontFamily: "Georgia, 'Times New Roman', serif",
+              letterSpacing: "0.04em",
               marginTop: "32px",
             }}
             initial={{ opacity: 0 }}
