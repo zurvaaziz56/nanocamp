@@ -26,21 +26,20 @@ const paragraphs: Para[] = [
 
 const Divider = () => (
   <div
-    className="mx-auto my-8"
-    style={{
-      width: "80px",
-      height: "1px",
-      backgroundColor: "rgba(80,50,20,0.2)",
-    }}
+    className="mx-auto my-10 flex items-center justify-center gap-3"
     aria-hidden="true"
-  />
+  >
+    <span style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, rgba(80,50,20,0.35), transparent)" }} />
+    <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: "rgba(80,50,20,0.4)" }} />
+    <span style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, rgba(80,50,20,0.35), transparent)" }} />
+  </div>
 );
 
-// SVG noise texture for aged paper grain
+// Subtle paper grain
 const noiseDataUri =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.05  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>`
+    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.10  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>`
   );
 
 const FounderNote = () => {
@@ -55,36 +54,34 @@ const FounderNote = () => {
       <div className="mx-auto" style={{ maxWidth: "720px" }}>
         <div
           style={{
-            background:
-              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #f5e6c4 0%, #efd9a8 35%, #f2dfb4 65%, #e8cf9a 100%)`,
             backgroundBlendMode: "multiply, normal",
-            border: "none",
-            borderRadius: "4px",
-            padding: "64px 80px",
-            transform: "rotate(-0.5deg)",
+            border: "1px solid rgba(120,85,40,0.25)",
+            borderRadius: "6px",
+            padding: "72px 80px",
+            transform: "rotate(-0.4deg)",
             boxShadow:
-              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 80px rgba(140,95,40,0.18), inset 0 0 0 1px rgba(255,240,200,0.4), 0 25px 70px rgba(0,0,0,0.55), 0 6px 16px rgba(0,0,0,0.35)",
             position: "relative",
           }}
-          className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
+          className="text-center max-[640px]:!px-8 max-[640px]:!py-14"
         >
           {/* Top ruled-paper line */}
           <div
             aria-hidden="true"
             style={{
               position: "absolute",
-              top: "24px",
-              left: "32px",
-              right: "32px",
+              top: "28px",
+              left: "40px",
+              right: "40px",
               height: "1px",
-              backgroundColor: "rgba(80,50,20,0.15)",
+              background: "linear-gradient(to right, transparent, rgba(80,50,20,0.2), transparent)",
             }}
           />
 
           {/* Label with gold lines */}
           <motion.div
-            className="flex items-center justify-center gap-3 mb-10"
+            className="flex items-center justify-center gap-3 mb-12"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -93,7 +90,7 @@ const FounderNote = () => {
             <span
               aria-hidden="true"
               style={{
-                width: "28px",
+                width: "32px",
                 height: "1px",
                 backgroundColor: "#8B6340",
                 display: "inline-block",
@@ -104,7 +101,7 @@ const FounderNote = () => {
               style={{
                 color: "#5C3D1E",
                 fontSize: "11px",
-                letterSpacing: "0.2em",
+                letterSpacing: "0.28em",
                 fontWeight: 700,
               }}
             >
@@ -113,7 +110,7 @@ const FounderNote = () => {
             <span
               aria-hidden="true"
               style={{
-                width: "28px",
+                width: "32px",
                 height: "1px",
                 backgroundColor: "#8B6340",
                 display: "inline-block",
@@ -124,31 +121,38 @@ const FounderNote = () => {
           {paragraphs.map((p, i) => {
             const isOpener = p.variant === "opener";
             const isIntimate = p.variant === "intimate";
-            const isCloser = p.variant === "closer";
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#2C1810",
-                  fontSize: "22px",
-                  fontWeight: 600,
-                  lineHeight: 1.5,
+                  color: "#1F1108",
+                  fontSize: "26px",
+                  fontWeight: 700,
+                  lineHeight: 1.35,
+                  letterSpacing: "-0.01em",
+                  maxWidth: "560px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
                 }
               : isIntimate
               ? {
-                  color: "#3D2510",
+                  color: "#2A1A0A",
                   fontSize: "18px",
                   fontStyle: "italic",
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.8,
-                  maxWidth: "520px",
+                  lineHeight: 1.85,
+                  maxWidth: "540px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#2C1810",
-                  fontSize: "20px",
+                  color: "#1F1108",
+                  fontSize: "21px",
                   fontWeight: 700,
-                  lineHeight: 1.55,
+                  lineHeight: 1.5,
+                  letterSpacing: "-0.005em",
+                  maxWidth: "560px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
                 };
 
             return (
@@ -175,7 +179,8 @@ const FounderNote = () => {
               fontSize: "14px",
               fontStyle: "italic",
               fontWeight: 500,
-              marginTop: "32px",
+              marginTop: "40px",
+              letterSpacing: "0.02em",
             }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
