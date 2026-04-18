@@ -183,23 +183,28 @@ const ThirtyDayGallery = () => {
       <style>{`
         .thirty-day-grid {
           display: flex;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           justify-content: center;
-          gap: 32px 24px;
-        }
-        .thirty-day-item {
-          flex: 0 0 240px;
+          align-items: flex-start;
+          gap: 16px;
         }
         .thirty-day-item {
           display: flex;
           flex-direction: column;
           align-items: center;
+          flex: 1 1 0;
+          min-width: 0;
         }
-        @media (max-width: 1199px) {
-          .thirty-day-grid { gap: 56px 28px; }
+        .thirty-day-item > div:nth-child(2) {
+          width: 100% !important;
+          max-width: 240px;
+          aspect-ratio: 240 / 500;
+          height: auto !important;
         }
         @media (max-width: 899px) {
-          .thirty-day-grid { gap: 56px 32px; }
+          .thirty-day-grid { flex-wrap: wrap; gap: 56px 32px; }
+          .thirty-day-item { flex: 0 0 240px; }
+          .thirty-day-item > div:nth-child(2) { height: 500px !important; aspect-ratio: auto; }
         }
         @media (max-width: 599px) {
           .thirty-day-grid { gap: 72px 24px; }
