@@ -30,17 +30,17 @@ const Divider = () => (
     style={{
       width: "80px",
       height: "1px",
-      backgroundColor: "rgba(30,15,5,0.35)",
+      backgroundColor: "rgba(107,74,31,0.6)",
     }}
     aria-hidden="true"
   />
 );
 
-// SVG noise texture for aged paper grain
+// SVG noise texture for aged paper grain — barely perceptible
 const noiseDataUri =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.05  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>`
+    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0 0.03  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>`
   );
 
 const FounderNote = () => {
@@ -55,16 +55,14 @@ const FounderNote = () => {
       <div className="mx-auto" style={{ maxWidth: "720px" }}>
         <div
           style={{
-            background:
-              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(180deg, #EBCB82 0%, #D9B15E 100%)`,
             backgroundBlendMode: "multiply, normal",
-            border: "none",
+            border: "1px solid rgba(201,164,86,0.4)",
             borderRadius: "4px",
             padding: "64px 80px",
             transform: "rotate(-0.5deg)",
             boxShadow:
-              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 0 1px rgba(201,164,86,0.4), 0 0 120px rgba(232,200,120,0.18), 0 20px 60px rgba(0,0,0,0.4)",
             position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
@@ -78,7 +76,7 @@ const FounderNote = () => {
               left: "32px",
               right: "32px",
               height: "1px",
-              backgroundColor: "rgba(60,35,10,0.25)",
+              backgroundColor: "rgba(107,74,31,0.5)",
             }}
           />
 
@@ -95,14 +93,14 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#5a3a18",
+                backgroundColor: "rgba(107,74,31,0.6)",
                 display: "inline-block",
               }}
             />
             <span
               className="font-body uppercase"
               style={{
-                color: "#3d2408",
+                color: "#6B4A1F",
                 fontSize: "11px",
                 letterSpacing: "0.22em",
                 fontWeight: 800,
@@ -115,7 +113,7 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#5a3a18",
+                backgroundColor: "rgba(107,74,31,0.6)",
                 display: "inline-block",
               }}
             />
@@ -128,14 +126,14 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#1a0f03",
+                  color: "#2A1B08",
                   fontSize: "22px",
-                  fontWeight: 600,
+                  fontWeight: 700,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "#2a1a08",
+                  color: "#2A1B08",
                   fontSize: "18.5px",
                   fontStyle: "italic",
                   fontWeight: 500,
@@ -146,9 +144,9 @@ const FounderNote = () => {
                   marginRight: "auto",
                 }
               : {
-                  color: "#1a0f03",
+                  color: "#2A1B08",
                   fontSize: "20px",
-                  fontWeight: 700,
+                  fontWeight: 800,
                   lineHeight: 1.55,
                 };
 
@@ -172,7 +170,7 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#f4e4c1",
+              color: "#6B4A1F",
               fontSize: "15px",
               fontStyle: "italic",
               fontWeight: 500,
