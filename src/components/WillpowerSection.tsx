@@ -73,7 +73,7 @@ const WillpowerSection = () => {
         >
           Been on your list{" "}
           <span className="italic" style={{ color: "#D4A843" }}>
-            long enough
+            {"\u200b"}
           </span>{" "}
           ...
         </h2>
