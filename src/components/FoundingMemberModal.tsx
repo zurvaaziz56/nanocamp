@@ -45,6 +45,7 @@ const Confetti = () => {
 const FoundingMemberModal = ({ open, onClose }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [discountCode, setDiscountCode] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [toastTriggered, setToastTriggered] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -53,6 +54,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     if (!open) {
       setName("");
       setEmail("");
+      setDiscountCode("");
       setShowToast(false);
       setToastTriggered(false);
     }
@@ -195,6 +197,17 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                     style={{ flex: 1, cursor: "pointer" }}
                   />
                 </div>
+              </Field>
+
+              <Field label="Discount code (optional)">
+                <input
+                  type="text"
+                  value={discountCode}
+                  onChange={(e) => setDiscountCode(e.target.value)}
+                  placeholder="Enter code"
+                  maxLength={40}
+                  className="modal-input"
+                />
               </Field>
 
               <button
