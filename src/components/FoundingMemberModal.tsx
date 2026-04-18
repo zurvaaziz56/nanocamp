@@ -213,6 +213,24 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 />
               </Field>
 
+              {formError && (
+                <div
+                  role="alert"
+                  style={{
+                    marginTop: "-4px",
+                    padding: "10px 14px",
+                    borderRadius: "8px",
+                    backgroundColor: "rgba(220, 38, 38, 0.12)",
+                    border: "1px solid rgba(220, 38, 38, 0.45)",
+                    color: "#FCA5A5",
+                    fontSize: "13px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formError}
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={submitting}
