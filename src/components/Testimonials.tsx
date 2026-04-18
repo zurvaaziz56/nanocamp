@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 const quotes = [
-  "Simply the feeling of showing up tired, doubtful, still choosing to try — and being witnessed by another human doing the same is so so rewarding in itself.",
-  "This feels bigger than goals. The process asks you what matters to you right now, and gives you a way to think about that both privately and with others. Once you open up this space, you never know what will emerge, and that's the best part.",
-  "Self worth and purpose are built when the individual learns to trust themselves and feel safe within a network of support.",
+  { text: "Simply the feeling of showing up tired, doubtful, still choosing to try — and being witnessed by another human doing the same is so so rewarding in itself.", name: "Zurva" },
+  { text: "This feels bigger than goals. The process asks you what matters to you right now, and gives you a way to think about that both privately and with others. Once you open up this space, you never know what will emerge, and that's the best part.", name: "Alida" },
+  { text: "Self worth and purpose are built when the individual learns to trust themselves and feel safe within a network of support.", name: "Maria" },
 ];
 
 const Testimonials = () => {
@@ -84,7 +84,13 @@ const Testimonials = () => {
                 className="font-display italic mt-2"
                 style={{ color: "#E8E4DC", fontSize: "18px", lineHeight: 1.8 }}
               >
-                {quote}
+                {quote.text}
+              </p>
+              <p
+                className="text-center"
+                style={{ color: "#D4A843", fontSize: "14px", fontWeight: 600, marginTop: "24px" }}
+              >
+                — {quote.name}
               </p>
             </div>
           ))}
