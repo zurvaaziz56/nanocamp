@@ -234,7 +234,7 @@ const Index = () => {
               Founding Offer
             </span>
             <p className="font-body text-[20px] mx-auto" style={{ color: "#C8C0B0", lineHeight: 1.75 }}>
-              This is Nano's first month. A small group of people get in at $20, prove it works, and walk away with $25. You in?
+              This is NanoCamp's first month. The first 100 members go in at $20, put in the work, and walk away with $25 — plus lifetime access. You in?
             </p>
 
             {/* Founding Member Perks */}
@@ -258,8 +258,8 @@ const Index = () => {
 
             <div className="mt-8 grid grid-cols-3 gap-3">
               {[
-                { value: "$20", label: "Commitment" },
-                { value: "$25", label: "Reward" },
+                { value: "$20", label: "Start with $20*" },
+                { value: "$25", label: "Finish and get $25" },
                 { value: "30", label: "Days" },
               ].map((item) => (
                 <div
@@ -305,6 +305,9 @@ const Index = () => {
             >
               Become a Founding Member
             </button>
+            <p style={{ color: "#6B6560", fontSize: "12px", lineHeight: 1.6, marginTop: "12px", textAlign: "center" }}>
+              *Pay $20 and you're in. 7 days to cancel for a full refund if it's not for you right now. Renews every 30 days.
+            </p>
           </motion.div>
         </div>
       </section>
