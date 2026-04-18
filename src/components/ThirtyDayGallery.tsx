@@ -75,8 +75,8 @@ const ThirtyDayGallery = () => {
                 style={{
                   fontFamily: "'Barlow', sans-serif",
                   fontWeight: 900,
-                  fontSize: "11px",
-                  letterSpacing: "4px",
+                  fontSize: "13px",
+                  letterSpacing: "1.2px",
                   textTransform: "uppercase",
                   color: "#F5C518",
                   backgroundColor: "#1a1400",
