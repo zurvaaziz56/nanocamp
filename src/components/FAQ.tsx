@@ -3,32 +3,36 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "How does the $20 commitment work?",
-    a: "You pay $20 to join a 30-day challenge. If you check in at least 24 of those 30 days, you get $25 back. That's it.",
+    q: "So how does this $20 thing actually work?",
+    a: "You pay $20 to join a 30-day challenge. Then you show up, check in, and send a photo, video, or screenshot as proof you did the work. Hit 20 out of 30 days, and you get $25.\n\nIt's just enough skin in the game to keep you going — without making it feel heavy.",
   },
   {
     q: "What counts as checking in?",
-    a: "Upload a screenshot each day that proves you did the thing - a step count, a gym selfie, your sleep app, whatever fits your goal. It takes about 30 seconds.",
+    a: "A check-in is you showing up for your goal and uploading a photo, short video, or screenshot that proves you did the work that day — a step count, gym selfie, sleep app screenshot, whatever fits your goal. And it only takes about 30 seconds.",
   },
   {
-    q: "What if I miss more than 6 days?",
-    a: "You don't get the $25. Your $20 goes toward paying out the people who did show up.",
+    q: "What if I miss more than 10 days?",
+    a: "You started showing up for yourself — and that's the whole point. You did real work, built real momentum, and moved closer to the person you're trying to become. The $25 doesn't come through this round, but the progress is yours. Jump into another 30-day challenge and keep going.",
   },
   {
-    q: "Can I pick any goal?",
-    a: "Right now we have three to choose from - hit the gym, walk 10,000 steps, or get 7 hours of sleep. We'll be adding more over time.",
+    q: "Can my goal be anything?",
+    a: "Right now we have five to choose from: Hit the gym, get to bed on time, walk 10,000 steps, eat healthier, or lose 5 pounds.",
   },
   {
-    q: "When do I get paid?",
-    a: "Once your 30 days are up, we review your check-ins and send the $25 to your account within 48 hours.",
+    q: "When do I get my $25?",
+    a: "Once your 30 days are up, we verify your check-ins and send you $25 within 72 hours.",
+  },
+  {
+    q: "Can I cancel?",
+    a: "Yes. You can cancel within 7 days of joining if Nano isn't for you and get a full refund.",
   },
   {
     q: "Is this a subscription?",
-    a: "No. You pay $20 per challenge. No recurring charges.",
+    a: "Yes — your challenge renews every 30 days: $20 in, up to $25 back if you finish.\n\nYou can keep the same goal or switch it up each month. The idea is to keep growing, one challenge at a time.\n\nSkip or cancel anytime from your account.",
   },
   {
-    q: "How is this different from other habit apps?",
-    a: "Most apps give you a badge when you hit a streak. This one gives you money. The difference in motivation is pretty significant.",
+    q: "How is NanoCamp different from other habit apps?",
+    a: "We've tried the habit apps too — and for a lot of people, they stop working around day 12. Streaks are easy to break when nothing's really on the line.\n\nNanoCamp adds just enough commitment to make showing up feel real. You put $20 on the line, show up for 20 out of 30 days, and if you finish, you get $25.\n\nIt's simple, flexible, and built to help you keep going.",
   },
 ];
 
@@ -47,7 +51,7 @@ const FAQ = () => {
             letterSpacing: "0.2em",
           }}
         >
-          FAQ
+          FAQs
         </span>
         <h2
           className="font-display font-bold leading-[1.1] mb-12"
@@ -102,6 +106,7 @@ const FAQ = () => {
                           color: "#C8C0B0",
                           fontSize: "17px",
                           lineHeight: 1.8,
+                          whiteSpace: "pre-line",
                         }}
                       >
                         {faq.a}
