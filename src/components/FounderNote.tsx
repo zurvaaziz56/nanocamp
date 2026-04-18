@@ -56,15 +56,15 @@ const FounderNote = () => {
         <div
           style={{
             background:
-              "linear-gradient(135deg, #efdfb8 0%, #e6d2a3 30%, #ecd9af 60%, #ddc695 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #efdfb8 0%, #e6d2a3 30%, #ecd9af 60%, #ddc695 100%)`,
+              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
             backgroundBlendMode: "multiply, normal",
             border: "none",
             borderRadius: "4px",
-            padding: "72px 88px",
+            padding: "64px 80px",
             transform: "rotate(-0.5deg)",
             boxShadow:
-              "inset 0 0 80px rgba(120,80,30,0.25), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
             position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
@@ -128,28 +128,31 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#1a0c02",
+                  color: "#0a0500",
                   fontSize: "23px",
                   fontWeight: 700,
                   lineHeight: 1.5,
+                  textShadow: "0 1px 0 rgba(255,230,180,0.25)",
                 }
               : isIntimate
               ? {
-                  color: "#1f1305",
+                  color: "#100800",
                   fontSize: "18px",
                   fontStyle: "italic",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   fontFamily: "Georgia, 'Times New Roman', serif",
                   lineHeight: 1.8,
                   maxWidth: "560px",
                   marginLeft: "auto",
                   marginRight: "auto",
+                  textShadow: "0 1px 0 rgba(255,230,180,0.2)",
                 }
               : {
-                  color: "#1a0c02",
+                  color: "#0a0500",
                   fontSize: "20px",
                   fontWeight: 700,
                   lineHeight: 1.55,
+                  textShadow: "0 1px 0 rgba(255,230,180,0.25)",
                 };
 
             return (
@@ -172,7 +175,7 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#3d2408",
+              color: "#fff5d6",
               fontSize: "15px",
               fontStyle: "italic",
               fontWeight: 600,
