@@ -30,9 +30,23 @@ const Divider = () => (
     style={{
       width: "80px",
       height: "1px",
-      backgroundColor: "rgba(80,50,20,0.2)",
+      backgroundColor: "rgba(80,50,20,0.25)",
     }}
     aria-hidden="true"
+  />
+);
+
+const Pin = () => (
+  <span
+    aria-hidden="true"
+    style={{
+      width: "10px",
+      height: "10px",
+      borderRadius: "50%",
+      background: "#8B6340",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.4), inset 0 -1px 1px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.3)",
+      display: "block",
+    }}
   />
 );
 
@@ -52,12 +66,62 @@ const FounderNote = () => {
           "radial-gradient(ellipse at 50% 50%, rgba(212,168,67,0.06) 0%, transparent 70%)",
       }}
     >
-      <div className="mx-auto" style={{ maxWidth: "720px" }}>
+      <div className="mx-auto relative" style={{ maxWidth: "720px", paddingTop: "60px" }}>
+        {/* Twine strings hanging from above */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "0",
+            left: "12%",
+            width: "2px",
+            height: "70px",
+            background: "#5C3010",
+            transform: "rotate(-12deg)",
+            transformOrigin: "top center",
+            zIndex: 1,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "0",
+            right: "12%",
+            width: "2px",
+            height: "70px",
+            background: "#5C3010",
+            transform: "rotate(12deg)",
+            transformOrigin: "top center",
+            zIndex: 1,
+          }}
+        />
+        {/* Pins at the top corners of the card */}
+        <div
+          style={{
+            position: "absolute",
+            top: "56px",
+            left: "calc(12% + 40px)",
+            zIndex: 3,
+          }}
+        >
+          <Pin />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "56px",
+            right: "calc(12% + 40px)",
+            zIndex: 3,
+          }}
+        >
+          <Pin />
+        </div>
         <div
           style={{
             background:
-              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
+              "linear-gradient(135deg, #d4a96e 0%, #c89860 30%, #d0a068 60%, #c4955a 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #d4a96e 0%, #c89860 30%, #d0a068 60%, #c4955a 100%)`,
             backgroundBlendMode: "multiply, normal",
             border: "none",
             borderRadius: "4px",
@@ -128,14 +192,14 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#2C1810",
+                  color: "#1A0E06",
                   fontSize: "22px",
-                  fontWeight: 600,
+                  fontWeight: 700,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "#3D2510",
+                  color: "#2A1A0A",
                   fontSize: "18px",
                   fontStyle: "italic",
                   fontFamily: "Georgia, 'Times New Roman', serif",
@@ -145,9 +209,9 @@ const FounderNote = () => {
                   marginRight: "auto",
                 }
               : {
-                  color: "#2C1810",
+                  color: "#1A0E06",
                   fontSize: "20px",
-                  fontWeight: 700,
+                  fontWeight: 800,
                   lineHeight: 1.55,
                 };
 
@@ -171,10 +235,10 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#6B4423",
+              color: "#4A2E10",
               fontSize: "14px",
               fontStyle: "italic",
-              fontWeight: 500,
+              fontWeight: 600,
               marginTop: "32px",
             }}
             initial={{ opacity: 0 }}
