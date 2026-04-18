@@ -87,7 +87,7 @@ const Index = () => {
             </motion.div>
 
             <motion.div
-              className="mt-14 md:mt-16 flex justify-center"
+              className="mt-20 md:mt-24 mb-8 md:mb-12 flex justify-center"
               initial="hidden"
               animate="visible"
               custom={3}
