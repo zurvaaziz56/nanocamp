@@ -128,31 +128,28 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#0a0500",
-                  fontSize: "23px",
-                  fontWeight: 700,
+                  color: "#1a0f03",
+                  fontSize: "22px",
+                  fontWeight: 600,
                   lineHeight: 1.5,
-                  textShadow: "0 1px 0 rgba(255,230,180,0.25)",
                 }
               : isIntimate
               ? {
-                  color: "#100800",
-                  fontSize: "18px",
+                  color: "#2a1a08",
+                  fontSize: "18.5px",
                   fontStyle: "italic",
-                  fontWeight: 600,
+                  fontWeight: 500,
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.8,
-                  maxWidth: "560px",
+                  lineHeight: 1.75,
+                  maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: "auto",
-                  textShadow: "0 1px 0 rgba(255,230,180,0.2)",
                 }
               : {
-                  color: "#0a0500",
+                  color: "#1a0f03",
                   fontSize: "20px",
                   fontWeight: 700,
                   lineHeight: 1.55,
-                  textShadow: "0 1px 0 rgba(255,230,180,0.25)",
                 };
 
             return (
@@ -175,13 +172,13 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#fff5d6",
+              color: "#f4e4c1",
               fontSize: "15px",
               fontStyle: "italic",
-              fontWeight: 600,
+              fontWeight: 500,
               fontFamily: "Georgia, 'Times New Roman', serif",
               letterSpacing: "0.04em",
-              marginTop: "36px",
+              marginTop: "32px",
             }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
