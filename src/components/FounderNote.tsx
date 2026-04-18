@@ -56,15 +56,15 @@ const FounderNote = () => {
         <div
           style={{
             background:
-              "linear-gradient(135deg, #efdfb8 0%, #e6d2a3 30%, #ecd9af 60%, #ddc695 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #efdfb8 0%, #e6d2a3 30%, #ecd9af 60%, #ddc695 100%)`,
+              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
             backgroundBlendMode: "multiply, normal",
             border: "none",
             borderRadius: "4px",
-            padding: "72px 88px",
+            padding: "64px 80px",
             transform: "rotate(-0.5deg)",
             boxShadow:
-              "inset 0 0 80px rgba(120,80,30,0.25), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
             position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
