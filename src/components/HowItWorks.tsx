@@ -125,7 +125,7 @@ const HowItWorks = () => {
                     color: "#A09880",
                     fontSize: "15px",
                     lineHeight: 1.6,
-                    padding: "14px 28px 0",
+                    padding: "14px 28px 90px",
                   }}
                 >
                   {goal.desc}
