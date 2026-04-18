@@ -39,7 +39,7 @@ const HowItWorks = () => {
             className="block mb-5 font-body uppercase"
             style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.2em", fontWeight: 700 }}
           >
-            How It Works
+            ​
           </span>
           <h2
             className="font-display font-medium leading-[1.1] mx-auto"
