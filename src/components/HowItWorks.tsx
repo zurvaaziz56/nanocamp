@@ -1,162 +1,195 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
-const goals = ["Hit the gym", "Sleep 7 hours", "Walk 10,000 steps"];
+const goals = [
+  { emoji: "🌙", title: "Get to bed on time", desc: "Sleep before midnight 20 out of 30 nights." },
+  { emoji: "👟", title: "Walk 10,000 steps", desc: "Hit your step count 20 out of 30 days." },
+  { emoji: "🏋️", title: "Hit the gym", desc: "Show up and train 10 out of 30 days." },
+  { emoji: "🥗", title: "Eat healthier", desc: "Make the better choice 20 out of 30 days." },
+  { emoji: "⚖️", title: "Lose 5 pounds", desc: "One month. One number. You've got this." },
+];
 
-const cardFade = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, ease: "easeOut" as const },
-  }),
-};
-
-const StreakBar = () => {
-  const filled = 14;
-  const total = 30;
-  return (
-    <div className="mt-6">
-      <div className="flex gap-[3px]">
-        {Array.from({ length: total }).map((_, i) => (
-          <div
-            key={i}
-            className="h-2 flex-1 rounded-full"
-            style={{
-              backgroundColor: i < filled ? "#c9a84c" : "rgba(255,255,255,0.06)",
-            }}
-          />
-        ))}
-      </div>
-      <p className="mt-2 text-xs font-body" style={{ color: "#C8C0B0" }}>Day 14 streak</p>
-    </div>
-  );
-};
-
-const cardStyle = {
-  backgroundColor: "#1A1A1A",
-  border: "1px solid rgba(255,255,255,0.12)",
-  boxShadow: "inset 0 1px 0 0 rgba(255,255,255,0.04)",
-};
+const steps = [
+  {
+    label: "Step 1 — Show up",
+    title: "Show up",
+    body: "Check in daily. Upload a quick photo, video, or screenshot to prove you're doing the work. Thirty days. One goal.",
+  },
+  {
+    label: "Step 2 — Get Paid",
+    title: "Get Paid",
+    body: "Show up at least 20 of 30 days — because life happens. Finish strong and earn your $25. Plus bragging rights.",
+  },
+];
 
 const HowItWorks = () => {
+  const [selected, setSelected] = useState<number | null>(null);
+
   return (
     <section id="how" className="py-28 md:py-36 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section label */}
+      <div className="max-w-6xl mx-auto text-center">
         <motion.div
-          className="mb-16 md:mb-20"
+          className="mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" as const }}
         >
-          <span className="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-body block mb-4">
-            {"\n"}
+          <span
+            className="block mb-5 font-body uppercase"
+            style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.2em", fontWeight: 700 }}
+          >
+            How It Works
           </span>
-          <h2 className="font-display text-[40px] md:text-[52px] font-medium leading-[1.1]" style={{ color: "#FFFFFF" }}>
-            How it works.
+          <h2
+            className="font-display font-medium leading-[1.1] mx-auto"
+            style={{ color: "#FFFFFF", fontSize: "56px", maxWidth: "900px" }}
+          >
+            Pick a goal that pays you $25 each month.
           </h2>
-          <div className="mt-4 w-8 h-[3px] bg-primary rounded-full" />
+          <p
+            className="font-display italic mt-5"
+            style={{ color: "#D4A843", fontSize: "24px" }}
+          >
+            Choose one.
+          </p>
         </motion.div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {/* Card 01 */}
-          <motion.div
-            className="relative overflow-hidden rounded-2xl p-9"
-            style={cardStyle}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={cardFade}
-          >
-            <span className="absolute top-6 left-9 font-display text-[80px] font-bold leading-none select-none" style={{ color: "#FFFFFF", opacity: 0.08 }}>
-              01
-            </span>
-            <div className="relative pt-16">
-              <h3 className="font-display text-[28px] font-semibold" style={{ color: "#FFFFFF" }}>
-                Pick Your Goal.
-              </h3>
-              <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
-                You already know what it is. The gym you keep meaning to get back to. The sleep you keep sacrificing. The steps you keep skipping. Pick one. Just one.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {goals.map((goal) => (
+        {/* Cards row */}
+        <div className="flex flex-wrap justify-center gap-5 mb-20">
+          {goals.map((goal, i) => {
+            const isSelected = selected === i;
+            return (
+              <motion.button
+                key={goal.title}
+                type="button"
+                onClick={() => setSelected(isSelected ? null : i)}
+                className="relative text-center transition-all duration-200"
+                style={{
+                  width: "180px",
+                  height: "260px",
+                  borderRadius: "12px",
+                  backgroundColor: isSelected ? "rgba(212,168,67,0.07)" : "#111111",
+                  border: isSelected
+                    ? "1px solid #D4A843"
+                    : "1px solid rgba(255,255,255,0.08)",
+                  overflow: "hidden",
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                onMouseEnter={(e) => {
+                  if (!isSelected) {
+                    e.currentTarget.style.borderColor = "rgba(212,168,67,0.3)";
+                  }
+                  e.currentTarget.style.transform = "translateY(-6px)";
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSelected) {
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  }
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                {/* Checkmark */}
+                {isSelected && (
                   <span
-                    key={goal}
-                    className="inline-block px-3.5 py-1.5 text-[13px] rounded-full font-body"
-                    style={{
-                      color: "#C8C0B0",
-                      border: "1px solid rgba(201,168,76,0.3)",
-                      backgroundColor: "rgba(201,168,76,0.06)",
-                    }}
+                    className="absolute top-2 right-2"
+                    style={{ color: "#D4A843", fontSize: "12px", fontWeight: 700 }}
                   >
-                    {goal}
+                    ✓
                   </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+                )}
 
-          {/* Card 02 */}
-          <motion.div
-            className="relative overflow-hidden rounded-2xl p-9"
-            style={cardStyle}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={1}
-            variants={cardFade}
-          >
-            <span className="absolute top-6 left-9 font-display text-[80px] font-bold leading-none select-none" style={{ color: "#FFFFFF", opacity: 0.08 }}>
-              02
-            </span>
-            <div className="relative pt-16">
-              <h3 className="font-display text-[28px] font-semibold" style={{ color: "#FFFFFF" }}>
-                Show up daily.
-              </h3>
-              <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
-                Check in every day. Upload a quick photo, video, or screenshot - you at the gymm, your step count, your sleep data. Thirty days. One goal. That's the whole job.
-              </p>
-              <StreakBar />
-            </div>
-          </motion.div>
+                {/* Emoji */}
+                <div style={{ fontSize: "32px", paddingTop: "28px" }}>{goal.emoji}</div>
 
-          {/* Card 03 */}
-          <motion.div
-            className="relative overflow-hidden rounded-2xl p-9"
-            style={cardStyle}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
-            variants={cardFade}
-          >
-            <span className="absolute top-6 left-9 font-display text-[80px] font-bold leading-none select-none" style={{ color: "#FFFFFF", opacity: 0.08 }}>
-              03
-            </span>
-            <div className="relative pt-16">
-              <h3 className="font-display text-[28px] font-semibold" style={{ color: "#FFFFFF" }}>
-                Get paid.
-              </h3>
-              <p className="mt-4 font-body text-[15px] leading-[1.7]" style={{ color: "#C8C0B0" }}>
-                Show up at least 24 out of 30 days and we send $25 straight to your account to celebrate you.  Because you actually did it.
-              </p>
-              <div className="mt-6">
-                <span
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[13px] rounded-full font-body font-medium"
+                {/* Title */}
+                <div
                   style={{
-                    color: "#52c97a",
-                    backgroundColor: "rgba(82,201,122,0.08)",
-                    border: "1px solid rgba(82,201,122,0.2)",
+                    color: "#FFFFFF",
+                    fontSize: "15px",
+                    fontWeight: 700,
+                    marginTop: "12px",
+                    padding: "0 12px",
                   }}
                 >
-                  ✓ $25 paid to your account
-                </span>
-              </div>
-            </div>
-          </motion.div>
+                  {goal.title}
+                </div>
+
+                {/* Desc */}
+                <div
+                  style={{
+                    color: "#A09880",
+                    fontSize: "12px",
+                    lineHeight: 1.6,
+                    padding: "8px 16px 0",
+                  }}
+                >
+                  {goal.desc}
+                </div>
+
+                {/* Bottom-left small italic */}
+                <div
+                  className="absolute bottom-0 left-0 text-left"
+                  style={{
+                    color: "#6B6560",
+                    fontSize: "9px",
+                    fontStyle: "italic",
+                    padding: "0 12px 14px",
+                  }}
+                >
+                  $20 monthly membership required
+                </div>
+
+                {/* Dog-ear fold bottom-right */}
+                <div
+                  className="absolute bottom-0 right-0 pointer-events-none"
+                  style={{
+                    width: "0",
+                    height: "0",
+                    borderStyle: "solid",
+                    borderWidth: "0 0 18px 18px",
+                    borderColor: "transparent transparent #1E1E1E transparent",
+                  }}
+                />
+              </motion.button>
+            );
+          })}
+        </div>
+
+        {/* Steps */}
+        <div className="flex flex-col items-center gap-16 max-w-2xl mx-auto">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="text-center"
+            >
+              <span
+                className="block mb-3 font-body uppercase"
+                style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em", fontWeight: 700 }}
+              >
+                {step.label}
+              </span>
+              <h3
+                className="font-display"
+                style={{ color: "#FFFFFF", fontSize: "36px", fontWeight: 700 }}
+              >
+                {step.title}
+              </h3>
+              <p
+                className="mt-4 font-body mx-auto"
+                style={{ color: "#C8C0B0", fontSize: "18px", lineHeight: 1.75 }}
+              >
+                {step.body}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
