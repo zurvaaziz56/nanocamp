@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
@@ -45,33 +45,18 @@ const Confetti = () => {
 const FoundingMemberModal = ({ open, onClose }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [card, setCard] = useState("");
-  const [exp, setExp] = useState("");
-  const [cvv, setCvv] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [toastTriggered, setToastTriggered] = useState(false);
-  const cardRef = useRef<HTMLInputElement>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setName("");
       setEmail("");
-      setCard("");
-      setExp("");
-      setCvv("");
       setShowToast(false);
       setToastTriggered(false);
     }
   }, [open]);
-
-  useEffect(() => {
-    if (!showToast) return;
-    const t = setTimeout(() => {
-      setShowToast(false);
-      setTimeout(() => cardRef.current?.focus(), 100);
-    }, 4000);
-    return () => clearTimeout(t);
-  }, [showToast]);
 
   useEffect(() => {
     if (!open) return;
@@ -82,33 +67,31 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  const handleEmailBlur = () => {
+  const triggerCelebration = async () => {
     if (toastTriggered) return;
-    if (emailRegex.test(email.trim())) {
-      setToastTriggered(true);
-      setShowToast(true);
-    }
-  };
-
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
     if (!name.trim() || !emailRegex.test(email.trim())) {
-      toast({ title: "Please enter a valid name and email.", variant: "destructive" });
+      toast({ title: "Please enter your name and a valid email first.", variant: "destructive" });
       return;
     }
+    setToastTriggered(true);
+    setShowToast(true);
     setSubmitting(true);
     const { error } = await supabase
       .from("founding_signups")
       .insert({ name: name.trim(), email: email.trim().toLowerCase() });
     setSubmitting(false);
     if (error) {
-      toast({ title: "Something went wrong. Try again.", description: error.message, variant: "destructive" });
-      return;
+      console.error("signup error", error);
     }
-    toast({ title: "You're in 🎉", description: "Welcome to Nanocamp." });
-    onClose();
+  };
+
+  const handleCardClick = () => {
+    triggerCelebration();
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    triggerCelebration();
   };
 
   const firstName = name.trim().split(" ")[0] || "friend";
@@ -177,7 +160,6 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  onBlur={handleEmailBlur}
                   placeholder="jane@email.com"
                   className="modal-input"
                 />
@@ -185,29 +167,35 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
 
               <Field label="Card details">
                 <input
-                  ref={cardRef}
                   type="text"
-                  value={card}
-                  onChange={(e) => setCard(e.target.value)}
+                  readOnly
+                  onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
+                  onFocus={handleCardClick}
+                  value=""
                   placeholder="1234 1234 1234 1234"
                   className="modal-input"
+                  style={{ cursor: "pointer" }}
                 />
                 <div className="flex gap-3 mt-3">
                   <input
                     type="text"
-                    value={exp}
-                    onChange={(e) => setExp(e.target.value)}
+                    readOnly
+                    onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
+                    onFocus={handleCardClick}
+                    value=""
                     placeholder="MM/YY"
                     className="modal-input"
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, cursor: "pointer" }}
                   />
                   <input
                     type="text"
-                    value={cvv}
-                    onChange={(e) => setCvv(e.target.value)}
+                    readOnly
+                    onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
+                    onFocus={handleCardClick}
+                    value=""
                     placeholder="CVV"
                     className="modal-input"
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, cursor: "pointer" }}
                   />
                 </div>
               </Field>
@@ -270,10 +258,10 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   <Confetti />
                   <div className="relative text-left">
                     <div className="font-display" style={{ fontWeight: 700, marginBottom: "6px" }}>
-                      🎉 You're already one of us.
+                      🎉 Thanks for raising your hand, {firstName}.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
-                      Welcome to Nanocamp, {firstName}. We're building something real here and you're part of it from day one. As a thank you — you're eligible for a $25 gift card just for being here. Now let's get you set up.
+                      This round's already full, but we'll send you a gift card as a thank you for your early support — and we'll be in touch when we're ready for you to join.
                     </div>
                   </div>
                 </motion.div>
