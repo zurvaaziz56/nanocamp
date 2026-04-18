@@ -30,7 +30,7 @@ const Divider = () => (
     style={{
       width: "80px",
       height: "1px",
-      backgroundColor: "rgba(80,50,20,0.2)",
+      backgroundColor: "rgba(30,15,5,0.35)",
     }}
     aria-hidden="true"
   />
@@ -56,15 +56,15 @@ const FounderNote = () => {
         <div
           style={{
             background:
-              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
+              "linear-gradient(135deg, #efdfb8 0%, #e6d2a3 30%, #ecd9af 60%, #ddc695 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #efdfb8 0%, #e6d2a3 30%, #ecd9af 60%, #ddc695 100%)`,
             backgroundBlendMode: "multiply, normal",
             border: "none",
             borderRadius: "4px",
-            padding: "64px 80px",
+            padding: "72px 88px",
             transform: "rotate(-0.5deg)",
             boxShadow:
-              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 80px rgba(120,80,30,0.25), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
             position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
@@ -78,7 +78,7 @@ const FounderNote = () => {
               left: "32px",
               right: "32px",
               height: "1px",
-              backgroundColor: "rgba(80,50,20,0.15)",
+              backgroundColor: "rgba(60,35,10,0.25)",
             }}
           />
 
@@ -95,17 +95,17 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#8B6340",
+                backgroundColor: "#5a3a18",
                 display: "inline-block",
               }}
             />
             <span
               className="font-body uppercase"
               style={{
-                color: "#f4e4c1",
+                color: "#3d2408",
                 fontSize: "11px",
-                letterSpacing: "0.2em",
-                fontWeight: 700,
+                letterSpacing: "0.22em",
+                fontWeight: 800,
               }}
             >
               A Note From Us
@@ -115,7 +115,7 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#8B6340",
+                backgroundColor: "#5a3a18",
                 display: "inline-block",
               }}
             />
@@ -128,25 +128,25 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#1a0f03",
-                  fontSize: "22px",
-                  fontWeight: 600,
+                  color: "#1a0c02",
+                  fontSize: "23px",
+                  fontWeight: 700,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "#2a1a08",
-                  fontSize: "18.5px",
+                  color: "#1f1305",
+                  fontSize: "18px",
                   fontStyle: "italic",
                   fontWeight: 500,
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.75,
-                  maxWidth: "520px",
+                  lineHeight: 1.8,
+                  maxWidth: "560px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#1a0f03",
+                  color: "#1a0c02",
                   fontSize: "20px",
                   fontWeight: 700,
                   lineHeight: 1.55,
@@ -172,13 +172,13 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#f4e4c1",
+              color: "#3d2408",
               fontSize: "15px",
               fontStyle: "italic",
-              fontWeight: 500,
+              fontWeight: 600,
               fontFamily: "Georgia, 'Times New Roman', serif",
               letterSpacing: "0.04em",
-              marginTop: "32px",
+              marginTop: "36px",
             }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
