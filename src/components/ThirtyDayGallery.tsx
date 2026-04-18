@@ -41,10 +41,10 @@ const ThirtyDayGallery = () => {
   return (
     <section
       style={{
-        padding: "144px 24px 8px",
+        padding: "144px 16px 8px",
       }}
     >
-      <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
         {/* Heading */}
         <div style={{ textAlign: "center" }}>
           <h2
