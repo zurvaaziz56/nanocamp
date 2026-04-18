@@ -44,7 +44,7 @@ const HowItWorks = () => {
         </motion.div>
 
         {/* Cards grid: 3 per row, last row (2) centered */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-6 mb-20 max-w-[1100px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-7 mb-20 max-w-[1180px] mx-auto">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
             // 6-col grid: each card spans 2. First card of last row starts at col 2 to center the pair.
@@ -54,15 +54,20 @@ const HowItWorks = () => {
                 key={goal.title}
                 type="button"
                 onClick={() => setSelected(isSelected ? null : i)}
-                className={`relative text-center transition-all duration-200 w-full max-w-[320px] mx-auto ${offsetClass}`}
+                className={`group relative text-left transition-all duration-300 w-full max-w-[340px] mx-auto ${offsetClass}`}
                 style={{
-                  height: "380px",
-                  borderRadius: "16px",
-                  backgroundColor: isSelected ? "rgba(212,168,67,0.07)" : "#111111",
+                  height: "440px",
+                  borderRadius: "20px",
+                  background: isSelected
+                    ? "linear-gradient(160deg, rgba(212,168,67,0.10) 0%, rgba(22,20,14,0.95) 55%, rgba(15,13,10,1) 100%)"
+                    : "linear-gradient(160deg, #1A1814 0%, #121110 60%, #0E0D0B 100%)",
                   border: isSelected
-                    ? "1px solid #D4A843"
-                    : "1px solid rgba(255,255,255,0.08)",
+                    ? "1px solid rgba(212,168,67,0.7)"
+                    : "1px solid rgba(255,255,255,0.06)",
                   overflow: "hidden",
+                  boxShadow: isSelected
+                    ? "0 20px 50px -20px rgba(212,168,67,0.35), 0 0 0 1px rgba(212,168,67,0.15), inset 0 1px 0 rgba(255,255,255,0.04)"
+                    : "0 14px 40px -18px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.03)",
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,53 +75,98 @@ const HowItWorks = () => {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = "rgba(212,168,67,0.3)";
+                    e.currentTarget.style.borderColor = "rgba(212,168,67,0.4)";
+                    e.currentTarget.style.boxShadow =
+                      "0 24px 60px -20px rgba(212,168,67,0.25), 0 0 0 1px rgba(212,168,67,0.1), inset 0 1px 0 rgba(255,255,255,0.05)";
                   }
-                  e.currentTarget.style.transform = "translateY(-6px)";
+                  e.currentTarget.style.transform = "translateY(-8px)";
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.boxShadow =
+                      "0 14px 40px -18px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.03)";
                   }
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                {/* Checkmark */}
+                {/* Subtle top warm sheen */}
+                <div
+                  className="absolute inset-x-0 top-0 pointer-events-none"
+                  style={{
+                    height: "120px",
+                    background:
+                      "radial-gradient(ellipse at top, rgba(212,168,67,0.08) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Checkmark badge */}
                 {isSelected && (
                   <span
-                    className="absolute top-3 right-3 z-10"
-                    style={{ color: "#D4A843", fontSize: "16px", fontWeight: 700 }}
+                    className="absolute top-4 right-4 z-10 flex items-center justify-center"
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "999px",
+                      background:
+                        "linear-gradient(135deg, #F4D27A 0%, #D4A843 100%)",
+                      color: "#1A1200",
+                      fontSize: "14px",
+                      fontWeight: 800,
+                      boxShadow: "0 4px 12px rgba(212,168,67,0.4)",
+                    }}
                   >
                     ✓
                   </span>
                 )}
 
-                {/* Emoji */}
-                <div style={{ fontSize: "56px", paddingTop: "56px" }}>{goal.emoji}</div>
+                {/* Inner content with consistent padding */}
+                <div className="relative h-full flex flex-col px-8 pt-12 pb-28">
+                  {/* Emoji in soft warm chip */}
+                  <div
+                    className="flex items-center justify-center mb-8"
+                    style={{
+                      width: "84px",
+                      height: "84px",
+                      borderRadius: "18px",
+                      background:
+                        "linear-gradient(160deg, rgba(212,168,67,0.12) 0%, rgba(212,168,67,0.04) 100%)",
+                      border: "1px solid rgba(212,168,67,0.18)",
+                      fontSize: "44px",
+                      lineHeight: 1,
+                      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)",
+                    }}
+                  >
+                    <span style={{ transform: "translateY(1px)" }}>{goal.emoji}</span>
+                  </div>
 
-                {/* Title */}
-                <div
-                  style={{
-                    color: "#FFFFFF",
-                    fontSize: "22px",
-                    fontWeight: 700,
-                    marginTop: "24px",
-                    padding: "0 20px",
-                  }}
-                >
-                  {goal.title}
-                </div>
+                  {/* Title */}
+                  <h3
+                    className="font-display"
+                    style={{
+                      color: "#F5F1E8",
+                      fontSize: "26px",
+                      fontWeight: 600,
+                      lineHeight: 1.2,
+                      letterSpacing: "-0.01em",
+                      marginBottom: "14px",
+                    }}
+                  >
+                    {goal.title}
+                  </h3>
 
-                {/* Desc */}
-                <div
-                  style={{
-                    color: "#A09880",
-                    fontSize: "15px",
-                    lineHeight: 1.6,
-                    padding: "14px 28px 90px",
-                  }}
-                >
-                  {goal.desc}
+                  {/* Desc */}
+                  <p
+                    className="font-body"
+                    style={{
+                      color: "#BFB6A0",
+                      fontSize: "16px",
+                      lineHeight: 1.65,
+                      fontWeight: 400,
+                    }}
+                  >
+                    {goal.desc}
+                  </p>
                 </div>
 
                 {/* Diagonal banner bottom-right */}
