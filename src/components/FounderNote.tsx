@@ -30,11 +30,18 @@ const Divider = () => (
     style={{
       width: "80px",
       height: "1px",
-      backgroundColor: "rgba(255,255,255,0.06)",
+      backgroundColor: "rgba(80,50,20,0.2)",
     }}
     aria-hidden="true"
   />
 );
+
+// SVG noise texture for aged paper grain
+const noiseDataUri =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.05  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>`
+  );
 
 const FounderNote = () => {
   return (
@@ -48,12 +55,33 @@ const FounderNote = () => {
       <div className="mx-auto" style={{ maxWidth: "720px" }}>
         <div
           style={{
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: "20px",
+            background:
+              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
+            backgroundBlendMode: "multiply, normal",
+            border: "none",
+            borderRadius: "4px",
             padding: "64px 80px",
+            transform: "rotate(-0.5deg)",
+            boxShadow:
+              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+            position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
         >
+          {/* Top ruled-paper line */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: "24px",
+              left: "32px",
+              right: "32px",
+              height: "1px",
+              backgroundColor: "rgba(80,50,20,0.15)",
+            }}
+          />
+
           {/* Label with gold lines */}
           <motion.div
             className="flex items-center justify-center gap-3 mb-10"
@@ -67,14 +95,14 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#D4A843",
+                backgroundColor: "#8B6340",
                 display: "inline-block",
               }}
             />
             <span
               className="font-body uppercase"
               style={{
-                color: "#D4A843",
+                color: "#5C3D1E",
                 fontSize: "11px",
                 letterSpacing: "0.2em",
                 fontWeight: 700,
@@ -87,7 +115,7 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#D4A843",
+                backgroundColor: "#8B6340",
                 display: "inline-block",
               }}
             />
@@ -100,25 +128,26 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#FFFFFF",
+                  color: "#2C1810",
                   fontSize: "22px",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "#C8C0B0",
+                  color: "#3D2510",
                   fontSize: "18px",
                   fontStyle: "italic",
+                  fontFamily: "Georgia, 'Times New Roman', serif",
                   lineHeight: 1.8,
                   maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#FFFFFF",
+                  color: "#2C1810",
                   fontSize: "20px",
-                  fontWeight: 600,
+                  fontWeight: 700,
                   lineHeight: 1.55,
                 };
 
@@ -142,7 +171,7 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#D4A843",
+              color: "#6B4423",
               fontSize: "14px",
               fontStyle: "italic",
               fontWeight: 500,
