@@ -30,7 +30,7 @@ const Divider = () => (
     style={{
       width: "80px",
       height: "1px",
-      backgroundColor: "rgba(20,12,4,0.25)",
+      backgroundColor: "rgba(80,50,20,0.2)",
     }}
     aria-hidden="true"
   />
@@ -56,15 +56,15 @@ const FounderNote = () => {
         <div
           style={{
             background:
-              "linear-gradient(180deg, #8a6a3a 0%, #7a5d32 50%, #6b4f28 100%)",
-            backgroundImage: `url("${noiseDataUri}"), linear-gradient(180deg, #8a6a3a 0%, #7a5d32 50%, #6b4f28 100%)`,
+              "linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)",
+            backgroundImage: `url("${noiseDataUri}"), linear-gradient(135deg, #c8a96e 0%, #b8935a 30%, #c4a068 60%, #b09050 100%)`,
             backgroundBlendMode: "multiply, normal",
             border: "none",
             borderRadius: "4px",
             padding: "64px 80px",
             transform: "rotate(-0.5deg)",
             boxShadow:
-              "inset 0 0 80px rgba(40,25,8,0.5), 0 0 80px rgba(212,168,67,0.12), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              "inset 0 0 60px rgba(80,50,20,0.4), 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)",
             position: "relative",
           }}
           className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
@@ -95,16 +95,16 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#d4b888",
+                backgroundColor: "#8B6340",
                 display: "inline-block",
               }}
             />
             <span
               className="font-body uppercase"
               style={{
-                color: "#f4e4c1",
+                color: "#5C3D1E",
                 fontSize: "11px",
-                letterSpacing: "0.25em",
+                letterSpacing: "0.2em",
                 fontWeight: 700,
               }}
             >
@@ -115,7 +115,7 @@ const FounderNote = () => {
               style={{
                 width: "28px",
                 height: "1px",
-                backgroundColor: "#d4b888",
+                backgroundColor: "#8B6340",
                 display: "inline-block",
               }}
             />
@@ -128,25 +128,24 @@ const FounderNote = () => {
 
             const style: React.CSSProperties = isOpener
               ? {
-                  color: "#120a03",
+                  color: "#2C1810",
                   fontSize: "22px",
-                  fontWeight: 700,
+                  fontWeight: 600,
                   lineHeight: 1.5,
                 }
               : isIntimate
               ? {
-                  color: "rgba(26,15,5,0.95)",
-                  fontSize: "18.5px",
+                  color: "#3D2510",
+                  fontSize: "18px",
                   fontStyle: "italic",
-                  fontWeight: 500,
                   fontFamily: "Georgia, 'Times New Roman', serif",
-                  lineHeight: 1.75,
+                  lineHeight: 1.8,
                   maxWidth: "520px",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }
               : {
-                  color: "#120a03",
+                  color: "#2C1810",
                   fontSize: "20px",
                   fontWeight: 700,
                   lineHeight: 1.55,
@@ -172,12 +171,10 @@ const FounderNote = () => {
           <motion.p
             className="font-display"
             style={{
-              color: "#e8d4a8",
-              fontSize: "15px",
+              color: "#6B4423",
+              fontSize: "14px",
               fontStyle: "italic",
-              fontFamily: "Georgia, 'Times New Roman', serif",
               fontWeight: 500,
-              letterSpacing: "0.05em",
               marginTop: "32px",
             }}
             initial={{ opacity: 0 }}
