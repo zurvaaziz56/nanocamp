@@ -233,24 +233,6 @@ const HowItWorks = () => {
                 className="relative text-center"
                 style={{ padding: "0 24px" }}
               >
-                {/* Watermark number */}
-                <span
-                  aria-hidden="true"
-                  className="absolute pointer-events-none font-display"
-                  style={{
-                    top: "-8px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    color: "#FFFFFF",
-                    fontSize: "72px",
-                    fontWeight: 900,
-                    opacity: 0.06,
-                    lineHeight: 1,
-                  }}
-                >
-                  {i === 0 ? "01" : "02"}
-                </span>
-
                 <span
                   className="relative block mb-3 font-body uppercase"
                   style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.15em", fontWeight: 700 }}
