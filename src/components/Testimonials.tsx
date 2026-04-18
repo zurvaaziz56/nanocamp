@@ -45,7 +45,7 @@ const Testimonials = () => {
           className="font-display font-bold mb-14"
           style={{ color: "#FFFFFF", fontSize: "48px", lineHeight: 1.1 }}
         >
-          Real words. Real results.
+          Real people. Real results.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
