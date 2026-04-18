@@ -160,7 +160,6 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  onBlur={handleEmailBlur}
                   placeholder="jane@email.com"
                   className="modal-input"
                 />
@@ -168,29 +167,35 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
 
               <Field label="Card details">
                 <input
-                  ref={cardRef}
                   type="text"
-                  value={card}
-                  onChange={(e) => setCard(e.target.value)}
+                  readOnly
+                  onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
+                  onFocus={handleCardClick}
+                  value=""
                   placeholder="1234 1234 1234 1234"
                   className="modal-input"
+                  style={{ cursor: "pointer" }}
                 />
                 <div className="flex gap-3 mt-3">
                   <input
                     type="text"
-                    value={exp}
-                    onChange={(e) => setExp(e.target.value)}
+                    readOnly
+                    onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
+                    onFocus={handleCardClick}
+                    value=""
                     placeholder="MM/YY"
                     className="modal-input"
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, cursor: "pointer" }}
                   />
                   <input
                     type="text"
-                    value={cvv}
-                    onChange={(e) => setCvv(e.target.value)}
+                    readOnly
+                    onMouseDown={(e) => { e.preventDefault(); handleCardClick(); }}
+                    onFocus={handleCardClick}
+                    value=""
                     placeholder="CVV"
                     className="modal-input"
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, cursor: "pointer" }}
                   />
                 </div>
               </Field>
