@@ -153,12 +153,12 @@ const HowItWorks = () => {
                       fontWeight: 700,
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
-                      padding: "8px 60px",
+                      padding: "8px 70px",
                       boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
                       whiteSpace: "nowrap",
                     }}
                   >
-                    $20 Monthly Subscription
+                    $20 / Month
                   </div>
                 </div>
               </motion.button>
