@@ -143,7 +143,7 @@ const Index = () => {
               >
                 Join the first 100
               </button>
-            </motion.form>
+            </motion.div>
 
           </div>
         </div>
