@@ -27,7 +27,7 @@ const phones = [
     img: phone4,
     pill: "04 · WITNESS",
     headline: "You're not alone",
-    desc: "3,847 people chasing their $25 this month. Real posts. Real payouts.",
+    desc: "3,847 people chasing their goals this month. Real posts. Real payouts.",
   },
   {
     img: phone5,
