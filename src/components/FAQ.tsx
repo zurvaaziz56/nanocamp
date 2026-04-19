@@ -11,7 +11,7 @@ const faqs = [
     a: "A check-in is you showing up for your goal and uploading a photo, short video, or screenshot that proves you did the work that day — a step count, gym selfie, sleep app screenshot, whatever fits your goal. And it only takes about 30 seconds.",
   },
   {
-    q: "What if I miss more than 10 days?",
+    q: "What if I miss so many days that I can’t reach the goal anymore?",
     a: "You started showing up for yourself — and that's the whole point. You did real work, built real momentum, and moved closer to the person you're trying to become. The $25 doesn't come through this round, but the progress is yours. Jump into another 30-day challenge and keep going.",
   },
   {
