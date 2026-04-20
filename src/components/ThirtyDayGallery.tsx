@@ -124,6 +124,7 @@ const ThirtyDayGallery = () => {
                     style={{
                       width: "100%",
                       height: "100%",
+                      aspectRatio: "480 / 1041",
                       objectFit: "cover",
                       objectPosition: "top center",
                       display: "block",
