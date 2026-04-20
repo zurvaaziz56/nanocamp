@@ -99,7 +99,7 @@ const Index = () => {
         </div>
       </section>
 
-      <HowItWorks />
+      <HowItWorks onGoalSelect={openModal} />
 
       <Testimonials />
 
