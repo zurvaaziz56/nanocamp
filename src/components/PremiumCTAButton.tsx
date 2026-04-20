@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-const PremiumCTAButton = ({ onClick, size = "sm", children = "Join the first 100", className = "" }: Props) => {
+const PremiumCTAButton = ({ onClick, size = "sm", children = "Join Now", className = "" }: Props) => {
   const isXl = size === "xl";
   const isLg = size === "lg";
 
