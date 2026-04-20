@@ -89,7 +89,7 @@ const Index = () => {
               custom={2}
               variants={fade}
             >
-              Put $20 down on a 30-day goal. Follow the plan, finish the month, and we pay you $25 — more than you put in. Because we'd rather bet on you finishing than watch another goal quietly slip away.
+              You bring the goal. We bring the plan. Finish it in 30 days and we pay you $25.
             </motion.p>
 
             <motion.div
