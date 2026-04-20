@@ -3,11 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "What counts as checking in?",
-    a: "A check-in is you showing up for your goal and uploading a photo, short video, or screenshot that proves you did the work that day — a step count, gym selfie, sleep app screenshot, whatever fits your goal. And it only takes about 30 seconds.",
-  },
-  {
-    q: "What if I miss so many days that I can’t reach the goal anymore?",
+    q: "What if I miss so many days that I can't reach the goal anymore?",
     a: "Every Nano Camp includes lazy tokens - skip days built right in. Life happens, you spend one, the goal keeps moving. No broken streaks, no starting over. The goal was never to be perfect. It was to actually get there.",
   },
   {
