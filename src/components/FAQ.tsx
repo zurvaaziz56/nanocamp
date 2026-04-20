@@ -27,10 +27,6 @@ const faqs = [
     a: "Yes. You can cancel within 7 days of joining if Nano isn't for you and get a full refund.",
   },
   {
-    q: "Is this a subscription?",
-    a: "Yes — your challenge renews every 30 days: $20 in, up to $25 back if you finish.\n\nYou can keep the same goal or switch it up each month. The idea is to keep growing, one challenge at a time.\n\nSkip or cancel anytime from your account.",
-  },
-  {
     q: "How is Nano Camp different from other habit apps?",
     a: "We've tried the habit apps too — and for a lot of people, they stop working around day 12. Streaks are easy to break when nothing's really on the line.\n\nNano Camp adds just enough commitment to make showing up feel real. You put $20 on the line, show up for 20 out of 30 days, and if you finish, you get $25.\n\nIt's simple, flexible, and built to help you keep going.",
   },
