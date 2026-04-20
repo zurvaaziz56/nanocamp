@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. You can cancel within 7 days of joining if Nano isn't for you and get a full refund.",
+    a: "Yes. You can cancel anytime. If you cancel within 7 days of joining, you wil not be charged. ",
   },
 ];
 
