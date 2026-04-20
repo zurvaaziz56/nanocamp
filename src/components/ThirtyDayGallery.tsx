@@ -1,8 +1,8 @@
-import phone1 from "@/assets/nano-01-goals.png";
-import phone2 from "@/assets/nano-02-home.png";
-import phone3 from "@/assets/nano-03-submission.png";
-import phone4 from "@/assets/nano-04-feed.png";
-import phone5 from "@/assets/nano-05-celebration.png";
+import phone1 from "@/assets/nano-01-goals.webp";
+import phone2 from "@/assets/nano-02-home.webp";
+import phone3 from "@/assets/nano-03-submission.webp";
+import phone4 from "@/assets/nano-04-feed.webp";
+import phone5 from "@/assets/nano-05-celebration.webp";
 
 const phones = [
   {
@@ -117,6 +117,10 @@ const ThirtyDayGallery = () => {
                   <img
                     src={p.img}
                     alt={p.headline}
+                    width={480}
+                    height={1041}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: "100%",
                       height: "100%",
