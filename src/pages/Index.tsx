@@ -82,14 +82,14 @@ const Index = () => {
             </motion.h1>
 
             <motion.p
-              className="mt-7 md:mt-8 max-w-[620px] text-base md:text-lg"
-              style={{ color: "#E8D4A8", lineHeight: 1.5, fontSize: 'clamp(16px, 1.4vw, 19px)' }}
+              className="mt-7 md:mt-8 max-w-[620px] text-base md:text-3xl"
+              style={{ color: "#E8D4A8", lineHeight: 1.5 }}
               initial="hidden"
               animate="visible"
               custom={2}
               variants={fade}
             >
-              Put $20 down on a 30-day goal. Follow the plan, finish the month, and we pay you $25 — more than you put in. Because we'd rather bet on you finishing than watch another goal quietly slip away.
+              You bring the goal. We bring the plan. Finish it in 30 days and we pay you $25.
             </motion.p>
 
             <motion.div
