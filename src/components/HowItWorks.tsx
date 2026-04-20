@@ -10,7 +10,11 @@ const goals = [
   { emoji: "⚖️", title: "Lose 5 pounds", desc: "One month. One number. You've got this." },
 ];
 
-const HowItWorks = () => {
+interface HowItWorksProps {
+  onGoalSelect?: () => void;
+}
+
+const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
@@ -53,7 +57,10 @@ const HowItWorks = () => {
               <motion.button
                 key={goal.title}
                 type="button"
-                onClick={() => setSelected(isSelected ? null : i)}
+                onClick={() => {
+                  setSelected(i);
+                  onGoalSelect?.();
+                }}
                 className={`group relative text-left transition-all duration-300 w-full max-w-[340px] mx-auto ${offsetClass}`}
                 style={{
                   height: "440px",
