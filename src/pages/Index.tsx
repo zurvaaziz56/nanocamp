@@ -87,7 +87,7 @@ const Index = () => {
                 style={{ 
                   color: "#D4A843", 
                   fontSize: 'clamp(56px, 10.8vw, 124px)',
-                  marginTop: 'clamp(20px, 3vw, 40px)',
+                  marginTop: 'clamp(8px, 1.2vw, 16px)',
                   lineHeight: 1.05
                 }}
               >
@@ -96,18 +96,25 @@ const Index = () => {
             </motion.div>
 
             <motion.p
-              className="mt-7 md:mt-8 max-w-[620px] text-base md:text-lg"
-              style={{ color: "#E8D4A8", lineHeight: 1.5, fontSize: 'clamp(16px, 1.4vw, 19px)' }}
+              className="max-w-[620px]"
+              style={{ 
+                color: "#F0DFB5", 
+                lineHeight: 1.5, 
+                fontSize: 'clamp(17px, 1.7vw, 23px)',
+                fontWeight: 500,
+                marginTop: 'clamp(40px, 4.5vw, 56px)'
+              }}
               initial="hidden"
               animate="visible"
               custom={2}
               variants={fade}
             >
-              Become someone who finishes. Follow the 30-day plan - we’ll even pay you $25 to prove it works.
+              Become someone who finishes. Follow the 30-day plan - we'll even pay you $25 to prove it works.
             </motion.p>
 
             <motion.div
-              className="mt-10 md:mt-12 w-full max-w-[600px]"
+              className="w-full max-w-[600px]"
+              style={{ marginTop: 'clamp(40px, 4.5vw, 56px)' }}
               initial="hidden"
               animate="visible"
               custom={3}
@@ -118,7 +125,8 @@ const Index = () => {
           </div>
 
           <motion.div
-            className="mt-12 md:mt-14 w-full flex justify-center"
+            className="w-full flex justify-center"
+            style={{ marginTop: 'clamp(56px, 6vw, 80px)' }}
             initial="hidden"
             animate="visible"
             custom={4}
