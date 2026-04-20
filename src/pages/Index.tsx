@@ -42,8 +42,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground editorial-bg">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: "rgba(10,10,10,0.85)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-        <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '64px' }}>
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '56px' }}>
           <div className="flex items-center gap-3" />
           <div className="flex items-center gap-4">
             <PremiumCTAButton onClick={openModal} size="sm" />
@@ -52,7 +52,7 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-20 md:pt-24 pb-8 px-6">
+      <section className="pt-10 md:pt-12 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <motion.img
             src={nanoCampLogo}
