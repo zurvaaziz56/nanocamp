@@ -201,7 +201,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 letterSpacing: "-0.01em",
               }}
             >
-              You're joining Nanocamp.
+              You're joining Nano Camp.
             </h2>
             <p
               className="mt-3 font-body mx-auto"
@@ -431,7 +431,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                       💬 One more thing — we'd love to hear from you.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
-                      We're paying $50 for a 30-minute call with early supporters. Tell us why you joined, what you're hoping Nanocamp will do for you, or anything else on your mind. It genuinely helps us build the right thing.
+                      We're paying $50 for a 30-minute call with early supporters. Tell us why you joined, what you're hoping Nano Camp will do for you, or anything else on your mind. It genuinely helps us build the right thing.
                     </div>
 
                     <a
