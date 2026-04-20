@@ -376,7 +376,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="fixed inset-0 z-[110] flex items-center justify-center px-4"
+                className="fixed inset-0 z-[110] flex items-center justify-center px-4 py-6 overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
                 onMouseDown={(e) => e.stopPropagation()}
                 style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
