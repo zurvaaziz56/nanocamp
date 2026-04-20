@@ -39,7 +39,7 @@ const PremiumCTAButton = ({ onClick, size = "sm", children = "Join for Free", cl
       {/* Inner gradient overlay for depth */}
       <span
         aria-hidden
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           background:
             "linear-gradient(135deg, #FBE19A 0%, #E8C068 45%, #C99232 100%)",
