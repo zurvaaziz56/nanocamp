@@ -69,17 +69,31 @@ const Index = () => {
       <section className="pt-24 md:pt-32 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <div className="w-full flex flex-col items-center">
-            <motion.h1
-              className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px]"
-              style={{ color: "#FFFFFF", fontSize: 'clamp(48px, 9vw, 104px)' }}
+            <motion.div
+              className="flex flex-col items-center"
               initial="hidden"
               animate="visible"
               custom={1}
               variants={fade}
             >
-              Get paid to reach your{" "}
-              <span className="italic" style={{ color: "#D4A843" }}>goals.</span>
-            </motion.h1>
+              <h1
+                className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px] text-center"
+                style={{ color: "#FFFFFF", fontSize: 'clamp(48px, 9vw, 104px)' }}
+              >
+                Get paid to reach your
+              </h1>
+              <span
+                className="font-display font-light italic tracking-tight text-center"
+                style={{ 
+                  color: "#D4A843", 
+                  fontSize: 'clamp(56px, 10.8vw, 124px)',
+                  marginTop: 'clamp(20px, 3vw, 40px)',
+                  lineHeight: 1.05
+                }}
+              >
+                goals.
+              </span>
+            </motion.div>
 
             <motion.p
               className="mt-7 md:mt-8 max-w-[620px] text-base md:text-lg"
