@@ -121,7 +121,6 @@ const Index = () => {
           <img src={nanoCampLogo} alt="Nano Camp" width={64} height={32} loading="lazy" decoding="async" style={{ height: '32px', width: 'auto' }} />
           <div className="flex items-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
             <a href="#how" className="hover:opacity-80 transition-colors">How it works</a>
-            <a href="#founding" className="hover:opacity-80 transition-colors">Pricing</a>
             <button
               type="button"
               onClick={() => setContactOpen(true)}
