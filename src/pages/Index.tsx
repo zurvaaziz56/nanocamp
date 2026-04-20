@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import StatPills from "@/components/StatPills";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
