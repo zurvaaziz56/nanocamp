@@ -37,7 +37,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
             className="font-display font-medium leading-[1.1] mx-auto"
             style={{ color: "#FFFFFF", fontSize: "56px", maxWidth: "900px" }}
           >
-            Pick a goal that pays you $25 each month.
+            Get $25 for any of these goals
           </h2>
           <p
             className="font-display italic mt-5"
