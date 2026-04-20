@@ -89,7 +89,7 @@ const Index = () => {
               custom={2}
               variants={fade}
             >
-              You bring the goal. We bring the plan. Finish it in 30 days and we pay you $25.
+              Become someone who finishes. Follow the 30-day plan - we’ll even pay you $25 to prove it works.
             </motion.p>
 
             <motion.div
