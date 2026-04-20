@@ -356,6 +356,13 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
               >
                 🔒 Secure checkout · No charge until your challenge starts
               </p>
+
+              <p
+                className="text-center font-body mt-4"
+                style={{ color: "#6A6250", fontSize: "11px", lineHeight: 1.5 }}
+              >
+                This is a pre-launch market test. Product not yet available. No purchase will be completed. No payment will be accepted. Provide your name and email and we'll send a $25 gift card for participating, subject to terms. Must be 18 or older to enter. Limit one entry per person/household.
+              </p>
             </form>
           </motion.div>
 
