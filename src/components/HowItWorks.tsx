@@ -17,7 +17,7 @@ const goals: Goal[] = [
     alt: "Woman waking up peacefully in bed at sunrise",
     bullets: [
       "Sleep your way to better health",
-      "Bed before 10:30 PM, 20 of 30\n nights",
+      "Bed by 10:30PM, 20 of 30 nights",
       "Nightly selfie proof",
     ],
     objectPosition: "center 35%",
