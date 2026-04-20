@@ -17,7 +17,7 @@ const phones = [
   },
   {
     img: phone5,
-    pill: "03 · WIN",
+    pill: "03 · Get Paid",
     headline: "You get paid",
     desc: "30 days done. $25 hits your account. Pick the next goal and keep stacking wins.",
   },
