@@ -46,9 +46,27 @@
     --sidebar-border: 240 4% 16%;
     --sidebar-ring: 43 50% 54%;
 
-    --font-display: 'Fraunces', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Fraunces', 'Fraunces-fallback', Georgia, serif;
+    --font-body: 'DM Sans', 'DMSans-fallback', Arial, sans-serif;
   }
+}
+
+@font-face {
+  font-family: 'Fraunces-fallback';
+  src: local('Georgia');
+  size-adjust: 105%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'DMSans-fallback';
+  src: local('Arial');
+  size-adjust: 96%;
+  ascent-override: 100%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
 
 @layer base {
