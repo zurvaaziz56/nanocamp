@@ -19,10 +19,6 @@ const faqs = [
     a: "Right now we have five to choose from: Hit the gym, get to bed on time, walk 10,000 steps, eat healthier, or lose 5 pounds.",
   },
   {
-    q: "When do I get my $25?",
-    a: "Once your 30 days are up, we verify your check-ins and send you $25 within 72 hours.",
-  },
-  {
     q: "Can I cancel?",
     a: "Yes. You can cancel within 7 days of joining if Nano isn't for you and get a full refund.",
   },
