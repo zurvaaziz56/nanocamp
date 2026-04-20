@@ -137,16 +137,10 @@ const Index = () => {
         </div>
       </section>
 
-      <Suspense fallback={null}>
-        <HowItWorks onGoalSelect={openModal} />
-        <Testimonials />
-        <FounderNote />
-      </Suspense>
-
-
-      <Suspense fallback={null}>
-        <FAQ />
-      </Suspense>
+      <HowItWorks onGoalSelect={openModal} />
+      <Testimonials />
+      <FounderNote />
+      <FAQ />
 
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
