@@ -15,7 +15,7 @@ const paragraphs: Para[] = [
     variant: "intimate",
   },
   {
-    text: "We're a small team and we're building this alongside you. Every person who joins this first cohort is shaping what Nanocamp becomes. We read every check-in, we think about every goal, and we genuinely celebrate every win.",
+    text: "We're a small team and we're building this alongside you. Every person who joins this first cohort is shaping what Nano Camp becomes. We read every check-in, we think about every goal, and we genuinely celebrate every win.",
     variant: "intimate",
   },
   {
