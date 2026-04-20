@@ -10,7 +10,7 @@ import FounderNote from "@/components/FounderNote";
 import FoundingMemberModal from "@/components/FoundingMemberModal";
 import ContactModal from "@/components/ContactModal";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
-import nanoCampLogo from "@/assets/nano-camp-logo.png";
+const nanoCampLogo = "/img/nano-camp-logo.webp";
 
 const fade = {
   hidden: { opacity: 0, y: 20 },
@@ -58,6 +58,10 @@ const Index = () => {
           <motion.img
             src={nanoCampLogo}
             alt="Nano Camp"
+            width={240}
+            height={120}
+            fetchPriority="high"
+            decoding="async"
             className="mb-10 md:mb-14"
             style={{ height: '120px', width: 'auto' }}
             initial="hidden"
@@ -190,7 +194,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-6 text-center">
-          <img src={nanoCampLogo} alt="Nano Camp" style={{ height: '32px', width: 'auto' }} />
+          <img src={nanoCampLogo} alt="Nano Camp" width={64} height={32} loading="lazy" decoding="async" style={{ height: '32px', width: 'auto' }} />
           <div className="flex items-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
             <a href="#how" className="hover:opacity-80 transition-colors">How it works</a>
             <a href="#founding" className="hover:opacity-80 transition-colors">Pricing</a>
