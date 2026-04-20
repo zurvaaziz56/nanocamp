@@ -11,7 +11,7 @@ const faqs = [
     a: "Right now we have five to choose from: Hit the gym, get to bed on time, walk 10,000 steps, eat healthier, or lose 5 pounds.",
   },
   {
-    q: "Can I cancel?",
+    q: "Can I cancel anytime?",
     a: "Yes. You can cancel within 7 days of joining if Nano isn't for you and get a full refund.",
   },
 ];
