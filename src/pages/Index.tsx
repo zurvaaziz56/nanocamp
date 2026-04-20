@@ -44,7 +44,21 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '56px' }}>
-          <div className="flex items-center gap-3" />
+          <div className="flex items-center gap-3">
+            <motion.img
+              src={nanoCampLogo}
+              alt="Nano Camp"
+              width={144}
+              height={72}
+              fetchPriority="high"
+              decoding="async"
+              style={{ height: 'clamp(32px, 3.5vw, 44px)', width: 'auto' }}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+              variants={fade}
+            />
+          </div>
           <div className="flex items-center gap-4">
             <PremiumCTAButton onClick={openModal} size="sm" />
           </div>
@@ -52,22 +66,8 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-10 md:pt-12 pb-8 px-6">
+      <section className="pt-24 md:pt-32 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
-          <motion.img
-            src={nanoCampLogo}
-            alt="Nano Camp"
-            width={144}
-            height={72}
-            fetchPriority="high"
-            decoding="async"
-            className="mb-16 md:mb-28"
-            style={{ height: 'clamp(44px, 6vw, 64px)', width: 'auto' }}
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={fade}
-          />
           <div className="w-full flex flex-col items-center">
             <motion.h1
               className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px]"
