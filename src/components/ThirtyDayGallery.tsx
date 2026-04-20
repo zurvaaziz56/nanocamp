@@ -78,12 +78,12 @@ const ThirtyDayGallery = () => {
               {/* Phone */}
               <div
                 style={{
-                  width: "240px",
-                  height: "500px",
+                  width: "320px",
+                  height: "667px",
                   background:
                     "linear-gradient(135deg, #2a2a30 0%, #15151a 35%, #2a2a30 50%, #15151a 70%, #1e1e24 100%)",
-                  borderRadius: "36px",
-                  padding: "7px",
+                  borderRadius: "44px",
+                  padding: "8px",
                   position: "relative",
                   boxShadow:
                     "inset 0 0 0 1px #3c3c44, inset 0 0 0 2px #0a0a0d, 0 30px 60px -15px rgba(0,0,0,0.9), 0 20px 40px -10px rgba(245,197,24,0.08)",
@@ -94,7 +94,7 @@ const ThirtyDayGallery = () => {
                   style={{
                     width: "100%",
                     height: "100%",
-                    borderRadius: "29px",
+                    borderRadius: "36px",
                     overflow: "hidden",
                     position: "relative",
                     backgroundColor: "#000",
@@ -120,13 +120,13 @@ const ThirtyDayGallery = () => {
                   <div
                     style={{
                       position: "absolute",
-                      top: "11px",
+                      top: "14px",
                       left: "50%",
                       transform: "translateX(-50%)",
-                      width: "74px",
-                      height: "22px",
+                      width: "98px",
+                      height: "28px",
                       backgroundColor: "#000",
-                      borderRadius: "12px",
+                      borderRadius: "16px",
                       zIndex: 2,
                     }}
                   />
@@ -136,8 +136,8 @@ const ThirtyDayGallery = () => {
               {/* Caption */}
               <div
                 style={{
-                  marginTop: "28px",
-                  maxWidth: "240px",
+                  marginTop: "32px",
+                  maxWidth: "320px",
                   textAlign: "center",
                 }}
               >
@@ -183,24 +183,26 @@ const ThirtyDayGallery = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          flex: 0 0 240px;
+          flex: 0 0 320px;
         }
         @media (max-width: 1380px) {
-          .thirty-day-grid { gap: 64px; }
-          .thirty-day-item { flex: 1 1 0; min-width: 0; max-width: 240px; }
+          .thirty-day-grid { gap: 56px; }
+          .thirty-day-item { flex: 1 1 0; min-width: 0; max-width: 320px; }
           .thirty-day-item > div:nth-child(2) {
             width: 100% !important;
-            aspect-ratio: 240 / 500;
+            aspect-ratio: 320 / 667;
             height: auto !important;
           }
         }
         @media (max-width: 899px) {
-          .thirty-day-grid { flex-wrap: wrap; gap: 72px 48px; }
-          .thirty-day-item { flex: 0 0 240px; }
-          .thirty-day-item > div:nth-child(2) { height: 500px !important; aspect-ratio: auto; }
+          .thirty-day-grid { flex-wrap: wrap; gap: 80px 48px; }
+          .thirty-day-item { flex: 0 0 300px; }
+          .thirty-day-item > div:nth-child(2) { width: 300px !important; height: 625px !important; aspect-ratio: auto; }
         }
         @media (max-width: 599px) {
           .thirty-day-grid { gap: 72px 24px; }
+          .thirty-day-item { flex: 0 0 280px; }
+          .thirty-day-item > div:nth-child(2) { width: 280px !important; height: 583px !important; }
         }
       `}</style>
     </section>
