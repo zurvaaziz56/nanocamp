@@ -102,7 +102,7 @@ const Index = () => {
                 lineHeight: 1.5, 
                 fontSize: 'clamp(17px, 1.7vw, 23px)',
                 fontWeight: 500,
-                marginTop: 'clamp(40px, 4.5vw, 56px)'
+                marginTop: 'clamp(64px, 7vw, 88px)'
               }}
               initial="hidden"
               animate="visible"
