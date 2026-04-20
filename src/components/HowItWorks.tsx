@@ -20,6 +20,7 @@ const goals: Goal[] = [
       "Bed before 10:30 PM, 20 of 30 nights",
       "Nightly selfie proof",
     ],
+    objectPosition: "center 35%",
   },
   {
     title: "Walk 10,000 steps",
@@ -30,6 +31,7 @@ const goals: Goal[] = [
       "10,000 steps, 20 of 30 days",
       "Daily step count proof",
     ],
+    objectPosition: "center 25%",
   },
   {
     title: "Hit the gym",
@@ -40,7 +42,7 @@ const goals: Goal[] = [
       "Train 10 of 30 days",
       "Gym selfie each session",
     ],
-    objectPosition: "center 25%",
+    objectPosition: "center 30%",
   },
   {
     title: "Eat healthier",
@@ -51,6 +53,7 @@ const goals: Goal[] = [
       "20 better choices out of 30 days",
       "Daily food photo",
     ],
+    objectPosition: "center 20%",
   },
   {
     title: "Lose 5 pounds",
@@ -61,6 +64,7 @@ const goals: Goal[] = [
       "Hit your goal weight by day 30",
       "Weekly weigh-in selfie",
     ],
+    objectPosition: "center 20%",
   },
 ];
 
