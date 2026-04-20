@@ -1,7 +1,5 @@
 import phone1 from "@/assets/nano-01-goals.webp";
-import phone2 from "@/assets/nano-02-home.webp";
 import phone3 from "@/assets/nano-03-submission.webp";
-import phone4 from "@/assets/nano-04-feed.webp";
 import phone5 from "@/assets/nano-05-celebration.webp";
 
 const phones = [
@@ -12,26 +10,14 @@ const phones = [
     desc: "One thing. 30 days. See how many people are chasing the same win.",
   },
   {
-    img: phone2,
-    pill: "02 · TRACK",
-    headline: "Your daily check-in.",
-    desc: "Streak, progress, today's micro-goal. Coach-written. One tap to submit.",
-  },
-  {
     img: phone3,
-    pill: "03 · PROVE",
+    pill: "02 · PROVE",
     headline: "Submit in 5 seconds",
     desc: "Photo, video, or Apple Health. Your coach verifies. Streak survives.",
   },
   {
-    img: phone4,
-    pill: "04 · WITNESS",
-    headline: "You're not alone",
-    desc: "3,847 people chasing their goals this month. Real posts. Real payouts.",
-  },
-  {
     img: phone5,
-    pill: "05 · WIN",
+    pill: "03 · WIN",
     headline: "You get paid",
     desc: "30 days done. $25 hits your account. Pick the next goal and keep stacking wins.",
   },
