@@ -1,11 +1,10 @@
 const stats = [
-  { value: "$25", label: "Finish and get $25" },
   { value: "30", label: "30 Days" },
 ];
 
 const StatPills = () => {
   return (
-    <div className="grid grid-cols-2 gap-3 w-full">
+    <div className="grid grid-cols-1 gap-3 w-full">
       {stats.map((stat) => (
         <div
           key={stat.label}
