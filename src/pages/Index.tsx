@@ -52,26 +52,26 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-36 pb-8 px-6">
+      <section className="pt-20 md:pt-24 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <motion.img
             src={nanoCampLogo}
             alt="Nano Camp"
-            width={240}
-            height={120}
+            width={144}
+            height={72}
             fetchPriority="high"
             decoding="async"
-            className="mb-10 md:mb-14"
-            style={{ height: '120px', width: 'auto' }}
+            className="mb-16 md:mb-28"
+            style={{ height: 'clamp(44px, 6vw, 64px)', width: 'auto' }}
             initial="hidden"
             animate="visible"
             custom={0}
             variants={fade}
           />
-          <div className="max-w-[600px] w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center">
             <motion.h1
-              className="font-display text-5xl md:text-[68px] font-light leading-[1.05] tracking-tight"
-              style={{ color: "#FFFFFF" }}
+              className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px]"
+              style={{ color: "#FFFFFF", fontSize: 'clamp(48px, 9vw, 104px)' }}
               initial="hidden"
               animate="visible"
               custom={1}
@@ -81,11 +81,22 @@ const Index = () => {
               <span className="italic" style={{ color: "#D4A843" }}>goals.</span>
             </motion.h1>
 
-            <motion.div
-              className="mt-8 w-full"
+            <motion.p
+              className="mt-7 md:mt-8 max-w-[620px] text-base md:text-lg"
+              style={{ color: "#E8D4A8", lineHeight: 1.5, fontSize: 'clamp(16px, 1.4vw, 19px)' }}
               initial="hidden"
               animate="visible"
               custom={2}
+              variants={fade}
+            >
+              Put $20 down on a 30-day goal. Follow the plan, finish the month, and we pay you $25 — more than you put in. Because we'd rather bet on you finishing than watch another goal quietly slip away.
+            </motion.p>
+
+            <motion.div
+              className="mt-10 md:mt-12 w-full max-w-[600px]"
+              initial="hidden"
+              animate="visible"
+              custom={3}
               variants={fade}
             >
               <StatPills />
@@ -96,7 +107,7 @@ const Index = () => {
             className="mt-12 md:mt-14 w-full flex justify-center"
             initial="hidden"
             animate="visible"
-            custom={3}
+            custom={4}
             variants={fade}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
