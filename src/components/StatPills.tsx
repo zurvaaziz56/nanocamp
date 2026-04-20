@@ -1,6 +1,4 @@
-const stats = [
-  { value: "30", label: "30 Days" },
-];
+const stats: { value: string; label: string }[] = [];
 
 const StatPills = () => {
   return (
