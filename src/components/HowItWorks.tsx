@@ -276,6 +276,57 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           })}
         </div>
 
+        {/* Reinforcement text block */}
+        <div
+          className="mx-auto text-center"
+          style={{
+            maxWidth: "640px",
+            marginTop: "clamp(64px, 7vw, 80px)",
+            marginBottom: "clamp(80px, 8vw, 96px)",
+            padding: "0 16px",
+          }}
+        >
+          <h3
+            className="font-display"
+            style={{
+              fontFamily: "'Fraunces', Georgia, serif",
+              fontWeight: 600,
+              fontSize: "clamp(32px, 4.2vw, 48px)",
+              lineHeight: 1.15,
+              color: "#FFFFFF",
+              margin: 0,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Join Nano Camp free
+          </h3>
+          <p
+            className="font-body"
+            style={{
+              fontSize: "clamp(15px, 1.4vw, 19px)",
+              lineHeight: 1.5,
+              color: "rgba(232, 212, 168, 0.85)",
+              marginTop: "14px",
+              marginBottom: 0,
+            }}
+          >
+            7-day free trial. Then $20/month. Cancel anytime.
+          </p>
+          <p
+            className="font-body"
+            style={{
+              fontSize: "clamp(15px, 1.4vw, 19px)",
+              lineHeight: 1.5,
+              color: "#D4A84A",
+              fontWeight: 600,
+              marginTop: "6px",
+              marginBottom: 0,
+            }}
+          >
+            Achieve your goal. Get $25 back.
+          </p>
+        </div>
+
         <ThirtyDayGallery />
       </div>
     </section>
