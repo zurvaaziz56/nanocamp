@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -129,7 +130,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     ...(focusedField === key ? focusStyle : {}),
   });
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -492,7 +493,8 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
           </AnimatePresence>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
