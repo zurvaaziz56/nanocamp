@@ -2,11 +2,11 @@ import { lazy, Suspense, useState } from "react";
 import { motion } from "framer-motion";
 import StatPills from "@/components/StatPills";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
+import HowItWorks from "@/components/HowItWorks";
+import Testimonials from "@/components/Testimonials";
+import FounderNote from "@/components/FounderNote";
+import FAQ from "@/components/FAQ";
 
-const HowItWorks = lazy(() => import("@/components/HowItWorks"));
-const Testimonials = lazy(() => import("@/components/Testimonials"));
-const FounderNote = lazy(() => import("@/components/FounderNote"));
-const FAQ = lazy(() => import("@/components/FAQ"));
 const FoundingMemberModal = lazy(() => import("@/components/FoundingMemberModal"));
 const ContactModal = lazy(() => import("@/components/ContactModal"));
 const nanoCampLogo = "/img/nano-camp-logo.webp";
