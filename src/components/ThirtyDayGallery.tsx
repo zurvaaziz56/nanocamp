@@ -133,39 +133,6 @@ const ThirtyDayGallery = () => {
                 </div>
               </div>
 
-              {/* Caption */}
-              <div
-                style={{
-                  marginTop: "32px",
-                  maxWidth: "320px",
-                  textAlign: "center",
-                }}
-              >
-                <h4
-                  style={{
-                    fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
-                    fontWeight: 800,
-                    fontSize: "20px",
-                    color: "#fff",
-                    lineHeight: 1.25,
-                    marginBottom: "8px",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  {p.headline}
-                </h4>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
-                    fontSize: "13px",
-                    color: "#888",
-                    lineHeight: 1.55,
-                    margin: 0,
-                  }}
-                >
-                  {p.desc}
-                </p>
-              </div>
             </div>
           ))}
         </div>
