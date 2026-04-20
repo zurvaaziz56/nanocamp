@@ -145,7 +145,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
               >
                 {/* Photo (top 55%) */}
-                <div className="relative w-full overflow-hidden" style={{ height: "55%" }}>
+                <div className="relative w-full overflow-hidden" style={{ height: "62%" }}>
                   <img
                     src={goal.image}
                     alt={goal.alt}
