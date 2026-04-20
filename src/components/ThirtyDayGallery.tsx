@@ -157,7 +157,7 @@ const ThirtyDayGallery = () => {
               >
                 <h4
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
                     fontWeight: 800,
                     fontSize: "20px",
                     color: "#fff",
@@ -170,7 +170,7 @@ const ThirtyDayGallery = () => {
                 </h4>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
                     fontSize: "13px",
                     color: "#888",
                     lineHeight: 1.55,
