@@ -1,15 +1,14 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { motion } from "framer-motion";
-import "@fontsource/dm-sans/400.css";
-import "@fontsource/dm-sans/500.css";
-import HowItWorks from "@/components/HowItWorks";
 import StatPills from "@/components/StatPills";
-import FAQ from "@/components/FAQ";
-import Testimonials from "@/components/Testimonials";
-import FounderNote from "@/components/FounderNote";
-import FoundingMemberModal from "@/components/FoundingMemberModal";
-import ContactModal from "@/components/ContactModal";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
+
+const HowItWorks = lazy(() => import("@/components/HowItWorks"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const FounderNote = lazy(() => import("@/components/FounderNote"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const FoundingMemberModal = lazy(() => import("@/components/FoundingMemberModal"));
+const ContactModal = lazy(() => import("@/components/ContactModal"));
 const nanoCampLogo = "/img/nano-camp-logo.webp";
 
 const fade = {
@@ -105,11 +104,11 @@ const Index = () => {
         </div>
       </section>
 
-      <HowItWorks onGoalSelect={openModal} />
-
-      <Testimonials />
-
-      <FounderNote />
+      <Suspense fallback={null}>
+        <HowItWorks onGoalSelect={openModal} />
+        <Testimonials />
+        <FounderNote />
+      </Suspense>
 
       {/* Founding Offer */}
       <section id="founding" className="pt-12 pb-28 px-6">
@@ -189,7 +188,9 @@ const Index = () => {
         </div>
       </section>
 
-      <FAQ />
+      <Suspense fallback={null}>
+        <FAQ />
+      </Suspense>
 
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
@@ -211,8 +212,16 @@ const Index = () => {
         </div>
       </footer>
 
-      <FoundingMemberModal open={modalOpen} onClose={() => setModalOpen(false)} />
-      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+      {modalOpen && (
+        <Suspense fallback={null}>
+          <FoundingMemberModal open={modalOpen} onClose={() => setModalOpen(false)} />
+        </Suspense>
+      )}
+      {contactOpen && (
+        <Suspense fallback={null}>
+          <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+        </Suspense>
+      )}
     </div>
   );
 };
