@@ -414,7 +414,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                       🎉 Thanks for raising your hand, {firstName}.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
-                      This round's already full, but we'll send you a gift card as a thank you for your early support — and we'll be in touch when we're ready for you to join.
+                      This round's already full, but we'll send you a gift card as a thank you for your early support -  and we'll be in touch when we're ready for you to join.
                     </div>
 
                     <div
@@ -429,7 +429,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                       className="font-display"
                       style={{ fontWeight: 700, marginBottom: "8px", fontSize: "18px", color: "#FBF7EE" }}
                     >
-                      💬 One more thing — we'd love to hear from you.
+                      💬 One more thing - we'd love to hear from you.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
                       We're paying $50 for a 30-minute call with early supporters. Tell us why you joined, what you're hoping Nano Camp will do for you, or anything else on your mind. It genuinely helps us build the right thing.
