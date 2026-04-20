@@ -5,7 +5,7 @@ import phone5 from "@/assets/nano-05-celebration.webp";
 const phones = [
   {
     img: phone1,
-    pill: "01 · PICK",
+    pill: "01 · Choose a Goal",
     headline: "Choose your goal",
     desc: "One thing. 30 days. See how many people are chasing the same win.",
   },
