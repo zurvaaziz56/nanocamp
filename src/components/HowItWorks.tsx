@@ -2,12 +2,66 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ThirtyDayGallery from "./ThirtyDayGallery";
 
-const goals = [
-  { emoji: "🌙", title: "Get to bed on time", desc: "Sleep before midnight 20 out of 30 nights." },
-  { emoji: "👟", title: "Walk 10,000 steps", desc: "Hit your step count 20 out of 30 days." },
-  { emoji: "🏋️", title: "Hit the gym", desc: "Show up and train 10 out of 30 days." },
-  { emoji: "🥗", title: "Eat healthier", desc: "Make the better choice 20 out of 30 days." },
-  { emoji: "⚖️", title: "Lose 5 pounds", desc: "One month. One number. You've got this." },
+type Goal = {
+  title: string;
+  image: string;
+  alt: string;
+  bullets: string[];
+  objectPosition?: string;
+};
+
+const goals: Goal[] = [
+  {
+    title: "Get to bed on time",
+    image: "/img/goals/sleep-on-time.webp",
+    alt: "Woman waking up peacefully in bed at sunrise",
+    bullets: [
+      "Sleep your way to better health",
+      "Bed before 10:30 PM, 20 of 30 nights",
+      "Nightly selfie proof",
+    ],
+  },
+  {
+    title: "Walk 10,000 steps",
+    image: "/img/goals/walk-10k.webp",
+    alt: "Smiling man standing on a sunlit city sidewalk",
+    bullets: [
+      "Move more, earn more",
+      "10,000 steps, 20 of 30 days",
+      "Daily step count proof",
+    ],
+  },
+  {
+    title: "Hit the gym",
+    image: "/img/goals/hit-the-gym.webp",
+    alt: "Woman taking a thumbs-up selfie in the gym",
+    bullets: [
+      "Show up, get stronger",
+      "Train 10 of 30 days",
+      "Gym selfie each session",
+    ],
+    objectPosition: "center 25%",
+  },
+  {
+    title: "Eat healthier",
+    image: "/img/goals/eat-healthier.webp",
+    alt: "Man preparing a healthy bowl of food in his kitchen",
+    bullets: [
+      "Real food, real results",
+      "20 better choices out of 30 days",
+      "Daily food photo",
+    ],
+  },
+  {
+    title: "Lose 5 pounds",
+    image: "/img/goals/lose-5-pounds.webp",
+    alt: "Woman smiling confidently in front of a bathroom mirror",
+    bullets: [
+      "Drop 5 pounds in 30 days",
+      "Hit your goal weight by day 30",
+      "Weekly weigh-in selfie",
+    ],
+  },
 ];
 
 interface HowItWorksProps {
@@ -16,6 +70,7 @@ interface HowItWorksProps {
 
 const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
   const [selected, setSelected] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <section id="how" className="pt-6 pb-28 md:pt-10 md:pb-36 px-6">
@@ -47,12 +102,13 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           </p>
         </motion.div>
 
-        {/* Cards grid: 3 per row, last row (2) centered */}
+        {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-7 mb-20 max-w-[1180px] mx-auto">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
-            // 6-col grid: each card spans 2. First card of last row starts at col 2 to center the pair.
+            const isHovered = hovered === i;
             const offsetClass = i === 3 ? "md:col-start-2 md:col-span-2" : "md:col-span-2";
+            const cardBg = "#141210";
             return (
               <motion.button
                 key={goal.title}
@@ -61,62 +117,116 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   setSelected(i);
                   onGoalSelect?.();
                 }}
-                className={`group relative text-left transition-all duration-300 w-full max-w-[340px] mx-auto ${offsetClass}`}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+                className={`group relative text-left transition-all duration-200 w-full max-w-[340px] mx-auto ${offsetClass}`}
                 style={{
-                  height: "440px",
-                  borderRadius: "20px",
-                  background: isSelected
-                    ? "linear-gradient(160deg, rgba(212,168,67,0.10) 0%, rgba(22,20,14,0.95) 55%, rgba(15,13,10,1) 100%)"
-                    : "linear-gradient(160deg, #1A1814 0%, #121110 60%, #0E0D0B 100%)",
+                  aspectRatio: "3 / 4",
+                  borderRadius: "18px",
+                  background: cardBg,
                   border: isSelected
                     ? "1px solid rgba(212,168,67,0.7)"
-                    : "1px solid rgba(255,255,255,0.06)",
+                    : `1px solid rgba(201,169,97,${isHovered ? 0.25 : 0.12})`,
                   overflow: "hidden",
+                  transform: isHovered ? "translateY(-4px)" : "translateY(0)",
                   boxShadow: isSelected
-                    ? "0 20px 50px -20px rgba(212,168,67,0.35), 0 0 0 1px rgba(212,168,67,0.15), inset 0 1px 0 rgba(255,255,255,0.04)"
-                    : "0 14px 40px -18px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.03)",
+                    ? "0 20px 50px -20px rgba(212,168,67,0.4), 0 0 0 1px rgba(212,168,67,0.2)"
+                    : isHovered
+                    ? "0 24px 60px -20px rgba(212,168,67,0.3), 0 0 0 1px rgba(212,168,67,0.1)"
+                    : "0 14px 40px -18px rgba(0,0,0,0.7)",
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
-                onMouseEnter={(e) => {
-                  if (!isSelected) {
-                    e.currentTarget.style.borderColor = "rgba(212,168,67,0.4)";
-                    e.currentTarget.style.boxShadow =
-                      "0 24px 60px -20px rgba(212,168,67,0.25), 0 0 0 1px rgba(212,168,67,0.1), inset 0 1px 0 rgba(255,255,255,0.05)";
-                  }
-                  e.currentTarget.style.transform = "translateY(-8px)";
-                }}
-                onMouseLeave={(e) => {
-                  if (!isSelected) {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
-                    e.currentTarget.style.boxShadow =
-                      "0 14px 40px -18px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.03)";
-                  }
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
               >
-                {/* Subtle top warm sheen */}
+                {/* Photo (top 55%) */}
+                <div className="relative w-full overflow-hidden" style={{ height: "55%" }}>
+                  <img
+                    src={goal.image}
+                    alt={goal.alt}
+                    width={600}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: goal.objectPosition ?? "center",
+                    }}
+                  />
+                  {/* Bottom fade into card bg */}
+                  <div
+                    className="absolute inset-x-0 bottom-0 pointer-events-none"
+                    style={{
+                      height: "60px",
+                      background: `linear-gradient(to bottom, rgba(20,18,16,0) 0%, ${cardBg} 100%)`,
+                    }}
+                  />
+                </div>
+
+                {/* Content (bottom 45%) */}
                 <div
-                  className="absolute inset-x-0 top-0 pointer-events-none"
-                  style={{
-                    height: "120px",
-                    background:
-                      "radial-gradient(ellipse at top, rgba(212,168,67,0.08) 0%, transparent 70%)",
-                  }}
-                />
+                  className="relative flex flex-col"
+                  style={{ height: "45%", padding: "20px 22px 24px" }}
+                >
+                  <h3
+                    className="font-display"
+                    style={{
+                      color: "#F5F1E8",
+                      fontSize: "22px",
+                      fontWeight: 600,
+                      lineHeight: 1.2,
+                      letterSpacing: "-0.01em",
+                      marginBottom: "12px",
+                      textAlign: "left",
+                    }}
+                  >
+                    {goal.title}
+                  </h3>
+                  <ul
+                    className="font-body flex flex-col"
+                    style={{ gap: "7px", textAlign: "left" }}
+                  >
+                    {goal.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="flex items-start"
+                        style={{
+                          color: "rgba(232,212,168,0.92)",
+                          fontSize: "14.5px",
+                          lineHeight: 1.45,
+                        }}
+                      >
+                        <span
+                          aria-hidden="true"
+                          style={{
+                            display: "inline-block",
+                            flexShrink: 0,
+                            width: "5px",
+                            height: "5px",
+                            borderRadius: "999px",
+                            background: "#D4A843",
+                            marginTop: "8px",
+                            marginRight: "10px",
+                            boxShadow: "0 0 6px rgba(212,168,67,0.5)",
+                          }}
+                        />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 {/* Checkmark badge */}
                 {isSelected && (
                   <span
-                    className="absolute top-4 right-4 z-10 flex items-center justify-center"
+                    className="absolute top-3 left-3 z-10 flex items-center justify-center"
                     style={{
                       width: "28px",
                       height: "28px",
                       borderRadius: "999px",
-                      background:
-                        "linear-gradient(135deg, #F4D27A 0%, #D4A843 100%)",
+                      background: "linear-gradient(135deg, #F4D27A 0%, #D4A843 100%)",
                       color: "#1A1200",
                       fontSize: "14px",
                       fontWeight: 800,
@@ -127,66 +237,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Inner content — centered composition */}
-                <div className="relative h-full flex flex-col items-center text-center px-7 pt-14 pb-24">
-                  {/* Emoji in soft warm chip — centered */}
-                  <div
-                    className="flex items-center justify-center mb-7"
-                    style={{
-                      width: "92px",
-                      height: "92px",
-                      borderRadius: "22px",
-                      background:
-                        "linear-gradient(160deg, rgba(212,168,67,0.14) 0%, rgba(212,168,67,0.04) 100%)",
-                      border: "1px solid rgba(212,168,67,0.2)",
-                      fontSize: "48px",
-                      lineHeight: 1,
-                      boxShadow:
-                        "inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 24px -12px rgba(212,168,67,0.25)",
-                    }}
-                  >
-                    <span style={{ transform: "translateY(1px)" }}>{goal.emoji}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3
-                    className="font-display"
-                    style={{
-                      color: "#F5F1E8",
-                      fontSize: "30px",
-                      fontWeight: 600,
-                      lineHeight: 1.15,
-                      letterSpacing: "-0.015em",
-                      marginBottom: "16px",
-                    }}
-                  >
-                    {goal.title}
-                  </h3>
-
-                  {/* Desc */}
-                  <p
-                    className="font-body"
-                    style={{
-                      color: "#D4CCB5",
-                      fontSize: "17px",
-                      lineHeight: 1.55,
-                      fontWeight: 400,
-                      maxWidth: "260px",
-                    }}
-                  >
-                    {goal.desc}
-                  </p>
-                </div>
-
-                {/* Diagonal banner bottom-right */}
+                {/* Diagonal $20/MONTH ribbon */}
                 <div
                   className="absolute pointer-events-none overflow-hidden"
-                  style={{
-                    bottom: 0,
-                    right: 0,
-                    width: "170px",
-                    height: "170px",
-                  }}
+                  style={{ bottom: 0, right: 0, width: "170px", height: "170px" }}
                 >
                   <div
                     style={{
