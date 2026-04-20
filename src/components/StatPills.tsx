@@ -5,7 +5,7 @@ const stats = [
 
 const StatPills = () => {
   return (
-    <div className="grid grid-cols-3 gap-3 w-full">
+    <div className="grid grid-cols-2 gap-3 w-full">
       {stats.map((stat) => (
         <div
           key={stat.label}
