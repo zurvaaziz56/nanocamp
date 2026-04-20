@@ -20,6 +20,7 @@ const goals: Goal[] = [
       "Bed before 10:30 PM, 20 of 30 nights",
       "Nightly selfie proof",
     ],
+    objectPosition: "center 35%",
   },
   {
     title: "Walk 10,000 steps",
@@ -30,6 +31,7 @@ const goals: Goal[] = [
       "10,000 steps, 20 of 30 days",
       "Daily step count proof",
     ],
+    objectPosition: "center 25%",
   },
   {
     title: "Hit the gym",
@@ -40,7 +42,7 @@ const goals: Goal[] = [
       "Train 10 of 30 days",
       "Gym selfie each session",
     ],
-    objectPosition: "center 25%",
+    objectPosition: "center 30%",
   },
   {
     title: "Eat healthier",
@@ -51,6 +53,7 @@ const goals: Goal[] = [
       "20 better choices out of 30 days",
       "Daily food photo",
     ],
+    objectPosition: "center 20%",
   },
   {
     title: "Lose 5 pounds",
@@ -61,6 +64,7 @@ const goals: Goal[] = [
       "Hit your goal weight by day 30",
       "Weekly weigh-in selfie",
     ],
+    objectPosition: "center 20%",
   },
 ];
 
@@ -141,7 +145,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
               >
                 {/* Photo (top 55%) */}
-                <div className="relative w-full overflow-hidden" style={{ height: "55%" }}>
+                <div className="relative w-full overflow-hidden" style={{ height: "62%" }}>
                   <img
                     src={goal.image}
                     alt={goal.alt}
@@ -168,7 +172,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Content (bottom 45%) */}
                 <div
                   className="relative flex flex-col"
-                  style={{ height: "45%", padding: "20px 22px 24px" }}
+                  style={{ height: "38%", padding: "20px 22px 24px" }}
                 >
                   <h3
                     className="font-display"
