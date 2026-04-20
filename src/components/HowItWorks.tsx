@@ -53,7 +53,7 @@ const goals: Goal[] = [
       "20 better choices out of 30 days",
       "Daily food photo",
     ],
-    objectPosition: "center 20%",
+    objectPosition: "center top",
   },
   {
     title: "Lose 5 pounds",
@@ -64,7 +64,7 @@ const goals: Goal[] = [
       "Hit your goal weight by day 30",
       "Weekly weigh-in selfie",
     ],
-    objectPosition: "center 20%",
+    objectPosition: "center top",
   },
 ];
 
