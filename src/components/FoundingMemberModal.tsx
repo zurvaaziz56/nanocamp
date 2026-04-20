@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 
+const RESEARCH_CALL_URL = "https://calendly.com/yadzia/nano-camp";
+
 interface Props {
   open: boolean;
   onClose: () => void;
