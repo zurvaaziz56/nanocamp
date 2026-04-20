@@ -187,7 +187,7 @@ const FounderNote = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            — The Nanocamp Team
+            — The Nano Camp Team
           </motion.p>
         </div>
       </div>
