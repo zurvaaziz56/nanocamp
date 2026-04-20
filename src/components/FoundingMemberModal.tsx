@@ -133,7 +133,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-6 overflow-y-auto"
+          className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center px-4 py-10 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -149,7 +149,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 12 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="relative w-full text-center my-auto"
+            className="relative w-full text-center"
             style={{
               maxWidth: "460px",
               background:
