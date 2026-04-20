@@ -47,13 +47,13 @@ const goals: Goal[] = [
   {
     title: "Eat healthier",
     image: "/img/goals/eat-healthier.webp",
-    alt: "Man preparing a healthy bowl of food in his kitchen",
+    alt: "Man drinking a green smoothie in his kitchen",
     bullets: [
       "Real food, real results",
       "20 better choices out of 30 \ndays",
       "Daily food photo",
     ],
-    objectPosition: "center top",
+    objectPosition: "center 30%",
   },
   {
     title: "Lose 5 pounds",
