@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import FounderNote from "@/components/FounderNote";
 import FoundingMemberModal from "@/components/FoundingMemberModal";
+import ContactModal from "@/components/ContactModal";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
 import nanoCampLogo from "@/assets/nano-camp-logo.png";
 
@@ -24,6 +25,7 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
 
@@ -192,13 +194,21 @@ const Index = () => {
           <div className="flex items-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
             <a href="#how" className="hover:opacity-80 transition-colors">How it works</a>
             <a href="#founding" className="hover:opacity-80 transition-colors">Pricing</a>
-            <a href="mailto:hello@nano.app" className="hover:opacity-80 transition-colors">Contact</a>
+            <button
+              type="button"
+              onClick={() => setContactOpen(true)}
+              className="hover:opacity-80 transition-colors"
+              style={{ color: "inherit", background: "none", padding: 0 }}
+            >
+              Contact
+            </button>
           </div>
           <p className="text-xs" style={{ color: "#807868" }}>© 2025 Nano. All rights reserved.</p>
         </div>
       </footer>
 
       <FoundingMemberModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </div>
   );
 };
