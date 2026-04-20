@@ -3,10 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "So how does this $20 thing actually work?",
-    a: "You pay $20 to join a 30-day challenge. Then you show up, check in, and send a photo, video, or screenshot as proof you did the work. Hit 20 out of 30 days, and you get $25.\n\nIt's just enough skin in the game to keep you going — without making it feel heavy.",
-  },
-  {
     q: "What counts as checking in?",
     a: "A check-in is you showing up for your goal and uploading a photo, short video, or screenshot that proves you did the work that day — a step count, gym selfie, sleep app screenshot, whatever fits your goal. And it only takes about 30 seconds.",
   },
