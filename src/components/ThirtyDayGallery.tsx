@@ -78,12 +78,12 @@ const ThirtyDayGallery = () => {
               {/* Phone */}
               <div
                 style={{
-                  width: "240px",
-                  height: "500px",
+                  width: "320px",
+                  height: "667px",
                   background:
                     "linear-gradient(135deg, #2a2a30 0%, #15151a 35%, #2a2a30 50%, #15151a 70%, #1e1e24 100%)",
-                  borderRadius: "36px",
-                  padding: "7px",
+                  borderRadius: "44px",
+                  padding: "8px",
                   position: "relative",
                   boxShadow:
                     "inset 0 0 0 1px #3c3c44, inset 0 0 0 2px #0a0a0d, 0 30px 60px -15px rgba(0,0,0,0.9), 0 20px 40px -10px rgba(245,197,24,0.08)",
@@ -94,7 +94,7 @@ const ThirtyDayGallery = () => {
                   style={{
                     width: "100%",
                     height: "100%",
-                    borderRadius: "29px",
+                    borderRadius: "36px",
                     overflow: "hidden",
                     position: "relative",
                     backgroundColor: "#000",
@@ -120,13 +120,13 @@ const ThirtyDayGallery = () => {
                   <div
                     style={{
                       position: "absolute",
-                      top: "11px",
+                      top: "14px",
                       left: "50%",
                       transform: "translateX(-50%)",
-                      width: "74px",
-                      height: "22px",
+                      width: "98px",
+                      height: "28px",
                       backgroundColor: "#000",
-                      borderRadius: "12px",
+                      borderRadius: "16px",
                       zIndex: 2,
                     }}
                   />
@@ -136,8 +136,8 @@ const ThirtyDayGallery = () => {
               {/* Caption */}
               <div
                 style={{
-                  marginTop: "28px",
-                  maxWidth: "240px",
+                  marginTop: "32px",
+                  maxWidth: "320px",
                   textAlign: "center",
                 }}
               >
