@@ -17,7 +17,7 @@ const goals: Goal[] = [
     alt: "Woman waking up peacefully in bed at sunrise",
     bullets: [
       "Sleep your way to better health",
-      "Bed before 10:30 PM, 20 of 30 nights",
+      "Bed before 10:30 PM, 20 of 30\n nights",
       "Nightly selfie proof",
     ],
     objectPosition: "center 35%",
@@ -216,7 +216,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                             boxShadow: "0 0 6px rgba(212,168,67,0.5)",
                           }}
                         />
-                        <span>{b}</span>
+                        <span style={{ whiteSpace: "pre-line" }}>{b}</span>
                       </li>
                     ))}
                   </ul>
