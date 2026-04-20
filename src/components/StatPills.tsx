@@ -1,5 +1,4 @@
 const stats = [
-  { value: "$20", label: "Start with $20" },
   { value: "$25", label: "Finish and get $25" },
   { value: "30", label: "30 Days" },
 ];
