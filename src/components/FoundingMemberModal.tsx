@@ -406,26 +406,84 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                   </button>
                   <Confetti />
                   <div className="relative text-left">
-                    <div className="font-display" style={{ fontWeight: 700, marginBottom: "8px", fontSize: "18px" }}>
+                    <div
+                      className="font-display"
+                      style={{ fontWeight: 700, marginBottom: "8px", fontSize: "18px", color: "#FBF7EE" }}
+                    >
                       🎉 Thanks for raising your hand, {firstName}.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
                       This round's already full, but we'll send you a gift card as a thank you for your early support — and we'll be in touch when we're ready for you to join.
                     </div>
+
+                    <div
+                      style={{
+                        height: "1px",
+                        background: "rgba(244, 228, 193, 0.18)",
+                        margin: "22px 0",
+                      }}
+                    />
+
+                    <div
+                      className="font-display"
+                      style={{ fontWeight: 700, marginBottom: "8px", fontSize: "18px", color: "#FBF7EE" }}
+                    >
+                      💬 One more thing — we'd love to hear from you.
+                    </div>
+                    <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
+                      We're paying $50 for a 30-minute call with early supporters. Tell us why you joined, what you're hoping Nanocamp will do for you, or anything else on your mind. It genuinely helps us build the right thing.
+                    </div>
+
+                    <a
+                      href={RESEARCH_CALL_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => { setShowToast(false); onClose(); }}
+                      className="transition-all duration-200 mt-5 block text-center"
+                      style={{
+                        height: "54px",
+                        lineHeight: "54px",
+                        width: "100%",
+                        background: "linear-gradient(180deg, #FBF7EE 0%, #ECE4D2 100%)",
+                        color: "#0A0908",
+                        fontWeight: 700,
+                        fontSize: "15px",
+                        borderRadius: "10px",
+                        letterSpacing: "0.01em",
+                        boxShadow:
+                          "0 10px 30px rgba(212,168,67,0.18), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)",
+                        textDecoration: "none",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "translateY(-1px)";
+                        e.currentTarget.style.boxShadow =
+                          "0 14px 36px rgba(212,168,67,0.28), 0 3px 8px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.7)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow =
+                          "0 10px 30px rgba(212,168,67,0.18), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)";
+                      }}
+                    >
+                      Book a call · Get $50 →
+                    </a>
+
                     <button
                       type="button"
                       onClick={() => { setShowToast(false); onClose(); }}
-                      className="mt-5 transition-all duration-200"
+                      className="block mx-auto transition-colors duration-200"
                       style={{
-                        backgroundColor: "#D4A843",
-                        color: "#000000",
-                        borderRadius: "6px",
+                        marginTop: "12px",
+                        background: "transparent",
+                        color: "#B8AE94",
                         fontSize: "13px",
-                        fontWeight: 700,
-                        padding: "10px 18px",
+                        fontWeight: 500,
+                        padding: "6px 12px",
                       }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = "#FBF7EE"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = "#B8AE94"; }}
                     >
-                      Got it
+                      Maybe later
                     </button>
                   </div>
                 </div>
