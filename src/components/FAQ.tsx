@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "What if I miss so many days that I can’t reach the goal anymore?",
-    a: "Every Nanocamp includes lazy tokens - skip days built right in. Life happens, you spend one, the goal keeps moving. No broken streaks, no starting over. The goal was never to be perfect. It was to actually get there.",
+    a: "Every Nano Camp includes lazy tokens - skip days built right in. Life happens, you spend one, the goal keeps moving. No broken streaks, no starting over. The goal was never to be perfect. It was to actually get there.",
   },
   {
     q: "Can my goal be anything?",
