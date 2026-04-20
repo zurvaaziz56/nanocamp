@@ -244,30 +244,31 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Diagonal $20/MONTH ribbon */}
                 <div
                   className="absolute pointer-events-none overflow-hidden"
-                  style={{ bottom: 0, right: 0, width: "170px", height: "170px" }}
+                  style={{ bottom: 0, right: 0, width: "210px", height: "210px" }}
                 >
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "30px",
-                      right: "-50px",
+                      bottom: "38px",
+                      right: "-60px",
                       transform: "rotate(-45deg)",
                       background:
-                        "linear-gradient(135deg, #F4D27A 0%, #D4A843 45%, #B8862F 100%)",
-                      color: "#1A1200",
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      letterSpacing: "0.05em",
+                        "linear-gradient(135deg, #f0c860 0%, #e0b84a 45%, #a87520 100%)",
+                      color: "#1a0f03",
+                      fontWeight: 800,
                       textTransform: "uppercase",
-                      padding: "8px 70px",
-                      borderTop: "1px solid rgba(255,220,140,0.6)",
-                      borderBottom: "1px solid rgba(0,0,0,0.2)",
+                      padding: "11px 80px",
+                      borderTop: "1.5px solid rgba(255,225,150,0.7)",
+                      borderBottom: "1.5px solid rgba(0,0,0,0.28)",
                       boxShadow:
-                        "0 4px 14px rgba(212,168,67,0.45), 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.15)",
+                        "0 6px 18px rgba(168,117,32,0.55), 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.18)",
                       whiteSpace: "nowrap",
+                      textShadow: "0 1px 0 rgba(255,225,150,0.35)",
+                      lineHeight: 1,
                     }}
                   >
-                    $20 / Month
+                    <span style={{ fontSize: "18px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
+                    <span style={{ fontSize: "15px", letterSpacing: "0.06em" }}> / Month</span>
                   </div>
                 </div>
               </motion.button>
