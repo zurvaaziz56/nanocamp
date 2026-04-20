@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "What if I cannot achieve the goal?",
-    a: "Every Nano Camp includes lazy tokens - skip days built right in. Life happens, you spend one, the goal keeps moving. No broken streaks, no starting over. The goal was never to be perfect. It was to actually get there.",
+    a: "You still showed up for yourself - and that matters. You put in real effort, built momentum, and made progress.  Start a new challenge and keep going.",
   },
   {
     q: "Can my goal be anything?",
