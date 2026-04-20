@@ -174,7 +174,7 @@ const Index = () => {
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              Join the first 100
+              Join Now
             </button>
             <p style={{ color: "#C8C0B0", fontSize: "15px", fontWeight: 500, lineHeight: 1.6, marginTop: "16px", textAlign: "center" }}>
               *Pay $20 and you're in. 7 days to cancel for a full refund if it's not for you right now. Renews every 30 days.
