@@ -43,7 +43,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground editorial-bg">
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-5xl mx-auto flex items-center justify-between px-6" style={{ minHeight: '56px' }}>
+        <div className="max-w-5xl mx-auto flex items-center justify-between px-6 pt-4 md:pt-7" style={{ minHeight: '56px' }}>
           <div className="flex items-center gap-3">
             <motion.img
               src={nanoCampLogo}
