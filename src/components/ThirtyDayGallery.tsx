@@ -49,7 +49,7 @@ const ThirtyDayGallery = () => {
         <div style={{ textAlign: "center" }}>
           <h2
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Fraunces', 'Fraunces-fallback', Georgia, serif",
               fontWeight: 700,
               fontSize: "clamp(36px, 5vw, 60px)",
               color: "#fff",
@@ -73,8 +73,8 @@ const ThirtyDayGallery = () => {
               {/* Step pill */}
               <div
                 style={{
-                  fontFamily: "'Barlow', sans-serif",
-                  fontWeight: 900,
+                  fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
+                  fontWeight: 800,
                   fontSize: "13px",
                   letterSpacing: "1.2px",
                   textTransform: "uppercase",
@@ -157,7 +157,7 @@ const ThirtyDayGallery = () => {
               >
                 <h4
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
                     fontWeight: 800,
                     fontSize: "20px",
                     color: "#fff",
@@ -170,7 +170,7 @@ const ThirtyDayGallery = () => {
                 </h4>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans', 'DMSans-fallback', Arial, sans-serif",
                     fontSize: "13px",
                     color: "#888",
                     lineHeight: 1.55,

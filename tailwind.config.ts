@@ -62,8 +62,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Fraunces", "serif"],
-        body: ["DM Sans", "sans-serif"],
+        display: ["Fraunces", "Fraunces-fallback", "Georgia", "serif"],
+        body: ["DM Sans", "DMSans-fallback", "Arial", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
