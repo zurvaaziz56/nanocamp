@@ -172,7 +172,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Content (bottom 45%) */}
                 <div
                   className="relative flex flex-col"
-                  style={{ height: "45%", padding: "20px 22px 24px" }}
+                  style={{ height: "38%", padding: "20px 22px 24px" }}
                 >
                   <h3
                     className="font-display"
