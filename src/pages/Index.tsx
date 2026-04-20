@@ -147,7 +147,7 @@ const Index = () => {
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-6 text-center">
           <img src={nanoCampLogo} alt="Nano Camp" width={64} height={32} loading="lazy" decoding="async" style={{ height: '32px', width: 'auto' }} />
-          <div className="flex items-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm" style={{ color: "#C8C0B0" }}>
             <a href="#how" className="hover:opacity-80 transition-colors">How it works</a>
             <button
               type="button"
@@ -157,6 +157,7 @@ const Index = () => {
             >
               Contact
             </button>
+            <Link to="/terms" className="hover:opacity-80 transition-colors">Terms of Use</Link>
           </div>
           <p className="text-xs" style={{ color: "#807868" }}>© 2025 Nano. All rights reserved.</p>
         </div>
