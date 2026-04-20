@@ -177,7 +177,7 @@ const ThirtyDayGallery = () => {
           flex-wrap: nowrap;
           justify-content: center;
           align-items: flex-start;
-          gap: 24px;
+          gap: 96px;
         }
         .thirty-day-item {
           display: flex;
@@ -186,7 +186,7 @@ const ThirtyDayGallery = () => {
           flex: 0 0 240px;
         }
         @media (max-width: 1380px) {
-          .thirty-day-grid { gap: 16px; }
+          .thirty-day-grid { gap: 64px; }
           .thirty-day-item { flex: 1 1 0; min-width: 0; max-width: 240px; }
           .thirty-day-item > div:nth-child(2) {
             width: 100% !important;
@@ -195,7 +195,7 @@ const ThirtyDayGallery = () => {
           }
         }
         @media (max-width: 899px) {
-          .thirty-day-grid { flex-wrap: wrap; gap: 56px 32px; }
+          .thirty-day-grid { flex-wrap: wrap; gap: 72px 48px; }
           .thirty-day-item { flex: 0 0 240px; }
           .thirty-day-item > div:nth-child(2) { height: 500px !important; aspect-ratio: auto; }
         }
