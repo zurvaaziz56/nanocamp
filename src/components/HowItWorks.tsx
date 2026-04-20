@@ -193,7 +193,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     className="font-body flex flex-col"
                     style={{ gap: "7px", textAlign: "left" }}
                   >
-                    {goal.bullets.map((b) => (
+                    {goal.bullets.map((b, idx) => (
                       <li
                         key={b}
                         className="flex items-start"
@@ -201,6 +201,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                           color: "rgba(232,212,168,0.92)",
                           fontSize: "14.5px",
                           lineHeight: 1.45,
+                          paddingRight: idx === goal.bullets.length - 1 ? "115px" : "0",
                         }}
                       >
                         <span
