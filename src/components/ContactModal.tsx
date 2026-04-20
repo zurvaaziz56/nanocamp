@@ -107,7 +107,7 @@ const ContactModal = ({ open, onClose }: Props) => {
     ...(focusedField === key ? focusStyle : {}),
   });
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -280,7 +280,8 @@ const ContactModal = ({ open, onClose }: Props) => {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
