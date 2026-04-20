@@ -183,24 +183,26 @@ const ThirtyDayGallery = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          flex: 0 0 240px;
+          flex: 0 0 320px;
         }
         @media (max-width: 1380px) {
-          .thirty-day-grid { gap: 64px; }
-          .thirty-day-item { flex: 1 1 0; min-width: 0; max-width: 240px; }
+          .thirty-day-grid { gap: 56px; }
+          .thirty-day-item { flex: 1 1 0; min-width: 0; max-width: 320px; }
           .thirty-day-item > div:nth-child(2) {
             width: 100% !important;
-            aspect-ratio: 240 / 500;
+            aspect-ratio: 320 / 667;
             height: auto !important;
           }
         }
         @media (max-width: 899px) {
-          .thirty-day-grid { flex-wrap: wrap; gap: 72px 48px; }
-          .thirty-day-item { flex: 0 0 240px; }
-          .thirty-day-item > div:nth-child(2) { height: 500px !important; aspect-ratio: auto; }
+          .thirty-day-grid { flex-wrap: wrap; gap: 80px 48px; }
+          .thirty-day-item { flex: 0 0 300px; }
+          .thirty-day-item > div:nth-child(2) { width: 300px !important; height: 625px !important; aspect-ratio: auto; }
         }
         @media (max-width: 599px) {
           .thirty-day-grid { gap: 72px 24px; }
+          .thirty-day-item { flex: 0 0 280px; }
+          .thirty-day-item > div:nth-child(2) { width: 280px !important; height: 583px !important; }
         }
       `}</style>
     </section>
