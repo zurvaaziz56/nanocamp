@@ -130,7 +130,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     ...(focusedField === key ? focusStyle : {}),
   });
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -493,7 +493,8 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
           </AnimatePresence>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
