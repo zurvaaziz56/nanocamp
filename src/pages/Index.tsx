@@ -90,11 +90,11 @@ const Index = () => {
               You've started this goal before. This time, we pay you to finish it.
             </p>
             <p
-              className="max-w-[620px] font-display italic"
+              className="font-display italic whitespace-nowrap"
               style={{
                 color: "#FFFFFF",
                 lineHeight: 1.4,
-                fontSize: 'clamp(22px, 2.4vw, 28px)',
+                fontSize: 'clamp(18px, 2.4vw, 28px)',
                 fontWeight: 400,
                 marginTop: '24px',
               }}
