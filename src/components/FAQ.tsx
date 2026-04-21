@@ -13,6 +13,10 @@ const faqs = [
     q: "Can I cancel anytime?",
     a: "Yes. You can cancel anytime. If you cancel within 7 days of joining, you wil not be charged. ",
   },
+  {
+    q: "Is my data safe?",
+    a: "Yes. Your data is private and secure. We don't sell it or share it with advertisers or other third parties.\n\nEmails, images, or anything you upload are only used to track your progress and nothing else.",
+  },
 ];
 
 const FAQ = () => {
