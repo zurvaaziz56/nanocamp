@@ -11,7 +11,7 @@ const phones = [
   },
   {
     img: phone3,
-    pill: "02 · Take a Selfie",
+    pill: "02 · Show Up Daily",
     headline: "Submit in 5 seconds",
     desc: "Photo, video, or Apple Health. Your coach verifies. Streak survives.",
   },
