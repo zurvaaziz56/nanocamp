@@ -87,7 +87,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              Become someone who finishes. Follow the 30-day plan - we'll even pay you $25 to prove it works.
+              You've started this goal before. This time, we pay you to finish it.
             </p>
 
             <div
