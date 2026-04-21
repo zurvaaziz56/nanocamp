@@ -129,6 +129,7 @@ const Index = () => {
               Contact
             </button>
             <Link to="/terms" className="hover:opacity-80 transition-colors">Terms of Use</Link>
+            <Link to="/privacy" className="hover:opacity-80 transition-colors">Privacy</Link>
           </div>
           <p className="text-xs" style={{ color: "#807868" }}>© 2025 Nano. All rights reserved.</p>
         </div>
