@@ -105,8 +105,7 @@ const ThirtyDayGallery = () => {
                     alt={p.headline}
                     width={480}
                     height={1041}
-                    loading="eager"
-                    fetchPriority="high"
+                    loading="lazy"
                     decoding="async"
                     style={{
                       width: "100%",
