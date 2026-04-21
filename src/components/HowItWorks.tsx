@@ -302,6 +302,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     <span style={{ fontSize: "10.5px", letterSpacing: "0.06em" }}> Back</span>
                   </div>
                 </div>
+              </button>
+            );
+          })}
+        </div>
 
         {/* Reinforcement text block */}
         <div
