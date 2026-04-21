@@ -87,10 +87,10 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              Pick a goal. Show up. Get rewarded.
+              You've started this goal before. This time, we pay you to finish it.
             </p>
             <p
-              className="font-display italic"
+              className="font-display italic whitespace-nowrap"
               style={{
                 color: "#FFFFFF",
                 lineHeight: 1.4,
@@ -99,7 +99,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              Nano helps you stay consistent for 30 days - and rewards you for sticking it.
+              The hardest part isn't starting - <span style={{ color: "#F5C518" }}>it's sticking with it.</span>
             </p>
 
             <div

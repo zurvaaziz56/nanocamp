@@ -16,7 +16,8 @@ const goals: Goal[] = [
     image: "/img/goals/sleep-on-time.webp",
     alt: "Woman waking up peacefully in bed at sunrise",
     bullets: [
-      "Get to bed by 10:30 PM, 20 out of 30 nights",
+      "Sleep your way to better health",
+      "Bed by 10:30PM, 20 of 30 nights",
       "Nightly selfie proof",
     ],
     objectPosition: "center 35%",
@@ -26,7 +27,8 @@ const goals: Goal[] = [
     image: "/img/goals/walk-10k.webp",
     alt: "Smiling man standing on a sunlit city sidewalk",
     bullets: [
-      "Hit 10,000 steps, 20 out of 30 days",
+      "Move more, earn more",
+      "10,000 steps, 20 of 30 days",
       "Daily step count proof",
     ],
     objectPosition: "center 25%",
@@ -36,8 +38,9 @@ const goals: Goal[] = [
     image: "/img/goals/hit-the-gym.webp",
     alt: "Woman taking a thumbs-up selfie in the gym",
     bullets: [
-      "Train 10 out of 30 days",
-      "Gym selfie each day",
+      "Show up, get stronger",
+      "Train 10 of 30 days",
+      "Gym selfie each session",
     ],
     objectPosition: "center 30%",
   },
@@ -46,8 +49,9 @@ const goals: Goal[] = [
     image: "/img/goals/eat-healthier.webp",
     alt: "Man preparing a healthy bowl of food in his kitchen",
     bullets: [
+      "Real food, real results",
       "20 better meals in 30 days",
-      "Daily food choice photo",
+      "Daily food photo",
     ],
     objectPosition: "center top",
   },
@@ -57,6 +61,7 @@ const goals: Goal[] = [
     alt: "Woman smiling confidently in front of a bathroom mirror",
     bullets: [
       "Drop 5 pounds in 30 days",
+      "Hit your goal weight by day 30",
       "Track daily activity",
     ],
     objectPosition: "center top",
@@ -187,7 +192,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     className="font-body flex flex-col"
                     style={{ gap: "7px", textAlign: "left" }}
                   >
-                    {goal.bullets.map((b) => (
+                    {goal.bullets.map((b, idx) => (
                       <li
                         key={b}
                         className="flex items-start"
@@ -195,7 +200,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                           color: "rgba(232,212,168,0.92)",
                           fontSize: "14.5px",
                           lineHeight: 1.45,
-                          paddingRight: "120px",
+                          paddingRight: idx >= goal.bullets.length - 2 ? "115px" : "0",
                         }}
                       >
                         <span
@@ -237,16 +242,15 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Diagonal stacked ribbons */}
+                {/* Diagonal $20/MONTH ribbon */}
                 <div
-                  className="absolute pointer-events-none"
-                  style={{ bottom: 0, right: 0, width: "230px", height: "230px", overflow: "hidden" }}
+                  className="absolute pointer-events-none overflow-hidden"
+                  style={{ bottom: 0, right: 0, width: "210px", height: "210px" }}
                 >
-                  {/* Gold ribbon: PAY $20 / MONTH */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "62px",
+                      bottom: "38px",
                       right: "-60px",
                       transform: "rotate(-45deg)",
                       background:
@@ -254,7 +258,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       color: "#1a0f03",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      padding: "10px 80px",
+                      padding: "11px 80px",
                       borderTop: "1.5px solid rgba(255,225,150,0.7)",
                       borderBottom: "1.5px solid rgba(0,0,0,0.28)",
                       boxShadow:
@@ -262,42 +266,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       textShadow: "0 1px 0 rgba(255,225,150,0.35)",
                       lineHeight: 1,
-                      transition: "filter 200ms ease",
-                      filter: isHovered ? "brightness(1.08)" : "brightness(1)",
                     }}
                   >
-                    <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.04em", opacity: 0.9 }}>Pay </span>
-                    <span style={{ fontSize: "15px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
-                    <span style={{ fontSize: "13px", letterSpacing: "0.06em" }}> / Month</span>
-                  </div>
-
-                  {/* Rose ribbon: GET PAID $25 / MONTH */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "22px",
-                      right: "-50px",
-                      transform: "rotate(-45deg)",
-                      background:
-                        "linear-gradient(135deg, #f4b6c6 0%, #e29bb2 50%, #b06a82 100%)",
-                      color: "#2a0f15",
-                      fontWeight: 800,
-                      textTransform: "uppercase",
-                      padding: "8px 68px",
-                      borderTop: "1.5px solid rgba(255,210,222,0.7)",
-                      borderBottom: "1.5px solid rgba(0,0,0,0.25)",
-                      boxShadow:
-                        "0 5px 16px rgba(176,106,130,0.5), 0 3px 6px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,235,240,0.5), inset 0 -1px 0 rgba(0,0,0,0.15)",
-                      whiteSpace: "nowrap",
-                      textShadow: "0 1px 0 rgba(255,220,230,0.3)",
-                      lineHeight: 1,
-                      transition: "filter 200ms ease",
-                      filter: isHovered ? "brightness(1.08)" : "brightness(1)",
-                    }}
-                  >
-                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.04em", opacity: 0.9 }}>Get Paid </span>
-                    <span style={{ fontSize: "13px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
-                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / Month</span>
+                    <span style={{ fontSize: "18px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
+                    <span style={{ fontSize: "15px", letterSpacing: "0.06em" }}> / Month</span>
                   </div>
                 </div>
               </button>
@@ -327,7 +299,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
               letterSpacing: "-0.01em",
             }}
           >
-            Join Nano for free
+            Join Nano Camp for free
           </h3>
           <p
             className="font-body"
@@ -352,7 +324,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
               marginBottom: 0,
             }}
           >
-            Get paid $25 to achieve your goals
+            Achieve your goal. Get $25 back.
           </p>
         </div>
 
