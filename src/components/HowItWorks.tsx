@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import ThirtyDayGallery from "./ThirtyDayGallery";
+
+const ThirtyDayGallery = lazy(() => import("./ThirtyDayGallery"));
 
 type Goal = {
   title: string;
@@ -147,8 +148,8 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     alt={goal.alt}
                     width={600}
                     height={800}
-                    loading="eager"
-                    fetchPriority="high"
+                    loading="lazy"
+                    fetchPriority="low"
                     decoding="async"
                     className="w-full h-full"
                     style={{
@@ -325,7 +326,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           </p>
         </div>
 
-        <ThirtyDayGallery />
+        <Suspense fallback={<div style={{ minHeight: "800px" }} aria-hidden />}>
+          <ThirtyDayGallery />
+        </Suspense>
       </div>
     </section>
   );
