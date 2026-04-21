@@ -466,7 +466,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                           "0 10px 30px rgba(212,168,67,0.18), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)";
                       }}
                     >
-                      Book a call · Get $50 →
+                      Book a call · Get $30 →
                     </a>
 
                     <button
