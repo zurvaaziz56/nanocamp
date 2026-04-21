@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 interface Props {
   onClick?: () => void;
   size?: "sm" | "lg" | "xl";
@@ -16,13 +14,10 @@ const PremiumCTAButton = ({ onClick, size = "sm", children = "Join for Free", cl
   const radius = isXl ? "14px" : isLg ? "10px" : "6px";
 
   return (
-    <motion.button
+    <button
       type="button"
       onClick={onClick}
-      whileHover={{ y: -2, scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 400, damping: 22 }}
-      className={`relative overflow-hidden group inline-flex items-center justify-center font-bold ${className}`}
+      className={`premium-cta relative overflow-hidden group inline-flex items-center justify-center font-bold ${className}`}
       style={{
         padding,
         fontSize,
@@ -34,6 +29,7 @@ const PremiumCTAButton = ({ onClick, size = "sm", children = "Join for Free", cl
         boxShadow:
           "0 8px 32px rgba(212,168,67,0.4), 0 3px 8px rgba(212,168,67,0.3), inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(0,0,0,0.15)",
         border: "1px solid rgba(255,220,140,0.6)",
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
       }}
     >
       {/* Inner gradient overlay for depth */}
@@ -77,7 +73,7 @@ const PremiumCTAButton = ({ onClick, size = "sm", children = "Join for Free", cl
           →
         </span>
       </span>
-    </motion.button>
+    </button>
   );
 };
 
