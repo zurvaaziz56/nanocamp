@@ -273,8 +273,8 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           className="mx-auto text-center"
           style={{
             maxWidth: "640px",
-            marginTop: "clamp(64px, 7vw, 80px)",
-            marginBottom: "clamp(80px, 8vw, 96px)",
+            marginTop: "clamp(120px, 14vw, 180px)",
+            marginBottom: "clamp(120px, 14vw, 180px)",
             padding: "0 16px",
           }}
         >
