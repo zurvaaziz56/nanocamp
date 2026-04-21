@@ -114,7 +114,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
             const offsetClass = i === 3 ? "md:col-start-2 md:col-span-2" : "md:col-span-2";
             const cardBg = "#141210";
             return (
-              <motion.button
+              <button
                 key={goal.title}
                 type="button"
                 onClick={() => {
@@ -139,10 +139,6 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     ? "0 24px 60px -20px rgba(212,168,67,0.3), 0 0 0 1px rgba(212,168,67,0.1)"
                     : "0 14px 40px -18px rgba(0,0,0,0.7)",
                 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5 }}
               >
                 {/* Photo (top 55%) */}
                 <div className="relative w-full overflow-hidden" style={{ height: "62%" }}>
@@ -273,7 +269,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     <span style={{ fontSize: "15px", letterSpacing: "0.06em" }}> / Month</span>
                   </div>
                 </div>
-              </motion.button>
+              </button>
             );
           })}
         </div>
