@@ -62,7 +62,7 @@ const goals: Goal[] = [
     bullets: [
       "Drop 5 pounds in 30 days",
       "Hit your goal weight by day 30",
-      "Weekly weigh-in selfie",
+      "Track daily activity",
     ],
     objectPosition: "center top",
   },
