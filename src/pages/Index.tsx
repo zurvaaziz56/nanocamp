@@ -90,7 +90,7 @@ const Index = () => {
               Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
             <p
-              className="font-display italic whitespace-nowrap"
+              className="font-display italic"
               style={{
                 color: "#FFFFFF",
                 lineHeight: 1.4,
@@ -99,7 +99,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              The hardest part isn't starting - <span style={{ color: "#F5C518" }}>it's sticking with it.</span>
+              How is this possible? <span style={{ color: "#F5C518" }}>AI verifies your progress and sponsors back the reward.</span>
             </p>
 
             <div
