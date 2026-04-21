@@ -139,10 +139,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     ? "0 24px 60px -20px rgba(212,168,67,0.3), 0 0 0 1px rgba(212,168,67,0.1)"
                     : "0 14px 40px -18px rgba(0,0,0,0.7)",
                 }}
-              </button>
-            );
-          })}
-        </div>
+              >
                 {/* Photo (top 55%) */}
                 <div className="relative w-full overflow-hidden" style={{ height: "62%" }}>
                   <img
