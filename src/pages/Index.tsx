@@ -78,6 +78,7 @@ const Index = () => {
 
             <p
               className="max-w-[620px] hero-fade"
+              translate="no"
               style={{
                 color: "#F0DFB5",
                 lineHeight: 1.5,
@@ -87,10 +88,11 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              Pick a goal. Show up. Get rewarded.
+              <span>Pick a goal. Show up. Get rewarded.</span>
             </p>
             <p
               className="font-display italic"
+              translate="no"
               style={{
                 color: "#FFFFFF",
                 lineHeight: 1.4,
@@ -99,7 +101,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              Nano helps you stay consistent for 30 days - and rewards you for sticking it.
+              <span>Nano helps you stay consistent for 30 days - and rewards you for sticking it.</span>
             </p>
 
             <div
