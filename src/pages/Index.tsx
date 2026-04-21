@@ -90,7 +90,7 @@ const Index = () => {
               Pick a goal. Show up. Get rewarded.
             </p>
             <p
-              className="font-display italic whitespace-nowrap"
+              className="font-display italic"
               style={{
                 color: "#FFFFFF",
                 lineHeight: 1.4,
@@ -99,7 +99,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              The hardest part isn't starting - <span style={{ color: "#F5C518" }}>it's sticking with it.</span>
+              Nano helps you stay consistent for 30 days - and rewards you for sticking it.
             </p>
 
             <div
