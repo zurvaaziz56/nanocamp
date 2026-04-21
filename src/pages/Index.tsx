@@ -87,7 +87,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              You've started this goal before. This time, we pay you to finish it.
+              Pick a goal. Show up. Get rewarded.
             </p>
             <p
               className="font-display italic whitespace-nowrap"
