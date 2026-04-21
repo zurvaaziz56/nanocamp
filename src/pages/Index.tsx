@@ -1,6 +1,5 @@
 import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import StatPills from "@/components/StatPills";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
 
@@ -11,15 +10,6 @@ const FAQ = lazy(() => import("@/components/FAQ"));
 const FoundingMemberModal = lazy(() => import("@/components/FoundingMemberModal"));
 const ContactModal = lazy(() => import("@/components/ContactModal"));
 const nanoCampLogo = "/img/nano-camp-logo.webp";
-
-const fade = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
-  }),
-};
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -46,7 +36,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6 pt-4 md:pt-7" style={{ minHeight: '56px' }}>
           <div className="flex items-center gap-3">
-            <motion.img
+            <img
               src={nanoCampLogo}
               alt="Nano Camp"
               width={144}
@@ -54,10 +44,6 @@ const Index = () => {
               fetchPriority="high"
               decoding="async"
               style={{ height: 'clamp(32px, 3.5vw, 44px)', width: 'auto' }}
-              initial="hidden"
-              animate="visible"
-              custom={0}
-              variants={fade}
             />
           </div>
           <div className="flex items-center gap-4">
@@ -90,45 +76,34 @@ const Index = () => {
               </span>
             </div>
 
-            <motion.p
-              className="max-w-[620px]"
-              style={{ 
-                color: "#F0DFB5", 
-                lineHeight: 1.5, 
+            <p
+              className="max-w-[620px] hero-fade"
+              style={{
+                color: "#F0DFB5",
+                lineHeight: 1.5,
                 fontSize: 'clamp(17px, 1.7vw, 23px)',
                 fontWeight: 500,
-                marginTop: 'clamp(64px, 7vw, 88px)'
+                marginTop: 'clamp(64px, 7vw, 88px)',
+                animationDelay: '0.2s',
               }}
-              initial="hidden"
-              animate="visible"
-              custom={2}
-              variants={fade}
             >
               Become someone who finishes. Follow the 30-day plan - we'll even pay you $25 to prove it works.
-            </motion.p>
+            </p>
 
-            <motion.div
-              className="w-full max-w-[600px]"
-              style={{ marginTop: 'clamp(40px, 4.5vw, 56px)' }}
-              initial="hidden"
-              animate="visible"
-              custom={3}
-              variants={fade}
+            <div
+              className="w-full max-w-[600px] hero-fade"
+              style={{ marginTop: 'clamp(40px, 4.5vw, 56px)', animationDelay: '0.3s' }}
             >
               <StatPills />
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            className="w-full flex justify-center"
-            style={{ marginTop: 'clamp(56px, 6vw, 80px)' }}
-            initial="hidden"
-            animate="visible"
-            custom={4}
-            variants={fade}
+          <div
+            className="w-full flex justify-center hero-fade"
+            style={{ marginTop: 'clamp(56px, 6vw, 80px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
-          </motion.div>
+          </div>
         </div>
       </section>
 
