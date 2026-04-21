@@ -432,7 +432,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                       💬 One more thing - we'd love to hear from you.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
-                      We're paying $50 for a 30-minute call with early supporters. Tell us why you joined, what you're hoping Nano Camp will do for you, or anything else on your mind. It genuinely helps us build the right thing.
+                      We're paying $30 for a 30-minute call with early supporters. Tell us why you joined, what you're hoping Nano Camp will do for you, or anything else on your mind. It genuinely helps us build the right thing.
                     </div>
 
                     <a
@@ -466,7 +466,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                           "0 10px 30px rgba(212,168,67,0.18), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)";
                       }}
                     >
-                      Book a call · Get $50 →
+                      Book a call · Get $30 →
                     </a>
 
                     <button
