@@ -70,13 +70,7 @@ const Index = () => {
       <section className="pt-24 md:pt-32 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <div className="w-full flex flex-col items-center">
-            <motion.div
-              className="flex flex-col items-center"
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              variants={fade}
-            >
+            <div className="flex flex-col items-center">
               <h1
                 className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px] text-center"
                 style={{ color: "#FFFFFF", fontSize: 'clamp(48px, 9vw, 104px)' }}
@@ -94,7 +88,7 @@ const Index = () => {
               >
                 goals.
               </span>
-            </motion.div>
+            </div>
 
             <motion.p
               className="max-w-[620px]"
