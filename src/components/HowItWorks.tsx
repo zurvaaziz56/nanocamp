@@ -237,16 +237,16 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Diagonal stacked ribbons - top-right corner */}
+                {/* Diagonal stacked ribbons - descending from upper-left to lower-right */}
                 <div
                   className="absolute pointer-events-none"
-                  style={{ top: 0, right: 0, width: "220px", height: "220px", overflow: "visible" }}
+                  style={{ bottom: 0, right: 0, width: "220px", height: "220px", overflow: "visible" }}
                 >
-                  {/* Gold ribbon: PAY $20 / MO */}
+                  {/* Gold ribbon: PAY $20 / MONTH */}
                   <div
                     style={{
                       position: "absolute",
-                      top: "30px",
+                      bottom: "56px",
                       right: "-70px",
                       transform: "rotate(45deg)",
                       transformOrigin: "center",
@@ -276,7 +276,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      top: "68px",
+                      bottom: "18px",
                       right: "-55px",
                       transform: "rotate(45deg)",
                       transformOrigin: "center",
