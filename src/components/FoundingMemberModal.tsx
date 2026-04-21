@@ -414,7 +414,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                       🎉 Thanks for raising your hand, {firstName}.
                     </div>
                     <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#E8E4DC" }}>
-                      This round's already full, but we'll send you a gift card as a thank you for your early support -  and we'll be in touch when we're ready for you to join.
+                      This round's already full, but you're on the early access list - and we'll be in touch the moment we're ready for you to join. Thank you for being one of the first
                     </div>
 
                     <div
