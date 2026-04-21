@@ -240,15 +240,16 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Diagonal stacked ribbons */}
                 <div
                   className="absolute pointer-events-none"
-                  style={{ bottom: 0, right: 0, width: "230px", height: "230px", overflow: "hidden" }}
+                  style={{ bottom: 0, right: 0, width: "240px", height: "240px", overflow: "hidden" }}
                 >
                   {/* Gold ribbon: PAY $20 / MONTH */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "62px",
+                      bottom: "78px",
                       right: "-60px",
                       transform: "rotate(-45deg)",
+                      transformOrigin: "center",
                       background:
                         "linear-gradient(135deg, #f0c860 0%, #e0b84a 45%, #a87520 100%)",
                       color: "#1a0f03",
@@ -271,33 +272,34 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     <span style={{ fontSize: "13px", letterSpacing: "0.06em" }}> / Month</span>
                   </div>
 
-                  {/* Rose ribbon: GET PAID $25 / MONTH */}
+                  {/* Dusty rose ribbon: GET PAID $25 / MONTH */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "22px",
-                      right: "-50px",
+                      bottom: "32px",
+                      right: "-42px",
                       transform: "rotate(-45deg)",
+                      transformOrigin: "center",
                       background:
-                        "linear-gradient(135deg, #f4b6c6 0%, #e29bb2 50%, #b06a82 100%)",
-                      color: "#2a0f15",
+                        "linear-gradient(135deg, #d49090 0%, #c97b7b 50%, #8a4a4a 100%)",
+                      color: "#fff4e0",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      padding: "8px 68px",
-                      borderTop: "1.5px solid rgba(255,210,222,0.7)",
-                      borderBottom: "1.5px solid rgba(0,0,0,0.25)",
+                      padding: "8px 64px",
+                      borderTop: "1.5px solid rgba(255,220,210,0.55)",
+                      borderBottom: "1.5px solid rgba(0,0,0,0.3)",
                       boxShadow:
-                        "0 5px 16px rgba(176,106,130,0.5), 0 3px 6px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,235,240,0.5), inset 0 -1px 0 rgba(0,0,0,0.15)",
+                        "0 5px 16px rgba(138,74,74,0.5), 0 3px 6px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,235,225,0.35), inset 0 -1px 0 rgba(0,0,0,0.2)",
                       whiteSpace: "nowrap",
-                      textShadow: "0 1px 0 rgba(255,220,230,0.3)",
+                      textShadow: "0 1px 1px rgba(0,0,0,0.35)",
                       lineHeight: 1,
                       transition: "filter 200ms ease",
                       filter: isHovered ? "brightness(1.08)" : "brightness(1)",
                     }}
                   >
-                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.04em", opacity: 0.9 }}>Get Paid </span>
-                    <span style={{ fontSize: "13px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
-                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / Month</span>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.04em", opacity: 0.95 }}>Get Paid </span>
+                    <span style={{ fontSize: "13.5px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
+                    <span style={{ fontSize: "11.5px", letterSpacing: "0.06em" }}> / Month</span>
                   </div>
                 </div>
               </button>
