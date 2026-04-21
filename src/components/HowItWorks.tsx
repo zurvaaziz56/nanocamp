@@ -135,7 +135,16 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 }}
               >
                 {/* Photo (top 55%) */}
-                <div className="relative w-full overflow-hidden" style={{ height: "62%" }}>
+                <div
+                  className="relative overflow-hidden"
+                  style={{
+                    height: "62%",
+                    marginLeft: "-1px",
+                    marginRight: "-1px",
+                    marginTop: "-1px",
+                    width: "calc(100% + 2px)",
+                  }}
+                >
                   <img
                     src={goal.image}
                     alt={goal.alt}
@@ -144,12 +153,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     loading="lazy"
                     fetchPriority="low"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full"
+                    className="absolute inset-0 w-full h-full block"
                     style={{
                       objectFit: "cover",
                       objectPosition: goal.objectPosition ?? "center",
-                      transform: "scale(1.08)",
-                      transformOrigin: "center",
                     }}
                   />
                   {/* Bottom fade into card bg */}
