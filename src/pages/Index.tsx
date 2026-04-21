@@ -99,7 +99,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              Nano helps you stay consistent for 30 days - and rewards you for sticking with it.
+              Nano helps you stay consistent for 30 days - and rewards you for sticking it.
             </p>
 
             <div
