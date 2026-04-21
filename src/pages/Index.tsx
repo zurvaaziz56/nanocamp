@@ -99,7 +99,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              How is this possible? <span style={{ color: "#F5C518" }}>AI verifies your progress and sponsors back the reward.</span>
+              How is this possible? <span style={{ color: "#FFFFFF" }}>AI verifies your progress and sponsors back the reward.</span>
             </p>
 
             <div
