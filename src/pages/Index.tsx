@@ -90,7 +90,7 @@ const Index = () => {
               Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
             <p
-              className="font-display italic"
+              className="font-display"
               style={{
                 color: "#FFFFFF",
                 lineHeight: 1.4,
