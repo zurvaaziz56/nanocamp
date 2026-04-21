@@ -299,7 +299,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
               letterSpacing: "-0.01em",
             }}
           >
-            Join Nano Camp for free
+            Join Nano for free
           </h3>
           <p
             className="font-body"
