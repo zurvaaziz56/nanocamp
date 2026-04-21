@@ -151,7 +151,8 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     alt={goal.alt}
                     width={600}
                     height={800}
-                    loading="lazy"
+                    loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     className="w-full h-full"
                     style={{
