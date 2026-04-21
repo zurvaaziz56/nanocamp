@@ -132,7 +132,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Suspense fallback={null}>
+      <Suspense fallback={<div style={{ minHeight: '2400px' }} aria-hidden />}>
         <HowItWorks onGoalSelect={openModal} />
         <Testimonials />
         <FounderNote />
