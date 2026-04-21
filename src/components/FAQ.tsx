@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -71,29 +70,26 @@ const FAQ = () => {
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p
-                        className="pb-7 font-body text-left"
-                        style={{
-                          color: "#C8C0B0",
-                          fontSize: "17px",
-                          lineHeight: 1.8,
-                          whiteSpace: "pre-line",
-                        }}
-                      >
-                        {faq.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  className="overflow-hidden faq-answer"
+                  style={{
+                    maxHeight: isOpen ? "400px" : "0",
+                    opacity: isOpen ? 1 : 0,
+                    transition: "max-height 0.3s ease-out, opacity 0.3s ease-out",
+                  }}
+                >
+                  <p
+                    className="pb-7 font-body text-left"
+                    style={{
+                      color: "#C8C0B0",
+                      fontSize: "17px",
+                      lineHeight: 1.8,
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {faq.a}
+                  </p>
+                </div>
               </div>
             );
           })}

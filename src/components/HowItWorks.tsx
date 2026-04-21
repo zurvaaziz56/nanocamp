@@ -1,5 +1,4 @@
 import { useState, lazy, Suspense } from "react";
-import { motion } from "framer-motion";
 
 const ThirtyDayGallery = lazy(() => import("./ThirtyDayGallery"));
 
@@ -80,13 +79,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
   return (
     <section id="how" className="pt-6 pb-28 md:pt-10 md:pb-36 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <motion.div
-          className="mb-14"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" as const }}
-        >
+        <div className="mb-14">
           <span
             className="block mb-5 font-body uppercase"
             style={{ color: "#D4A843", fontSize: "11px", letterSpacing: "0.2em", fontWeight: 700 }}
@@ -105,7 +98,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           >
             Choose one.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-7 mb-20 max-w-[1180px] mx-auto">
