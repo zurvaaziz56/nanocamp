@@ -114,7 +114,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
             const offsetClass = i === 3 ? "md:col-start-2 md:col-span-2" : "md:col-span-2";
             const cardBg = "#141210";
             return (
-              <motion.button
+              <button
                 key={goal.title}
                 type="button"
                 onClick={() => {
