@@ -240,7 +240,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Corner badge: pink wedge + gold ribbon overlay */}
                 <div
                   className="absolute pointer-events-none"
-                  style={{ bottom: 0, right: 0, width: "160px", height: "160px", overflow: "hidden" }}
+                  style={{ bottom: 0, right: 0, width: "135px", height: "135px", overflow: "hidden", borderBottomRightRadius: "18px" }}
                 >
                   {/* Layer 1 — Pink triangular corner wedge */}
                   <div
@@ -255,36 +255,38 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       filter: isHovered ? "brightness(1.08)" : "brightness(1)",
                       zIndex: 1,
                     }}
-                  >
-                    {/* Diagonal "GET PAID $25 / MONTH" text along hypotenuse */}
-                    <div
-                      style={{
-                        position: "absolute",
-                        bottom: "18px",
-                        right: "-30px",
-                        transform: "rotate(-45deg)",
-                        transformOrigin: "center",
-                        color: "#fff4e0",
-                        fontWeight: 800,
-                        textTransform: "uppercase",
-                        whiteSpace: "nowrap",
-                        textShadow: "0 1px 1px rgba(0,0,0,0.4)",
-                        lineHeight: 1,
-                        letterSpacing: "0.05em",
-                      }}
-                    >
-                      <span style={{ fontSize: "10px", fontWeight: 700, opacity: 0.95 }}>Get Paid </span>
-                      <span style={{ fontSize: "12px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
-                      <span style={{ fontSize: "10.5px" }}> / Mo</span>
-                    </div>
-                  </div>
+                  />
 
-                  {/* Layer 2 — Gold ribbon (on top of pink wedge) */}
+                  {/* Diagonal "GET $25 BACK" text along hypotenuse (below ribbon) */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "62px",
-                      right: "-60px",
+                      bottom: "14px",
+                      right: "14px",
+                      transform: "rotate(-45deg)",
+                      transformOrigin: "right bottom",
+                      color: "#fff4e0",
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                      whiteSpace: "nowrap",
+                      textShadow: "0 1px 1px rgba(0,0,0,0.4)",
+                      lineHeight: 1,
+                      letterSpacing: "0.06em",
+                      fontSize: "11px",
+                      zIndex: 2,
+                    }}
+                  >
+                    <span style={{ fontWeight: 700, opacity: 0.95 }}>Get </span>
+                    <span style={{ fontSize: "12.5px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
+                    <span> Back</span>
+                  </div>
+
+                  {/* Layer 3 — Gold ribbon (on top of pink wedge) */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "70px",
+                      right: "-50px",
                       transform: "rotate(-45deg)",
                       transformOrigin: "center",
                       background:
@@ -292,7 +294,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       color: "#1a0f03",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      padding: "10px 80px",
+                      padding: "9px 64px",
                       borderTop: "1.5px solid rgba(255,225,150,0.7)",
                       borderBottom: "1.5px solid rgba(0,0,0,0.28)",
                       boxShadow:
@@ -302,12 +304,12 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       lineHeight: 1,
                       transition: "filter 200ms ease",
                       filter: isHovered ? "brightness(1.08)" : "brightness(1)",
-                      zIndex: 2,
+                      zIndex: 3,
                     }}
                   >
-                    <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.04em", opacity: 0.9 }}>Pay </span>
-                    <span style={{ fontSize: "15px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
-                    <span style={{ fontSize: "13px", letterSpacing: "0.06em" }}> / Month</span>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.04em", opacity: 0.9 }}>Pay </span>
+                    <span style={{ fontSize: "14px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
+                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / Mo</span>
                   </div>
                 </div>
               </button>
