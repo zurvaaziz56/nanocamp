@@ -81,7 +81,7 @@ const Index = () => {
               style={{
                 color: "#F0DFB5",
                 lineHeight: 1.5,
-                fontSize: 'clamp(17px, 1.7vw, 23px)',
+                fontSize: 'clamp(20px, 2.1vw, 28px)',
                 fontWeight: 500,
                 marginTop: 'clamp(64px, 7vw, 88px)',
                 animationDelay: '0.2s',
