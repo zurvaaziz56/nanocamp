@@ -87,7 +87,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              You've started this goal before. This time, we pay you to finish it.
+              Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
             <p
               className="font-display italic whitespace-nowrap"
