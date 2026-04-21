@@ -352,7 +352,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
               marginBottom: 0,
             }}
           >
-            Achieve your goal. Get $25 back.
+            Get paid $25 to achieve your goals
           </p>
         </div>
 
