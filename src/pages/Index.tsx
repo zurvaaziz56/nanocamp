@@ -92,7 +92,7 @@ const Index = () => {
             <p
               className="max-w-[620px] font-display italic"
               style={{
-                color: "#F0DFB5",
+                color: "#FFFFFF",
                 lineHeight: 1.4,
                 fontSize: 'clamp(22px, 2.4vw, 28px)',
                 fontWeight: 400,
