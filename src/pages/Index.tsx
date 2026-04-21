@@ -87,7 +87,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              You've started this goal before. This time, we pay you to finish it.
+              You've started this goal before. This time, we pay you to finish it. The hard part isn’t starting. It’s sticking with it.
             </p>
 
             <div
