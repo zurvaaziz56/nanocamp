@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 type Para = {
   text: string;
   variant: "opener" | "intimate" | "closer";
@@ -80,13 +78,7 @@ const FounderNote = () => {
             }}
           />
 
-          <motion.div
-            className="flex items-center justify-center gap-3 mb-10"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="flex items-center justify-center gap-3 mb-10">
             <span
               aria-hidden="true"
               style={{
@@ -116,7 +108,7 @@ const FounderNote = () => {
                 display: "inline-block",
               }}
             />
-          </motion.div>
+          </div>
 
           {paragraphs.map((p, i) => {
             const isOpener = p.variant === "opener";
@@ -156,22 +148,15 @@ const FounderNote = () => {
 
             return (
               <div key={i}>
-                <motion.p
-                  className="font-display"
-                  style={style}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6 }}
-                >
+                <p className="font-display" style={style}>
                   {p.text}
-                </motion.p>
+                </p>
                 {i < paragraphs.length - 1 && <Divider />}
               </div>
             );
           })}
 
-          <motion.p
+          <p
             className="font-display"
             style={{
               color: "#f7ebd1",
@@ -182,13 +167,9 @@ const FounderNote = () => {
               letterSpacing: "0.04em",
               marginTop: "34px",
             }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.6 }}
           >
             — The Nano Camp Team
-          </motion.p>
+          </p>
         </div>
       </div>
     </section>
