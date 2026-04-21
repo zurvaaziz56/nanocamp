@@ -484,7 +484,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                       onMouseEnter={(e) => { e.currentTarget.style.color = "#FBF7EE"; }}
                       onMouseLeave={(e) => { e.currentTarget.style.color = "#B8AE94"; }}
                     >
-                      I’ll just take the gift card
+                      Maybe later
                     </button>
                   </div>
                 </div>
