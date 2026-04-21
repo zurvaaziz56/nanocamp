@@ -269,7 +269,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     <span style={{ fontSize: "15px", letterSpacing: "0.06em" }}> / Month</span>
                   </div>
                 </div>
-              </motion.button>
+              </button>
             );
           })}
         </div>
