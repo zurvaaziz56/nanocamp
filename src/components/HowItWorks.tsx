@@ -14,21 +14,19 @@ const goals: Goal[] = [
   {
     title: "Get to bed on time",
     image: "/img/goals/sleep-on-time.webp",
-    alt: "Woman waking up peacefully in bed at sunrise",
+    alt: "Woman smiling as she settles into bed under warm lamp light",
     bullets: [
-      "Sleep your way to better health",
-      "Bed by 10:30PM, 20 of 30 nights",
+      "Get to bed by 10:30 PM, 20 out of 30 nights",
       "Nightly selfie proof",
     ],
-    objectPosition: "center 35%",
+    objectPosition: "center 30%",
   },
   {
     title: "Walk 10,000 steps",
     image: "/img/goals/walk-10k.webp",
-    alt: "Smiling man standing on a sunlit city sidewalk",
+    alt: "Man walking outdoors on a tree-lined path at golden hour",
     bullets: [
-      "Move more, earn more",
-      "10,000 steps, 20 of 30 days",
+      "Hit 10,000 steps 20 out of 30 days",
       "Daily step count proof",
     ],
     objectPosition: "center 25%",
@@ -36,35 +34,32 @@ const goals: Goal[] = [
   {
     title: "Hit the gym",
     image: "/img/goals/hit-the-gym.webp",
-    alt: "Woman taking a thumbs-up selfie in the gym",
+    alt: "Athletic woman training with dumbbells in a dark premium gym",
     bullets: [
-      "Show up, get stronger",
-      "Train 10 of 30 days",
-      "Gym selfie each session",
+      "Train 10 out of 30 days",
+      "Gym selfie each day",
     ],
-    objectPosition: "center 30%",
+    objectPosition: "center 20%",
   },
   {
     title: "Eat healthier",
     image: "/img/goals/eat-healthier.webp",
-    alt: "Man preparing a healthy bowl of food in his kitchen",
+    alt: "Man assembling a fresh salad bowl in a sunlit kitchen",
     bullets: [
-      "Real food, real results",
       "20 better meals in 30 days",
-      "Daily food photo",
+      "Daily food choice photo",
     ],
-    objectPosition: "center top",
+    objectPosition: "center 30%",
   },
   {
     title: "Lose 5 pounds",
     image: "/img/goals/lose-5-pounds.webp",
-    alt: "Woman smiling confidently in front of a bathroom mirror",
+    alt: "Fit woman hiking a coastal trail at sunrise",
     bullets: [
-      "Drop 5 pounds in 30 days",
-      "Hit your goal weight by day 30",
+      "Drop five pounds in 30 days",
       "Track daily activity",
     ],
-    objectPosition: "center top",
+    objectPosition: "center 25%",
   },
 ];
 
@@ -134,73 +129,77 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     : "0 14px 40px -18px rgba(0,0,0,0.7)",
                 }}
               >
-                {/* Photo (top 55%) */}
+                {/* Full-bleed cinematic photo */}
                 <div
-                  className="relative overflow-hidden"
-                  style={{
-                    height: "62%",
-                    marginLeft: "-1px",
-                    marginRight: "-1px",
-                    marginTop: "-1px",
-                    width: "calc(100% + 2px)",
-                  }}
+                  className="absolute inset-0 overflow-hidden"
+                  style={{ borderRadius: "18px" }}
                 >
                   <img
                     src={goal.image}
                     alt={goal.alt}
-                    width={600}
-                    height={800}
+                    width={800}
+                    height={1024}
                     loading="lazy"
                     fetchPriority="low"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full block"
+                    className="absolute inset-0 w-full h-full block transition-transform duration-700 ease-out"
                     style={{
                       objectFit: "cover",
                       objectPosition: goal.objectPosition ?? "center",
+                      transform: isHovered ? "scale(1.04)" : "scale(1)",
                     }}
                   />
-                  {/* Bottom fade into card bg */}
+                  {/* Cinematic dark gradient for text legibility */}
                   <div
-                    className="absolute inset-x-0 bottom-0 pointer-events-none"
+                    className="absolute inset-0 pointer-events-none"
                     style={{
-                      height: "60px",
-                      background: `linear-gradient(to bottom, rgba(20,18,16,0) 0%, ${cardBg} 100%)`,
+                      background:
+                        "linear-gradient(to bottom, rgba(10,8,6,0.15) 0%, rgba(10,8,6,0) 35%, rgba(10,8,6,0.55) 65%, rgba(8,6,4,0.95) 100%)",
+                    }}
+                  />
+                  {/* Subtle warm vignette */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse at 50% 30%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 100%)",
                     }}
                   />
                 </div>
 
-                {/* Content (bottom 45%) */}
+                {/* Content overlaid on bottom of image */}
                 <div
-                  className="relative flex flex-col"
-                  style={{ height: "38%", padding: "20px 22px 24px" }}
+                  className="absolute inset-x-0 bottom-0 flex flex-col"
+                  style={{ padding: "0 24px 26px" }}
                 >
                   <h3
                     className="font-display"
                     style={{
-                      color: "#F5F1E8",
-                      fontSize: "22px",
+                      color: "#FFFFFF",
+                      fontSize: "26px",
                       fontWeight: 600,
-                      lineHeight: 1.2,
-                      letterSpacing: "-0.01em",
-                      marginBottom: "12px",
+                      lineHeight: 1.15,
+                      letterSpacing: "-0.015em",
+                      marginBottom: "14px",
                       textAlign: "left",
+                      textShadow: "0 2px 12px rgba(0,0,0,0.6)",
                     }}
                   >
                     {goal.title}
                   </h3>
                   <ul
                     className="font-body flex flex-col"
-                    style={{ gap: "7px", textAlign: "left" }}
+                    style={{ gap: "9px", textAlign: "left" }}
                   >
-                    {goal.bullets.map((b, idx) => (
+                    {goal.bullets.map((b) => (
                       <li
                         key={b}
                         className="flex items-start"
                         style={{
-                          color: "rgba(232,212,168,0.92)",
+                          color: "rgba(245,235,215,0.96)",
                           fontSize: "14.5px",
                           lineHeight: 1.45,
-                          paddingRight: idx >= goal.bullets.length - 2 ? "115px" : "0",
+                          textShadow: "0 1px 6px rgba(0,0,0,0.55)",
                         }}
                       >
                         <span
@@ -211,10 +210,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                             width: "5px",
                             height: "5px",
                             borderRadius: "999px",
-                            background: "#D4A843",
+                            background: "#E8B94A",
                             marginTop: "8px",
                             marginRight: "10px",
-                            boxShadow: "0 0 6px rgba(212,168,67,0.5)",
+                            boxShadow: "0 0 8px rgba(232,185,74,0.7)",
                           }}
                         />
                         <span style={{ whiteSpace: "pre-line" }}>{b}</span>
@@ -226,7 +225,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Checkmark badge */}
                 {isSelected && (
                   <span
-                    className="absolute top-3 left-3 z-10 flex items-center justify-center"
+                    className="absolute top-3 left-3 z-20 flex items-center justify-center"
                     style={{
                       width: "28px",
                       height: "28px",
@@ -242,34 +241,60 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Diagonal $20/MONTH ribbon */}
+                {/* Two-part diagonal ribbon (top-right corner) */}
                 <div
-                  className="absolute pointer-events-none overflow-hidden"
-                  style={{ bottom: 0, right: 0, width: "210px", height: "210px" }}
+                  className="absolute pointer-events-none overflow-hidden z-10"
+                  style={{ top: 0, right: 0, width: "180px", height: "180px" }}
                 >
+                  {/* Primary gold ribbon: Pay $20/mo */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "38px",
-                      right: "-60px",
-                      transform: "rotate(-45deg)",
+                      top: "26px",
+                      right: "-58px",
+                      transform: "rotate(45deg)",
                       background:
-                        "linear-gradient(135deg, #f0c860 0%, #e0b84a 45%, #a87520 100%)",
+                        "linear-gradient(135deg, #f5d27a 0%, #e0b84a 50%, #a87520 100%)",
                       color: "#1a0f03",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      padding: "11px 80px",
-                      borderTop: "1.5px solid rgba(255,225,150,0.7)",
-                      borderBottom: "1.5px solid rgba(0,0,0,0.28)",
+                      padding: "7px 70px",
+                      borderTop: "1px solid rgba(255,230,160,0.8)",
+                      borderBottom: "1px solid rgba(0,0,0,0.3)",
                       boxShadow:
-                        "0 6px 18px rgba(168,117,32,0.55), 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.18)",
+                        "0 4px 14px rgba(168,117,32,0.5), 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.45)",
                       whiteSpace: "nowrap",
-                      textShadow: "0 1px 0 rgba(255,225,150,0.35)",
                       lineHeight: 1,
+                      letterSpacing: "0.04em",
+                      fontSize: "11.5px",
                     }}
                   >
-                    <span style={{ fontSize: "18px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
-                    <span style={{ fontSize: "15px", letterSpacing: "0.06em" }}> / Month</span>
+                    Pay $20 / mo
+                  </div>
+                  {/* Secondary pink ribbon: Get $25 back */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "60px",
+                      right: "-58px",
+                      transform: "rotate(45deg)",
+                      background:
+                        "linear-gradient(135deg, #f8a8c8 0%, #e8729c 50%, #b03e6a 100%)",
+                      color: "#2a0612",
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                      padding: "5px 70px",
+                      borderTop: "1px solid rgba(255,210,225,0.75)",
+                      borderBottom: "1px solid rgba(0,0,0,0.28)",
+                      boxShadow:
+                        "0 4px 12px rgba(176,62,106,0.45), 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4)",
+                      whiteSpace: "nowrap",
+                      lineHeight: 1,
+                      letterSpacing: "0.04em",
+                      fontSize: "10px",
+                    }}
+                  >
+                    Get $25 back
                   </div>
                 </div>
               </button>
