@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Is my data safe?",
-    a: "Yes. Your data is private and secure. We don't sell it or share it with advertisers or other third parties.\n\nEmails, images, or anything you upload are only used to track your progress and nothing else.",
+    a: "Yes. Your data is private and secure. We don't sell it or share it with advertisers or other third parties.\n\nEmails, images, or anything you upload are only used to track your progress. ",
   },
 ];
 
