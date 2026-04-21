@@ -99,7 +99,7 @@ const Index = () => {
                 marginTop: '24px',
               }}
             >
-              The hard part isn't starting -<br /><span style={{ color: "#F5C518" }}>it's sticking with it.</span>
+              The hard part isn't starting - <span style={{ color: "#F5C518" }}>it's sticking with it.</span>
             </p>
 
             <div
