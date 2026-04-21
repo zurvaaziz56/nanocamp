@@ -144,10 +144,12 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     loading="lazy"
                     fetchPriority="low"
                     decoding="async"
-                    className="w-full h-full"
+                    className="absolute inset-0 w-full h-full"
                     style={{
                       objectFit: "cover",
                       objectPosition: goal.objectPosition ?? "center",
+                      transform: "scale(1.08)",
+                      transformOrigin: "center",
                     }}
                   />
                   {/* Bottom fade into card bg */}
