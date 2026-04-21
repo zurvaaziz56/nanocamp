@@ -87,7 +87,19 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              You've started this goal before. This time, we pay you to finish it. The hard part isn’t starting. It’s sticking with it.
+              You've started this goal before. This time, we pay you to finish it.
+            </p>
+            <p
+              className="max-w-[620px] font-display italic"
+              style={{
+                color: "#F0DFB5",
+                lineHeight: 1.4,
+                fontSize: 'clamp(22px, 2.4vw, 28px)',
+                fontWeight: 400,
+                marginTop: '24px',
+              }}
+            >
+              The hard part isn't starting — <span style={{ color: "#F5C518" }}>it's sticking with it.</span>
             </p>
 
             <div
