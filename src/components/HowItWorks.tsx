@@ -288,13 +288,15 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       width: "200px",
                       transform: "rotate(-45deg)",
                       textAlign: "center",
-                      color: "#1a0510",
+                      color: "#0a0207",
                       fontWeight: 900,
-                      fontSize: "14px",
-                      letterSpacing: "0.06em",
+                      fontSize: "15px",
+                      letterSpacing: "0.04em",
                       textTransform: "uppercase",
                       whiteSpace: "nowrap",
                       lineHeight: 1,
+                      WebkitTextStroke: "0.4px #0a0207",
+                      textShadow: "0 1px 0 rgba(255,220,228,0.4)",
                     }}
                   >
                     $25 / MONTH
@@ -311,7 +313,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textAlign: "center",
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
-                      color: "#1a0f03",
+                      color: "#0a0500",
                       padding: "14px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
@@ -320,9 +322,11 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       lineHeight: 1,
                       fontWeight: 900,
-                      fontSize: "14px",
-                      letterSpacing: "0.06em",
+                      fontSize: "15px",
+                      letterSpacing: "0.04em",
                       textTransform: "uppercase",
+                      WebkitTextStroke: "0.4px #0a0500",
+                      textShadow: "0 1px 0 rgba(255,228,160,0.4)",
                     }}
                   >
                     $20 / MONTH
