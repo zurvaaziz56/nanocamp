@@ -243,17 +243,15 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
 
                 {/* Layered corner system: gold diagonal ribbon over a calm pink corner panel */}
                 <div
-                  className="absolute pointer-events-none"
+                  className="goal-corner pointer-events-none absolute"
                   style={{
                     bottom: 0,
                     right: 0,
-                    width: "270px",
-                    height: "270px",
                     overflow: "hidden",
                     borderBottomRightRadius: "20px",
                   }}
                 >
-                  {/* Pink lower corner panel — larger geometric block */}
+                  {/* Pink lower corner panel */}
                   <div
                     style={{
                       position: "absolute",
@@ -265,25 +263,22 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                         "inset 1px 1px 0 rgba(255,200,215,0.18), inset -1px -1px 0 rgba(0,0,0,0.35)",
                     }}
                   />
-                  {/* Subtle divider line where gold meets pink */}
+                  {/* Subtle divider line */}
                   <div
+                    className="goal-corner-divider"
                     style={{
                       position: "absolute",
-                      bottom: "115px",
-                      right: "-60px",
-                      width: "330px",
-                      height: "1px",
                       transform: "rotate(-45deg)",
                       background: "rgba(0,0,0,0.22)",
                       boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
+                      height: "1px",
                     }}
                   />
-                  {/* Pink panel text — centered in triangle, bold, on diagonal */}
+                  {/* GET PAID $25 text */}
                   <div
+                    className="goal-corner-paid"
                     style={{
                       position: "absolute",
-                      bottom: "56px",
-                      right: "56px",
                       transform: "translate(50%, 50%) rotate(-45deg)",
                       transformOrigin: "center",
                       textAlign: "center",
@@ -297,23 +292,20 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 2px rgba(0,0,0,0.55)",
                     }}
                   >
-                    <div style={{ fontSize: "18px", letterSpacing: "0.14em", fontWeight: 1000 }}>GET PAID</div>
-                    <div style={{ fontSize: "23px", fontWeight: 1000 }}>$25</div>
+                    <div className="goal-corner-paid-label" style={{ fontWeight: 1000 }}>GET PAID</div>
+                    <div className="goal-corner-paid-amount" style={{ fontWeight: 1000 }}>$25</div>
                   </div>
 
-                  {/* Gold dominant diagonal ribbon */}
+                  {/* Gold diagonal ribbon */}
                   <div
+                    className="goal-corner-ribbon"
                     style={{
                       position: "absolute",
-                      bottom: "78px",
-                      right: "-90px",
                       transform: "rotate(-45deg)",
-                      width: "360px",
                       textAlign: "center",
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#0a0500",
-                      padding: "11px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
@@ -321,8 +313,6 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
                       fontWeight: 1000,
-                      fontSize: "18px",
-                      letterSpacing: "0.12em",
                       textTransform: "uppercase",
                       WebkitTextStroke: "1px #0a0500",
                       textShadow: "0 1px 0 rgba(255,228,160,0.5)",
@@ -335,6 +325,23 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
             );
           })}
         </div>
+
+        <style>{`
+          .goal-corner { width: 270px; height: 270px; }
+          .goal-corner-divider { bottom: 115px; right: -60px; width: 330px; }
+          .goal-corner-paid { bottom: 56px; right: 56px; }
+          .goal-corner-paid-label { font-size: 18px; letter-spacing: 0.14em; }
+          .goal-corner-paid-amount { font-size: 23px; }
+          .goal-corner-ribbon { bottom: 78px; right: -90px; width: 360px; padding: 11px 0; font-size: 18px; letter-spacing: 0.12em; }
+          @media (max-width: 599px) {
+            .goal-corner { width: 180px; height: 180px; }
+            .goal-corner-divider { bottom: 76px; right: -40px; width: 220px; }
+            .goal-corner-paid { bottom: 36px; right: 36px; }
+            .goal-corner-paid-label { font-size: 12px; letter-spacing: 0.1em; }
+            .goal-corner-paid-amount { font-size: 16px; }
+            .goal-corner-ribbon { bottom: 53px; right: -62px; width: 245px; padding: 7px 0; font-size: 12px; letter-spacing: 0.08em; }
+          }
+        `}</style>
 
         {/* Reinforcement text block */}
         <div
