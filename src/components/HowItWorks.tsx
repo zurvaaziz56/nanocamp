@@ -39,7 +39,7 @@ const goals: Goal[] = [
     alt: "Woman taking a thumbs-up selfie in the gym",
     bullets: [
       "Train consistently",
-      "Train 10 of 30 days",
+      "10 out of 30 days.",
       "Gym selfie each session",
     ],
     objectPosition: "center 10%",
