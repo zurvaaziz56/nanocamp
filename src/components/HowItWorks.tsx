@@ -330,7 +330,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           style={{
             maxWidth: "640px",
             marginTop: "clamp(32px, 4vw, 48px)",
-            marginBottom: "clamp(32px, 4vw, 48px)",
+            marginBottom: "clamp(8px, 1.5vw, 16px)",
             padding: "0 16px",
           }}
         >
