@@ -61,18 +61,20 @@ const Index = () => {
                 className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px] text-center"
                 style={{ color: "#FFFFFF", fontSize: 'clamp(48px, 9vw, 104px)' }}
               >
-                Get paid to reach your
+                Get{" "}
+                <span style={{ color: "#D4A843" }}>paid</span>
+                {" "}to
               </h1>
               <span
                 className="font-display font-light italic tracking-tight text-center"
                 style={{ 
-                  color: "#D4A843", 
-                  fontSize: 'clamp(56px, 10.8vw, 124px)',
-                  marginTop: 'clamp(8px, 1.2vw, 16px)',
+                  color: "#FFFFFF", 
+                  fontSize: 'clamp(48px, 9vw, 104px)',
                   lineHeight: 1.05
                 }}
               >
-                goals.
+                reach your{" "}
+                <span style={{ color: "#D4A843" }}>goals.</span>
               </span>
             </div>
 
