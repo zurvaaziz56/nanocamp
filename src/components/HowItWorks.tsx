@@ -53,7 +53,7 @@ const goals: Goal[] = [
       "20 better meals in 30 days",
       "Daily food photo",
     ],
-    objectPosition: "center 15%",
+    objectPosition: "center 5%",
   },
   {
     title: "Lose 5 pounds",
