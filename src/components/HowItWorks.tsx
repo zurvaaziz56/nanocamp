@@ -279,7 +279,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
                     }}
                   />
-                  {/* Pink panel text — serif display, on diagonal */}
+                  {/* Pink panel text — centered in triangle, bold, on diagonal */}
                   <div
                     style={{
                       position: "absolute",
@@ -289,15 +289,17 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       transformOrigin: "center",
                       textAlign: "center",
                       color: "#0a0207",
-                      fontFamily: "'Fraunces', Georgia, serif",
-                      fontWeight: 600,
-                      letterSpacing: "0.01em",
+                      fontWeight: 900,
+                      letterSpacing: "0.05em",
+                      textTransform: "uppercase",
                       whiteSpace: "nowrap",
-                      lineHeight: 1.15,
+                      lineHeight: 1.18,
+                      WebkitTextStroke: "0.6px #0a0207",
+                      textShadow: "0 1px 0 rgba(255,220,228,0.45)",
                     }}
                   >
-                    <div style={{ fontSize: "15px", fontStyle: "italic", opacity: 0.85 }}>earn</div>
-                    <div style={{ fontSize: "22px" }}>$25 / month</div>
+                    <div style={{ fontSize: "13px", letterSpacing: "0.14em" }}>EARN</div>
+                    <div style={{ fontSize: "16px" }}>$25 / MONTH</div>
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
@@ -312,20 +314,22 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#0a0500",
-                      padding: "13px 0",
+                      padding: "11px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
                         "0 8px 22px rgba(168,117,32,0.5), 0 3px 6px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.2)",
                       whiteSpace: "nowrap",
-                      lineHeight: 1.15,
-                      fontFamily: "'Fraunces', Georgia, serif",
-                      fontWeight: 600,
-                      fontSize: "20px",
-                      letterSpacing: "0.01em",
+                      lineHeight: 1.18,
+                      fontWeight: 900,
+                      fontSize: "13px",
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      WebkitTextStroke: "0.6px #0a0500",
+                      textShadow: "0 1px 0 rgba(255,228,160,0.5)",
                     }}
                   >
-                    $20 / month
+                    PAY $20 / MONTH
                   </div>
                 </div>
               </button>
