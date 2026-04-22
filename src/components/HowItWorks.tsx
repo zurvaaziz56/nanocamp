@@ -40,7 +40,7 @@ const goals: Goal[] = [
     bullets: [
       "Train consistently",
       "10 out of 30 days",
-      "Gym selfie each session",
+      "Selfie each session",
     ],
     objectPosition: "center 10%",
   },
