@@ -298,8 +298,8 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 2px rgba(0,0,0,0.55)",
                     }}
                   >
-                    <div style={{ fontSize: "15px", letterSpacing: "0.14em", fontWeight: 1000 }}>GET PAID</div>
-                    <div style={{ fontSize: "19px", fontWeight: 1000 }}>$25</div>
+                    <div style={{ fontSize: "18px", letterSpacing: "0.14em", fontWeight: 1000 }}>GET PAID</div>
+                    <div style={{ fontSize: "23px", fontWeight: 1000 }}>$25</div>
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
@@ -322,7 +322,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
                       fontWeight: 1000,
-                      fontSize: "15px",
+                      fontSize: "18px",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
                       WebkitTextStroke: "1px #0a0500",
