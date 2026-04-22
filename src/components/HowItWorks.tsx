@@ -79,7 +79,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-9 mb-20 max-w-[1540px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 mb-20 max-w-[1540px] mx-auto">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
             const isHovered = hovered === i;
