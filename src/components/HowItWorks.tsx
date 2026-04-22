@@ -101,7 +101,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-7 mb-20 max-w-[1180px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8 mb-20 max-w-[1380px] mx-auto">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
             const isHovered = hovered === i;
@@ -117,10 +117,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
-                className={`group relative text-left transition-all duration-200 w-full max-w-[340px] mx-auto ${offsetClass}`}
+                className={`group relative text-left transition-all duration-200 w-full max-w-[400px] mx-auto ${offsetClass}`}
                 style={{
                   aspectRatio: "3 / 4",
-                  borderRadius: "18px",
+                  borderRadius: "20px",
                   background: cardBg,
                   border: isSelected
                     ? "1px solid rgba(212,168,67,0.7)"
@@ -172,17 +172,17 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 {/* Content (bottom 38%) */}
                 <div
                   className="relative flex flex-col"
-                  style={{ height: "38%", padding: "20px 22px 24px" }}
+                  style={{ height: "38%", padding: "22px 26px 28px" }}
                 >
                   <h3
                     className="font-display"
                     style={{
                       color: "#F5F1E8",
-                      fontSize: "22px",
+                      fontSize: "24px",
                       fontWeight: 600,
                       lineHeight: 1.2,
                       letterSpacing: "-0.01em",
-                      marginBottom: "12px",
+                      marginBottom: "14px",
                       textAlign: "left",
                     }}
                   >
@@ -190,7 +190,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </h3>
                   <ul
                     className="font-body flex flex-col"
-                    style={{ gap: "7px", textAlign: "left" }}
+                    style={{ gap: "8px", textAlign: "left" }}
                   >
                     {goal.bullets.map((b, idx) => (
                       <li
@@ -198,9 +198,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                         className="flex items-start"
                         style={{
                           color: "rgba(232,212,168,0.92)",
-                          fontSize: "14.5px",
+                          fontSize: "15.5px",
                           lineHeight: 1.45,
-                          paddingRight: idx >= goal.bullets.length - 2 ? "140px" : "0",
+                          paddingRight: idx >= goal.bullets.length - 2 ? "165px" : "0",
                         }}
                       >
                         <span
@@ -248,10 +248,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   style={{
                     bottom: 0,
                     right: 0,
-                    width: "230px",
-                    height: "230px",
+                    width: "270px",
+                    height: "270px",
                     overflow: "hidden",
-                    borderBottomRightRadius: "18px",
+                    borderBottomRightRadius: "20px",
                   }}
                 >
                   {/* Pink lower corner panel — larger geometric block */}
@@ -270,9 +270,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "98px",
-                      right: "-50px",
-                      width: "280px",
+                      bottom: "115px",
+                      right: "-60px",
+                      width: "330px",
                       height: "1px",
                       transform: "rotate(-45deg)",
                       background: "rgba(0,0,0,0.22)",
@@ -283,8 +283,8 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "48px",
-                      right: "48px",
+                      bottom: "56px",
+                      right: "56px",
                       transform: "translate(50%, 50%) rotate(-45deg)",
                       transformOrigin: "center",
                       textAlign: "center",
@@ -298,23 +298,23 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 0 rgba(255,220,228,0.45)",
                     }}
                   >
-                    <div style={{ fontSize: "13px", letterSpacing: "0.14em", fontWeight: 1000 }}>EARN</div>
-                    <div style={{ fontSize: "16px", fontWeight: 1000 }}>$25 / MONTH</div>
+                    <div style={{ fontSize: "15px", letterSpacing: "0.14em", fontWeight: 1000 }}>EARN</div>
+                    <div style={{ fontSize: "19px", fontWeight: 1000 }}>$25 / MONTH</div>
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "50px",
-                      right: "-80px",
+                      bottom: "60px",
+                      right: "-95px",
                       transform: "rotate(-45deg)",
-                      width: "330px",
+                      width: "390px",
                       textAlign: "center",
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#0a0500",
-                      padding: "11px 0",
+                      padding: "13px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
@@ -322,7 +322,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
                       fontWeight: 1000,
-                      fontSize: "15px",
+                      fontSize: "17px",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
                       WebkitTextStroke: "1px #0a0500",
