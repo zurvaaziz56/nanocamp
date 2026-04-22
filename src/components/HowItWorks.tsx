@@ -79,11 +79,11 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-9 mb-20 max-w-[1540px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 mb-20 max-w-[1540px] mx-auto">
           {goals.map((goal, i) => {
             const isSelected = selected === i;
             const isHovered = hovered === i;
-            const offsetClass = "md:col-span-2";
+            const offsetClass = "";
             const cardBg = "#141210";
             return (
               <button
@@ -311,14 +311,6 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           .goal-corner-paid-label { font-size: 18px; letter-spacing: 0.14em; }
           .goal-corner-paid-amount { font-size: 23px; }
           .goal-corner-ribbon { bottom: 78px; right: -90px; width: 360px; padding: 11px 0; font-size: 18px; letter-spacing: 0.12em; }
-          @media (max-width: 1279px) {
-            .goal-corner { width: 170px; height: 170px; }
-            .goal-corner-divider { bottom: 72px; right: -38px; width: 210px; }
-            .goal-corner-paid { bottom: 34px; right: 34px; }
-            .goal-corner-paid-label { font-size: 11px; letter-spacing: 0.1em; }
-            .goal-corner-paid-amount { font-size: 15px; }
-            .goal-corner-ribbon { bottom: 50px; right: -60px; width: 235px; padding: 7px 0; font-size: 11px; letter-spacing: 0.08em; }
-          }
           @media (max-width: 599px) {
             .goal-corner { width: 180px; height: 180px; }
             .goal-corner-divider { bottom: 76px; right: -40px; width: 220px; }
