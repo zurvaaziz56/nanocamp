@@ -50,7 +50,7 @@ const goals: Goal[] = [
     alt: "Man preparing a healthy bowl of food in his kitchen",
     bullets: [
       "Eat better meals",
-      "20 better meals in 30 days",
+      "15 out of 30 days\n",
       "Daily food photo",
     ],
     objectPosition: "center 5%",
