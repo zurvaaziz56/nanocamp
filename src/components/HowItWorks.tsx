@@ -83,7 +83,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           {goals.map((goal, i) => {
             const isSelected = selected === i;
             const isHovered = hovered === i;
-            const offsetClass = "md:col-span-2";
+            const offsetClass = "";
             const cardBg = "#141210";
             return (
               <button
