@@ -61,7 +61,7 @@ const goals: Goal[] = [
     alt: "Overhead view of a person standing on a bathroom scale in soft natural light",
     bullets: [
       "Drop 5 pounds ",
-      "Hit your goal weight by day 30",
+      "In 30 days\n",
       "Track daily activity",
     ],
     objectPosition: "center 55%",
