@@ -44,28 +44,6 @@ const goals: Goal[] = [
     ],
     objectPosition: "center 10%",
   },
-  {
-    title: "Eat healthier",
-    image: "/img/goals/eat-healthier.webp",
-    alt: "Man preparing a healthy bowl of food in his kitchen",
-    bullets: [
-      "Eat better meals",
-      "15 out of 30 days\n",
-      "Daily meal photo",
-    ],
-    objectPosition: "center 5%",
-  },
-  {
-    title: "Lose 5 pounds",
-    image: "/img/goals/lose-5-pounds.webp",
-    alt: "Overhead view of a person standing on a bathroom scale in soft natural light",
-    bullets: [
-      "Drop 5 pounds ",
-      "In 30 days\n",
-      "Track daily activity",
-    ],
-    objectPosition: "center 55%",
-  },
 ];
 
 interface HowItWorksProps {
