@@ -42,7 +42,7 @@ const goals: Goal[] = [
       "Train 10 of 30 days",
       "Gym selfie each session",
     ],
-    objectPosition: "center 30%",
+    objectPosition: "center 10%",
   },
   {
     title: "Eat healthier",
