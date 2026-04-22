@@ -306,15 +306,15 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "55px",
-                      right: "-90px",
+                      bottom: "50px",
+                      right: "-80px",
                       transform: "rotate(-45deg)",
-                      width: "380px",
+                      width: "330px",
                       textAlign: "center",
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#0a0500",
-                      padding: "14px 0",
+                      padding: "11px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
@@ -322,7 +322,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
                       fontWeight: 900,
-                      fontSize: "15px",
+                      fontSize: "13px",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
                       WebkitTextStroke: "0.6px #0a0500",
