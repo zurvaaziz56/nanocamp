@@ -200,7 +200,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                           color: "rgba(232,212,168,0.92)",
                           fontSize: "15.5px",
                           lineHeight: 1.45,
-                          paddingRight: idx >= goal.bullets.length - 2 ? "165px" : "0",
+                          whiteSpace: "nowrap",
                         }}
                       >
                         <span
