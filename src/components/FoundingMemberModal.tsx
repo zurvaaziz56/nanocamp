@@ -364,7 +364,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 className="text-center font-body mt-4"
                 style={{ color: "#6A6250", fontSize: "11px", lineHeight: 1.5 }}
               >
-                This is a pre-launch market test. Product not yet available. No purchase will be completed. No payment will be accepted. Provide your name and email to participate, subject to terms. Must be 18 or older to enter. Limit one entry per person/household.
+                This is a pre-launch market test. Product not yet available. No purchase will be completed. No payment will be accepted.
               </p>
             </form>
           </motion.div>
