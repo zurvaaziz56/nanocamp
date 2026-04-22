@@ -31,7 +31,7 @@ const goals: Goal[] = [
       "10,000 steps, 20 of 30 days",
       "Daily step count proof",
     ],
-    objectPosition: "center 20%",
+    objectPosition: "center 35%",
   },
   {
     title: "Hit the gym",
