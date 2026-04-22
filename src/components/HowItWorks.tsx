@@ -298,7 +298,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 0 rgba(255,220,228,0.45)",
                     }}
                   >
-                    <div style={{ fontSize: "13px", letterSpacing: "0.14em" }}>GET PAID</div>
+                    <div style={{ fontSize: "13px", letterSpacing: "0.14em" }}>EARN</div>
                     <div style={{ fontSize: "16px" }}>$25 / MONTH</div>
                   </div>
 
