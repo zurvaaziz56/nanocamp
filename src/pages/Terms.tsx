@@ -35,15 +35,7 @@ const Terms = () => {
         participation gift card.
       </p>
 
-      <h2>3. Gift Card</h2>
-      <p>
-        If you qualify under the offer shown on the site, we will send the stated gift card to the
-        email address you provide within 30 days. Limit one per person or household. Duplicate,
-        incomplete, or abusive submissions may be rejected. Gift cards are subject to any issuer
-        terms, limits, or restrictions.
-      </p>
-
-      <h2>4. Accurate Information and Site Use</h2>
+      <h2>3. Accurate Information and Site Use</h2>
       <p>You agree to provide accurate information and not misuse the site.</p>
 
       <h2>5. Changes to Test</h2>
