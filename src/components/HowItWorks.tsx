@@ -217,7 +217,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                             boxShadow: "0 0 6px rgba(212,168,67,0.5)",
                           }}
                         />
-                        <span style={{ whiteSpace: "pre-line" }}>{b}</span>
+                        <span>{b.replace(/\n/g, "").trim()}</span>
                       </li>
                     ))}
                   </ul>
