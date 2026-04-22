@@ -200,7 +200,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                           color: "rgba(232,212,168,0.92)",
                           fontSize: "15.5px",
                           lineHeight: 1.45,
-                          paddingRight: idx >= goal.bullets.length - 2 ? "165px" : "0",
+                          whiteSpace: "nowrap",
                         }}
                       >
                         <span
@@ -217,7 +217,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                             boxShadow: "0 0 6px rgba(212,168,67,0.5)",
                           }}
                         />
-                        <span style={{ whiteSpace: "pre-line" }}>{b}</span>
+                        <span>{b.replace(/\n/g, "").trim()}</span>
                       </li>
                     ))}
                   </ul>
