@@ -200,7 +200,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                           color: "rgba(232,212,168,0.92)",
                           fontSize: "14.5px",
                           lineHeight: 1.45,
-                          paddingRight: idx >= goal.bullets.length - 2 ? "120px" : "0",
+                          paddingRight: idx >= goal.bullets.length - 2 ? "140px" : "0",
                         }}
                       >
                         <span
@@ -242,81 +242,101 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Layered corner ribbon system: gold (Pay $20) + pink (Get $25) */}
+                {/* Layered corner system: large pink base panel + dominant gold ribbon */}
                 <div
                   className="absolute pointer-events-none"
                   style={{
                     bottom: 0,
                     right: 0,
-                    width: "180px",
-                    height: "180px",
+                    width: "210px",
+                    height: "210px",
                     overflow: "hidden",
                     borderBottomRightRadius: "18px",
                   }}
                 >
-                  {/* Pink lower triangle (background layer) */}
+                  {/* Pink lower corner panel — larger, cleaner base layer */}
                   <div
                     style={{
                       position: "absolute",
                       inset: 0,
-                      clipPath: "polygon(100% 28%, 100% 100%, 28% 100%)",
+                      clipPath: "polygon(100% 38%, 100% 100%, 38% 100%)",
                       background:
-                        "linear-gradient(135deg, #F4A4B8 0%, #E87A95 45%, #B84968 100%)",
+                        "linear-gradient(140deg, #EDA8B8 0%, #D97A93 50%, #9E3F5C 100%)",
                       boxShadow:
-                        "inset 1px 1px 0 rgba(255,210,220,0.45), inset -1px -1px 0 rgba(0,0,0,0.2)",
+                        "inset 1px 1px 0 rgba(255,215,225,0.4), inset -1px -1px 0 rgba(0,0,0,0.18)",
                     }}
                   />
-                  {/* Pink ribbon text */}
+                  {/* Pink panel text */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "14px",
-                      right: "-58px",
+                      bottom: "26px",
+                      right: "-46px",
                       transform: "rotate(-45deg)",
-                      width: "200px",
+                      width: "210px",
                       textAlign: "center",
-                      color: "#3a0a18",
-                      fontWeight: 800,
-                      textTransform: "uppercase",
+                      color: "#2d0612",
+                      fontWeight: 700,
                       whiteSpace: "nowrap",
-                      lineHeight: 1,
-                      textShadow: "0 1px 0 rgba(255,220,228,0.4)",
+                      lineHeight: 1.05,
+                      textShadow: "0 1px 0 rgba(255,220,228,0.35)",
                     }}
                   >
-                    <span style={{ fontSize: "11px", letterSpacing: "0.08em", display: "block", marginBottom: "3px", opacity: 0.85 }}>
+                    <div
+                      style={{
+                        fontSize: "10px",
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        opacity: 0.75,
+                        fontWeight: 700,
+                        marginBottom: "4px",
+                      }}
+                    >
                       Get paid
-                    </span>
-                    <span style={{ fontSize: "15px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
-                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / mo</span>
+                    </div>
+                    <div style={{ fontSize: "15px", fontWeight: 800, letterSpacing: "0.01em" }}>
+                      <span style={{ fontWeight: 900 }}>$25</span>
+                      <span style={{ opacity: 0.8, fontWeight: 600 }}> / month</span>
+                    </div>
                   </div>
 
-                  {/* Gold main diagonal ribbon (top layer) */}
+                  {/* Gold dominant diagonal ribbon */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "62px",
-                      right: "-58px",
+                      bottom: "92px",
+                      right: "-60px",
                       transform: "rotate(-45deg)",
-                      width: "200px",
+                      width: "230px",
                       textAlign: "center",
                       background:
-                        "linear-gradient(135deg, #f5d27a 0%, #e0b84a 45%, #a87520 100%)",
+                        "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#1a0f03",
                       fontWeight: 800,
-                      textTransform: "uppercase",
-                      padding: "9px 0",
-                      borderTop: "1px solid rgba(255,225,150,0.75)",
-                      borderBottom: "1px solid rgba(0,0,0,0.3)",
+                      padding: "11px 0",
+                      borderTop: "1px solid rgba(255,228,160,0.85)",
+                      borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
-                        "0 6px 18px rgba(168,117,32,0.55), 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.18)",
+                        "0 8px 22px rgba(168,117,32,0.5), 0 3px 6px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.2)",
                       whiteSpace: "nowrap",
-                      textShadow: "0 1px 0 rgba(255,225,150,0.35)",
-                      lineHeight: 1,
+                      textShadow: "0 1px 0 rgba(255,228,160,0.4)",
+                      lineHeight: 1.05,
                     }}
                   >
-                    <span style={{ fontSize: "11px", letterSpacing: "0.08em", opacity: 0.78, marginRight: "6px" }}>Pay</span>
-                    <span style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
-                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / mo</span>
+                    <span
+                      style={{
+                        fontSize: "10px",
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        opacity: 0.7,
+                        marginRight: "8px",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Pay
+                    </span>
+                    <span style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "0.01em" }}>$20</span>
+                    <span style={{ fontSize: "13px", letterSpacing: "0.04em", opacity: 0.85, fontWeight: 600 }}> / month</span>
                   </div>
                 </div>
               </button>
