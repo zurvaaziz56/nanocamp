@@ -84,7 +84,7 @@ const Index = () => {
                 lineHeight: 1.5,
                 fontSize: 'clamp(20px, 2.1vw, 28px)',
                 fontWeight: 500,
-                marginTop: 'clamp(64px, 7vw, 88px)',
+                marginTop: 'clamp(32px, 4vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
@@ -97,7 +97,7 @@ const Index = () => {
                 lineHeight: 1.4,
                 fontSize: 'clamp(18px, 2.4vw, 28px)',
                 fontWeight: 400,
-                marginTop: '24px',
+                marginTop: '16px',
               }}
             >
               How is this possible?<br /><span style={{ color: "#FFFFFF" }}>AI verifies your progress and sponsors back the reward.</span>
@@ -105,7 +105,7 @@ const Index = () => {
 
             <div
               className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(40px, 4.5vw, 56px)', animationDelay: '0.3s' }}
+              style={{ marginTop: 'clamp(24px, 3vw, 40px)', animationDelay: '0.3s' }}
             >
               <StatPills />
             </div>
@@ -113,7 +113,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(56px, 6vw, 80px)', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(32px, 4vw, 56px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
