@@ -279,33 +279,32 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
                     }}
                   />
-                  {/* Pink panel text — larger and more readable */}
+                  {/* Pink panel text — larger and more prominent */}
                   <div
                     style={{
                       position: "absolute",
-                      right: "18px",
-                      bottom: "18px",
+                      right: "20px",
+                      bottom: "20px",
                       textAlign: "right",
-                      color: "#2d0612",
-                      lineHeight: 1.15,
-                      textShadow: "0 1px 0 rgba(255,220,228,0.35)",
+                      color: "#1a0510",
+                      lineHeight: 1.2,
+                      textShadow: "0 1px 2px rgba(255,220,228,0.5)",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: "11px",
-                        letterSpacing: "0.2em",
+                        fontSize: "12px",
+                        letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        opacity: 0.75,
-                        fontWeight: 700,
-                        marginBottom: "5px",
+                        fontWeight: 800,
+                        marginBottom: "6px",
                       }}
                     >
                       Get paid
                     </div>
-                    <div style={{ fontSize: "19px", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                    <div style={{ fontSize: "22px", fontWeight: 900, letterSpacing: "-0.02em" }}>
                       <span style={{ fontWeight: 900 }}>$25</span>
-                      <span style={{ opacity: 0.8, fontWeight: 600, fontSize: "15px" }}> / month</span>
+                      <span style={{ fontWeight: 700, fontSize: "16px" }}> / month</span>
                     </div>
                   </div>
 
