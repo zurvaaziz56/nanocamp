@@ -313,16 +313,16 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "108px",
-                      right: "-70px",
+                      bottom: "105px",
+                      right: "-90px",
                       transform: "rotate(-45deg)",
-                      width: "260px",
+                      width: "380px",
                       textAlign: "center",
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#1a0f03",
                       fontWeight: 800,
-                      padding: "12px 0",
+                      padding: "14px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
