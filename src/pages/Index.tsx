@@ -81,27 +81,49 @@ const Index = () => {
               className="max-w-[620px] hero-fade"
               style={{
                 color: "#F0DFB5",
-                lineHeight: 1.5,
-                fontSize: 'clamp(20px, 2.1vw, 28px)',
+                lineHeight: 1.45,
+                fontSize: 'clamp(17px, 2.1vw, 28px)',
                 fontWeight: 500,
-                marginTop: 'clamp(32px, 4vw, 56px)',
+                marginTop: 'clamp(24px, 4vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
               Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
-            <p
-              className="font-display"
+            <div
+              className="mx-auto"
               style={{
-                color: "#FFFFFF",
-                lineHeight: 1.4,
-                fontSize: 'clamp(18px, 2.4vw, 28px)',
-                fontWeight: 400,
-                marginTop: '16px',
+                marginTop: 'clamp(20px, 3vw, 28px)',
+                paddingTop: 'clamp(16px, 2.5vw, 20px)',
+                borderTop: '1px solid rgba(212,168,67,0.18)',
+                maxWidth: '560px',
               }}
             >
-              How is this possible?<br /><span style={{ color: "#FFFFFF" }}>AI verifies your progress and sponsors back the reward.</span>
-            </p>
+              <p
+                className="font-body uppercase"
+                style={{
+                  color: '#D4A843',
+                  fontSize: 'clamp(11px, 1.2vw, 13px)',
+                  letterSpacing: '0.18em',
+                  fontWeight: 700,
+                  margin: 0,
+                }}
+              >
+                How is this possible?
+              </p>
+              <p
+                className="font-display"
+                style={{
+                  color: 'rgba(245,241,232,0.9)',
+                  lineHeight: 1.45,
+                  fontSize: 'clamp(15px, 2vw, 22px)',
+                  fontWeight: 400,
+                  marginTop: '8px',
+                }}
+              >
+                AI verifies your progress and sponsors back the reward.
+              </p>
+            </div>
 
             <div
               className="w-full max-w-[600px] hero-fade"
