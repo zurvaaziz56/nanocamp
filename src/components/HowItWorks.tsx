@@ -28,7 +28,7 @@ const goals: Goal[] = [
     alt: "Smiling man jogging along a riverside path at sunset with city skyline in the background",
     bullets: [
       "Hit 10,000 steps ",
-      "10,000 steps, 20 of 30 days",
+      "20 out of 30 days\n",
       "Daily step count proof",
     ],
     objectPosition: "center 5%",
