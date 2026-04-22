@@ -279,33 +279,25 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
                     }}
                   />
-                  {/* Pink panel text — larger and more prominent */}
+                  {/* Pink panel text — diagonal, bold, matching ribbon angle */}
                   <div
                     style={{
                       position: "absolute",
-                      right: "20px",
-                      bottom: "20px",
-                      textAlign: "right",
+                      bottom: "32px",
+                      right: "-40px",
+                      width: "200px",
+                      transform: "rotate(-45deg)",
+                      textAlign: "center",
                       color: "#1a0510",
-                      lineHeight: 1.2,
-                      textShadow: "0 1px 2px rgba(255,220,228,0.5)",
+                      fontWeight: 900,
+                      fontSize: "14px",
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      whiteSpace: "nowrap",
+                      lineHeight: 1,
                     }}
                   >
-                    <div
-                      style={{
-                        fontSize: "12px",
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        fontWeight: 800,
-                        marginBottom: "6px",
-                      }}
-                    >
-                      Get paid
-                    </div>
-                    <div style={{ fontSize: "22px", fontWeight: 900, letterSpacing: "-0.02em" }}>
-                      <span style={{ fontWeight: 900 }}>$25</span>
-                      <span style={{ fontWeight: 700, fontSize: "16px" }}> / month</span>
-                    </div>
+                    $25 / MONTH
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
@@ -320,31 +312,20 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#1a0f03",
-                      fontWeight: 800,
                       padding: "14px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
                         "0 8px 22px rgba(168,117,32,0.5), 0 3px 6px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.2)",
                       whiteSpace: "nowrap",
-                      textShadow: "0 1px 0 rgba(255,228,160,0.4)",
-                      lineHeight: 1.05,
+                      lineHeight: 1,
+                      fontWeight: 900,
+                      fontSize: "14px",
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: "11px",
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        opacity: 0.75,
-                        marginRight: "8px",
-                        fontWeight: 700,
-                      }}
-                    >
-                      Pay
-                    </span>
-                    <span style={{ fontSize: "17px", fontWeight: 900, letterSpacing: "0.01em" }}>$20</span>
-                    <span style={{ fontSize: "14px", letterSpacing: "0.04em", opacity: 0.85, fontWeight: 600 }}> / month</span>
+                    $20 / MONTH
                   </div>
                 </div>
               </button>
