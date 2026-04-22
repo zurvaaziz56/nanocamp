@@ -20,7 +20,7 @@ const goals: Goal[] = [
       "Bed by 10:30PM, 20 of 30 nights",
       "Nightly selfie proof",
     ],
-    objectPosition: "center 35%",
+    objectPosition: "center 20%",
   },
   {
     title: "Walk 10,000 steps",
