@@ -113,7 +113,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
     borderRadius: "8px",
     padding: "0 14px",
     color: "#F5F1E8",
-    fontSize: "14px",
+    fontSize: "16px",
     fontFamily: "inherit",
     outline: "none",
     transition: "border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease",
@@ -157,7 +157,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 "linear-gradient(180deg, #181613 0%, #141210 100%)",
               border: "1px solid rgba(212,168,67,0.14)",
               borderRadius: "18px",
-              padding: "44px 36px 36px",
+              padding: "clamp(28px, 6vw, 44px) clamp(20px, 5vw, 36px) clamp(24px, 5vw, 36px)",
               boxShadow:
                 "0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,235,190,0.03), 0 0 60px rgba(212,168,67,0.06)",
             }}
@@ -196,7 +196,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
               className="font-display"
               style={{
                 color: "#FBF7EE",
-                fontSize: "28px",
+                fontSize: "clamp(22px, 5.5vw, 28px)",
                 fontWeight: 700,
                 lineHeight: 1.15,
                 letterSpacing: "-0.01em",
@@ -208,7 +208,7 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
               className="mt-3 font-body mx-auto"
               style={{
                 color: "#C9C0AB",
-                fontSize: "14.5px",
+                fontSize: "clamp(13px, 3.5vw, 14.5px)",
                 maxWidth: "340px",
                 lineHeight: 1.5,
               }}
@@ -328,12 +328,12 @@ const FoundingMemberModal = ({ open, onClose }: Props) => {
                 disabled={submitting}
                 className="transition-all duration-200 mt-6 disabled:opacity-60"
                 style={{
-                  height: "54px",
+                  height: "clamp(48px, 12vw, 54px)",
                   width: "100%",
                   background: "linear-gradient(180deg, #FBF7EE 0%, #ECE4D2 100%)",
                   color: "#0A0908",
                   fontWeight: 700,
-                  fontSize: "15px",
+                  fontSize: "clamp(14px, 3.8vw, 15px)",
                   borderRadius: "10px",
                   letterSpacing: "0.01em",
                   boxShadow:
