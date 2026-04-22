@@ -46,7 +46,7 @@ const Index = () => {
               style={{ height: 'clamp(32px, 3.5vw, 44px)', width: 'auto' }}
             />
           </div>
-          <div className="flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-4">
             <PremiumCTAButton onClick={openModal} size="sm" />
           </div>
         </div>
