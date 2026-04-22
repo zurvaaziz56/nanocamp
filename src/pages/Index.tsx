@@ -91,20 +91,20 @@ const Index = () => {
               Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
             <div
-              className="mx-auto"
+              className="mx-auto text-center"
               style={{
-                marginTop: 'clamp(20px, 3vw, 28px)',
-                paddingTop: 'clamp(16px, 2.5vw, 20px)',
+                marginTop: 'clamp(24px, 3vw, 32px)',
+                paddingTop: 'clamp(18px, 2.5vw, 22px)',
                 borderTop: '1px solid rgba(212,168,67,0.18)',
-                maxWidth: '560px',
+                maxWidth: '460px',
               }}
             >
               <p
-                className="font-body uppercase"
+                className="font-body uppercase mx-auto"
                 style={{
                   color: '#D4A843',
-                  fontSize: 'clamp(11px, 1.2vw, 13px)',
-                  letterSpacing: '0.18em',
+                  fontSize: 'clamp(10.5px, 1.2vw, 13px)',
+                  letterSpacing: '0.22em',
                   fontWeight: 700,
                   margin: 0,
                 }}
@@ -112,16 +112,18 @@ const Index = () => {
                 How is this possible?
               </p>
               <p
-                className="font-display"
+                className="font-display mx-auto"
                 style={{
-                  color: 'rgba(245,241,232,0.9)',
-                  lineHeight: 1.45,
-                  fontSize: 'clamp(15px, 2vw, 22px)',
+                  color: 'rgba(245,241,232,0.92)',
+                  lineHeight: 1.4,
+                  fontSize: 'clamp(15px, 2vw, 21px)',
                   fontWeight: 400,
-                  marginTop: '8px',
+                  marginTop: '10px',
+                  maxWidth: '380px',
+                  textWrap: 'balance',
                 }}
               >
-                AI verifies your progress and sponsors back the reward.
+                AI verifies your progress and sponsors the reward.
               </p>
             </div>
 
