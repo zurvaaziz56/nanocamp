@@ -279,27 +279,27 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
                     }}
                   />
-                  {/* Pink panel text — diagonal, bold, matching ribbon angle, two lines */}
+                  {/* Pink panel text — centered in triangle, bold, on diagonal */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "30px",
-                      right: "-50px",
-                      width: "230px",
-                      transform: "rotate(-45deg)",
+                      bottom: "48px",
+                      right: "48px",
+                      transform: "translate(50%, 50%) rotate(-45deg)",
+                      transformOrigin: "center",
                       textAlign: "center",
                       color: "#0a0207",
                       fontWeight: 900,
-                      letterSpacing: "0.04em",
+                      letterSpacing: "0.05em",
                       textTransform: "uppercase",
                       whiteSpace: "nowrap",
-                      lineHeight: 1.15,
-                      WebkitTextStroke: "0.4px #0a0207",
-                      textShadow: "0 1px 0 rgba(255,220,228,0.4)",
+                      lineHeight: 1.18,
+                      WebkitTextStroke: "0.6px #0a0207",
+                      textShadow: "0 1px 0 rgba(255,220,228,0.45)",
                     }}
                   >
-                    <div style={{ fontSize: "13px", letterSpacing: "0.12em" }}>GET PAID</div>
-                    <div style={{ fontSize: "15px" }}>$25 / MONTH</div>
+                    <div style={{ fontSize: "13px", letterSpacing: "0.14em" }}>GET PAID</div>
+                    <div style={{ fontSize: "16px" }}>$25 / MONTH</div>
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
