@@ -64,7 +64,7 @@ const goals: Goal[] = [
       "Hit your goal weight by day 30",
       "Track daily activity",
     ],
-    objectPosition: "center 15%",
+    objectPosition: "center 30%",
   },
 ];
 
