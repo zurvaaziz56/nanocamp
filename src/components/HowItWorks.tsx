@@ -261,7 +261,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       inset: 0,
                       clipPath: "polygon(100% 35%, 100% 100%, 35% 100%)",
                       background:
-                        "linear-gradient(145deg, #D93D9A 0%, #B72F83 50%, #7A1B57 100%)",
+                        "linear-gradient(145deg, #FF69B4 0%, #FF1493 50%, #C71585 100%)",
                       boxShadow:
                         "inset 1px 1px 0 rgba(255,200,215,0.18), inset -1px -1px 0 rgba(0,0,0,0.35)",
                     }}
