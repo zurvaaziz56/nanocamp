@@ -169,7 +169,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   />
                 </div>
 
-                {/* Content (bottom 45%) */}
+                {/* Content (bottom 38%) */}
                 <div
                   className="relative flex flex-col"
                   style={{ height: "38%", padding: "20px 22px 24px" }}
@@ -200,7 +200,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                           color: "rgba(232,212,168,0.92)",
                           fontSize: "14.5px",
                           lineHeight: 1.45,
-                          paddingRight: idx >= goal.bullets.length - 2 ? "115px" : "0",
+                          paddingRight: idx >= goal.bullets.length - 2 ? "120px" : "0",
                         }}
                       >
                         <span
@@ -242,25 +242,71 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Diagonal $20/MONTH ribbon */}
+                {/* Layered corner ribbon system: gold (Pay $20) + pink (Get $25) */}
                 <div
-                  className="absolute pointer-events-none overflow-hidden"
-                  style={{ bottom: 0, right: 0, width: "210px", height: "210px" }}
+                  className="absolute pointer-events-none"
+                  style={{
+                    bottom: 0,
+                    right: 0,
+                    width: "180px",
+                    height: "180px",
+                    overflow: "hidden",
+                    borderBottomRightRadius: "18px",
+                  }}
                 >
+                  {/* Pink lower triangle (background layer) */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "38px",
-                      right: "-60px",
-                      transform: "rotate(-45deg)",
+                      inset: 0,
+                      clipPath: "polygon(100% 28%, 100% 100%, 28% 100%)",
                       background:
-                        "linear-gradient(135deg, #f0c860 0%, #e0b84a 45%, #a87520 100%)",
+                        "linear-gradient(135deg, #F4A4B8 0%, #E87A95 45%, #B84968 100%)",
+                      boxShadow:
+                        "inset 1px 1px 0 rgba(255,210,220,0.45), inset -1px -1px 0 rgba(0,0,0,0.2)",
+                    }}
+                  />
+                  {/* Pink ribbon text */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "14px",
+                      right: "-58px",
+                      transform: "rotate(-45deg)",
+                      width: "200px",
+                      textAlign: "center",
+                      color: "#3a0a18",
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                      whiteSpace: "nowrap",
+                      lineHeight: 1,
+                      textShadow: "0 1px 0 rgba(255,220,228,0.4)",
+                    }}
+                  >
+                    <span style={{ fontSize: "11px", letterSpacing: "0.08em", display: "block", marginBottom: "3px", opacity: 0.85 }}>
+                      Get paid
+                    </span>
+                    <span style={{ fontSize: "15px", fontWeight: 900, letterSpacing: "0.02em" }}>$25</span>
+                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / mo</span>
+                  </div>
+
+                  {/* Gold main diagonal ribbon (top layer) */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "62px",
+                      right: "-58px",
+                      transform: "rotate(-45deg)",
+                      width: "200px",
+                      textAlign: "center",
+                      background:
+                        "linear-gradient(135deg, #f5d27a 0%, #e0b84a 45%, #a87520 100%)",
                       color: "#1a0f03",
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      padding: "11px 80px",
-                      borderTop: "1.5px solid rgba(255,225,150,0.7)",
-                      borderBottom: "1.5px solid rgba(0,0,0,0.28)",
+                      padding: "9px 0",
+                      borderTop: "1px solid rgba(255,225,150,0.75)",
+                      borderBottom: "1px solid rgba(0,0,0,0.3)",
                       boxShadow:
                         "0 6px 18px rgba(168,117,32,0.55), 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.18)",
                       whiteSpace: "nowrap",
@@ -268,8 +314,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       lineHeight: 1,
                     }}
                   >
-                    <span style={{ fontSize: "18px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
-                    <span style={{ fontSize: "15px", letterSpacing: "0.06em" }}> / Month</span>
+                    <span style={{ fontSize: "11px", letterSpacing: "0.08em", opacity: 0.78, marginRight: "6px" }}>Pay</span>
+                    <span style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "0.02em" }}>$20</span>
+                    <span style={{ fontSize: "12px", letterSpacing: "0.06em" }}> / mo</span>
                   </div>
                 </div>
               </button>
