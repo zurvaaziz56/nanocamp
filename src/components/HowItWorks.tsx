@@ -95,7 +95,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                 }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
-                className={`group relative text-left transition-all duration-200 w-full max-w-[450px] mx-auto ${offsetClass}`}
+                className={`group relative text-left transition-all duration-200 w-full max-w-[560px] mx-auto ${offsetClass}`}
                 style={{
                   aspectRatio: "3 / 4",
                   borderRadius: "20px",
