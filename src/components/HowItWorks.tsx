@@ -12,7 +12,7 @@ type Goal = {
 
 const goals: Goal[] = [
   {
-    title: "Get to bed on time",
+    title: "​Go to bed early",
     image: "/img/goals/sleep-on-time.webp",
     alt: "Woman waking up peacefully in bed at sunrise",
     bullets: [
