@@ -14,7 +14,7 @@ const goals: Goal[] = [
   {
     title: "Get to bed on time",
     image: "/img/goals/sleep-on-time.webp",
-    alt: "Woman waking up peacefully in bed at sunrise",
+    alt: "Woman sleeping peacefully in bed with a clock reading 10:30 PM on the nightstand",
     bullets: [
       "Sleep your way to better health",
       "Bed by 10:30PM, 20 of 30 nights",
