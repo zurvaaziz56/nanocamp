@@ -66,7 +66,7 @@ const Index = () => {
                 {" "}to
               </h1>
               <span
-                className="font-display font-light italic tracking-tight text-center"
+                className="font-display font-light tracking-tight text-center"
                 style={{ 
                   color: "#FFFFFF", 
                   fontSize: 'clamp(48px, 9vw, 104px)',
