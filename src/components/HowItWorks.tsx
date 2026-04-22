@@ -320,13 +320,13 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       boxShadow:
                         "0 8px 22px rgba(168,117,32,0.5), 0 3px 6px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.2)",
                       whiteSpace: "nowrap",
-                      lineHeight: 1,
+                      lineHeight: 1.18,
                       fontWeight: 900,
                       fontSize: "15px",
-                      letterSpacing: "0.04em",
+                      letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      WebkitTextStroke: "0.4px #0a0500",
-                      textShadow: "0 1px 0 rgba(255,228,160,0.4)",
+                      WebkitTextStroke: "0.6px #0a0500",
+                      textShadow: "0 1px 0 rgba(255,228,160,0.5)",
                     }}
                   >
                     PAY $20 / MONTH
