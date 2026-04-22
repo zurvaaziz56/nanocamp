@@ -38,7 +38,7 @@ const goals: Goal[] = [
     image: "/img/goals/hit-the-gym.webp",
     alt: "Woman taking a thumbs-up selfie in the gym",
     bullets: [
-      "Show up, get stronger",
+      "Train consistently",
       "Train 10 of 30 days",
       "Gym selfie each session",
     ],
