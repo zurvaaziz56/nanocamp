@@ -299,7 +299,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 0 rgba(255,220,228,0.4)",
                     }}
                   >
-                    $25 / MONTH
+                    GET PAID $25 / MONTH
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
