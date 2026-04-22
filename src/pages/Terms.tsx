@@ -35,37 +35,47 @@ const Terms = () => {
         participation gift card.
       </p>
 
-      <h2>3. Accurate Information and Site Use</h2>
-      <p>You agree to provide accurate information and not misuse the site.</p>
-
-      <h2>4. Changes to Test</h2>
+      <h2>3. Gift Card</h2>
       <p>
-        We may change or end this market test at any time.
+        If you qualify under the offer shown on the site, we will send the stated gift card to the
+        email address you provide within 30 days. Limit one per person or household. Duplicate,
+        incomplete, or abusive submissions may be rejected. Gift cards are subject to any issuer
+        terms, limits, or restrictions.
       </p>
 
-      <h2>5. Limitation of Liability</h2>
+      <h2>4. Accurate Information and Site Use</h2>
+      <p>You agree to provide accurate information and not misuse the site.</p>
+
+      <h2>5. Changes to Test</h2>
+      <p>
+        We may change or end this market test at any time, but changes will not affect gift cards
+        already earned under the terms shown when you participated.
+      </p>
+
+      <h2>6. Limitation of Liability</h2>
       <p>
         To the fullest extent permitted by law, T Labs will not be liable for any indirect,
         incidental, special, consequential, or punitive damages, or for any loss of profits,
         revenue, data, goodwill, or business opportunities, arising out of or related to your use
         of this site or participation in this test. T Labs' total liability for any claim arising
-        out of or relating to this site or these Terms will not exceed $30.
+        out of or relating to this site or these Terms will not exceed the greater of $30 or the
+        value of the gift card offered to you.
       </p>
 
-      <h2>6. Privacy</h2>
+      <h2>7. Privacy</h2>
       <p>
         Your use of this site is also subject to our <Link to="/privacy">Privacy Notice</Link>,
         which describes how we collect, use, and disclose information in connection with this
         market test.
       </p>
 
-      <h2>7. Governing Law</h2>
+      <h2>8. Governing Law</h2>
       <p>
         These Terms are governed by the laws of the State of Nevada, without regard to conflict of
         laws principles.
       </p>
 
-      <h2>8. Contact</h2>
+      <h2>9. Contact</h2>
       <p>
         Questions about this site or these Terms may be sent to{" "}
         <a href="mailto:support@nano.com">support@nano.com</a>.
