@@ -73,8 +73,7 @@ const Index = () => {
                   lineHeight: 1.05
                 }}
               >
-                reach your{" "}
-                <span style={{ color: "#D4A843" }}>goals.</span>
+                reach your goals.
               </span>
             </div>
 
