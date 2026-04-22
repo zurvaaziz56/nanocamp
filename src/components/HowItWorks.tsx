@@ -173,10 +173,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     {goal.bullets.map((b, idx) => (
                       <li
                         key={b}
-                        className="flex items-start"
+                        className="goal-bullet flex items-start"
                         style={{
                           color: "rgba(232,212,168,0.92)",
-                          fontSize: "15.5px",
                           lineHeight: 1.45,
                         }}
                       >
@@ -305,6 +304,10 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
         </div>
 
         <style>{`
+          .goal-bullet { font-size: 15.5px; }
+          @media (min-width: 600px) and (max-width: 1023px) {
+            .goal-bullet { font-size: 20px; }
+          }
           .goal-corner { width: 270px; height: 270px; }
           .goal-corner-divider { bottom: 115px; right: -60px; width: 330px; }
           .goal-corner-paid { bottom: 56px; right: 56px; }
