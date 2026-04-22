@@ -58,7 +58,7 @@ const goals: Goal[] = [
   {
     title: "Lose 5 pounds",
     image: "/img/goals/lose-5-pounds.webp",
-    alt: "Woman smiling confidently in front of a bathroom mirror",
+    alt: "Overhead view of a person standing on a bathroom scale in soft natural light",
     bullets: [
       "Drop 5 pounds in 30 days",
       "Hit your goal weight by day 30",
