@@ -279,7 +279,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
                     }}
                   />
-                  {/* Pink panel text — centered in triangle, bold, on diagonal */}
+                  {/* Pink panel text — refined premium styling on diagonal */}
                   <div
                     style={{
                       position: "absolute",
@@ -288,18 +288,47 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       transform: "translate(50%, 50%) rotate(-45deg)",
                       transformOrigin: "center",
                       textAlign: "center",
-                      color: "#0a0207",
-                      fontWeight: 1000,
-                      letterSpacing: "0.05em",
-                      textTransform: "uppercase",
+                      color: "#FFF4F6",
                       whiteSpace: "nowrap",
-                      lineHeight: 1.18,
-                      WebkitTextStroke: "1px #0a0207",
-                      textShadow: "0 1px 0 rgba(255,220,228,0.45)",
+                      lineHeight: 1.15,
+                      textShadow: "0 1px 2px rgba(80,20,40,0.55)",
                     }}
                   >
-                    <div style={{ fontSize: "13px", letterSpacing: "0.14em", fontWeight: 1000 }}>EARN</div>
-                    <div style={{ fontSize: "16px", fontWeight: 1000 }}>$25 / MONTH</div>
+                    <div
+                      style={{
+                        fontFamily: "'Inter', system-ui, sans-serif",
+                        fontSize: "10px",
+                        letterSpacing: "0.32em",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        opacity: 0.92,
+                        marginBottom: "3px",
+                      }}
+                    >
+                      Earn
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "'Fraunces', Georgia, serif",
+                        fontSize: "21px",
+                        fontWeight: 700,
+                        letterSpacing: "-0.015em",
+                      }}
+                    >
+                      $25
+                      <span
+                        style={{
+                          fontSize: "12px",
+                          fontWeight: 500,
+                          opacity: 0.85,
+                          marginLeft: "3px",
+                          letterSpacing: "0.02em",
+                          fontFamily: "'Inter', system-ui, sans-serif",
+                        }}
+                      >
+                        /mo
+                      </span>
+                    </div>
                   </div>
 
                   {/* Gold dominant diagonal ribbon */}
