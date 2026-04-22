@@ -6,16 +6,15 @@ const Terms = () => {
     <LegalPage
       title="Terms of Use — Nano Camp"
       metaDescription="Terms of Use for Nano Camp's limited U.S. market test. Learn about eligibility, gift card terms, and site usage."
-      lastUpdated="April 20, 2026"
+      lastUpdated="April 22, 2026"
     >
       <h1>Terms of Use</h1>
 
-      <p><strong>Effective Date:</strong> Apr 20, 2026</p>
+      <p><strong>Effective Date:</strong> Apr 22, 2026</p>
 
       <p>
         This is a pre-launch market test. Product not yet available. No purchase will be completed.
-        No payment will be accepted. Provide your name and email and we'll send a $25 gift card for
-        participating, subject to terms.
+        No payment will be accepted.
       </p>
 
       <p>
@@ -35,12 +34,12 @@ const Terms = () => {
         participation gift card.
       </p>
 
-      <h2>3. Gift Card</h2>
+      <h2>3. Interview</h2>
       <p>
-        If you qualify under the offer shown on the site, we will send the stated gift card to the
-        email address you provide within 30 days. Limit one per person or household. Duplicate,
-        incomplete, or abusive submissions may be rejected. Gift cards are subject to any issuer
-        terms, limits, or restrictions.
+        If you qualify under the offer shown on the site and complete the required steps, we will
+        send the stated gift card to the email address you provide within 30 days. Limit one per
+        person or household. Duplicate, incomplete, or abusive submissions may be rejected. Gift
+        cards are subject to any issuer terms, limits, or restrictions.
       </p>
 
       <h2>4. Accurate Information and Site Use</h2>
@@ -57,7 +56,7 @@ const Terms = () => {
         To the fullest extent permitted by law, T Labs will not be liable for any indirect,
         incidental, special, consequential, or punitive damages, or for any loss of profits,
         revenue, data, goodwill, or business opportunities, arising out of or related to your use
-        of this site or participation in this test. T Labs' total liability for any claim arising
+        of this site or participation in this test. T Lab's total liability for any claim arising
         out of or relating to this site or these Terms will not exceed the greater of $30 or the
         value of the gift card offered to you.
       </p>
