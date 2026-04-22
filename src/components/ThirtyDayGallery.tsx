@@ -27,7 +27,7 @@ const ThirtyDayGallery = () => {
   return (
     <section
       style={{
-        padding: "144px 16px 8px",
+        padding: "48px 16px 8px",
       }}
     >
       <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
