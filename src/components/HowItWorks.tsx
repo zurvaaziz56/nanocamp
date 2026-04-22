@@ -25,7 +25,7 @@ const goals: Goal[] = [
   {
     title: "Walk 10,000 steps",
     image: "/img/goals/walk-10k.webp",
-    alt: "Smiling man jogging along a riverside path at sunset",
+    alt: "Smiling man standing on a sunlit city sidewalk",
     bullets: [
       "Move more, earn more",
       "10,000 steps, 20 of 30 days",
