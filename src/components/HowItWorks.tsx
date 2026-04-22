@@ -51,7 +51,7 @@ const goals: Goal[] = [
     bullets: [
       "Eat better meals",
       "15 out of 30 days\n",
-      "Daily food photo",
+      "Daily meal photo",
     ],
     objectPosition: "center 5%",
   },
