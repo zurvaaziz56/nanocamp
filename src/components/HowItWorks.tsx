@@ -261,9 +261,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       inset: 0,
                       clipPath: "polygon(100% 35%, 100% 100%, 35% 100%)",
                       background:
-                        "linear-gradient(145deg, #E8A5B6 0%, #C56F89 50%, #8E3753 100%)",
+                        "linear-gradient(145deg, #8E3753 0%, #5E1F36 50%, #3A0F22 100%)",
                       boxShadow:
-                        "inset 1px 1px 0 rgba(255,215,225,0.35), inset -1px -1px 0 rgba(0,0,0,0.18)",
+                        "inset 1px 1px 0 rgba(255,200,215,0.18), inset -1px -1px 0 rgba(0,0,0,0.35)",
                     }}
                   />
                   {/* Subtle divider line where gold meets pink */}
@@ -288,14 +288,14 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       transform: "translate(50%, 50%) rotate(-45deg)",
                       transformOrigin: "center",
                       textAlign: "center",
-                      color: "#0a0207",
+                      color: "#FFFFFF",
                       fontWeight: 1000,
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
-                      WebkitTextStroke: "1px #0a0207",
-                      textShadow: "0 1px 0 rgba(255,220,228,0.45)",
+                      WebkitTextStroke: "0.5px rgba(255,255,255,0.6)",
+                      textShadow: "0 1px 2px rgba(0,0,0,0.55)",
                     }}
                   >
                     <div style={{ fontSize: "15px", letterSpacing: "0.14em", fontWeight: 1000 }}>EARN</div>
