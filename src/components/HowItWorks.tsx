@@ -248,20 +248,20 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   style={{
                     bottom: 0,
                     right: 0,
-                    width: "210px",
-                    height: "210px",
+                    width: "230px",
+                    height: "230px",
                     overflow: "hidden",
                     borderBottomRightRadius: "18px",
                   }}
                 >
-                  {/* Pink lower corner panel — clean geometric block, no rotation */}
+                  {/* Pink lower corner panel — larger geometric block */}
                   <div
                     style={{
                       position: "absolute",
                       inset: 0,
-                      clipPath: "polygon(100% 52%, 100% 100%, 52% 100%)",
+                      clipPath: "polygon(100% 35%, 100% 100%, 35% 100%)",
                       background:
-                        "linear-gradient(160deg, #E8A5B6 0%, #C56F89 55%, #8E3753 100%)",
+                        "linear-gradient(145deg, #E8A5B6 0%, #C56F89 50%, #8E3753 100%)",
                       boxShadow:
                         "inset 1px 1px 0 rgba(255,215,225,0.35), inset -1px -1px 0 rgba(0,0,0,0.18)",
                     }}
@@ -270,42 +270,42 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "78px",
-                      right: "-40px",
-                      width: "230px",
+                      bottom: "98px",
+                      right: "-50px",
+                      width: "280px",
                       height: "1px",
                       transform: "rotate(-45deg)",
-                      background: "rgba(0,0,0,0.25)",
-                      boxShadow: "0 1px 0 rgba(255,255,255,0.15)",
+                      background: "rgba(0,0,0,0.22)",
+                      boxShadow: "0 1px 0 rgba(255,255,255,0.12)",
                     }}
                   />
-                  {/* Pink panel text — horizontal, right-aligned, elegant */}
+                  {/* Pink panel text — larger and more readable */}
                   <div
                     style={{
                       position: "absolute",
-                      right: "14px",
-                      bottom: "14px",
+                      right: "18px",
+                      bottom: "18px",
                       textAlign: "right",
                       color: "#2d0612",
-                      lineHeight: 1.1,
-                      textShadow: "0 1px 0 rgba(255,220,228,0.3)",
+                      lineHeight: 1.15,
+                      textShadow: "0 1px 0 rgba(255,220,228,0.35)",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: "9.5px",
-                        letterSpacing: "0.22em",
+                        fontSize: "11px",
+                        letterSpacing: "0.2em",
                         textTransform: "uppercase",
-                        opacity: 0.72,
+                        opacity: 0.75,
                         fontWeight: 700,
-                        marginBottom: "4px",
+                        marginBottom: "5px",
                       }}
                     >
                       Get paid
                     </div>
-                    <div style={{ fontSize: "17px", fontWeight: 800, letterSpacing: "-0.005em" }}>
+                    <div style={{ fontSize: "19px", fontWeight: 800, letterSpacing: "-0.01em" }}>
                       <span style={{ fontWeight: 900 }}>$25</span>
-                      <span style={{ opacity: 0.78, fontWeight: 600, fontSize: "14px" }}> / month</span>
+                      <span style={{ opacity: 0.8, fontWeight: 600, fontSize: "15px" }}> / month</span>
                     </div>
                   </div>
 
@@ -313,16 +313,16 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "92px",
-                      right: "-60px",
+                      bottom: "108px",
+                      right: "-70px",
                       transform: "rotate(-45deg)",
-                      width: "230px",
+                      width: "260px",
                       textAlign: "center",
                       background:
                         "linear-gradient(135deg, #f7d785 0%, #e0b84a 48%, #9d6c1c 100%)",
                       color: "#1a0f03",
                       fontWeight: 800,
-                      padding: "11px 0",
+                      padding: "12px 0",
                       borderTop: "1px solid rgba(255,228,160,0.85)",
                       borderBottom: "1px solid rgba(0,0,0,0.35)",
                       boxShadow:
@@ -334,18 +334,18 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   >
                     <span
                       style={{
-                        fontSize: "10px",
+                        fontSize: "11px",
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        opacity: 0.7,
+                        opacity: 0.75,
                         marginRight: "8px",
                         fontWeight: 700,
                       }}
                     >
                       Pay
                     </span>
-                    <span style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "0.01em" }}>$20</span>
-                    <span style={{ fontSize: "13px", letterSpacing: "0.04em", opacity: 0.85, fontWeight: 600 }}> / month</span>
+                    <span style={{ fontSize: "17px", fontWeight: 900, letterSpacing: "0.01em" }}>$20</span>
+                    <span style={{ fontSize: "14px", letterSpacing: "0.04em", opacity: 0.85, fontWeight: 600 }}> / month</span>
                   </div>
                 </div>
               </button>
