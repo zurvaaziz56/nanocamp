@@ -173,10 +173,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     {goal.bullets.map((b, idx) => (
                       <li
                         key={b}
-                        className="flex items-start"
+                        className="goal-bullet flex items-start"
                         style={{
                           color: "rgba(232,212,168,0.92)",
-                          fontSize: "15.5px",
                           lineHeight: 1.45,
                         }}
                       >
