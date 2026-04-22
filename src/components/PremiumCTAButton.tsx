@@ -9,8 +9,16 @@ const PremiumCTAButton = ({ onClick, size = "sm", children = "Join for Free", cl
   const isXl = size === "xl";
   const isLg = size === "lg";
 
-  const padding = isXl ? "24px 52px" : isLg ? "16px 32px" : "10px 22px";
-  const fontSize = isXl ? "22px" : isLg ? "16px" : "14px";
+  const padding = isXl
+    ? "clamp(16px, 2.4vw, 24px) clamp(28px, 5.5vw, 52px)"
+    : isLg
+    ? "16px 32px"
+    : "10px 22px";
+  const fontSize = isXl
+    ? "clamp(16px, 2.4vw, 22px)"
+    : isLg
+    ? "16px"
+    : "14px";
   const radius = isXl ? "14px" : isLg ? "10px" : "6px";
 
   return (
