@@ -29,7 +29,7 @@ const goals: Goal[] = [
     bullets: [
       "Hit 10,000 steps ",
       "20 out of 30 days\n",
-      "Daily step count proof",
+      "Step count proof ",
     ],
     objectPosition: "center 5%",
   },
