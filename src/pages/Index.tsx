@@ -53,7 +53,7 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-24 md:pt-32 pb-8 px-6">
+      <section className="pt-16 md:pt-20 pb-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center">
