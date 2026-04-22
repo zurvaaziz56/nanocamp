@@ -311,6 +311,14 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           .goal-corner-paid-label { font-size: 18px; letter-spacing: 0.14em; }
           .goal-corner-paid-amount { font-size: 23px; }
           .goal-corner-ribbon { bottom: 78px; right: -90px; width: 360px; padding: 11px 0; font-size: 18px; letter-spacing: 0.12em; }
+          @media (max-width: 1023px) {
+            .goal-corner { width: 210px; height: 210px; }
+            .goal-corner-divider { bottom: 90px; right: -48px; width: 260px; }
+            .goal-corner-paid { bottom: 44px; right: 44px; }
+            .goal-corner-paid-label { font-size: 14px; letter-spacing: 0.12em; }
+            .goal-corner-paid-amount { font-size: 19px; }
+            .goal-corner-ribbon { bottom: 62px; right: -72px; width: 285px; padding: 9px 0; font-size: 14px; letter-spacing: 0.1em; }
+          }
           @media (max-width: 599px) {
             .goal-corner { width: 180px; height: 180px; }
             .goal-corner-divider { bottom: 76px; right: -40px; width: 220px; }
