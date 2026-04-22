@@ -242,7 +242,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   </span>
                 )}
 
-                {/* Layered corner system: large pink base panel + dominant gold ribbon */}
+                {/* Layered corner system: gold diagonal ribbon over a calm pink corner panel */}
                 <div
                   className="absolute pointer-events-none"
                   style={{
@@ -254,49 +254,58 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     borderBottomRightRadius: "18px",
                   }}
                 >
-                  {/* Pink lower corner panel — larger, cleaner base layer */}
+                  {/* Pink lower corner panel — clean geometric block, no rotation */}
                   <div
                     style={{
                       position: "absolute",
                       inset: 0,
-                      clipPath: "polygon(100% 38%, 100% 100%, 38% 100%)",
+                      clipPath: "polygon(100% 52%, 100% 100%, 52% 100%)",
                       background:
-                        "linear-gradient(140deg, #EDA8B8 0%, #D97A93 50%, #9E3F5C 100%)",
+                        "linear-gradient(160deg, #E8A5B6 0%, #C56F89 55%, #8E3753 100%)",
                       boxShadow:
-                        "inset 1px 1px 0 rgba(255,215,225,0.4), inset -1px -1px 0 rgba(0,0,0,0.18)",
+                        "inset 1px 1px 0 rgba(255,215,225,0.35), inset -1px -1px 0 rgba(0,0,0,0.18)",
                     }}
                   />
-                  {/* Pink panel text */}
+                  {/* Subtle divider line where gold meets pink */}
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "26px",
-                      right: "-46px",
+                      bottom: "78px",
+                      right: "-40px",
+                      width: "230px",
+                      height: "1px",
                       transform: "rotate(-45deg)",
-                      width: "210px",
-                      textAlign: "center",
+                      background: "rgba(0,0,0,0.25)",
+                      boxShadow: "0 1px 0 rgba(255,255,255,0.15)",
+                    }}
+                  />
+                  {/* Pink panel text — horizontal, right-aligned, elegant */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      right: "14px",
+                      bottom: "14px",
+                      textAlign: "right",
                       color: "#2d0612",
-                      fontWeight: 700,
-                      whiteSpace: "nowrap",
-                      lineHeight: 1.05,
-                      textShadow: "0 1px 0 rgba(255,220,228,0.35)",
+                      lineHeight: 1.1,
+                      textShadow: "0 1px 0 rgba(255,220,228,0.3)",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: "10px",
-                        letterSpacing: "0.18em",
+                        fontSize: "9.5px",
+                        letterSpacing: "0.22em",
                         textTransform: "uppercase",
-                        opacity: 0.75,
+                        opacity: 0.72,
                         fontWeight: 700,
                         marginBottom: "4px",
                       }}
                     >
                       Get paid
                     </div>
-                    <div style={{ fontSize: "15px", fontWeight: 800, letterSpacing: "0.01em" }}>
+                    <div style={{ fontSize: "17px", fontWeight: 800, letterSpacing: "-0.005em" }}>
                       <span style={{ fontWeight: 900 }}>$25</span>
-                      <span style={{ opacity: 0.8, fontWeight: 600 }}> / month</span>
+                      <span style={{ opacity: 0.78, fontWeight: 600, fontSize: "14px" }}> / month</span>
                     </div>
                   </div>
 
