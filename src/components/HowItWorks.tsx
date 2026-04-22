@@ -306,7 +306,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "55px",
+                      bottom: "78px",
                       right: "-90px",
                       transform: "rotate(-45deg)",
                       width: "360px",
