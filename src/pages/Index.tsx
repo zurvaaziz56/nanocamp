@@ -162,18 +162,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Sentinel placed right after the fold to trigger below-fold hydration */}
-      <div ref={sentinelRef} aria-hidden style={{ height: 1 }} />
-
-      {showBelowFold && (
-        <Suspense fallback={<div style={{ minHeight: '800px' }} aria-hidden />}>
-          <HowItWorks onGoalSelect={openModal} />
-          <EnterpriseGrade />
-          <Testimonials />
-          <FounderNote />
-          <FAQ />
-        </Suspense>
-      )}
+      {/* Sentinel placed right after the fold to trigger below-fold hydration.
+          The min-height reserves space so the footer doesn't shift when the
+          deferred below-fold content mounts (prevents CLS). */}
+      <div
+        ref={sentinelRef}
+        aria-hidden
+        style={{ minHeight: showBelowFold ? undefined : '6500px' }}
+      >
+        {showBelowFold && (
+          <Suspense fallback={<div style={{ minHeight: '6500px' }} aria-hidden />}>
+            <HowItWorks onGoalSelect={openModal} />
+            <EnterpriseGrade />
+            <Testimonials />
+            <FounderNote />
+            <FAQ />
+          </Suspense>
+        )}
+      </div>
 
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
