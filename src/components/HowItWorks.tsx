@@ -306,7 +306,12 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
         <style>{`
           .goal-bullet { font-size: 15.5px; }
           @media (min-width: 600px) and (max-width: 1023px) {
-            .goal-bullet { font-size: 20px; }
+            .goal-bullet { font-size: 26px; line-height: 1.4; }
+            .goal-bullet > span:last-child { letter-spacing: -0.005em; }
+            .goal-title { font-size: 34px !important; margin-bottom: 22px !important; }
+            .goal-content { padding: 32px 36px 36px !important; }
+            .goal-bullet-list { gap: 14px !important; }
+            .goal-bullet-dot { width: 7px !important; height: 7px !important; margin-top: 12px !important; margin-right: 14px !important; }
           }
           .goal-corner { width: 270px; height: 270px; }
           .goal-corner-divider { bottom: 115px; right: -60px; width: 330px; }
