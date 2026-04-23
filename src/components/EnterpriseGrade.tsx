@@ -33,7 +33,7 @@ const EnterpriseGrade = () => {
         <p
           className="font-body mx-auto"
           style={{
-            color: "#E8DFC9",
+            color: "#F5EFDD",
             fontSize: "clamp(15px, 1.6vw, 19px)",
             lineHeight: 1.6,
             fontWeight: 500,
@@ -73,7 +73,7 @@ const EnterpriseGrade = () => {
         <p
           className="font-body mx-auto"
           style={{
-            color: "#B5AC97",
+            color: "#D4C9AE",
             fontSize: "clamp(11px, 1.1vw, 13px)",
             lineHeight: 1.5,
             marginTop: "clamp(36px, 4vw, 48px)",
