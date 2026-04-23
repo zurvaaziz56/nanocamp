@@ -85,7 +85,7 @@ const Index = () => {
                 lineHeight: 1.4,
                 fontSize: 'clamp(22px, 2.6vw, 30px)',
                 fontWeight: 600,
-                marginTop: 'clamp(40px, 5vw, 56px)',
+                marginTop: 'clamp(56px, 6.5vw, 72px)',
                 animationDelay: '0.2s',
               }}
             >
@@ -96,7 +96,7 @@ const Index = () => {
             <div
               className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(64px, 7vw, 72px)',
+                marginTop: 'clamp(40px, 5vw, 56px)',
                 gap: '12px',
               }}
             >
