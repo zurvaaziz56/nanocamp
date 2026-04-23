@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 const quotes = [
-  { text: "Simply the feeling of showing up tired, doubtful, still choosing to try — and being witnessed by another human doing the same is so so rewarding in itself.", name: "Zurva" },
-  { text: "This feels bigger than goals. The process asks you what matters to you right now, and gives you a way to think about that both privately and with others. Once you open up this space, you never know what will emerge, and that's the best part.", name: "Alida" },
-  { text: "Self worth and purpose are built when the individual learns to trust themselves and feel safe within a network of support.", name: "Maria" },
+  { text: "Simply the feeling of showing up tired, doubtful, still choosing to try — and being witnessed by another human doing the same is so so rewarding in itself.", name: "Zurva A" },
+  { text: "This feels bigger than goals. The process asks you what matters to you right now, and gives you a way to think about that both privately and with others. Once you open up this space, you never know what will emerge, and that's the best part.", name: "Alida R" },
+  { text: "Self worth and purpose are built when the individual learns to trust themselves and feel safe within a network of support.", name: "Maria T" },
 ];
 
 const Testimonials = () => {
