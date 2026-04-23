@@ -132,7 +132,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(28px, 3.2vw, 32px)', marginBottom: 'clamp(32px, 4vw, 40px)', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(48px, 6vw, 56px)', marginBottom: 'clamp(8px, 1.5vw, 16px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
