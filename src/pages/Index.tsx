@@ -59,8 +59,8 @@ const Index = () => {
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center">
               <h1
-                className="font-display font-light leading-[0.98] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
-                style={{ color: "#FFFFFF", fontSize: 'clamp(50px, 11.5vw, 104px)' }}
+                className="font-display font-light leading-[1.02] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
+                style={{ color: "#FFFFFF", fontSize: 'clamp(42px, 9.5vw, 96px)' }}
               >
                 Get{" "}
                 <span style={{ color: "#D4A843" }}>paid</span>
@@ -70,8 +70,8 @@ const Index = () => {
                 className="font-display font-light tracking-tight text-center"
                 style={{
                   color: "#FFFFFF",
-                  fontSize: 'clamp(50px, 11.5vw, 104px)',
-                  lineHeight: 0.98
+                  fontSize: 'clamp(42px, 9.5vw, 96px)',
+                  lineHeight: 1.02
                 }}
               >
                 reach your goals.
@@ -85,7 +85,7 @@ const Index = () => {
                 lineHeight: 1.4,
                 fontSize: 'clamp(22px, 2.6vw, 30px)',
                 fontWeight: 600,
-                marginTop: 'clamp(24px, 3vw, 32px)',
+                marginTop: 'clamp(40px, 5vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
