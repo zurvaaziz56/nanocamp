@@ -263,15 +263,14 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       color: "#FFFFFF",
                       fontWeight: 1000,
                       letterSpacing: "0.05em",
-                      textTransform: "uppercase",
+                      textTransform: "none",
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
                       WebkitTextStroke: "0.5px rgba(255,255,255,0.6)",
                       textShadow: "0 1px 2px rgba(0,0,0,0.55)",
                     }}
                   >
-                    <div className="goal-corner-paid-label" style={{ fontWeight: 1000 }}>GET PAID</div>
-                    <div className="goal-corner-paid-amount" style={{ fontWeight: 1000 }}>$25</div>
+                    <div className="goal-corner-paid-label" style={{ fontWeight: 1000 }}>EARN $25/Mo</div>
                   </div>
 
                   {/* Gold diagonal ribbon */}
@@ -291,12 +290,12 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       whiteSpace: "nowrap",
                       lineHeight: 1.18,
                       fontWeight: 1000,
-                      textTransform: "uppercase",
+                      textTransform: "none",
                       WebkitTextStroke: "1px #0a0500",
                       textShadow: "0 1px 0 rgba(255,228,160,0.5)",
                     }}
                   >
-                    PAY $20/MO
+                    PAY $20/Mo
                   </div>
                 </div>
               </button>
