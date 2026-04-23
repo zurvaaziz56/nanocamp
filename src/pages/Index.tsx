@@ -89,7 +89,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              Finish in 30 days. Earn $25
+              Finish in 30 days. Earn $25.
             </p>
 
             {/* Proof points */}
