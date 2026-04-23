@@ -12,7 +12,7 @@ const logos: { name: string; text: string; style?: React.CSSProperties }[] = [
 const EnterpriseGrade = () => {
   return (
     <section
-      className="pt-16 pb-16 sm:pt-24 sm:pb-20 px-6 relative"
+      className="pt-4 pb-12 sm:pt-24 sm:pb-20 px-6 relative"
       style={{
         background:
           "radial-gradient(ellipse at 50% 40%, rgba(212,168,67,0.06) 0%, transparent 70%)",
