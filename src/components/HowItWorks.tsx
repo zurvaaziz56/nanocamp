@@ -296,7 +296,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 0 rgba(255,228,160,0.5)",
                     }}
                   >
-                    PAY $20 / MONTH
+                    PAY $20/MO
                   </div>
                 </div>
               </button>
