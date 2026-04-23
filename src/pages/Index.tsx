@@ -141,8 +141,8 @@ const Index = () => {
 
       <Suspense fallback={<div style={{ minHeight: '2400px' }} aria-hidden />}>
         <HowItWorks onGoalSelect={openModal} />
-        <Testimonials />
         <EnterpriseGrade />
+        <Testimonials />
         <FounderNote />
         <FAQ />
       </Suspense>
