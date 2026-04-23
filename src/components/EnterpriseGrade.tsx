@@ -12,7 +12,7 @@ const logos: { name: string; text: string; style?: React.CSSProperties }[] = [
 const EnterpriseGrade = () => {
   return (
     <section
-      className="pt-0 pb-12 sm:pt-12 sm:pb-20 px-6 relative"
+      className="pt-10 pb-12 sm:pt-12 sm:pb-20 px-6 relative"
     >
       <div className="max-w-5xl mx-auto text-center">
         <h2
