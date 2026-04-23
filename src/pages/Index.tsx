@@ -82,61 +82,44 @@ const Index = () => {
               className="max-w-[620px] hero-fade"
               style={{
                 color: "#F5E8C4",
-                lineHeight: 1.5,
-                fontSize: 'clamp(20px, 2.4vw, 28px)',
-                fontWeight: 500,
-                marginTop: 'clamp(28px, 4vw, 56px)',
+                lineHeight: 1.4,
+                fontSize: 'clamp(22px, 2.6vw, 30px)',
+                fontWeight: 600,
+                marginTop: 'clamp(24px, 4vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
-              Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
+              Pick a goal. Get paid.
             </p>
 
-            {/* How is this possible */}
+            {/* Proof points */}
             <div
               className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(14px, 2vw, 22px)',
+                marginTop: 'clamp(20px, 2.6vw, 28px)',
+                gap: 'clamp(8px, 1.2vw, 12px)',
               }}
             >
-              <p
-                className="font-body uppercase"
-                style={{
-                  color: 'rgba(212,168,67,0.75)',
-                  fontSize: 'clamp(10px, 1.1vw, 12px)',
-                  letterSpacing: '0.24em',
-                  fontWeight: 600,
-                  margin: 0,
-                  marginBottom: 'clamp(18px, 2.2vw, 22px)',
-                }}
-              >
-                How is this possible?
-              </p>
-              <div
-                className="flex flex-col items-center"
-                style={{ gap: 'clamp(10px, 1.4vw, 14px)' }}
-              >
-                {[
-                  { prefix: "Powered by", word: "science" },
-                  { prefix: "Verified by", word: "AI" },
-                  { prefix: "Funded by", word: "sponsors" },
-                ].map(({ prefix, word }) => (
-                  <p
-                    key={word}
-                    className="font-display whitespace-nowrap"
-                    style={{
-                      color: '#FFFFFF',
-                      lineHeight: 1.15,
-                      fontSize: 'clamp(22px, 2.9vw, 30px)',
-                      fontWeight: 600,
-                      margin: 0,
-                    }}
-                  >
-                    {prefix}{" "}
-                    <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>
-                  </p>
-                ))}
-              </div>
+              {[
+                { prefix: "Powered by", word: "science" },
+                { prefix: "Verified by", word: "AI" },
+                { prefix: "Funded by", word: "sponsors" },
+              ].map(({ prefix, word }) => (
+                <p
+                  key={word}
+                  className="font-display whitespace-nowrap"
+                  style={{
+                    color: '#FFFFFF',
+                    lineHeight: 1.15,
+                    fontSize: 'clamp(20px, 2.6vw, 26px)',
+                    fontWeight: 500,
+                    margin: 0,
+                  }}
+                >
+                  {prefix}{" "}
+                  <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>
+                </p>
+              ))}
             </div>
 
             <div
