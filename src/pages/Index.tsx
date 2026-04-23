@@ -92,34 +92,43 @@ const Index = () => {
               Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
 
-            {/* Powered by trio */}
+            {/* How is this possible */}
             <div
-              className="mx-auto flex flex-col items-center"
+              className="mx-auto text-center"
               style={{
-                marginTop: 'clamp(20px, 3vw, 32px)',
-                gap: 'clamp(8px, 1.4vw, 12px)',
+                marginTop: 'clamp(14px, 2vw, 22px)',
+                maxWidth: '640px',
               }}
             >
-              {[
-                { word: "science", prefix: "Powered by" },
-                { word: "AI", prefix: "Verified by" },
-                { word: "sponsors", prefix: "Funded by" },
-              ].map(({ word, prefix }) => (
-                <p
-                  key={word}
-                  className="font-display"
-                  style={{
-                    color: 'rgba(245,241,232,0.96)',
-                    lineHeight: 1.3,
-                    fontSize: 'clamp(16px, 2vw, 21px)',
-                    fontWeight: 500,
-                    margin: 0,
-                  }}
-                >
-                  {prefix}{" "}
-                  <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>.
-                </p>
-              ))}
+              <p
+                className="font-body uppercase mx-auto"
+                style={{
+                  color: 'rgba(212,168,67,0.75)',
+                  fontSize: 'clamp(10px, 1.1vw, 12px)',
+                  letterSpacing: '0.24em',
+                  fontWeight: 600,
+                  margin: 0,
+                }}
+              >
+                How is this possible?
+              </p>
+              <p
+                className="font-display mx-auto"
+                style={{
+                  color: '#FFFFFF',
+                  lineHeight: 1.25,
+                  fontSize: 'clamp(20px, 2.8vw, 30px)',
+                  fontWeight: 600,
+                  marginTop: '10px',
+                  textWrap: 'balance',
+                }}
+              >
+                Powered by <span style={{ color: '#D4A843' }}>science</span>
+                <span style={{ color: 'rgba(212,168,67,0.55)', margin: '0 0.45em' }}>·</span>
+                Verified by <span style={{ color: '#D4A843' }}>AI</span>
+                <span style={{ color: 'rgba(212,168,67,0.55)', margin: '0 0.45em' }}>·</span>
+                Funded by <span style={{ color: '#D4A843' }}>sponsors</span>
+              </p>
             </div>
 
             <div
