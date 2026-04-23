@@ -124,7 +124,7 @@ const Index = () => {
 
             <div
               className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(22px, 2.6vw, 26px)', animationDelay: '0.3s' }}
+              style={{ marginTop: 'clamp(28px, 3.2vw, 32px)', animationDelay: '0.3s' }}
             >
               <StatPills />
             </div>
@@ -132,7 +132,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(22px, 2.8vw, 30px)', marginBottom: 'clamp(8px, 1.5vw, 16px)', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(28px, 3.5vw, 36px)', marginBottom: 'clamp(8px, 1.5vw, 16px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
