@@ -23,7 +23,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="pt-28 pb-20 px-6">
+    <section className="pt-8 pb-20 sm:pt-28 px-6">
       <div className="mx-auto text-center" style={{ maxWidth: "760px" }}>
         <span
           className="block mb-4 font-body font-bold"
