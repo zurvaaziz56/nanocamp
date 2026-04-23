@@ -161,10 +161,15 @@
     linear-gradient(180deg, hsl(26 10% 4%) 0%, hsl(24 12% 5%) 35%, hsl(22 14% 4%) 65%, hsl(26 10% 3%) 100%);
 }
 
-/* Lighter background on mobile to reduce paint cost */
+/* Lighter background on mobile to reduce paint cost — keep the warm gold vibe */
 @media (max-width: 768px) {
   .editorial-bg {
     background-image:
+      /* warm gold glow top-center (hero) */
+      radial-gradient(ellipse 110% 45% at 50% 6%, hsla(38, 60%, 40%, 0.20), transparent 65%),
+      /* lower warm pool */
+      radial-gradient(ellipse 100% 40% at 50% 95%, hsla(36, 45%, 28%, 0.10), transparent 70%),
+      /* base tonal gradient */
       linear-gradient(180deg, hsl(26 10% 4%) 0%, hsl(24 12% 5%) 60%, hsl(26 10% 3%) 100%);
   }
   .editorial-bg::before { display: none; }
