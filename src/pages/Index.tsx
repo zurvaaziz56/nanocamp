@@ -54,7 +54,7 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-4 sm:pt-12 pb-8 px-5 sm:px-6">
+      <section className="pt-4 sm:pt-12 pb-0 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center">
@@ -85,7 +85,7 @@ const Index = () => {
                 lineHeight: 1.4,
                 fontSize: 'clamp(22px, 2.6vw, 30px)',
                 fontWeight: 600,
-                marginTop: 'clamp(20px, 2.4vw, 32px)',
+                marginTop: 'clamp(24px, 3vw, 32px)',
                 animationDelay: '0.2s',
               }}
             >
@@ -96,7 +96,7 @@ const Index = () => {
             <div
               className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(32px, 4vw, 48px)',
+                marginTop: 'clamp(28px, 3.2vw, 32px)',
                 gap: '12px',
               }}
             >
@@ -124,7 +124,7 @@ const Index = () => {
 
             <div
               className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(32px, 4vw, 48px)', animationDelay: '0.3s' }}
+              style={{ marginTop: 'clamp(28px, 3.2vw, 32px)', animationDelay: '0.3s' }}
             >
               <StatPills />
             </div>
@@ -132,7 +132,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(32px, 4vw, 48px)', marginBottom: '48px', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(28px, 3.2vw, 32px)', marginBottom: 'clamp(32px, 4vw, 40px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
