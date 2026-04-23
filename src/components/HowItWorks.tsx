@@ -149,11 +149,11 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
 
                 {/* Content (bottom 38%) */}
                 <div
-                  className="relative flex flex-col"
+                  className="goal-content relative flex flex-col"
                   style={{ height: "38%", padding: "22px 26px 28px" }}
                 >
                   <h3
-                    className="font-display"
+                    className="goal-title font-display"
                     style={{
                       color: "#F5F1E8",
                       fontSize: "24px",
@@ -167,7 +167,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     {goal.title}
                   </h3>
                   <ul
-                    className="font-body flex flex-col"
+                    className="goal-bullet-list font-body flex flex-col"
                     style={{ gap: "8px", textAlign: "left" }}
                   >
                     {goal.bullets.map((b, idx) => (
@@ -181,6 +181,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       >
                         <span
                           aria-hidden="true"
+                          className="goal-bullet-dot"
                           style={{
                             display: "inline-block",
                             flexShrink: 0,
@@ -306,7 +307,12 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
         <style>{`
           .goal-bullet { font-size: 15.5px; }
           @media (min-width: 600px) and (max-width: 1023px) {
-            .goal-bullet { font-size: 20px; }
+            .goal-bullet { font-size: 26px; line-height: 1.4; }
+            .goal-bullet > span:last-child { letter-spacing: -0.005em; }
+            .goal-title { font-size: 34px !important; margin-bottom: 22px !important; }
+            .goal-content { padding: 32px 36px 36px !important; }
+            .goal-bullet-list { gap: 14px !important; }
+            .goal-bullet-dot { width: 7px !important; height: 7px !important; margin-top: 12px !important; margin-right: 14px !important; }
           }
           .goal-corner { width: 270px; height: 270px; }
           .goal-corner-divider { bottom: 115px; right: -60px; width: 330px; }
