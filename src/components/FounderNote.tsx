@@ -5,15 +5,15 @@ type Para = {
 
 const paragraphs: Para[] = [
   {
-    text: "We're new. Like, genuinely just getting started.",
+    text: "We're new. Genuinely just getting started.",
     variant: "opener",
   },
   {
-    text: "Everyone we know has a goal they keep starting over on. We wanted to build the thing that finally makes it stick — for them, and honestly, for us too.",
+    text: "Everyone we know has a goal they keep starting over on. We wanted to build something that finally makes it stick — for them, and honestly, for us too.",
     variant: "intimate",
   },
   {
-    text: "We're a small team and we're building this alongside you. Every person who joins this first cohort is shaping what Nano Camp becomes. We read every check-in, we think about every goal, and we genuinely celebrate every win.",
+    text: "We're a small team building this alongside you. Every person who joins this first cohort is helping shape what Nano Camp becomes. We read every check-in, think about every goal, and genuinely celebrate every win.",
     variant: "intimate",
   },
   {
@@ -24,7 +24,7 @@ const paragraphs: Para[] = [
 
 const Divider = () => (
   <div
-    className="mx-auto my-8"
+    className="mx-auto my-6 sm:my-7"
     style={{
       width: "84px",
       height: "1px",
@@ -64,57 +64,14 @@ const FounderNote = () => {
             backgroundBlendMode: "soft-light, normal",
             border: "1px solid rgba(255, 236, 197, 0.08)",
             borderRadius: "6px",
-            padding: "68px 68px",
+            padding: "56px 68px",
             transform: "rotate(-0.35deg)",
             boxShadow:
               "inset 0 0 28px rgba(70,40,10,0.16), 0 28px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,235,190,0.05)",
             position: "relative",
           }}
-          className="text-center max-[640px]:!px-8 max-[640px]:!py-12"
+          className="text-center max-[640px]:!px-7 max-[640px]:!py-10"
         >
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: "24px",
-              left: "32px",
-              right: "32px",
-              height: "1px",
-              backgroundColor: "rgba(62, 36, 11, 0.24)",
-            }}
-          />
-
-          <div className="flex items-center justify-center gap-3 mb-10">
-            <span
-              aria-hidden="true"
-              style={{
-                width: "32px",
-                height: "1px",
-                backgroundColor: "#4b2c0d",
-                display: "inline-block",
-              }}
-            />
-            <span
-              className="font-body uppercase"
-              style={{
-                color: "#321b06",
-                fontSize: "12.5px",
-                letterSpacing: "0.24em",
-                fontWeight: 800,
-              }}
-            >
-              A Note From Us
-            </span>
-            <span
-              aria-hidden="true"
-              style={{
-                width: "32px",
-                height: "1px",
-                backgroundColor: "#4b2c0d",
-                display: "inline-block",
-              }}
-            />
-          </div>
 
           {paragraphs.map((p, i) => {
             const isOpener = p.variant === "opener";
