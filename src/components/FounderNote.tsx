@@ -43,7 +43,7 @@ const noiseDataUri =
 const FounderNote = () => {
   return (
     <section
-      className="pt-8 pb-16 sm:py-28 px-6 relative"
+      className="pt-8 pb-6 sm:py-28 px-6 relative"
       style={{
         background:
           "radial-gradient(ellipse at 50% 45%, rgba(232,190,92,0.14) 0%, rgba(232,190,92,0.06) 38%, transparent 72%)",
