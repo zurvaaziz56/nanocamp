@@ -149,11 +149,11 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
 
                 {/* Content (bottom 38%) */}
                 <div
-                  className="relative flex flex-col"
+                  className="goal-content relative flex flex-col"
                   style={{ height: "38%", padding: "22px 26px 28px" }}
                 >
                   <h3
-                    className="font-display"
+                    className="goal-title font-display"
                     style={{
                       color: "#F5F1E8",
                       fontSize: "24px",
@@ -167,7 +167,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     {goal.title}
                   </h3>
                   <ul
-                    className="font-body flex flex-col"
+                    className="goal-bullet-list font-body flex flex-col"
                     style={{ gap: "8px", textAlign: "left" }}
                   >
                     {goal.bullets.map((b, idx) => (
@@ -181,6 +181,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       >
                         <span
                           aria-hidden="true"
+                          className="goal-bullet-dot"
                           style={{
                             display: "inline-block",
                             flexShrink: 0,
