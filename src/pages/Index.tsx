@@ -85,7 +85,7 @@ const Index = () => {
                 lineHeight: 1.4,
                 fontSize: 'clamp(22px, 2.6vw, 30px)',
                 fontWeight: 600,
-                marginTop: 'clamp(24px, 4vw, 56px)',
+                marginTop: 'clamp(20px, 2.4vw, 32px)',
                 animationDelay: '0.2s',
               }}
             >
@@ -96,8 +96,8 @@ const Index = () => {
             <div
               className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(20px, 2.6vw, 28px)',
-                gap: 'clamp(8px, 1.2vw, 12px)',
+                marginTop: 'clamp(32px, 4vw, 48px)',
+                gap: '12px',
               }}
             >
               {[
@@ -124,7 +124,7 @@ const Index = () => {
 
             <div
               className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(24px, 3vw, 40px)', animationDelay: '0.3s' }}
+              style={{ marginTop: 'clamp(32px, 4vw, 48px)', animationDelay: '0.3s' }}
             >
               <StatPills />
             </div>
@@ -132,7 +132,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(36px, 4.5vw, 56px)', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(32px, 4vw, 48px)', marginBottom: '48px', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
