@@ -96,7 +96,7 @@ const Index = () => {
             <div
               className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(64px, 7vw, 72px)',
+                marginTop: 'clamp(40px, 5vw, 56px)',
                 gap: '12px',
               }}
             >
