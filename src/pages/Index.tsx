@@ -54,13 +54,13 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-8 md:pt-12 pb-8 px-6">
+      <section className="pt-4 sm:pt-12 pb-8 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center">
               <h1
-                className="font-display font-light leading-[1.05] tracking-tight max-w-[1000px] text-center"
-                style={{ color: "#FFFFFF", fontSize: 'clamp(48px, 9vw, 104px)' }}
+                className="font-display font-light leading-[1.02] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
+                style={{ color: "#FFFFFF", fontSize: 'clamp(56px, 13vw, 104px)' }}
               >
                 Get{" "}
                 <span style={{ color: "#D4A843" }}>paid</span>
@@ -70,8 +70,8 @@ const Index = () => {
                 className="font-display font-light tracking-tight text-center"
                 style={{ 
                   color: "#FFFFFF", 
-                  fontSize: 'clamp(48px, 9vw, 104px)',
-                  lineHeight: 1.05
+                  fontSize: 'clamp(56px, 13vw, 104px)',
+                  lineHeight: 1.02
                 }}
               >
                 reach your goals.
@@ -81,56 +81,50 @@ const Index = () => {
             <p
               className="max-w-[620px] hero-fade"
               style={{
-                color: "#F0DFB5",
-                lineHeight: 1.45,
-                fontSize: 'clamp(17px, 2.1vw, 28px)',
+                color: "#F5E8C4",
+                lineHeight: 1.4,
+                fontSize: 'clamp(19px, 2.3vw, 28px)',
                 fontWeight: 500,
-                marginTop: 'clamp(24px, 4vw, 56px)',
+                marginTop: 'clamp(18px, 3vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
               Choose one goal. Stay on track for 30 days. Earn $25 when you finish.
             </p>
+
+            {/* Powered by trio */}
             <div
-              className="mx-auto text-center"
+              className="mx-auto flex flex-col items-center"
               style={{
-                marginTop: 'clamp(24px, 3vw, 32px)',
-                paddingTop: 'clamp(18px, 2.5vw, 22px)',
-                borderTop: '1px solid rgba(212,168,67,0.18)',
-                maxWidth: '460px',
+                marginTop: 'clamp(20px, 3vw, 32px)',
+                gap: 'clamp(8px, 1.4vw, 12px)',
               }}
             >
-              <p
-                className="font-body uppercase mx-auto"
-                style={{
-                  color: '#D4A843',
-                  fontSize: 'clamp(10.5px, 1.2vw, 13px)',
-                  letterSpacing: '0.22em',
-                  fontWeight: 700,
-                  margin: 0,
-                }}
-              >
-                How is this possible?
-              </p>
-              <p
-                className="font-display mx-auto"
-                style={{
-                  color: 'rgba(245,241,232,0.92)',
-                  lineHeight: 1.4,
-                  fontSize: 'clamp(15px, 2vw, 21px)',
-                  fontWeight: 400,
-                  marginTop: '10px',
-                  maxWidth: '380px',
-                  textWrap: 'balance',
-                }}
-              >
-                AI verifies your progress and sponsors the reward.
-              </p>
+              {[
+                { word: "science", prefix: "Powered by" },
+                { word: "AI", prefix: "Verified by" },
+                { word: "sponsors", prefix: "Funded by" },
+              ].map(({ word, prefix }) => (
+                <p
+                  key={word}
+                  className="font-display"
+                  style={{
+                    color: 'rgba(245,241,232,0.96)',
+                    lineHeight: 1.3,
+                    fontSize: 'clamp(16px, 2vw, 21px)',
+                    fontWeight: 500,
+                    margin: 0,
+                  }}
+                >
+                  {prefix}{" "}
+                  <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>.
+                </p>
+              ))}
             </div>
 
             <div
               className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(24px, 3vw, 40px)', animationDelay: '0.3s' }}
+              style={{ marginTop: 'clamp(20px, 3vw, 40px)', animationDelay: '0.3s' }}
             >
               <StatPills />
             </div>
@@ -138,7 +132,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(32px, 4vw, 56px)', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(24px, 4vw, 56px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
