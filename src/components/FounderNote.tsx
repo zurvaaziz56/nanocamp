@@ -50,6 +50,12 @@ const FounderNote = () => {
       }}
     >
       <div className="mx-auto" style={{ maxWidth: "760px" }}>
+        <span
+          className="block mb-6 sm:mb-8 font-body uppercase font-bold text-center"
+          style={{ color: "#D4A843", fontSize: "13px", letterSpacing: "0.2em" }}
+        >
+          A Note From Us
+        </span>
         <div
           style={{
             background:
