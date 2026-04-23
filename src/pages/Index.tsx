@@ -59,8 +59,8 @@ const Index = () => {
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center">
               <h1
-                className="font-display font-light leading-[1.02] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
-                style={{ color: "#FFFFFF", fontSize: 'clamp(56px, 13vw, 104px)' }}
+                className="font-display font-light leading-[0.98] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
+                style={{ color: "#FFFFFF", fontSize: 'clamp(50px, 11.5vw, 104px)' }}
               >
                 Get{" "}
                 <span style={{ color: "#D4A843" }}>paid</span>
@@ -68,10 +68,10 @@ const Index = () => {
               </h1>
               <span
                 className="font-display font-light tracking-tight text-center"
-                style={{ 
-                  color: "#FFFFFF", 
-                  fontSize: 'clamp(56px, 13vw, 104px)',
-                  lineHeight: 1.02
+                style={{
+                  color: "#FFFFFF",
+                  fontSize: 'clamp(50px, 11.5vw, 104px)',
+                  lineHeight: 0.98
                 }}
               >
                 reach your goals.
@@ -82,10 +82,10 @@ const Index = () => {
               className="max-w-[620px] hero-fade"
               style={{
                 color: "#F5E8C4",
-                lineHeight: 1.4,
-                fontSize: 'clamp(19px, 2.3vw, 28px)',
+                lineHeight: 1.5,
+                fontSize: 'clamp(20px, 2.4vw, 28px)',
                 fontWeight: 500,
-                marginTop: 'clamp(18px, 3vw, 56px)',
+                marginTop: 'clamp(28px, 4vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
