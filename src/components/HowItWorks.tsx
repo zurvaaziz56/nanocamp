@@ -270,7 +270,8 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                       textShadow: "0 1px 2px rgba(0,0,0,0.55)",
                     }}
                   >
-                    <div className="goal-corner-paid-label" style={{ fontWeight: 1000 }}>EARN $25/Mo</div>
+                    <div className="goal-corner-paid-label" style={{ fontWeight: 1000 }}>EARN</div>
+                    <div className="goal-corner-paid-amount" style={{ fontWeight: 1000 }}>$25/Mo</div>
                   </div>
 
                   {/* Gold diagonal ribbon */}
