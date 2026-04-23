@@ -16,7 +16,7 @@ const EnterpriseGrade = () => {
     >
       <div className="max-w-5xl mx-auto text-center">
         <h2
-          className="font-display font-light tracking-tight mx-auto"
+          className="font-display font-bold tracking-tight mx-auto"
           style={{
             color: "#FFFFFF",
             fontSize: "clamp(30px, 5.2vw, 56px)",
