@@ -1,6 +1,5 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import StatPills from "@/components/StatPills";
 import PremiumCTAButton from "@/components/PremiumCTAButton";
 
 const HowItWorks = lazy(() => import("@/components/HowItWorks"));
@@ -13,23 +12,54 @@ const ContactModal = lazy(() => import("@/components/ContactModal"));
 const nanoCampLogo = "/img/nano-camp-logo.webp";
 
 const Index = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [showBelowFold, setShowBelowFold] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
 
   const openModal = () => setModalOpen(true);
 
-  const validateAndSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      setError("Please enter a valid email address.");
-      return;
+  // Defer mounting of below-the-fold components until user scrolls near them
+  // (or after a short idle window as a safety net). This dramatically improves
+  // mobile TTI/FID without affecting layout or UX.
+  useEffect(() => {
+    if (showBelowFold) return;
+    if (typeof window === "undefined") return;
+
+    const trigger = () => setShowBelowFold(true);
+
+    let observer: IntersectionObserver | null = null;
+    if ("IntersectionObserver" in window && sentinelRef.current) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            trigger();
+            observer?.disconnect();
+          }
+        },
+        { rootMargin: "600px 0px" }
+      );
+      observer.observe(sentinelRef.current);
     }
-    setError("");
-    openModal();
-  };
+
+    // Safety fallback: if the user never scrolls, hydrate after idle so SEO
+    // crawlers and direct deep-links still see the full page.
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+    };
+    let idleId: number | undefined;
+    let timeoutId: number | undefined;
+    if (typeof w.requestIdleCallback === "function") {
+      idleId = w.requestIdleCallback(trigger, { timeout: 4000 });
+    } else {
+      timeoutId = window.setTimeout(trigger, 2500);
+    }
+
+    return () => {
+      observer?.disconnect();
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, [showBelowFold]);
 
   return (
     <div className="min-h-screen bg-background text-foreground editorial-bg">
@@ -121,13 +151,6 @@ const Index = () => {
                 </p>
               ))}
             </div>
-
-            <div
-              className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(28px, 3.2vw, 32px)', animationDelay: '0.3s' }}
-            >
-              <StatPills />
-            </div>
           </div>
 
           <div
@@ -139,13 +162,18 @@ const Index = () => {
         </div>
       </section>
 
-      <Suspense fallback={<div style={{ minHeight: '2400px' }} aria-hidden />}>
-        <HowItWorks onGoalSelect={openModal} />
-        <EnterpriseGrade />
-        <Testimonials />
-        <FounderNote />
-        <FAQ />
-      </Suspense>
+      {/* Sentinel placed right after the fold to trigger below-fold hydration */}
+      <div ref={sentinelRef} aria-hidden style={{ height: 1 }} />
+
+      {showBelowFold && (
+        <Suspense fallback={<div style={{ minHeight: '800px' }} aria-hidden />}>
+          <HowItWorks onGoalSelect={openModal} />
+          <EnterpriseGrade />
+          <Testimonials />
+          <FounderNote />
+          <FAQ />
+        </Suspense>
+      )}
 
       {/* Footer */}
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>

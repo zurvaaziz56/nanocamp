@@ -131,6 +131,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
                     loading="lazy"
                     fetchPriority="low"
                     decoding="async"
+                    sizes="(max-width: 1023px) 90vw, 33vw"
                     className="absolute inset-0 w-full h-full block"
                     style={{
                       objectFit: "cover",

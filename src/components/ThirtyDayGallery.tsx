@@ -108,6 +108,7 @@ const ThirtyDayGallery = () => {
                     loading="lazy"
                     fetchPriority="low"
                     decoding="async"
+                    sizes="(max-width: 599px) 280px, (max-width: 899px) 300px, 320px"
                     style={{
                       width: "100%",
                       height: "100%",
