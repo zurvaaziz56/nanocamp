@@ -94,41 +94,49 @@ const Index = () => {
 
             {/* How is this possible */}
             <div
-              className="mx-auto text-center"
+              className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(14px, 2vw, 22px)',
-                maxWidth: '640px',
+                marginTop: 'clamp(16px, 2.2vw, 24px)',
               }}
             >
               <p
-                className="font-body uppercase mx-auto"
+                className="font-body uppercase"
                 style={{
                   color: 'rgba(212,168,67,0.75)',
                   fontSize: 'clamp(10px, 1.1vw, 12px)',
                   letterSpacing: '0.24em',
                   fontWeight: 600,
                   margin: 0,
+                  marginBottom: 'clamp(10px, 1.4vw, 14px)',
                 }}
               >
                 How is this possible?
               </p>
-              <p
-                className="font-display mx-auto"
-                style={{
-                  color: '#FFFFFF',
-                  lineHeight: 1.25,
-                  fontSize: 'clamp(20px, 2.8vw, 30px)',
-                  fontWeight: 600,
-                  marginTop: '10px',
-                  textWrap: 'balance',
-                }}
+              <div
+                className="flex flex-col items-center"
+                style={{ gap: 'clamp(6px, 1vw, 10px)' }}
               >
-                Powered by <span style={{ color: '#D4A843' }}>science</span>
-                <span style={{ color: 'rgba(212,168,67,0.55)', margin: '0 0.45em' }}>·</span>
-                Verified by <span style={{ color: '#D4A843' }}>AI</span>
-                <span style={{ color: 'rgba(212,168,67,0.55)', margin: '0 0.45em' }}>·</span>
-                Funded by <span style={{ color: '#D4A843' }}>sponsors</span>
-              </p>
+                {[
+                  { prefix: "Powered by", word: "science" },
+                  { prefix: "Verified by", word: "AI" },
+                  { prefix: "Funded by", word: "sponsors" },
+                ].map(({ prefix, word }) => (
+                  <p
+                    key={word}
+                    className="font-display whitespace-nowrap"
+                    style={{
+                      color: '#FFFFFF',
+                      lineHeight: 1.2,
+                      fontSize: 'clamp(20px, 2.6vw, 28px)',
+                      fontWeight: 600,
+                      margin: 0,
+                    }}
+                  >
+                    {prefix}{" "}
+                    <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div
