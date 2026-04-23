@@ -5,6 +5,7 @@ import PremiumCTAButton from "@/components/PremiumCTAButton";
 
 const HowItWorks = lazy(() => import("@/components/HowItWorks"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
+const EnterpriseGrade = lazy(() => import("@/components/EnterpriseGrade"));
 const FounderNote = lazy(() => import("@/components/FounderNote"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const FoundingMemberModal = lazy(() => import("@/components/FoundingMemberModal"));
@@ -147,6 +148,7 @@ const Index = () => {
       <Suspense fallback={<div style={{ minHeight: '2400px' }} aria-hidden />}>
         <HowItWorks onGoalSelect={openModal} />
         <Testimonials />
+        <EnterpriseGrade />
         <FounderNote />
         <FAQ />
       </Suspense>
