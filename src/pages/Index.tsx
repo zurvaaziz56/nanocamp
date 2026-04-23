@@ -96,7 +96,7 @@ const Index = () => {
             <div
               className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(16px, 2.2vw, 24px)',
+                marginTop: 'clamp(14px, 2vw, 22px)',
               }}
             >
               <p
@@ -107,14 +107,14 @@ const Index = () => {
                   letterSpacing: '0.24em',
                   fontWeight: 600,
                   margin: 0,
-                  marginBottom: 'clamp(10px, 1.4vw, 14px)',
+                  marginBottom: 'clamp(18px, 2.2vw, 22px)',
                 }}
               >
                 How is this possible?
               </p>
               <div
                 className="flex flex-col items-center"
-                style={{ gap: 'clamp(6px, 1vw, 10px)' }}
+                style={{ gap: 'clamp(10px, 1.4vw, 14px)' }}
               >
                 {[
                   { prefix: "Powered by", word: "science" },
@@ -126,8 +126,8 @@ const Index = () => {
                     className="font-display whitespace-nowrap"
                     style={{
                       color: '#FFFFFF',
-                      lineHeight: 1.2,
-                      fontSize: 'clamp(20px, 2.6vw, 28px)',
+                      lineHeight: 1.15,
+                      fontSize: 'clamp(22px, 2.9vw, 30px)',
                       fontWeight: 600,
                       margin: 0,
                     }}
@@ -141,7 +141,7 @@ const Index = () => {
 
             <div
               className="w-full max-w-[600px] hero-fade"
-              style={{ marginTop: 'clamp(20px, 3vw, 40px)', animationDelay: '0.3s' }}
+              style={{ marginTop: 'clamp(24px, 3vw, 40px)', animationDelay: '0.3s' }}
             >
               <StatPills />
             </div>
@@ -149,7 +149,7 @@ const Index = () => {
 
           <div
             className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(24px, 4vw, 56px)', animationDelay: '0.4s' }}
+            style={{ marginTop: 'clamp(36px, 4.5vw, 56px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
