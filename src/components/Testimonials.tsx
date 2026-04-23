@@ -30,9 +30,6 @@ const Testimonials = () => {
     <section
       ref={sectionRef}
       className="pt-8 pb-24 px-6"
-      style={{
-        background: "radial-gradient(ellipse at 50% 60%, rgba(212,168,67,0.05) 0%, transparent 65%)",
-      }}
     >
       <div className="max-w-5xl mx-auto text-center">
         <span
