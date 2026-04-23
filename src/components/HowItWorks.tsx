@@ -65,7 +65,7 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
             ​
           </span>
           <h2
-            className="font-display font-medium leading-[1.1] mx-auto"
+            className="font-display font-light leading-[1.1] mx-auto"
             style={{ color: "#FFFFFF", fontSize: "56px", maxWidth: "900px" }}
           >
             Get $25 for any of these goals.
