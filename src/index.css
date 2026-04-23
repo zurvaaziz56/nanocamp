@@ -161,16 +161,27 @@
     linear-gradient(180deg, hsl(26 10% 4%) 0%, hsl(24 12% 5%) 35%, hsl(22 14% 4%) 65%, hsl(26 10% 3%) 100%);
 }
 
-/* Lighter background on mobile to reduce paint cost — keep the warm gold vibe */
-@media (max-width: 768px) {
+/* Mobile & tablet: warm gold glow repeated down the entire page */
+@media (max-width: 1024px) {
   .editorial-bg {
+    background-attachment: scroll;
     background-image:
-      /* warm gold glow top-center (hero) */
-      radial-gradient(ellipse 110% 45% at 50% 6%, hsla(38, 60%, 40%, 0.20), transparent 65%),
+      /* hero top glow */
+      radial-gradient(ellipse 110% 28% at 50% 4%, hsla(38, 60%, 40%, 0.22), transparent 65%),
+      /* upper-mid warm pool */
+      radial-gradient(ellipse 95% 22% at 50% 22%, hsla(36, 50%, 32%, 0.14), transparent 70%),
+      /* mid-page warm pool */
+      radial-gradient(ellipse 100% 22% at 50% 42%, hsla(38, 55%, 35%, 0.13), transparent 70%),
+      /* lower-mid warm pool */
+      radial-gradient(ellipse 100% 22% at 50% 62%, hsla(36, 50%, 30%, 0.12), transparent 70%),
       /* lower warm pool */
-      radial-gradient(ellipse 100% 40% at 50% 95%, hsla(36, 45%, 28%, 0.10), transparent 70%),
+      radial-gradient(ellipse 100% 22% at 50% 82%, hsla(38, 55%, 32%, 0.13), transparent 70%),
+      /* footer warm fade */
+      radial-gradient(ellipse 110% 25% at 50% 100%, hsla(36, 45%, 28%, 0.12), transparent 70%),
       /* base tonal gradient */
-      linear-gradient(180deg, hsl(26 10% 4%) 0%, hsl(24 12% 5%) 60%, hsl(26 10% 3%) 100%);
+      linear-gradient(180deg, hsl(26 10% 4%) 0%, hsl(24 12% 5%) 50%, hsl(26 10% 3%) 100%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
   .editorial-bg::before { display: none; }
   .editorial-bg::after { display: none; }
