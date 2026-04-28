@@ -119,7 +119,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              Finish one goal. Earn $25.
+              Or help someone else reach theirs.
             </p>
 
             {/* Proof points */}
