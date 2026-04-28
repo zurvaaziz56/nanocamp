@@ -89,80 +89,75 @@ const Index = () => {
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center">
               <h1
-                className="font-display font-light leading-[1.02] sm:leading-[1.05] tracking-tight max-w-[1100px] text-center"
-                style={{ color: "#FFFFFF", fontSize: 'clamp(38px, 8.2vw, 84px)' }}
+                className="font-display font-light leading-[1.02] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
+                style={{ color: "#FFFFFF", fontSize: 'clamp(42px, 9.5vw, 96px)' }}
               >
                 Get{" "}
                 <span style={{ color: "#D4A843" }}>paid</span>
-                {" "}to reach your goals.
+                {" "}to
               </h1>
               <span
-                className="font-display font-light tracking-tight text-center max-w-[1000px]"
+                className="font-display font-light tracking-tight text-center"
                 style={{
                   color: "#FFFFFF",
-                  fontSize: 'clamp(38px, 8.2vw, 84px)',
-                  lineHeight: 1.04,
-                  marginTop: 'clamp(8px, 1vw, 14px)',
+                  fontSize: 'clamp(42px, 9.5vw, 96px)',
+                  lineHeight: 1.02
                 }}
               >
-                Help others do the same.
+                reach your goals.
               </span>
             </div>
 
             <p
-              className="max-w-[720px] hero-fade"
+              className="max-w-[620px] hero-fade"
               style={{
                 color: "#F5E8C4",
                 lineHeight: 1.4,
-                fontSize: 'clamp(19px, 2.2vw, 26px)',
-                fontWeight: 500,
-                marginTop: 'clamp(40px, 5vw, 56px)',
+                fontSize: 'clamp(22px, 2.6vw, 30px)',
+                fontWeight: 600,
+                marginTop: 'clamp(56px, 6.5vw, 72px)',
                 animationDelay: '0.2s',
               }}
             >
-              NanoCamp helps you follow through on meaningful goals, earn{" "}
-              <span style={{ color: '#FFFFFF', fontWeight: 700 }}>Nano Score</span>, and turn your progress into rewards, support, or impact.
+              Finish one goal. Earn $25.
             </p>
 
-            {/* Mini 1-2-3 explainer */}
+            {/* Proof points */}
             <div
-              className="mx-auto hero-fade flex flex-wrap items-center justify-center"
+              className="mx-auto text-center flex flex-col items-center"
               style={{
-                marginTop: 'clamp(32px, 4vw, 44px)',
-                gap: 'clamp(10px, 1.5vw, 18px)',
-                color: '#FFFFFF',
-                fontSize: 'clamp(14px, 1.5vw, 17px)',
-                fontWeight: 500,
-                letterSpacing: '0.01em',
-                animationDelay: '0.3s',
+                marginTop: 'clamp(40px, 5vw, 56px)',
+                gap: '12px',
               }}
             >
-              <span>Pick a goal</span>
-              <span style={{ color: '#D4A843', fontWeight: 700 }}>→</span>
-              <span>Show up & earn <span style={{ color: '#D4A843', fontWeight: 700 }}>Nano Score</span></span>
-              <span style={{ color: '#D4A843', fontWeight: 700 }}>→</span>
-              <span>Use it for you or for someone else</span>
+              {[
+                { prefix: "Powered by", word: "science" },
+                { prefix: "Verified by", word: "AI" },
+                { prefix: "Funded by", word: "sponsors" },
+              ].map(({ prefix, word }) => (
+                <p
+                  key={word}
+                  className="font-display whitespace-nowrap"
+                  style={{
+                    color: '#FFFFFF',
+                    lineHeight: 1.15,
+                    fontSize: 'clamp(20px, 2.6vw, 26px)',
+                    fontWeight: 500,
+                    margin: 0,
+                  }}
+                >
+                  {prefix}{" "}
+                  <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>
+                </p>
+              ))}
             </div>
           </div>
 
           <div
-            className="w-full flex flex-col items-center hero-fade"
+            className="w-full flex justify-center hero-fade"
             style={{ marginTop: 'clamp(28px, 3.5vw, 36px)', marginBottom: 'clamp(8px, 1.5vw, 16px)', animationDelay: '0.4s' }}
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
-            <p
-              className="max-w-[560px] text-center"
-              style={{
-                color: '#C8C0B0',
-                fontSize: 'clamp(14px, 1.5vw, 17px)',
-                fontWeight: 500,
-                lineHeight: 1.45,
-                marginTop: 'clamp(16px, 2vw, 22px)',
-              }}
-            >
-              Pocket the reward or pass it on.{" "}
-              <span style={{ color: '#F5E8C4' }}>Sponsors make both possible.</span>
-            </p>
           </div>
         </div>
       </section>
