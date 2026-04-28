@@ -145,49 +145,113 @@ const Index = () => {
 
           {/* Why sponsors pay */}
           <div
-            className="hero-fade w-full max-w-[760px] text-center"
+            className="hero-fade w-full max-w-[860px]"
             style={{
-              marginTop: 'clamp(64px, 8vw, 96px)',
+              marginTop: 'clamp(80px, 10vw, 128px)',
               animationDelay: '0.5s',
             }}
           >
-            <h2
-              className="font-display"
+            <div
               style={{
-                color: '#D4A843',
-                fontSize: 'clamp(22px, 2.8vw, 30px)',
-                fontWeight: 600,
-                letterSpacing: '-0.01em',
-                margin: 0,
+                position: 'relative',
+                padding: 'clamp(32px, 4vw, 56px) clamp(24px, 3vw, 48px)',
+                borderRadius: '20px',
+                border: '1px solid rgba(212, 168, 67, 0.22)',
+                background:
+                  'radial-gradient(120% 140% at 50% 0%, rgba(212,168,67,0.10) 0%, rgba(212,168,67,0.02) 45%, rgba(255,255,255,0) 80%)',
+                boxShadow: '0 1px 0 rgba(212,168,67,0.08) inset',
               }}
             >
-              Why would sponsors pay you?
-            </h2>
-            <p
-              style={{
-                color: '#F5E8C4',
-                fontSize: 'clamp(17px, 1.9vw, 21px)',
-                lineHeight: 1.55,
-                marginTop: 'clamp(16px, 2vw, 20px)',
-                fontWeight: 400,
-              }}
-            >
-              In the post-AI era, content is everywhere. Advice is everywhere. Plans are everywhere. What's rare now is follow-through. NanoCamp gives sponsors a way to back real action and real progress.
-            </p>
+              <div
+                aria-hidden
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '6px 12px',
+                  borderRadius: '999px',
+                  border: '1px solid rgba(212, 168, 67, 0.35)',
+                  background: 'rgba(212, 168, 67, 0.08)',
+                  color: '#D4A843',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.22em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                The opportunity
+              </div>
+              <h2
+                className="font-display"
+                style={{
+                  color: '#FFFFFF',
+                  fontSize: 'clamp(26px, 3.6vw, 40px)',
+                  fontWeight: 500,
+                  letterSpacing: '-0.015em',
+                  lineHeight: 1.15,
+                  marginTop: '18px',
+                }}
+              >
+                Why would sponsors <span style={{ color: '#D4A843' }}>pay you?</span>
+              </h2>
+              <p
+                style={{
+                  color: '#E8DDC2',
+                  fontSize: 'clamp(17px, 1.9vw, 20px)',
+                  lineHeight: 1.6,
+                  marginTop: '18px',
+                  fontWeight: 400,
+                  maxWidth: '680px',
+                }}
+              >
+                In the post-AI era, content is everywhere. Advice is everywhere. Plans are everywhere.
+                <br />
+                <span style={{ color: '#FFFFFF', fontWeight: 500 }}>
+                  What's rare now is follow-through.
+                </span>{' '}
+                NanoCamp gives sponsors a way to back real action and real progress.
+              </p>
+            </div>
           </div>
 
           {/* Compact How it works */}
           <div
-            className="hero-fade w-full max-w-[1000px]"
+            className="hero-fade w-full max-w-[1040px]"
             style={{
-              marginTop: 'clamp(56px, 7vw, 88px)',
+              marginTop: 'clamp(64px, 8vw, 104px)',
               animationDelay: '0.6s',
             }}
           >
+            <div className="text-center" style={{ marginBottom: 'clamp(28px, 3.5vw, 44px)' }}>
+              <div
+                style={{
+                  display: 'inline-block',
+                  color: '#D4A843',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.22em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                How it works
+              </div>
+              <h2
+                className="font-display"
+                style={{
+                  color: '#FFFFFF',
+                  fontSize: 'clamp(24px, 3.2vw, 36px)',
+                  fontWeight: 500,
+                  letterSpacing: '-0.015em',
+                  marginTop: '10px',
+                }}
+              >
+                Three steps. That's it.
+              </h2>
+            </div>
             <div
-              className="grid gap-6 sm:gap-8 text-left"
+              className="grid gap-5 sm:gap-6 text-left"
               style={{
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               }}
             >
               {[
@@ -210,22 +274,55 @@ const Index = () => {
                 <div
                   key={step}
                   style={{
-                    padding: 'clamp(20px, 2.4vw, 28px)',
-                    borderRadius: '14px',
-                    border: '1px solid rgba(212, 168, 67, 0.18)',
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0))',
+                    position: 'relative',
+                    padding: 'clamp(24px, 2.6vw, 32px)',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(212, 168, 67, 0.16)',
+                    background:
+                      'linear-gradient(180deg, rgba(212,168,67,0.05) 0%, rgba(255,255,255,0.01) 100%)',
+                    overflow: 'hidden',
                   }}
                 >
                   <div
-                    className="font-display"
+                    aria-hidden
                     style={{
-                      color: '#D4A843',
-                      fontSize: '13px',
-                      fontWeight: 700,
-                      letterSpacing: '0.18em',
+                      position: 'absolute',
+                      top: '-24px',
+                      right: '-12px',
+                      fontFamily: 'inherit',
+                      fontSize: 'clamp(72px, 8vw, 104px)',
+                      fontWeight: 300,
+                      color: 'rgba(212, 168, 67, 0.10)',
+                      lineHeight: 1,
+                      letterSpacing: '-0.04em',
+                      pointerEvents: 'none',
                     }}
+                    className="font-display"
                   >
                     {step}
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      color: '#D4A843',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      letterSpacing: '0.2em',
+                      position: 'relative',
+                    }}
+                    className="font-display"
+                  >
+                    <span
+                      style={{
+                        width: '24px',
+                        height: '1px',
+                        background: '#D4A843',
+                        opacity: 0.6,
+                      }}
+                    />
+                    STEP {step}
                   </div>
                   <h3
                     className="font-display"
@@ -233,8 +330,9 @@ const Index = () => {
                       color: '#FFFFFF',
                       fontSize: 'clamp(20px, 2.2vw, 24px)',
                       fontWeight: 600,
-                      marginTop: '10px',
+                      marginTop: '14px',
                       letterSpacing: '-0.01em',
+                      position: 'relative',
                     }}
                   >
                     {title}
@@ -243,8 +341,9 @@ const Index = () => {
                     style={{
                       color: '#C8C0B0',
                       fontSize: 'clamp(15px, 1.6vw, 17px)',
-                      lineHeight: 1.5,
-                      marginTop: '8px',
+                      lineHeight: 1.55,
+                      marginTop: '10px',
+                      position: 'relative',
                     }}
                   >
                     {body}
