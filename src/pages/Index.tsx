@@ -134,35 +134,6 @@ const Index = () => {
               Earn Nano Score every time you check in. Cash it out, donate to charity, or send it to a friend who needs a push.
             </p>
 
-            {/* Proof points */}
-            <div
-              className="mx-auto text-center flex flex-col items-center"
-              style={{
-                marginTop: 'clamp(40px, 5vw, 56px)',
-                gap: '12px',
-              }}
-            >
-              {[
-                { prefix: "Powered by", word: "science" },
-                { prefix: "Verified by", word: "AI" },
-                { prefix: "Funded by", word: "sponsors" },
-              ].map(({ prefix, word }) => (
-                <p
-                  key={word}
-                  className="font-display whitespace-nowrap"
-                  style={{
-                    color: '#FFFFFF',
-                    lineHeight: 1.15,
-                    fontSize: 'clamp(20px, 2.6vw, 26px)',
-                    fontWeight: 500,
-                    margin: 0,
-                  }}
-                >
-                  {prefix}{" "}
-                  <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>
-                </p>
-              ))}
-            </div>
           </div>
 
           <div
