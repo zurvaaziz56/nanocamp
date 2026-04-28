@@ -86,170 +86,78 @@ const Index = () => {
       {/* Hero */}
       <section className="pt-4 sm:pt-12 pb-0 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
-          {/* Headline */}
-          <h1
-            className="font-display font-light leading-[1.04] tracking-tight max-w-[1000px] text-center"
-            style={{ color: "#FFFFFF", fontSize: 'clamp(38px, 7.6vw, 80px)' }}
-          >
-            Get{" "}
-            <span style={{ color: "#D4A843" }}>paid</span>
-            {" "}to reach your goals.
-            <br />
-            <span style={{ color: '#F5E8C4', fontStyle: 'italic', fontWeight: 300 }}>
-              Or help someone else reach theirs.
-            </span>
-          </h1>
+          <div className="w-full flex flex-col items-center">
+            <div className="flex flex-col items-center">
+              <h1
+                className="font-display font-light leading-[1.02] sm:leading-[1.05] tracking-tight max-w-[1000px] text-center"
+                style={{ color: "#FFFFFF", fontSize: 'clamp(42px, 9.5vw, 96px)' }}
+              >
+                Get{" "}
+                <span style={{ color: "#D4A843" }}>paid</span>
+                {" "}to
+              </h1>
+              <span
+                className="font-display font-light tracking-tight text-center"
+                style={{
+                  color: "#FFFFFF",
+                  fontSize: 'clamp(42px, 9.5vw, 96px)',
+                  lineHeight: 1.02
+                }}
+              >
+                reach your goals.
+              </span>
+            </div>
 
-          {/* Subheading */}
-          <p
-            className="max-w-[680px] hero-fade"
-            style={{
-              color: "#F5E8C4",
-              lineHeight: 1.45,
-              fontSize: 'clamp(18px, 1.9vw, 22px)',
-              fontWeight: 500,
-              marginTop: 'clamp(28px, 3.5vw, 40px)',
-              animationDelay: '0.15s',
-            }}
-          >
-            Earn{" "}
-            <span style={{ color: '#D4A843', fontWeight: 700 }}>Nano Score</span>{" "}
-            every time you check in. Cash it out, donate to charity, or send it to a friend who needs a push.
-          </p>
-
-          {/* CTA */}
-          <div
-            className="w-full flex justify-center hero-fade"
-            style={{ marginTop: 'clamp(28px, 3.5vw, 40px)', animationDelay: '0.3s' }}
-          >
-            <PremiumCTAButton onClick={openModal} size="xl">Start your first goal</PremiumCTAButton>
-          </div>
-
-          {/* Sponsor micro-explanation */}
-          <div
-            className="hero-fade max-w-[640px] mx-auto"
-            style={{
-              marginTop: 'clamp(48px, 6vw, 72px)',
-              padding: 'clamp(20px, 2.4vw, 28px) clamp(22px, 3vw, 32px)',
-              border: '1px solid rgba(212, 168, 67, 0.22)',
-              borderRadius: '14px',
-              background: 'linear-gradient(180deg, rgba(212,168,67,0.05), rgba(212,168,67,0.015))',
-              animationDelay: '0.45s',
-            }}
-          >
             <p
-              className="font-display"
+              className="max-w-[620px] hero-fade"
               style={{
-                color: '#D4A843',
-                fontSize: 'clamp(13px, 1.1vw, 14px)',
+                color: "#F5E8C4",
+                lineHeight: 1.4,
+                fontSize: 'clamp(22px, 2.6vw, 30px)',
                 fontWeight: 600,
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                margin: 0,
+                marginTop: 'clamp(56px, 6.5vw, 72px)',
+                animationDelay: '0.2s',
               }}
             >
-              Why sponsors pay you
+              Finish one goal. Earn $25.
             </p>
-            <p
-              style={{
-                color: '#E8DCC0',
-                fontSize: 'clamp(15px, 1.5vw, 17px)',
-                lineHeight: 1.55,
-                fontWeight: 400,
-                marginTop: '10px',
-                marginBottom: 0,
-              }}
-            >
-              In the post-AI era, content, advice, and plans are everywhere. What's rare is{" "}
-              <span style={{ color: '#FFFFFF', fontWeight: 600 }}>follow-through</span>. NanoCamp gives sponsors a way to back real action and real progress.
-            </p>
-          </div>
 
-          {/* How it works — 3 steps */}
-          <div
-            className="hero-fade w-full max-w-[960px] mx-auto"
-            style={{ marginTop: 'clamp(56px, 6.5vw, 80px)', animationDelay: '0.55s' }}
-          >
-            <p
-              className="font-display"
-              style={{
-                color: '#D4A843',
-                fontSize: 'clamp(13px, 1.1vw, 14px)',
-                fontWeight: 600,
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                margin: 0,
-                marginBottom: 'clamp(24px, 3vw, 36px)',
-              }}
-            >
-              How it works
-            </p>
+            {/* Proof points */}
             <div
-              className="grid gap-6 sm:gap-5 text-left"
-              style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}
+              className="mx-auto text-center flex flex-col items-center"
+              style={{
+                marginTop: 'clamp(40px, 5vw, 56px)',
+                gap: '12px',
+              }}
             >
               {[
-                {
-                  n: '01',
-                  title: 'Pick one goal',
-                  body: 'Choose one thing that matters to you right now.',
-                },
-                {
-                  n: '02',
-                  title: 'Show up',
-                  body: 'Check in with proof, progress, or synced activity.',
-                },
-                {
-                  n: '03',
-                  title: 'Use what you earn',
-                  body: 'Your Nano Score is yours to keep, spend, or pass forward.',
-                },
-              ].map((step) => (
-                <div
-                  key={step.n}
+                { prefix: "Powered by", word: "science" },
+                { prefix: "Verified by", word: "AI" },
+                { prefix: "Funded by", word: "sponsors" },
+              ].map(({ prefix, word }) => (
+                <p
+                  key={word}
+                  className="font-display whitespace-nowrap"
                   style={{
-                    paddingTop: '18px',
-                    borderTop: '1px solid rgba(212, 168, 67, 0.22)',
+                    color: '#FFFFFF',
+                    lineHeight: 1.15,
+                    fontSize: 'clamp(20px, 2.6vw, 26px)',
+                    fontWeight: 500,
+                    margin: 0,
                   }}
                 >
-                  <div
-                    className="font-display"
-                    style={{
-                      color: '#D4A843',
-                      fontSize: '13px',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                      marginBottom: '10px',
-                    }}
-                  >
-                    {step.n}
-                  </div>
-                  <h3
-                    className="font-display"
-                    style={{
-                      color: '#FFFFFF',
-                      fontSize: 'clamp(20px, 2vw, 24px)',
-                      fontWeight: 500,
-                      lineHeight: 1.2,
-                      margin: 0,
-                      marginBottom: '8px',
-                    }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p
-                    style={{
-                      color: '#C8C0B0',
-                      fontSize: 'clamp(14px, 1.3vw, 15px)',
-                      lineHeight: 1.5,
-                      margin: 0,
-                    }}
-                  >
-                    {step.body}
-                  </p>
-                </div>
+                  {prefix}{" "}
+                  <span style={{ color: '#D4A843', fontWeight: 700 }}>{word}</span>
+                </p>
               ))}
             </div>
+          </div>
+
+          <div
+            className="w-full flex justify-center hero-fade"
+            style={{ marginTop: 'clamp(28px, 3.5vw, 36px)', marginBottom: 'clamp(8px, 1.5vw, 16px)', animationDelay: '0.4s' }}
+          >
+            <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
         </div>
       </section>
