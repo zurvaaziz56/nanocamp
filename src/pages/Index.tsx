@@ -101,25 +101,37 @@ const Index = () => {
                 style={{
                   color: "#FFFFFF",
                   fontSize: 'clamp(42px, 9.5vw, 96px)',
-                  lineHeight: 1.02
+                  lineHeight: 1.02,
                 }}
               >
-                reach your goals.{" "}
+                reach your goals.
+              </span>
+              <span
+                className="font-display font-light tracking-tight text-center"
+                style={{
+                  color: "#F5E8C4",
+                  fontSize: 'clamp(28px, 5.2vw, 52px)',
+                  lineHeight: 1.08,
+                  marginTop: 'clamp(16px, 2vw, 24px)',
+                  opacity: 0.92,
+                }}
+              >
+                Or help someone else reach theirs.
               </span>
             </div>
 
             <p
-              className="max-w-[620px] hero-fade"
+              className="max-w-[640px] hero-fade"
               style={{
                 color: "#F5E8C4",
-                lineHeight: 1.4,
-                fontSize: 'clamp(22px, 2.6vw, 30px)',
-                fontWeight: 600,
-                marginTop: 'clamp(56px, 6.5vw, 72px)',
+                lineHeight: 1.45,
+                fontSize: 'clamp(18px, 2.1vw, 24px)',
+                fontWeight: 500,
+                marginTop: 'clamp(40px, 5vw, 56px)',
                 animationDelay: '0.2s',
               }}
             >
-              Or help someone else reach theirs.
+              Earn Nano Score every time you check in. Cash it out, donate to charity, or send it to a friend who needs a push.
             </p>
 
             {/* Proof points */}
@@ -159,8 +171,120 @@ const Index = () => {
           >
             <PremiumCTAButton onClick={openModal} size="xl" />
           </div>
+
+          {/* Why sponsors pay */}
+          <div
+            className="hero-fade w-full max-w-[760px] text-center"
+            style={{
+              marginTop: 'clamp(64px, 8vw, 96px)',
+              animationDelay: '0.5s',
+            }}
+          >
+            <h2
+              className="font-display"
+              style={{
+                color: '#D4A843',
+                fontSize: 'clamp(22px, 2.8vw, 30px)',
+                fontWeight: 600,
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}
+            >
+              Why would sponsors pay you?
+            </h2>
+            <p
+              style={{
+                color: '#F5E8C4',
+                fontSize: 'clamp(17px, 1.9vw, 21px)',
+                lineHeight: 1.55,
+                marginTop: 'clamp(16px, 2vw, 20px)',
+                fontWeight: 400,
+              }}
+            >
+              In the post-AI era, content is everywhere. Advice is everywhere. Plans are everywhere. What's rare now is follow-through. NanoCamp gives sponsors a way to back real action and real progress.
+            </p>
+          </div>
+
+          {/* Compact How it works */}
+          <div
+            className="hero-fade w-full max-w-[1000px]"
+            style={{
+              marginTop: 'clamp(56px, 7vw, 88px)',
+              animationDelay: '0.6s',
+            }}
+          >
+            <div
+              className="grid gap-6 sm:gap-8 text-left"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              }}
+            >
+              {[
+                {
+                  step: '01',
+                  title: 'Pick one goal',
+                  body: 'Choose one thing that matters to you right now.',
+                },
+                {
+                  step: '02',
+                  title: 'Show up',
+                  body: 'Check in with proof, progress, or synced activity.',
+                },
+                {
+                  step: '03',
+                  title: 'Use what you earn',
+                  body: 'Your progress becomes a Nano Score you can keep, spend, or pass forward.',
+                },
+              ].map(({ step, title, body }) => (
+                <div
+                  key={step}
+                  style={{
+                    padding: 'clamp(20px, 2.4vw, 28px)',
+                    borderRadius: '14px',
+                    border: '1px solid rgba(212, 168, 67, 0.18)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0))',
+                  }}
+                >
+                  <div
+                    className="font-display"
+                    style={{
+                      color: '#D4A843',
+                      fontSize: '13px',
+                      fontWeight: 700,
+                      letterSpacing: '0.18em',
+                    }}
+                  >
+                    {step}
+                  </div>
+                  <h3
+                    className="font-display"
+                    style={{
+                      color: '#FFFFFF',
+                      fontSize: 'clamp(20px, 2.2vw, 24px)',
+                      fontWeight: 600,
+                      marginTop: '10px',
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    {title}
+                  </h3>
+                  <p
+                    style={{
+                      color: '#C8C0B0',
+                      fontSize: 'clamp(15px, 1.6vw, 17px)',
+                      lineHeight: 1.5,
+                      marginTop: '8px',
+                    }}
+                  >
+                    {body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* Sentinel placed right after the fold to trigger below-fold hydration.
           The min-height reserves space so the footer doesn't shift when the
