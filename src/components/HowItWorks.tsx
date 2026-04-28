@@ -1,6 +1,5 @@
-import { useState, lazy, Suspense } from "react";
-
-const ThirtyDayGallery = lazy(() => import("./ThirtyDayGallery"));
+import { useState } from "react";
+import ThirtyDayGallery from "./ThirtyDayGallery";
 
 type Goal = {
   title: string;
