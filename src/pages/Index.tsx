@@ -104,7 +104,7 @@ const Index = () => {
                   lineHeight: 1.02
                 }}
               >
-                reach your goals.
+                reach your goals.{" "}
               </span>
             </div>
 
@@ -119,7 +119,7 @@ const Index = () => {
                 animationDelay: '0.2s',
               }}
             >
-              Finish one goal. Earn $25.
+              Or help someone else reach theirs.
             </p>
 
             {/* Proof points */}
