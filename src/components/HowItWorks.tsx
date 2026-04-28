@@ -1,5 +1,6 @@
-import { useState } from "react";
-import ThirtyDayGallery from "./ThirtyDayGallery";
+import { useState, lazy, Suspense } from "react";
+
+const ThirtyDayGallery = lazy(() => import("./ThirtyDayGallery"));
 
 type Goal = {
   title: string;
@@ -381,7 +382,9 @@ const HowItWorks = ({ onGoalSelect }: HowItWorksProps) => {
           </p>
         </div>
 
-        <ThirtyDayGallery />
+        <Suspense fallback={<div style={{ minHeight: "800px" }} aria-hidden />}>
+          <ThirtyDayGallery />
+        </Suspense>
       </div>
     </section>
   );
